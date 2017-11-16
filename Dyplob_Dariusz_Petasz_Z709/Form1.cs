@@ -60,5 +60,11 @@ namespace Dyplob_Dariusz_Petasz_Z709
             labelKom.Text = "";
             textBoxPassword.Clear();
         }
+
+        private void buttonObrotowka_Click(object sender, EventArgs e)
+        {
+            Obrotowka obrotowka = new Obrotowka();
+            obrotowka.Show();
+        }
     }
 }

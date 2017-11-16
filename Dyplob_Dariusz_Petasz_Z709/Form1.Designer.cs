@@ -44,6 +44,7 @@
             this.widokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelLogowanie = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.labelKom = new System.Windows.Forms.Label();
             this.buttonWejscie = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pokazLoginTableAdapter = new Dyplob_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazLoginTableAdapter();
-            this.button2 = new System.Windows.Forms.Button();
             this.panelPrzyciski.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -185,6 +185,7 @@
             this.buttonObrotowka.TabIndex = 3;
             this.buttonObrotowka.Text = "Obrotówka";
             this.buttonObrotowka.UseVisualStyleBackColor = false;
+            this.buttonObrotowka.Click += new System.EventHandler(this.buttonObrotowka_Click);
             // 
             // labelTextPrzyciski
             // 
@@ -250,6 +251,22 @@
             this.panelLogowanie.Name = "panelLogowanie";
             this.panelLogowanie.Size = new System.Drawing.Size(309, 273);
             this.panelLogowanie.TabIndex = 7;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Brown;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button2.FlatAppearance.BorderSize = 2;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkKhaki;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button2.Location = new System.Drawing.Point(95, 180);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(113, 37);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "WYJŚCIE";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // labelKom
             // 
@@ -329,22 +346,6 @@
             // pokazLoginTableAdapter
             // 
             this.pokazLoginTableAdapter.ClearBeforeFill = true;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Brown;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkKhaki;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button2.Location = new System.Drawing.Point(95, 180);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 37);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "WYJŚCIE";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
