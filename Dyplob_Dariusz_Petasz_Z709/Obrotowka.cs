@@ -30,5 +30,11 @@ namespace Dyplob_Dariusz_Petasz_Z709
             tarcza.Tarcza(g);
             tarcza.Obrot(g, o);
         }
+
+        private void buttonDodajBaza_Click(object sender, EventArgs e)
+        {
+            Form_BazaDanych formBazaDanych = new Form_BazaDanych();
+            formBazaDanych.Show();
+        }
     }
 }

@@ -55,7 +55,14 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_BazaDanych.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_BazaDanych.Designer.cs">
+      <DependentUpon>Form_BazaDanych.cs</DependentUpon>
+    </Compile>
     <Compile Include="IRysujTarcza.cs" />
+    <Compile Include="IZapiszBazaPrzedstawienie.cs" />
     <Compile Include="Obrotowka.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,8 +78,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TWDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ZapiszBazaPrzedstawienie.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_BazaDanych.resx">
+      <DependentUpon>Form_BazaDanych.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obrotowka.resx">
       <DependentUpon>Obrotowka.cs</DependentUpon>

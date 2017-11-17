@@ -494,6 +494,7 @@
             this.buttonDodajBaza.TabIndex = 9;
             this.buttonDodajBaza.Text = "Dodaj";
             this.buttonDodajBaza.UseVisualStyleBackColor = false;
+            this.buttonDodajBaza.Click += new System.EventHandler(this.buttonDodajBaza_Click);
             // 
             // richTextBox1
             // 
