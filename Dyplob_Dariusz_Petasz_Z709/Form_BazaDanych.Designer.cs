@@ -44,9 +44,9 @@
             this.comboBoxRodzaj = new System.Windows.Forms.ComboBox();
             this.panelKompozytor = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxImieKomp = new System.Windows.Forms.TextBox();
             this.ImieKomp = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxNazwiskoKomp = new System.Windows.Forms.TextBox();
             this.labelKompozytor = new System.Windows.Forms.Label();
             this.buttonZapiszKomp = new System.Windows.Forms.Button();
             this.buttonDodajKomp = new System.Windows.Forms.Button();
@@ -58,6 +58,8 @@
             this.labelWynikRez = new System.Windows.Forms.Label();
             this.buttonUsun = new System.Windows.Forms.Button();
             this.textBoxImieRez = new System.Windows.Forms.TextBox();
+            this.pokazRezyserBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tWDataSet = new Dyplob_Dariusz_Petasz_Z709.TWDataSet();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxNazwiskoRez = new System.Windows.Forms.TextBox();
             this.labelRezyser = new System.Windows.Forms.Label();
@@ -67,11 +69,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxRezyser = new System.Windows.Forms.ComboBox();
-            this.pokazRezyserBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tWDataSet = new Dyplob_Dariusz_Petasz_Z709.TWDataSet();
             this.pokazRezyserTableAdapter = new Dyplob_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazRezyserTableAdapter();
             this.pokazNowyRezBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokazNowyRezTableAdapter = new Dyplob_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazNowyRezTableAdapter();
+            this.labelWynikKomp = new System.Windows.Forms.Label();
+            this.pokazKompozytorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pokazKompozytorTableAdapter = new Dyplob_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazKompozytorTableAdapter();
             this.tabControlBazaDanych.SuspendLayout();
             this.tabPageKomRezRodz.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pokazRezyserBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazNowyRezBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazKompozytorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlBazaDanych
@@ -132,12 +136,12 @@
             this.panel2.Controls.Add(this.comboBoxRodzaj);
             this.panel2.Location = new System.Drawing.Point(778, 25);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(352, 301);
+            this.panel2.Size = new System.Drawing.Size(352, 342);
             this.panel2.TabIndex = 3;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(26, 242);
+            this.button2.Location = new System.Drawing.Point(27, 287);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(83, 29);
             this.button2.TabIndex = 10;
@@ -146,7 +150,7 @@
             // 
             // textBoxNazwa
             // 
-            this.textBoxNazwa.Location = new System.Drawing.Point(97, 94);
+            this.textBoxNazwa.Location = new System.Drawing.Point(98, 139);
             this.textBoxNazwa.Name = "textBoxNazwa";
             this.textBoxNazwa.Size = new System.Drawing.Size(227, 26);
             this.textBoxNazwa.TabIndex = 7;
@@ -157,13 +161,13 @@
             this.labelRodzaj.ForeColor = System.Drawing.Color.Cyan;
             this.labelRodzaj.Location = new System.Drawing.Point(21, 12);
             this.labelRodzaj.Name = "labelRodzaj";
-            this.labelRodzaj.Size = new System.Drawing.Size(107, 19);
+            this.labelRodzaj.Size = new System.Drawing.Size(68, 19);
             this.labelRodzaj.TabIndex = 6;
-            this.labelRodzaj.Text = "KMPOZYTOR";
+            this.labelRodzaj.Text = "RODZAJ";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(241, 242);
+            this.button3.Location = new System.Drawing.Point(242, 287);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(83, 29);
             this.button3.TabIndex = 5;
@@ -172,7 +176,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(241, 190);
+            this.button4.Location = new System.Drawing.Point(242, 235);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(83, 29);
             this.button4.TabIndex = 4;
@@ -181,7 +185,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(97, 190);
+            this.button5.Location = new System.Drawing.Point(98, 235);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(83, 29);
             this.button5.TabIndex = 3;
@@ -192,7 +196,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label6.Location = new System.Drawing.Point(21, 97);
+            this.label6.Location = new System.Drawing.Point(22, 142);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 19);
             this.label6.TabIndex = 2;
@@ -202,7 +206,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label7.Location = new System.Drawing.Point(22, 52);
+            this.label7.Location = new System.Drawing.Point(23, 97);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 19);
             this.label7.TabIndex = 1;
@@ -211,7 +215,7 @@
             // comboBoxRodzaj
             // 
             this.comboBoxRodzaj.FormattingEnabled = true;
-            this.comboBoxRodzaj.Location = new System.Drawing.Point(97, 49);
+            this.comboBoxRodzaj.Location = new System.Drawing.Point(98, 94);
             this.comboBoxRodzaj.Name = "comboBoxRodzaj";
             this.comboBoxRodzaj.Size = new System.Drawing.Size(227, 27);
             this.comboBoxRodzaj.TabIndex = 0;
@@ -220,10 +224,11 @@
             // 
             this.panelKompozytor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
             this.panelKompozytor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelKompozytor.Controls.Add(this.labelWynikKomp);
             this.panelKompozytor.Controls.Add(this.button1);
-            this.panelKompozytor.Controls.Add(this.textBox1);
+            this.panelKompozytor.Controls.Add(this.textBoxImieKomp);
             this.panelKompozytor.Controls.Add(this.ImieKomp);
-            this.panelKompozytor.Controls.Add(this.textBox2);
+            this.panelKompozytor.Controls.Add(this.textBoxNazwiskoKomp);
             this.panelKompozytor.Controls.Add(this.labelKompozytor);
             this.panelKompozytor.Controls.Add(this.buttonZapiszKomp);
             this.panelKompozytor.Controls.Add(this.buttonDodajKomp);
@@ -233,41 +238,45 @@
             this.panelKompozytor.Controls.Add(this.comboBoxKompozytor);
             this.panelKompozytor.Location = new System.Drawing.Point(394, 25);
             this.panelKompozytor.Name = "panelKompozytor";
-            this.panelKompozytor.Size = new System.Drawing.Size(352, 301);
+            this.panelKompozytor.Size = new System.Drawing.Size(352, 342);
             this.panelKompozytor.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(26, 242);
+            this.button1.Location = new System.Drawing.Point(27, 287);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 29);
             this.button1.TabIndex = 10;
             this.button1.Text = "Usuń";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textBoxImieKomp
             // 
-            this.textBox1.Location = new System.Drawing.Point(97, 141);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(227, 26);
-            this.textBox1.TabIndex = 9;
+            this.textBoxImieKomp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazKompozytorBindingSource, "imie", true));
+            this.textBoxImieKomp.Enabled = false;
+            this.textBoxImieKomp.Location = new System.Drawing.Point(98, 186);
+            this.textBoxImieKomp.Name = "textBoxImieKomp";
+            this.textBoxImieKomp.Size = new System.Drawing.Size(227, 26);
+            this.textBoxImieKomp.TabIndex = 9;
             // 
             // ImieKomp
             // 
             this.ImieKomp.AutoSize = true;
             this.ImieKomp.ForeColor = System.Drawing.Color.Cornsilk;
-            this.ImieKomp.Location = new System.Drawing.Point(56, 144);
+            this.ImieKomp.Location = new System.Drawing.Point(57, 189);
             this.ImieKomp.Name = "ImieKomp";
             this.ImieKomp.Size = new System.Drawing.Size(35, 19);
             this.ImieKomp.TabIndex = 8;
             this.ImieKomp.Text = "Imie";
             // 
-            // textBox2
+            // textBoxNazwiskoKomp
             // 
-            this.textBox2.Location = new System.Drawing.Point(97, 94);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(227, 26);
-            this.textBox2.TabIndex = 7;
+            this.textBoxNazwiskoKomp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazKompozytorBindingSource, "nazwisko", true));
+            this.textBoxNazwiskoKomp.Enabled = false;
+            this.textBoxNazwiskoKomp.Location = new System.Drawing.Point(98, 139);
+            this.textBoxNazwiskoKomp.Name = "textBoxNazwiskoKomp";
+            this.textBoxNazwiskoKomp.Size = new System.Drawing.Size(227, 26);
+            this.textBoxNazwiskoKomp.TabIndex = 7;
             // 
             // labelKompozytor
             // 
@@ -275,31 +284,33 @@
             this.labelKompozytor.ForeColor = System.Drawing.Color.Cyan;
             this.labelKompozytor.Location = new System.Drawing.Point(21, 12);
             this.labelKompozytor.Name = "labelKompozytor";
-            this.labelKompozytor.Size = new System.Drawing.Size(107, 19);
+            this.labelKompozytor.Size = new System.Drawing.Size(119, 19);
             this.labelKompozytor.TabIndex = 6;
-            this.labelKompozytor.Text = "KMPOZYTOR";
+            this.labelKompozytor.Text = "KOMPOZYTOR";
             // 
             // buttonZapiszKomp
             // 
-            this.buttonZapiszKomp.Location = new System.Drawing.Point(241, 242);
+            this.buttonZapiszKomp.Location = new System.Drawing.Point(242, 287);
             this.buttonZapiszKomp.Name = "buttonZapiszKomp";
             this.buttonZapiszKomp.Size = new System.Drawing.Size(83, 29);
             this.buttonZapiszKomp.TabIndex = 5;
             this.buttonZapiszKomp.Text = "Zapisz";
             this.buttonZapiszKomp.UseVisualStyleBackColor = true;
+            this.buttonZapiszKomp.Click += new System.EventHandler(this.buttonZapiszKomp_Click);
             // 
             // buttonDodajKomp
             // 
-            this.buttonDodajKomp.Location = new System.Drawing.Point(241, 190);
+            this.buttonDodajKomp.Location = new System.Drawing.Point(242, 235);
             this.buttonDodajKomp.Name = "buttonDodajKomp";
             this.buttonDodajKomp.Size = new System.Drawing.Size(83, 29);
             this.buttonDodajKomp.TabIndex = 4;
             this.buttonDodajKomp.Text = "Dodaj";
             this.buttonDodajKomp.UseVisualStyleBackColor = true;
+            this.buttonDodajKomp.Click += new System.EventHandler(this.buttonDodajKomp_Click);
             // 
             // buttonAktualizujKomp
             // 
-            this.buttonAktualizujKomp.Location = new System.Drawing.Point(97, 190);
+            this.buttonAktualizujKomp.Location = new System.Drawing.Point(98, 235);
             this.buttonAktualizujKomp.Name = "buttonAktualizujKomp";
             this.buttonAktualizujKomp.Size = new System.Drawing.Size(83, 29);
             this.buttonAktualizujKomp.TabIndex = 3;
@@ -310,7 +321,7 @@
             // 
             this.NazwiskoKomp.AutoSize = true;
             this.NazwiskoKomp.ForeColor = System.Drawing.Color.Cornsilk;
-            this.NazwiskoKomp.Location = new System.Drawing.Point(21, 97);
+            this.NazwiskoKomp.Location = new System.Drawing.Point(22, 142);
             this.NazwiskoKomp.Name = "NazwiskoKomp";
             this.NazwiskoKomp.Size = new System.Drawing.Size(70, 19);
             this.NazwiskoKomp.TabIndex = 2;
@@ -320,7 +331,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label9.Location = new System.Drawing.Point(22, 52);
+            this.label9.Location = new System.Drawing.Point(23, 97);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 19);
             this.label9.TabIndex = 1;
@@ -328,11 +339,14 @@
             // 
             // comboBoxKompozytor
             // 
+            this.comboBoxKompozytor.DataSource = this.pokazKompozytorBindingSource;
+            this.comboBoxKompozytor.DisplayMember = "Kompozytor";
             this.comboBoxKompozytor.FormattingEnabled = true;
-            this.comboBoxKompozytor.Location = new System.Drawing.Point(97, 49);
+            this.comboBoxKompozytor.Location = new System.Drawing.Point(98, 94);
             this.comboBoxKompozytor.Name = "comboBoxKompozytor";
             this.comboBoxKompozytor.Size = new System.Drawing.Size(227, 27);
             this.comboBoxKompozytor.TabIndex = 0;
+            this.comboBoxKompozytor.ValueMember = "idkompozytor";
             // 
             // panel1
             // 
@@ -381,6 +395,16 @@
             this.textBoxImieRez.Name = "textBoxImieRez";
             this.textBoxImieRez.Size = new System.Drawing.Size(227, 26);
             this.textBoxImieRez.TabIndex = 9;
+            // 
+            // pokazRezyserBindingSource
+            // 
+            this.pokazRezyserBindingSource.DataMember = "pokazRezyser";
+            this.pokazRezyserBindingSource.DataSource = this.tWDataSet;
+            // 
+            // tWDataSet
+            // 
+            this.tWDataSet.DataSetName = "TWDataSet";
+            this.tWDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label5
             // 
@@ -471,16 +495,6 @@
             this.comboBoxRezyser.TabIndex = 0;
             this.comboBoxRezyser.ValueMember = "idrezyser";
             // 
-            // pokazRezyserBindingSource
-            // 
-            this.pokazRezyserBindingSource.DataMember = "pokazRezyser";
-            this.pokazRezyserBindingSource.DataSource = this.tWDataSet;
-            // 
-            // tWDataSet
-            // 
-            this.tWDataSet.DataSetName = "TWDataSet";
-            this.tWDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // pokazRezyserTableAdapter
             // 
             this.pokazRezyserTableAdapter.ClearBeforeFill = true;
@@ -493,6 +507,25 @@
             // pokazNowyRezTableAdapter
             // 
             this.pokazNowyRezTableAdapter.ClearBeforeFill = true;
+            // 
+            // labelWynikKomp
+            // 
+            this.labelWynikKomp.AutoSize = true;
+            this.labelWynikKomp.ForeColor = System.Drawing.Color.Cornsilk;
+            this.labelWynikKomp.Location = new System.Drawing.Point(23, 49);
+            this.labelWynikKomp.Name = "labelWynikKomp";
+            this.labelWynikKomp.Size = new System.Drawing.Size(185, 19);
+            this.labelWynikKomp.TabIndex = 11;
+            this.labelWynikKomp.Text = "Naciśnij Aktualizuj lub Dodaj";
+            // 
+            // pokazKompozytorBindingSource
+            // 
+            this.pokazKompozytorBindingSource.DataMember = "pokazKompozytor";
+            this.pokazKompozytorBindingSource.DataSource = this.tWDataSet;
+            // 
+            // pokazKompozytorTableAdapter
+            // 
+            this.pokazKompozytorTableAdapter.ClearBeforeFill = true;
             // 
             // Form_BazaDanych
             // 
@@ -515,6 +548,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pokazRezyserBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazNowyRezBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazKompozytorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -538,9 +572,9 @@
         private System.Windows.Forms.Button buttonZapisz;
         private System.Windows.Forms.Panel panelKompozytor;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxImieKomp;
         private System.Windows.Forms.Label ImieKomp;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxNazwiskoKomp;
         private System.Windows.Forms.Label labelKompozytor;
         private System.Windows.Forms.Button buttonZapiszKomp;
         private System.Windows.Forms.Button buttonDodajKomp;
@@ -564,5 +598,8 @@
         private System.Windows.Forms.Label labelWynikRez;
         private System.Windows.Forms.BindingSource pokazNowyRezBindingSource;
         private TWDataSetTableAdapters.pokazNowyRezTableAdapter pokazNowyRezTableAdapter;
+        private System.Windows.Forms.Label labelWynikKomp;
+        private System.Windows.Forms.BindingSource pokazKompozytorBindingSource;
+        private TWDataSetTableAdapters.pokazKompozytorTableAdapter pokazKompozytorTableAdapter;
     }
 }

@@ -23,6 +23,8 @@ namespace Dyplob_Dariusz_Petasz_Z709
 
         private void Form_BazaDanych_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'tWDataSet.pokazKompozytor' table. You can move, or remove it, as needed.
+            
 
             PokazDane();
 
@@ -30,6 +32,7 @@ namespace Dyplob_Dariusz_Petasz_Z709
 
         void PokazDane()
         {
+            this.pokazKompozytorTableAdapter.Fill(this.tWDataSet.pokazKompozytor);
             this.pokazRezyserTableAdapter.Fill(this.tWDataSet.pokazRezyser);
             //this.pokazNowyRezTableAdapter.Fill(this.tWDataSet.pokazNowyRez);
         }
@@ -75,5 +78,49 @@ namespace Dyplob_Dariusz_Petasz_Z709
 
             }
         }
+
+        private void buttonDodajKomp_Click(object sender, EventArgs e)
+        {
+            przycisk = buttonDodajKomp.Text;
+            labelWynikKomp.Text = "Wybrano Dodaj nowego reżysera.";
+            textBoxNazwiskoKomp.Clear();
+            textBoxImieKomp.Clear();
+            textBoxImieKomp.Enabled = true;
+            textBoxNazwiskoKomp.Enabled = true;
+        }
+
+        private void buttonZapiszKomp_Click(object sender, EventArgs e)
+        {
+            string kom = "";
+            db = new ZapiszBazaPrzedstawienie();
+            switch (przycisk)
+            {
+                case "Dodaj":
+                    {
+                        kom = db.ZapiszKompozytor(textBoxNazwiskoKomp.Text, textBoxImieKomp.Text);
+                        labelWynikKomp.Text = kom;
+                        PokazDane();
+                        textBoxImieKomp.Enabled = false;
+                        textBoxNazwiskoKomp.Enabled = false;
+                        przycisk = "";
+                        break;
+                    }
+                case "Aktualizuj":
+                    {
+
+                        break;
+                    }
+                default:
+                    {
+                        labelWynikRez.Text = "Nic nie wybrane";
+                        break;
+                    }
+
+            }
+        }
+
+        
+
+        
     }
 }
