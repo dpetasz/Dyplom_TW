@@ -14,7 +14,7 @@ namespace Dyplob_Dariusz_Petasz_Z709
     {
 
         IZapiszBazaPrzedstawienie db = new ZapiszBazaPrzedstawienie();
-        //string przycisk = "";
+        string przycisk = "";
 
         public Form_BazaDanych()
         {
