@@ -28,10 +28,10 @@ namespace Dyplob_Dariusz_Petasz_Z709
             db.dodajRodzaj(n, ref kom);
             return kom;
         }
-        public string ZapiszPrzedstawienie()
+        public string ZapiszPrzedstawienie(int komp, int rez, int rodz, string nazwa, DateTime data)
         {
             string kom = "";
-
+            db.DodajPrzedstawienie(komp, rez, rodz, nazwa, data, ref kom);
 
             return kom;
         }

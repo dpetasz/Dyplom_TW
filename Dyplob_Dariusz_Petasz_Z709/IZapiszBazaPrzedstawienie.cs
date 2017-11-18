@@ -11,6 +11,6 @@ namespace Dyplob_Dariusz_Petasz_Z709
         string ZapiszRezyser(string n, string i);
         string ZapiszKompozytor(string n, string i);
         string ZapiszRodzaj(string n);
-        string ZapiszPrzedstawienie();
+        string ZapiszPrzedstawienie(int komp, int rez, int rodz, string nazwa, DateTime data);
     }
 }

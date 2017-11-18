@@ -23,6 +23,10 @@ namespace Dyplob_Dariusz_Petasz_Z709
 
         private void Form_BazaDanych_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'tWDataSet.pokazRodzaj' table. You can move, or remove it, as needed.
+            
+            // TODO: This line of code loads data into the 'tWDataSet.pokazPrzedstawienie' table. You can move, or remove it, as needed.
+            
             // TODO: This line of code loads data into the 'tWDataSet.pokazKompozytor' table. You can move, or remove it, as needed.
             
 
@@ -32,8 +36,10 @@ namespace Dyplob_Dariusz_Petasz_Z709
 
         void PokazDane()
         {
+            this.pokazRodzajTableAdapter.Fill(this.tWDataSet.pokazRodzaj);
             this.pokazKompozytorTableAdapter.Fill(this.tWDataSet.pokazKompozytor);
             this.pokazRezyserTableAdapter.Fill(this.tWDataSet.pokazRezyser);
+            this.pokazPrzedstawienieTableAdapter.Fill(this.tWDataSet.pokazPrzedstawienie);
             //this.pokazNowyRezTableAdapter.Fill(this.tWDataSet.pokazNowyRez);
         }
 
@@ -47,6 +53,7 @@ namespace Dyplob_Dariusz_Petasz_Z709
             textBoxImieRez.Clear();
             textBoxImieRez.Enabled = true;
             textBoxNazwiskoRez.Enabled = true;
+            buttonZapisz.Enabled = true;
         }
 
         private void buttonZapisz_Click(object sender, EventArgs e)
@@ -87,6 +94,7 @@ namespace Dyplob_Dariusz_Petasz_Z709
             textBoxImieKomp.Clear();
             textBoxImieKomp.Enabled = true;
             textBoxNazwiskoKomp.Enabled = true;
+            buttonZapiszKomp.Enabled = true;
         }
 
         private void buttonZapiszKomp_Click(object sender, EventArgs e)
@@ -118,6 +126,46 @@ namespace Dyplob_Dariusz_Petasz_Z709
 
             }
         }
+
+        private void buttonDodajRodzaj_Click(object sender, EventArgs e)
+        {
+            przycisk = buttonDodajRodzaj.Text;
+            labelWynikRodzaj.Text = "Wybrano Dodaj nowy Rodzaj.";
+            textBoxNazwaRodzaj.Clear();
+            textBoxNazwaRodzaj.Enabled = true;
+            buttonZapiszRodzaj.Enabled = true;
+        }
+
+        private void buttonZapiszRodzaj_Click(object sender, EventArgs e)
+        {
+            string kom = "";
+            db = new ZapiszBazaPrzedstawienie();
+            switch (przycisk)
+            {
+                case "Dodaj":
+                    {
+                        kom = db.ZapiszRodzaj(textBoxNazwaRodzaj.Text);
+                        labelWynikRodzaj.Text = kom;
+                        PokazDane();
+                        textBoxNazwaRodzaj.Enabled = false;
+                        przycisk = "";
+                        break;
+                    }
+                case "Aktualizuj":
+                    {
+
+                        break;
+                    }
+                default:
+                    {
+                        labelWynikRez.Text = "Nic nie wybrane";
+                        break;
+                    }
+
+            }
+        }
+
+        
 
         
 
