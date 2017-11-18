@@ -13,7 +13,7 @@ namespace Dyplob_Dariusz_Petasz_Z709
     public partial class Form_BazaDanych : Form
     {
 
-        IZapiszBazaPrzedstawienie db;
+        IZapiszBazaPrzedstawienie db = new ZapiszBazaPrzedstawienie();
         string przycisk = "";
 
         public Form_BazaDanych()
@@ -59,7 +59,6 @@ namespace Dyplob_Dariusz_Petasz_Z709
         private void buttonZapisz_Click(object sender, EventArgs e)
         {
             string kom = "";
-            db = new ZapiszBazaPrzedstawienie();
             switch (przycisk)
             {
                 case "Dodaj":
@@ -100,7 +99,6 @@ namespace Dyplob_Dariusz_Petasz_Z709
         private void buttonZapiszKomp_Click(object sender, EventArgs e)
         {
             string kom = "";
-            db = new ZapiszBazaPrzedstawienie();
             switch (przycisk)
             {
                 case "Dodaj":
@@ -139,7 +137,6 @@ namespace Dyplob_Dariusz_Petasz_Z709
         private void buttonZapiszRodzaj_Click(object sender, EventArgs e)
         {
             string kom = "";
-            db = new ZapiszBazaPrzedstawienie();
             switch (przycisk)
             {
                 case "Dodaj":
@@ -163,6 +160,17 @@ namespace Dyplob_Dariusz_Petasz_Z709
                     }
 
             }
+        }
+
+        private void buttonZapiszPrzedstawienie_Click(object sender, EventArgs e)
+        {
+            string kom = "";
+            int idRez = Convert.ToInt32(labelIdRezyser.Text),
+                idKom = Convert.ToInt32(labelIdKompozytor.Text),
+                idRodz = Convert.ToInt32(labelIdRodzaj.Text);
+            
+            kom = db.ZapiszPrzedstawienie(idKom,idRez,idRodz,textBoxNazwaPrzedstawienia.Text.ToString(), dateTimePickerDataPremiery.Value);
+            labelWynikPrzedstawienie.Text = kom;
         }
 
         
