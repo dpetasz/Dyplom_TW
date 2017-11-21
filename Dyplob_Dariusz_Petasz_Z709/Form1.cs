@@ -36,6 +36,9 @@ namespace Dyplob_Dariusz_Petasz_Z709
             proceduryDB.logowanie(comboBoxLogin.Text, textBoxPassword.Text, ref kom);
             if (kom == "Zalogowany")
             {
+                plikToolStripMenuItem.Enabled = true;
+                bazaToolStripMenuItem.Enabled = true;
+                widokToolStripMenuItem.Enabled = true;
                 panelLogowanie.Visible = false;
                 panelPrzyciski.Enabled = true;
                 labelTextPrzyciski.Text = kom + ": " + comboBoxLogin.Text;
@@ -65,6 +68,12 @@ namespace Dyplob_Dariusz_Petasz_Z709
         {
             Obrotowka obrotowka = new Obrotowka();
             obrotowka.Show();
+        }
+
+        private void dodajPrzedstawienieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_BazaDanych baza = new Form_BazaDanych();
+            baza.Show();
         }
     }
 }

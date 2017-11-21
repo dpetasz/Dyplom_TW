@@ -23,11 +23,7 @@ namespace Dyplob_Dariusz_Petasz_Z709
 
         private void Form_BazaDanych_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'tWDataSet.pokazRodzaj' table. You can move, or remove it, as needed.
-            
-            // TODO: This line of code loads data into the 'tWDataSet.pokazPrzedstawienie' table. You can move, or remove it, as needed.
-            
-            // TODO: This line of code loads data into the 'tWDataSet.pokazKompozytor' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 'tWDataSet1.pokazPrzedstawienie' table. You can move, or remove it, as needed.
             
 
             PokazDane();
@@ -39,11 +35,11 @@ namespace Dyplob_Dariusz_Petasz_Z709
             this.pokazRodzajTableAdapter.Fill(this.tWDataSet.pokazRodzaj);
             this.pokazKompozytorTableAdapter.Fill(this.tWDataSet.pokazKompozytor);
             this.pokazRezyserTableAdapter.Fill(this.tWDataSet.pokazRezyser);
-            this.pokazPrzedstawienieTableAdapter.Fill(this.tWDataSet.pokazPrzedstawienie);
-            //this.pokazNowyRezTableAdapter.Fill(this.tWDataSet.pokazNowyRez);
+            this.pokazPrzedstawienieTableAdapter.Fill(this.tWDataSet1.pokazPrzedstawienie);
+
         }
 
-        
+
 
         private void buttonDodaj_Click(object sender, EventArgs e)
         {
@@ -165,18 +161,123 @@ namespace Dyplob_Dariusz_Petasz_Z709
         private void buttonZapiszPrzedstawienie_Click(object sender, EventArgs e)
         {
             string kom = "";
-            int idRez = Convert.ToInt32(labelIdRezyser.Text),
-                idKom = Convert.ToInt32(labelIdKompozytor.Text),
-                idRodz = Convert.ToInt32(labelIdRodzaj.Text);
-            
-            kom = db.ZapiszPrzedstawienie(idKom,idRez,idRodz,textBoxNazwaPrzedstawienia.Text.ToString(), dateTimePickerDataPremiery.Value);
-            labelWynikPrzedstawienie.Text = kom;
+
+            switch (przycisk)
+            {
+                case "Dodaj":
+                    {
+                        int idRez = Convert.ToInt32(labelIdRezyser.Text),
+                        idKom = Convert.ToInt32(labelIdKompozytor.Text),
+                        idRodz = Convert.ToInt32(labelIdRodzaj.Text);
+
+                        kom = db.ZapiszPrzedstawienie(idKom, idRez, idRodz, textBoxNazwaPrzedstawienia.Text.ToString(), dateTimePickerDataPremiery.Value);
+                        labelWynikPrzedstawienie.Text = kom;
+                        PokazDane();
+                        comboBoxPrzedstawienieRezyser.Enabled = false;
+                        comboBoxPrzedstawienieRezyser.Enabled = false;
+                        comboBoxPrzedstawienieKompozytor.Enabled = false;
+                        comboBoxPrzedstawienieRodzaj.Enabled = false;
+                        textBoxNazwaPrzedstawienia.Enabled = false;
+                        buttonZapiszPrzedstawienie.Visible = false;
+                        dateTimePickerDataPremiery.Enabled = false;
+                        dateTimePickerDlugoscPrzedstawienia.Enabled = false;
+                        richTextBoxOpisPrzedstawienie.Enabled = false;
+
+                        labelIdKompozytor.Visible = false;
+                        labelIdPrzedstawienie.Visible = false;
+                        labelIdRezyser.Visible = false;
+                        labelIdRodzaj.Visible = false;
+                        przycisk = "";
+                        break;
+                    }
+                case "Aktualizuj":
+                    {
+                        int idRez = Convert.ToInt32(labelIdRezyser.Text),
+                        idKom = Convert.ToInt32(labelIdKompozytor.Text),
+                        idRodz = Convert.ToInt32(labelIdRodzaj.Text),
+                        idPrzed = Convert.ToInt32(labelIdPrzedstawienie.Text);
+                        kom = db.AktualizujPrzedstawienie(idPrzed, idKom, idRez, idRodz, 
+                            textBoxNazwaPrzedstawienia.Text.ToString(), dateTimePickerDataPremiery.Value, 
+                            TimeSpan.Parse(dateTimePickerDlugoscPrzedstawienia.Text), 
+                            richTextBoxOpisPrzedstawienie.Text.ToString());
+                        labelWynikPrzedstawienie.Text = kom;
+                        PokazDane();
+                        break;
+                    }
+
+                default:
+                    {
+                        labelWynikRez.Text = "Nic nie wybrane";
+                        break;
+                    }
+
+            }
         }
 
-        
+        private void buttonDodajPrzedstawienie_Click(object sender, EventArgs e)
+        {
+            przycisk = "Dodaj";
+            comboBoxPrzedstawienieRezyser.Enabled = true;
+            comboBoxPrzedstawienieRezyser.Enabled = true;
+            comboBoxPrzedstawienieKompozytor.Enabled = true;
+            comboBoxPrzedstawienieRodzaj.Enabled = true;
+            textBoxNazwaPrzedstawienia.Enabled = true;
+            textBoxNazwaPrzedstawienia.Text = "";
+            buttonZapiszPrzedstawienie.Visible = true;
+            dateTimePickerDataPremiery.Enabled = true;
 
-        
+            labelIdKompozytor.Visible = true;
+            //labelIdPrzedstawienie.Visible = true;
+            labelIdRezyser.Visible = true;
+            labelIdRodzaj.Visible = true;
+            //dateTimePickerDlugoscPrzedstawienia.Enabled = true;
+            //richTextBoxOpisPrzedstawienie.Enabled = true;
 
-        
+        }
+
+        private void buttonAktualizujPrzedstawienie_Click(object sender, EventArgs e)
+        {
+            przycisk = "Aktualizuj";
+            comboBoxPrzedstawienieRezyser.Enabled = true;
+            comboBoxPrzedstawienieRezyser.Enabled = true;
+            comboBoxPrzedstawienieKompozytor.Enabled = true;
+            comboBoxPrzedstawienieRodzaj.Enabled = true;
+            textBoxNazwaPrzedstawienia.Enabled = true;
+            buttonZapiszPrzedstawienie.Visible = true;
+            dateTimePickerDataPremiery.Enabled = true;
+
+            labelIdKompozytor.Visible = true;
+            labelIdPrzedstawienie.Visible = true;
+            labelIdRezyser.Visible = true;
+            labelIdRodzaj.Visible = true;
+            dateTimePickerDlugoscPrzedstawienia.Enabled = true;
+            richTextBoxOpisPrzedstawienie.Enabled = true;
+        }
+
+        private void buttonAnulujPrzedstawienie_Click(object sender, EventArgs e)
+        {
+            PokazDane();
+            comboBoxPrzedstawienieRezyser.Enabled = false;
+            comboBoxPrzedstawienieRezyser.Enabled = false;
+            comboBoxPrzedstawienieKompozytor.Enabled = false;
+            comboBoxPrzedstawienieRodzaj.Enabled = false;
+            textBoxNazwaPrzedstawienia.Enabled = false;
+            buttonZapiszPrzedstawienie.Visible = false;
+            dateTimePickerDataPremiery.Enabled = false;
+            dateTimePickerDlugoscPrzedstawienia.Enabled = false;
+            richTextBoxOpisPrzedstawienie.Enabled = false;
+
+            labelIdKompozytor.Visible = false;
+            labelIdPrzedstawienie.Visible = false;
+            labelIdRezyser.Visible = false;
+            labelIdRodzaj.Visible = false;
+            przycisk = "";
+        }
+
+
+
+
+
+
     }
 }

@@ -54,6 +54,7 @@
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pokazLoginTableAdapter = new Dyplob_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazLoginTableAdapter();
+            this.dodajPrzedstawienieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelPrzyciski.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -211,18 +212,23 @@
             // 
             // plikToolStripMenuItem
             // 
+            this.plikToolStripMenuItem.Enabled = false;
             this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
             this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.plikToolStripMenuItem.Text = "Plik";
             // 
             // bazaToolStripMenuItem
             // 
+            this.bazaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dodajPrzedstawienieToolStripMenuItem});
+            this.bazaToolStripMenuItem.Enabled = false;
             this.bazaToolStripMenuItem.Name = "bazaToolStripMenuItem";
             this.bazaToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.bazaToolStripMenuItem.Text = "Baza";
             // 
             // widokToolStripMenuItem
             // 
+            this.widokToolStripMenuItem.Enabled = false;
             this.widokToolStripMenuItem.Name = "widokToolStripMenuItem";
             this.widokToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.widokToolStripMenuItem.Text = "Widok";
@@ -267,6 +273,7 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "WYJŚCIE";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.buttonKoniec_Click);
             // 
             // labelKom
             // 
@@ -347,6 +354,13 @@
             // 
             this.pokazLoginTableAdapter.ClearBeforeFill = true;
             // 
+            // dodajPrzedstawienieToolStripMenuItem
+            // 
+            this.dodajPrzedstawienieToolStripMenuItem.Name = "dodajPrzedstawienieToolStripMenuItem";
+            this.dodajPrzedstawienieToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.dodajPrzedstawienieToolStripMenuItem.Text = "DodajPrzedstawienie";
+            this.dodajPrzedstawienieToolStripMenuItem.Click += new System.EventHandler(this.dodajPrzedstawienieToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,6 +416,7 @@
         private System.Windows.Forms.BindingSource pokazLoginBindingSource;
         private TWDataSetTableAdapters.pokazLoginTableAdapter pokazLoginTableAdapter;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripMenuItem dodajPrzedstawienieToolStripMenuItem;
     }
 }
 

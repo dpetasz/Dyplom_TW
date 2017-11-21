@@ -73,6 +73,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RysujTarcza.cs" />
     <Compile Include="StanWypelnienie.cs" />
+    <Compile Include="TWDataSet.cs">
+      <DependentUpon>TWDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TWDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
