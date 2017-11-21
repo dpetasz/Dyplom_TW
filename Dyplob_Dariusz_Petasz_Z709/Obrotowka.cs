@@ -1,12 +1,15 @@
-﻿using System;
+﻿using Dyplob_Dariusz_Petasz_Z709.ScenaObrotowa;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Dyplob_Dariusz_Petasz_Z709
 {
@@ -15,6 +18,8 @@ namespace Dyplob_Dariusz_Petasz_Z709
         RysujTarcza tarcza = new RysujTarcza();
         Graphics g;
         StanWypelnienie stanWyp = new Wypelnienie1();
+        IJazdaObrotowka jazda = new JazdaObrotowka();
+
         public Obrotowka()
         {
             InitializeComponent();
@@ -26,15 +31,21 @@ namespace Dyplob_Dariusz_Petasz_Z709
             stanWyp.Wypelnienie(tarcza);
             g = e.Graphics;
 
-            float o = 0;
+            
+            
             tarcza.Tarcza(g);
-            tarcza.Obrot(g, o);
+            tarcza.Obrot(g, jazda.PozycjaObrotowka());
         }
-
+       
         private void buttonDodajBaza_Click(object sender, EventArgs e)
         {
             Form_BazaDanych formBazaDanych = new Form_BazaDanych();
             formBazaDanych.Show();
+        }
+
+        private void buttonZapiszPozycja_Click(object sender, EventArgs e)
+        {
+            jazda.ZapisPozycja(12);
         }
     }
 }

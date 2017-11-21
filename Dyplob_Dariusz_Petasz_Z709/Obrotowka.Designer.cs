@@ -63,13 +63,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.buttonDodajBaza = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxOpis = new System.Windows.Forms.RichTextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonZapiszPozycja = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelSterowanie.SuspendLayout();
@@ -366,7 +367,7 @@
             this.panelBazaDanych.Controls.Add(this.button3);
             this.panelBazaDanych.Controls.Add(this.button2);
             this.panelBazaDanych.Controls.Add(this.buttonDodajBaza);
-            this.panelBazaDanych.Controls.Add(this.richTextBox1);
+            this.panelBazaDanych.Controls.Add(this.richTextBoxOpis);
             this.panelBazaDanych.Controls.Add(this.comboBox2);
             this.panelBazaDanych.Controls.Add(this.comboBox1);
             this.panelBazaDanych.Controls.Add(this.label4);
@@ -496,13 +497,13 @@
             this.buttonDodajBaza.UseVisualStyleBackColor = false;
             this.buttonDodajBaza.Click += new System.EventHandler(this.buttonDodajBaza_Click);
             // 
-            // richTextBox1
+            // richTextBoxOpis
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(726, 15);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(211, 140);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "";
+            this.richTextBoxOpis.Location = new System.Drawing.Point(726, 15);
+            this.richTextBoxOpis.Name = "richTextBoxOpis";
+            this.richTextBoxOpis.Size = new System.Drawing.Size(211, 140);
+            this.richTextBoxOpis.TabIndex = 8;
+            this.richTextBoxOpis.Text = "";
             // 
             // comboBox2
             // 
@@ -572,12 +573,26 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Przedstawienie";
             // 
+            // buttonZapiszPozycja
+            // 
+            this.buttonZapiszPozycja.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonZapiszPozycja.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.buttonZapiszPozycja.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonZapiszPozycja.Location = new System.Drawing.Point(724, 215);
+            this.buttonZapiszPozycja.Name = "buttonZapiszPozycja";
+            this.buttonZapiszPozycja.Size = new System.Drawing.Size(161, 35);
+            this.buttonZapiszPozycja.TabIndex = 8;
+            this.buttonZapiszPozycja.Text = "Zapisz pozycja";
+            this.buttonZapiszPozycja.UseVisualStyleBackColor = false;
+            this.buttonZapiszPozycja.Click += new System.EventHandler(this.buttonZapiszPozycja_Click);
+            // 
             // Obrotowka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1008, 891);
+            this.Controls.Add(this.buttonZapiszPozycja);
             this.Controls.Add(this.panelBazaDanych);
             this.Controls.Add(this.panelSterowanie);
             this.Controls.Add(this.panel2);
@@ -637,12 +652,13 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button buttonDodajBaza;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBoxOpis;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonZapiszPozycja;
     }
 }
