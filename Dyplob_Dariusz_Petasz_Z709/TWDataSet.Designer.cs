@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Dyplob_Dariusz_Petasz_Z709 {
+namespace Dyplom_Dariusz_Petasz_Z709 {
     
     
     /// <summary>
@@ -14207,7 +14207,7 @@ namespace Dyplob_Dariusz_Petasz_Z709 {
         }
     }
 }
-namespace Dyplob_Dariusz_Petasz_Z709.TWDataSetTableAdapters {
+namespace Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters {
     
     
     /// <summary>
@@ -14383,7 +14383,7 @@ SELECT idakt, idprzed, nazwa, opis, dlugosc FROM Akt WHERE (idakt = @idakt)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14781,7 +14781,7 @@ SELECT idfx_most, idakt, nazwa, opis FROM FX_Most WHERE (idfx_most = @idfx_most)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15151,7 +15151,7 @@ SELECT idfx_most_most, idfx_most, idmost, predkosc, miejsce_stop FROM FX_Most_Mo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15487,7 +15487,7 @@ SELECT idfx_obrotowka, idakt, nazwa, predkosc, kierunek, miejsce_stop, opis FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15863,7 +15863,7 @@ SELECT idfx_sztankiet, idakt, nazwa, opis FROM FX_Sztankiet WHERE (idfx_sztankie
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16230,7 +16230,7 @@ SELECT idfx_sztankiet_sztankiet, idfx_sztankiet, idsztankiet, predkosc, miejsce_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16554,7 +16554,7 @@ SELECT idfx_wozek, idakt, nazwa, opis FROM FX_Wozek WHERE (idfx_wozek = @idfx_wo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16924,7 +16924,7 @@ SELECT idfx_wozek_wozek, idfx_wozek, idwozek, predkosc, miejsce_stop FROM FX_Woz
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17248,7 +17248,7 @@ SELECT idfx_zapadnia, idakt, nazwa, opis FROM FX_Zapadnia WHERE (idfx_zapadnia =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17620,7 +17620,7 @@ SELECT idfx_zapadnia_zapadnia, idfx_zapadnia, idzapadnia, z_portalem, predkosc, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17943,7 +17943,7 @@ SELECT idkompozytor, nazwisko, imie FROM Kompozytor WHERE (idkompozytor = @idkom
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18307,7 +18307,7 @@ SELECT idmost, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FROM Mo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18642,7 +18642,7 @@ SELECT idmost, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FROM Mo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18965,7 +18965,7 @@ SELECT idpracownik, login, password FROM Pracownik WHERE (idpracownik = @idpraco
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19341,7 +19341,7 @@ SELECT idprzed, idkompozytor, idrezyser, idrodzaj, nazwa, datapremiery, dlugosc,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19779,7 +19779,7 @@ SELECT idrezyser, nazwisko, imie FROM Rezyser WHERE (idrezyser = @idrezyser)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20125,7 +20125,7 @@ SELECT idrezyser, nazwisko, imie FROM Rezyser WHERE (idrezyser = @idrezyser)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20461,7 +20461,7 @@ SELECT idsztankiet, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20807,7 +20807,7 @@ SELECT idwozek, nazwa, pozycja, predkosc_max FROM Wozek WHERE (idwozek = @idwoze
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21151,7 +21151,7 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21463,7 +21463,7 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21688,7 +21688,7 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21875,7 +21875,7 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22059,7 +22059,7 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22227,7 +22227,7 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22398,7 +22398,7 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22567,7 +22567,7 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22735,7 +22735,7 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22911,7 +22911,7 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22979,7 +22979,7 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
         private void InitCommandCollection() {
             this._commandCollection = new global::System.Data.IDbCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = "dbo.dodajKompozytor";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -22987,7 +22987,7 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imie", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kom", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.InputOutput, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).CommandText = "dbo.dodajRezyser";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -22995,14 +22995,14 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imie", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kom", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.InputOutput, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).CommandText = "dbo.dodajRodzaj";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nazwa", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kom", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.InputOutput, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).CommandText = "dbo.updateRezyser";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23011,7 +23011,7 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imie", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kom", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.InputOutput, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).CommandText = "dbo.logowanie";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23019,7 +23019,7 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@haslo", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kom", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.InputOutput, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).CommandText = "dbo.DodajPrzedstawienie";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23030,7 +23030,7 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@data", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kom", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.InputOutput, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Dyplob_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.TWConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).CommandText = "dbo.AktualizujPrzedstawienie";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

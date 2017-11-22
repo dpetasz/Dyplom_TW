@@ -1,4 +1,4 @@
-﻿using Dyplob_Dariusz_Petasz_Z709.ScenaObrotowa;
+﻿using Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace Dyplob_Dariusz_Petasz_Z709
+namespace Dyplom_Dariusz_Petasz_Z709
 {
     public partial class Obrotowka : Form
     {
@@ -19,6 +19,7 @@ namespace Dyplob_Dariusz_Petasz_Z709
         Graphics g;
         StanWypelnienie stanWyp = new Wypelnienie1();
         IJazdaObrotowka jazda = new JazdaObrotowka();
+        int predkosc = 1000;
 
         public Obrotowka()
         {
@@ -31,10 +32,8 @@ namespace Dyplob_Dariusz_Petasz_Z709
             stanWyp.Wypelnienie(tarcza);
             g = e.Graphics;
 
-            
-            
             tarcza.Tarcza(g);
-            tarcza.Obrot(g, jazda.PozycjaObrotowka());
+            tarcza.Obrot(g,jazda.PozycjaObrotowka());
         }
        
         private void buttonDodajBaza_Click(object sender, EventArgs e)
@@ -45,7 +44,15 @@ namespace Dyplob_Dariusz_Petasz_Z709
 
         private void buttonZapiszPozycja_Click(object sender, EventArgs e)
         {
-            jazda.ZapisPozycja(12);
+            jazda.ZapisPozycja(float.Parse(textBoxPozycjaObrotowka.Text));
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //tarcza.Obrot(g,jazda.ruch(false, predkosc));
+            //tarcza.PozycjaObrotowka(jazda.ruch(false, predkosc));
+            textBoxPozycjaObrotowka.Text =  jazda.ruch(false, predkosc).ToString();
+            Invalidate();
         }
     }
 }

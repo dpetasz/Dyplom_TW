@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dyplob_Dariusz_Petasz_Z709
+namespace Dyplom_Dariusz_Petasz_Z709
 {
     class RysujTarcza: IRysujTarcza
     {
@@ -19,11 +19,13 @@ namespace Dyplob_Dariusz_Petasz_Z709
         public SolidBrush KolorLiczby;
         public Font textFont;
 
+        
+
         public void Tarcza(Graphics g)
         {
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             int x = 0;
-
+            
 
             Font textFont = new Font("Century", 12F, FontStyle.Bold);
             g.FillRectangle(Pioro3, 0, 0, 630, 630);
@@ -59,6 +61,7 @@ namespace Dyplob_Dariusz_Petasz_Z709
         }
         public void Obrot(Graphics g, float o)
         {
+            
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             Point[] trojkat = { new Point(530, 314), new Point(550, 324), new Point(530, 334) };
 
@@ -73,5 +76,6 @@ namespace Dyplob_Dariusz_Petasz_Z709
             stanWyp.Wypelnienie(this);
 
         }
+        
     }
 }

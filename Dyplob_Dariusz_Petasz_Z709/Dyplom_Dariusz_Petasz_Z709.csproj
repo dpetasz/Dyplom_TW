@@ -7,8 +7,8 @@
     <ProjectGuid>{4A0AD820-86D8-4666-A53D-6537F68B1762}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Dyplob_Dariusz_Petasz_Z709</RootNamespace>
-    <AssemblyName>Dyplob_Dariusz_Petasz_Z709</AssemblyName>
+    <RootNamespace>Dyplom_Dariusz_Petasz_Z709</RootNamespace>
+    <AssemblyName>Dyplom_Dariusz_Petasz_Z709</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -75,6 +75,9 @@
     <Compile Include="ScenaObrotowa\IJazdaObrotowka.cs" />
     <Compile Include="ScenaObrotowa\JazdaObrotowka.cs" />
     <Compile Include="ScenaObrotowa\StanWypelnienie.cs" />
+    <Compile Include="ScenaObrotowa\Timer.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TWDataSet.cs">
       <DependentUpon>TWDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>

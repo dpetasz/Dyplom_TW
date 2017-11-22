@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Dyplob_Dariusz_Petasz_Z709.Properties {
+namespace Dyplom_Dariusz_Petasz_Z709.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

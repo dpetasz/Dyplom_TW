@@ -1,4 +1,4 @@
-﻿namespace Dyplob_Dariusz_Petasz_Z709
+﻿namespace Dyplom_Dariusz_Petasz_Z709
 {
     partial class Obrotowka
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bazaDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,7 +37,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBoxPredkosc = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxPozycjaObrotowka = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -71,6 +72,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonZapiszPozycja = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelSterowanie.SuspendLayout();
@@ -132,7 +134,7 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.textBoxPredkosc);
             this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.textBoxPozycjaObrotowka);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label5);
@@ -157,13 +159,13 @@
             this.textBox2.Size = new System.Drawing.Size(96, 26);
             this.textBox2.TabIndex = 5;
             // 
-            // textBox1
+            // textBoxPozycjaObrotowka
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.textBox1.Location = new System.Drawing.Point(153, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(96, 26);
-            this.textBox1.TabIndex = 4;
+            this.textBoxPozycjaObrotowka.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.textBoxPozycjaObrotowka.Location = new System.Drawing.Point(153, 23);
+            this.textBoxPozycjaObrotowka.Name = "textBoxPozycjaObrotowka";
+            this.textBoxPozycjaObrotowka.Size = new System.Drawing.Size(96, 26);
+            this.textBoxPozycjaObrotowka.TabIndex = 4;
             // 
             // label8
             // 
@@ -586,6 +588,11 @@
             this.buttonZapiszPozycja.UseVisualStyleBackColor = false;
             this.buttonZapiszPozycja.Click += new System.EventHandler(this.buttonZapiszPozycja_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Obrotowka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -598,6 +605,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.Name = "Obrotowka";
             this.Text = "Obrotowka";
             this.menuStrip1.ResumeLayout(false);
@@ -625,7 +633,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBoxPredkosc;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxPozycjaObrotowka;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
@@ -660,5 +668,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonZapiszPozycja;
+        private System.Windows.Forms.Timer timer1;
     }
 }

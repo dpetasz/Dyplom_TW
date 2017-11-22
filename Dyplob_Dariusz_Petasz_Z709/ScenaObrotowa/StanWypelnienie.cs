@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dyplob_Dariusz_Petasz_Z709
+namespace Dyplom_Dariusz_Petasz_Z709
 {
     abstract class StanWypelnienie
     {

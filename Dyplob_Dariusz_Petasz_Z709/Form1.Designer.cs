@@ -1,4 +1,4 @@
-﻿namespace Dyplob_Dariusz_Petasz_Z709
+﻿namespace Dyplom_Dariusz_Petasz_Z709
 {
     partial class Form1
     {
@@ -50,10 +50,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxLogin = new System.Windows.Forms.ComboBox();
             this.pokazLoginBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tWDataSet = new Dyplob_Dariusz_Petasz_Z709.TWDataSet();
+            this.tWDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pokazLoginTableAdapter = new Dyplob_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazLoginTableAdapter();
+            this.pokazLoginTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazLoginTableAdapter();
             this.dodajPrzedstawienieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelPrzyciski.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -235,7 +235,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Dyplob_Dariusz_Petasz_Z709.Properties.Resources.TeatrWielki;
+            this.pictureBox1.Image = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.TeatrWielki;
             this.pictureBox1.Location = new System.Drawing.Point(0, 154);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(870, 577);

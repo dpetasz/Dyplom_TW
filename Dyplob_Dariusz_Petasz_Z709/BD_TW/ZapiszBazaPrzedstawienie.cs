@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dyplob_Dariusz_Petasz_Z709
+namespace Dyplom_Dariusz_Petasz_Z709
 {
     public class ZapiszBazaPrzedstawienie : IZapiszBazaPrzedstawienie
     {

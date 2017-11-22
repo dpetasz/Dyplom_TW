@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Dyplob_Dariusz_Petasz_Z709 {
+namespace Dyplom_Dariusz_Petasz_Z709 {
     
     
     /// <summary>

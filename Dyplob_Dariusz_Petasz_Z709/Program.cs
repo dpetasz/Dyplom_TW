@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Dyplob_Dariusz_Petasz_Z709
+namespace Dyplom_Dariusz_Petasz_Z709
 {
     static class Program
     {

@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dyplob_Dariusz_Petasz_Z709.ScenaObrotowa
+
+namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 {
     public class JazdaObrotowka: IJazdaObrotowka
     {
-        private float o = 0;
+        private float o = 0f;
         string plik = @"C:\Users\dpeta\OneDrive\Documents\Visual Studio 2013\Projects\Dyplob_Dariusz_Petasz_Z709\Dyplob_Dariusz_Petasz_Z709\Resources\Pozycja_Obrotowka.txt";
         public float PozycjaObrotowka()
         {
@@ -26,7 +27,7 @@ namespace Dyplob_Dariusz_Petasz_Z709.ScenaObrotowa
                 
 
             }
-            catch { o = 0f;  }
+            catch { o = 0;  }
             return o;
 
         }
@@ -37,12 +38,33 @@ namespace Dyplob_Dariusz_Petasz_Z709.ScenaObrotowa
             try
             {
                 StreamWriter sw = new StreamWriter(fs);
-                sw.WriteLine(x.ToString());
+                sw.WriteLine(Math.Round(x,2).ToString());
                 sw.Close();
                 fs.Close();
                 
             }
             catch {  }
+        }
+        public float ruch(bool kierunek, int v)
+        {
+           
+            switch (kierunek)
+            {
+                case true:
+                    {
+                        o += v * 0.0001f;
+                        if ((float)Math.Round(o, 0) == 360) o = 0;
+                        break;
+                    }
+                case false:
+                    {
+                        o -= v * 0.0001f;
+                        if ((float)Math.Round(o, 0) == 0) o = 360;
+                        break;
+                    }
+            }
+            return (float)Math.Round(o, 0);
+
         }
     }
 }

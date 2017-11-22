@@ -1,4 +1,4 @@
-﻿namespace Dyplob_Dariusz_Petasz_Z709
+﻿namespace Dyplom_Dariusz_Petasz_Z709
 {
     partial class Form_BazaDanych
     {
@@ -33,7 +33,7 @@
             this.tabPagePrzedstawienie = new System.Windows.Forms.TabPage();
             this.labelOpisPrzedstawienie = new System.Windows.Forms.Label();
             this.richTextBoxOpisPrzedstawienie = new System.Windows.Forms.RichTextBox();
-            this.tWDataSet = new Dyplob_Dariusz_Petasz_Z709.TWDataSet();
+            this.tWDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
             this.labelDlugoscPrzedstawienie = new System.Windows.Forms.Label();
             this.buttonDodajPrzedstawienie = new System.Windows.Forms.Button();
             this.buttonAktualizujPrzedstawienie = new System.Windows.Forms.Button();
@@ -96,14 +96,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxRezyser = new System.Windows.Forms.ComboBox();
-            this.pokazRezyserTableAdapter = new Dyplob_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazRezyserTableAdapter();
+            this.pokazRezyserTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazRezyserTableAdapter();
             this.pokazNowyRezBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pokazNowyRezTableAdapter = new Dyplob_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazNowyRezTableAdapter();
-            this.pokazKompozytorTableAdapter = new Dyplob_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazKompozytorTableAdapter();
-            this.pokazRodzajTableAdapter = new Dyplob_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazRodzajTableAdapter();
-            this.tWDataSet1 = new Dyplob_Dariusz_Petasz_Z709.TWDataSet();
+            this.pokazNowyRezTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazNowyRezTableAdapter();
+            this.pokazKompozytorTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazKompozytorTableAdapter();
+            this.pokazRodzajTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazRodzajTableAdapter();
+            this.tWDataSet1 = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
             this.pokazPrzedstawienieBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pokazPrzedstawienieTableAdapter = new Dyplob_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazPrzedstawienieTableAdapter();
+            this.pokazPrzedstawienieTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazPrzedstawienieTableAdapter();
             this.dateTimePickerDlugoscPrzedstawienia = new System.Windows.Forms.DateTimePicker();
             this.buttonAnulujPrzedstawienie = new System.Windows.Forms.Button();
             this.tabControlBazaDanych.SuspendLayout();
