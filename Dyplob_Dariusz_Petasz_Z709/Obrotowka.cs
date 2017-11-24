@@ -21,6 +21,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
         IJazdaObrotowka jazda = new JazdaObrotowka();
         int predkosc = 1000;
         float pozycja = 0f;
+        bool kierunek;
 
         public Obrotowka()
         {
@@ -55,13 +56,55 @@ namespace Dyplom_Dariusz_Petasz_Z709
             //tarcza.Obrot(g,jazda.ruch(false, predkosc));
             //tarcza.PozycjaObrotowka(jazda.ruch(false, predkosc));
             textBoxPozycjaObrotowka.Text =  jazda.ruch(false, predkosc).ToString();
-            pozycja = jazda.ruch(false, predkosc);
+            pozycja = jazda.ruch(kierunek, predkosc);
             Invalidate();
         }
 
         private void buttonStartStop_Click(object sender, EventArgs e)
         {
-            timer1.Enabled = true;
+            string przycisk = buttonStartStop.BackColor.ToString();
+            textBoxPrzycisk.Text = buttonStartStop.BackColor.ToString();
+            switch (przycisk)
+            {
+                case "Color [Green]":
+                    {
+                        buttonStartStop.BackColor = Color.Red ;
+                        timer1.Enabled = true;
+
+                        break;
+                    }
+                case "Color [Red]":
+                    {
+                        
+                        buttonStartStop.BackColor = Color.Green;
+                        timer1.Enabled = false;
+
+                        break;
+                    }
+                    
+            }
+            
+        }
+
+        private void trackBarKierunek_Scroll(object sender, EventArgs e)
+        {
+
+            switch (trackBarKierunek.Value)
+            {
+                case 1:
+                    {
+                        kierunek = false;
+                        textBoxPrzycisk.Text = kierunek.ToString();
+                        break;
+                    }
+                case 0:
+                    {
+                        kierunek = true;
+                        textBoxPrzycisk.Text = kierunek.ToString();
+                        break;
+                    }
+
+            }
         }
     }
 }

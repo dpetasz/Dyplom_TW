@@ -82,8 +82,8 @@
             // 
             this.buttonKoniec.BackColor = System.Drawing.Color.Brown;
             this.buttonKoniec.FlatAppearance.BorderColor = System.Drawing.SystemColors.AppWorkspace;
-            this.buttonKoniec.FlatAppearance.BorderSize = 2;
-            this.buttonKoniec.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkKhaki;
+            this.buttonKoniec.FlatAppearance.BorderSize = 0;
+            this.buttonKoniec.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
             this.buttonKoniec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonKoniec.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonKoniec.ForeColor = System.Drawing.Color.Gainsboro;
@@ -97,9 +97,9 @@
             // 
             // buttonWyloguj
             // 
-            this.buttonWyloguj.BackColor = System.Drawing.Color.RosyBrown;
+            this.buttonWyloguj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(165)))), ((int)(((byte)(98)))));
             this.buttonWyloguj.FlatAppearance.BorderColor = System.Drawing.SystemColors.AppWorkspace;
-            this.buttonWyloguj.FlatAppearance.BorderSize = 2;
+            this.buttonWyloguj.FlatAppearance.BorderSize = 0;
             this.buttonWyloguj.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkKhaki;
             this.buttonWyloguj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonWyloguj.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -113,10 +113,10 @@
             // 
             // buttonMosty
             // 
-            this.buttonMosty.BackColor = System.Drawing.Color.Peru;
+            this.buttonMosty.BackColor = System.Drawing.Color.Tan;
             this.buttonMosty.FlatAppearance.BorderColor = System.Drawing.Color.Sienna;
-            this.buttonMosty.FlatAppearance.BorderSize = 2;
-            this.buttonMosty.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.buttonMosty.FlatAppearance.BorderSize = 0;
+            this.buttonMosty.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(146)))), ((int)(((byte)(120)))));
             this.buttonMosty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMosty.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonMosty.Location = new System.Drawing.Point(521, 41);
@@ -128,10 +128,10 @@
             // 
             // buttonWozki
             // 
-            this.buttonWozki.BackColor = System.Drawing.Color.Peru;
+            this.buttonWozki.BackColor = System.Drawing.Color.Tan;
             this.buttonWozki.FlatAppearance.BorderColor = System.Drawing.Color.Sienna;
-            this.buttonWozki.FlatAppearance.BorderSize = 2;
-            this.buttonWozki.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.buttonWozki.FlatAppearance.BorderSize = 0;
+            this.buttonWozki.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(146)))), ((int)(((byte)(120)))));
             this.buttonWozki.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonWozki.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonWozki.Location = new System.Drawing.Point(397, 41);
@@ -140,13 +140,14 @@
             this.buttonWozki.TabIndex = 6;
             this.buttonWozki.Text = "Wózki";
             this.buttonWozki.UseVisualStyleBackColor = false;
+            this.buttonWozki.Click += new System.EventHandler(this.buttonWozki_Click);
             // 
             // buttonSztankiety
             // 
-            this.buttonSztankiety.BackColor = System.Drawing.Color.Peru;
+            this.buttonSztankiety.BackColor = System.Drawing.Color.Tan;
             this.buttonSztankiety.FlatAppearance.BorderColor = System.Drawing.Color.Sienna;
-            this.buttonSztankiety.FlatAppearance.BorderSize = 2;
-            this.buttonSztankiety.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.buttonSztankiety.FlatAppearance.BorderSize = 0;
+            this.buttonSztankiety.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(146)))), ((int)(((byte)(120)))));
             this.buttonSztankiety.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSztankiety.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSztankiety.Location = new System.Drawing.Point(271, 41);
@@ -158,10 +159,10 @@
             // 
             // buttonZapadnie
             // 
-            this.buttonZapadnie.BackColor = System.Drawing.Color.Peru;
+            this.buttonZapadnie.BackColor = System.Drawing.Color.Tan;
             this.buttonZapadnie.FlatAppearance.BorderColor = System.Drawing.Color.Sienna;
-            this.buttonZapadnie.FlatAppearance.BorderSize = 2;
-            this.buttonZapadnie.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.buttonZapadnie.FlatAppearance.BorderSize = 0;
+            this.buttonZapadnie.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(146)))), ((int)(((byte)(120)))));
             this.buttonZapadnie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonZapadnie.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonZapadnie.Location = new System.Drawing.Point(150, 41);
@@ -173,10 +174,10 @@
             // 
             // buttonObrotowka
             // 
-            this.buttonObrotowka.BackColor = System.Drawing.Color.Peru;
-            this.buttonObrotowka.FlatAppearance.BorderColor = System.Drawing.Color.Sienna;
-            this.buttonObrotowka.FlatAppearance.BorderSize = 2;
-            this.buttonObrotowka.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOrange;
+            this.buttonObrotowka.BackColor = System.Drawing.Color.Tan;
+            this.buttonObrotowka.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.buttonObrotowka.FlatAppearance.BorderSize = 0;
+            this.buttonObrotowka.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(146)))), ((int)(((byte)(120)))));
             this.buttonObrotowka.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonObrotowka.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonObrotowka.Location = new System.Drawing.Point(28, 41);

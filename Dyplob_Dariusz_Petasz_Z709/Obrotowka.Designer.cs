@@ -72,6 +72,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonZapiszPozycja = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.textBoxPrzycisk = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelSterowanie.SuspendLayout();
@@ -197,6 +198,7 @@
             // 
             this.panelSterowanie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
             this.panelSterowanie.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelSterowanie.Controls.Add(this.textBoxPrzycisk);
             this.panelSterowanie.Controls.Add(this.label13);
             this.panelSterowanie.Controls.Add(this.label6);
             this.panelSterowanie.Controls.Add(this.trackBarKierunek);
@@ -245,6 +247,7 @@
             this.trackBarKierunek.Name = "trackBarKierunek";
             this.trackBarKierunek.Size = new System.Drawing.Size(118, 45);
             this.trackBarKierunek.TabIndex = 9;
+            this.trackBarKierunek.Scroll += new System.EventHandler(this.trackBarKierunek_Scroll);
             // 
             // label11
             // 
@@ -307,7 +310,7 @@
             // 
             // buttonStartStop
             // 
-            this.buttonStartStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(30)))));
+            this.buttonStartStop.BackColor = System.Drawing.Color.Green;
             this.buttonStartStop.FlatAppearance.BorderColor = System.Drawing.Color.CadetBlue;
             this.buttonStartStop.FlatAppearance.BorderSize = 3;
             this.buttonStartStop.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
@@ -583,6 +586,13 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // textBoxPrzycisk
+            // 
+            this.textBoxPrzycisk.Location = new System.Drawing.Point(22, 367);
+            this.textBoxPrzycisk.Name = "textBoxPrzycisk";
+            this.textBoxPrzycisk.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPrzycisk.TabIndex = 12;
+            // 
             // Obrotowka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -658,5 +668,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonZapiszPozycja;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox textBoxPrzycisk;
     }
 }

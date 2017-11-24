@@ -84,5 +84,10 @@ namespace Dyplom_Dariusz_Petasz_Z709
             Form_BazaDanych baza = new Form_BazaDanych();
             baza.Show();
         }
+
+        private void buttonWozki_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
