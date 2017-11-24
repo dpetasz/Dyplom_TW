@@ -41,6 +41,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bazaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dodajPrzedstawienieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.widokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelLogowanie = new System.Windows.Forms.Panel();
@@ -54,7 +55,6 @@
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pokazLoginTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazLoginTableAdapter();
-            this.dodajPrzedstawienieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelPrzyciski.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,7 +73,6 @@
             this.panelPrzyciski.Controls.Add(this.buttonZapadnie);
             this.panelPrzyciski.Controls.Add(this.buttonObrotowka);
             this.panelPrzyciski.Controls.Add(this.labelTextPrzyciski);
-            this.panelPrzyciski.Enabled = false;
             this.panelPrzyciski.Location = new System.Drawing.Point(0, 25);
             this.panelPrzyciski.Name = "panelPrzyciski";
             this.panelPrzyciski.Size = new System.Drawing.Size(867, 122);
@@ -226,6 +225,13 @@
             this.bazaToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.bazaToolStripMenuItem.Text = "Baza";
             // 
+            // dodajPrzedstawienieToolStripMenuItem
+            // 
+            this.dodajPrzedstawienieToolStripMenuItem.Name = "dodajPrzedstawienieToolStripMenuItem";
+            this.dodajPrzedstawienieToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.dodajPrzedstawienieToolStripMenuItem.Text = "DodajPrzedstawienie";
+            this.dodajPrzedstawienieToolStripMenuItem.Click += new System.EventHandler(this.dodajPrzedstawienieToolStripMenuItem_Click);
+            // 
             // widokToolStripMenuItem
             // 
             this.widokToolStripMenuItem.Enabled = false;
@@ -353,13 +359,6 @@
             // pokazLoginTableAdapter
             // 
             this.pokazLoginTableAdapter.ClearBeforeFill = true;
-            // 
-            // dodajPrzedstawienieToolStripMenuItem
-            // 
-            this.dodajPrzedstawienieToolStripMenuItem.Name = "dodajPrzedstawienieToolStripMenuItem";
-            this.dodajPrzedstawienieToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.dodajPrzedstawienieToolStripMenuItem.Text = "DodajPrzedstawienie";
-            this.dodajPrzedstawienieToolStripMenuItem.Click += new System.EventHandler(this.dodajPrzedstawienieToolStripMenuItem_Click);
             // 
             // Form1
             // 

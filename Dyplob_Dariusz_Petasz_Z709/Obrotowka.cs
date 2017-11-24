@@ -20,11 +20,13 @@ namespace Dyplom_Dariusz_Petasz_Z709
         StanWypelnienie stanWyp = new Wypelnienie1();
         IJazdaObrotowka jazda = new JazdaObrotowka();
         int predkosc = 1000;
+        float pozycja = 0f;
 
         public Obrotowka()
         {
             InitializeComponent();
             textBoxPredkosc.Text = trackBar1.Value.ToString();
+            pozycja = jazda.PozycjaObrotowka();
         }
 
         private void PaintTarcza(object sender, PaintEventArgs e)
@@ -33,7 +35,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
             g = e.Graphics;
 
             tarcza.Tarcza(g);
-            tarcza.Obrot(g,jazda.PozycjaObrotowka());
+            tarcza.Obrot(g,pozycja);
         }
        
         private void buttonDodajBaza_Click(object sender, EventArgs e)
@@ -49,10 +51,17 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+
             //tarcza.Obrot(g,jazda.ruch(false, predkosc));
             //tarcza.PozycjaObrotowka(jazda.ruch(false, predkosc));
             textBoxPozycjaObrotowka.Text =  jazda.ruch(false, predkosc).ToString();
+            pozycja = jazda.ruch(false, predkosc);
             Invalidate();
+        }
+
+        private void buttonStartStop_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
         }
     }
 }

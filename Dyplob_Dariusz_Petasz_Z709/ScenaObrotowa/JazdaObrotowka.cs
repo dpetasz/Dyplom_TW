@@ -63,7 +63,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
                         break;
                     }
             }
-            return (float)Math.Round(o, 0);
+            return (float)Math.Round(o, 2);
 
         }
     }

@@ -33,7 +33,6 @@
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bazaDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ekranToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBoxPredkosc = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -118,15 +117,6 @@
             this.ekranToolStripMenuItem.Name = "ekranToolStripMenuItem";
             this.ekranToolStripMenuItem.Size = new System.Drawing.Size(55, 21);
             this.ekranToolStripMenuItem.Text = "Ekran";
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Location = new System.Drawing.Point(23, 40);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(630, 630);
-            this.panel1.TabIndex = 4;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintTarcza);
             // 
             // panel2
             // 
@@ -330,6 +320,7 @@
             this.buttonStartStop.TabIndex = 2;
             this.buttonStartStop.Text = "START";
             this.buttonStartStop.UseVisualStyleBackColor = false;
+            this.buttonStartStop.Click += new System.EventHandler(this.buttonStartStop_Click);
             // 
             // buttonJazdaDoPozycji
             // 
@@ -590,7 +581,6 @@
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Obrotowka
@@ -603,11 +593,11 @@
             this.Controls.Add(this.panelBazaDanych);
             this.Controls.Add(this.panelSterowanie);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.Name = "Obrotowka";
             this.Text = "Obrotowka";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintTarcza);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -629,7 +619,6 @@
         private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bazaDanychToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ekranToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBoxPredkosc;
         private System.Windows.Forms.TextBox textBox2;
