@@ -264,6 +264,7 @@
             this.panelLogowanie.Name = "panelLogowanie";
             this.panelLogowanie.Size = new System.Drawing.Size(309, 273);
             this.panelLogowanie.TabIndex = 7;
+            this.panelLogowanie.Enter += new System.EventHandler(this.buttonWejscie_Click);
             // 
             // button2
             // 

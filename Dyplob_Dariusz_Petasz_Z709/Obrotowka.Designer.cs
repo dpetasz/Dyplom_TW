@@ -41,6 +41,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panelSterowanie = new System.Windows.Forms.Panel();
+            this.textBoxPrzycisk = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.trackBarKierunek = new System.Windows.Forms.TrackBar();
@@ -72,13 +73,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonZapiszPozycja = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.textBoxPrzycisk = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelSterowanie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarKierunek)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.panelBazaDanych.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -214,6 +216,13 @@
             this.panelSterowanie.Name = "panelSterowanie";
             this.panelSterowanie.Size = new System.Drawing.Size(297, 401);
             this.panelSterowanie.TabIndex = 6;
+            // 
+            // textBoxPrzycisk
+            // 
+            this.textBoxPrzycisk.Location = new System.Drawing.Point(22, 367);
+            this.textBoxPrzycisk.Name = "textBoxPrzycisk";
+            this.textBoxPrzycisk.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPrzycisk.TabIndex = 12;
             // 
             // label13
             // 
@@ -586,12 +595,16 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // textBoxPrzycisk
+            // pictureBox1
             // 
-            this.textBoxPrzycisk.Location = new System.Drawing.Point(22, 367);
-            this.textBoxPrzycisk.Name = "textBoxPrzycisk";
-            this.textBoxPrzycisk.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPrzycisk.TabIndex = 12;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(630, 630);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintTarcza);
             // 
             // Obrotowka
             // 
@@ -599,6 +612,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1008, 891);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonZapiszPozycja);
             this.Controls.Add(this.panelBazaDanych);
             this.Controls.Add(this.panelSterowanie);
@@ -607,7 +621,6 @@
             this.DoubleBuffered = true;
             this.Name = "Obrotowka";
             this.Text = "Obrotowka";
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintTarcza);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -618,6 +631,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.panelBazaDanych.ResumeLayout(false);
             this.panelBazaDanych.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -669,5 +683,6 @@
         private System.Windows.Forms.Button buttonZapiszPozycja;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox textBoxPrzycisk;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

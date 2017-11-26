@@ -22,6 +22,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
         int predkosc = 1000;
         float pozycja = 0f;
         bool kierunek;
+        
 
         public Obrotowka()
         {
@@ -34,7 +35,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
         {
             stanWyp.Wypelnienie(tarcza);
             g = e.Graphics;
-
+            
             tarcza.Tarcza(g);
             tarcza.Obrot(g,pozycja);
         }
@@ -55,9 +56,11 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
             //tarcza.Obrot(g,jazda.ruch(false, predkosc));
             //tarcza.PozycjaObrotowka(jazda.ruch(false, predkosc));
+            
             textBoxPozycjaObrotowka.Text =  jazda.ruch(false, predkosc).ToString();
             pozycja = jazda.ruch(kierunek, predkosc);
-            Invalidate();
+            
+            pictureBox1.Invalidate();
         }
 
         private void buttonStartStop_Click(object sender, EventArgs e)
@@ -105,6 +108,18 @@ namespace Dyplom_Dariusz_Petasz_Z709
                     }
 
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+
+
+
+
+
+
+
         }
     }
 }
