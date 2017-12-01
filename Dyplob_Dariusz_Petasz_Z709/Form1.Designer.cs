@@ -125,6 +125,7 @@
             this.buttonMosty.TabIndex = 7;
             this.buttonMosty.Text = "Mosty";
             this.buttonMosty.UseVisualStyleBackColor = false;
+            this.buttonMosty.Click += new System.EventHandler(this.buttonMosty_Click);
             // 
             // buttonWozki
             // 
@@ -140,7 +141,6 @@
             this.buttonWozki.TabIndex = 6;
             this.buttonWozki.Text = "Wózki";
             this.buttonWozki.UseVisualStyleBackColor = false;
-            this.buttonWozki.Click += new System.EventHandler(this.buttonWozki_Click);
             // 
             // buttonSztankiety
             // 

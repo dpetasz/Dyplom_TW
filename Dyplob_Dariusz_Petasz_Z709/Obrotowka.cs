@@ -136,14 +136,32 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
         private void pokazAktBindingSource_CurrentChanged(object sender, EventArgs e)
         {
-            int idAkt = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
-            this.pokazFxObrotowkaTableAdapter.Fill(this.tWDataSet.pokazFxObrotowka, idAkt);
+            try
+            {
+                int idAkt = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
+                this.pokazFxObrotowkaTableAdapter.Fill(this.tWDataSet.pokazFxObrotowka, idAkt);
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+            
         }
 
         private void pokazPrzedstawienieBindingSource_CurrentChanged(object sender, EventArgs e)
         {
-            int idPrzed = ((this.pokazPrzedstawienieBindingSource.Current as DataRowView).Row as TWDataSet.pokazPrzedstawienieRow).idprzed;
-            this.pokazAktTableAdapter.Fill(this.tWDataSet.pokazAkt, idPrzed);
+            try
+            {
+                int idPrzed = ((this.pokazPrzedstawienieBindingSource.Current as DataRowView).Row as TWDataSet.pokazPrzedstawienieRow).idprzed;
+                this.pokazAktTableAdapter.Fill(this.tWDataSet.pokazAkt, idPrzed);
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+            
         }
     }
 }

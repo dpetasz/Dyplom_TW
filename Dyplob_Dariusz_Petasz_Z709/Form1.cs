@@ -76,6 +76,11 @@ namespace Dyplom_Dariusz_Petasz_Z709
             baza.Show();
         }
 
+        private void buttonMosty_Click(object sender, EventArgs e)
+        {
+
+        }
+
         
     }
 }
