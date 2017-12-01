@@ -44,11 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Baza_TW.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Baza_TW.xsd</DependentUpon>
+    <Compile Include="BD_TW\IZapiszAkt.cs" />
+    <Compile Include="BD_TW\PokazBaza.cs">
+      <SubType>Component</SubType>
     </Compile>
+    <Compile Include="BD_TW\ZapiszAkt.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,17 +107,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Baza_TW.xsc">
-      <DependentUpon>Baza_TW.xsd</DependentUpon>
-    </None>
-    <None Include="Baza_TW.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Baza_TW.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Baza_TW.xss">
-      <DependentUpon>Baza_TW.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

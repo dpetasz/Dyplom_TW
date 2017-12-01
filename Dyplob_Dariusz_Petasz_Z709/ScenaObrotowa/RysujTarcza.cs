@@ -18,7 +18,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
         public SolidBrush Pioro3;
         public SolidBrush KolorLiczby;
         public Font textFont;
-
+        
         
 
         public void Tarcza(Graphics g)

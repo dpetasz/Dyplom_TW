@@ -49,7 +49,11 @@ namespace Dyplom_Dariusz_Petasz_Z709
             textBoxImieRez.Clear();
             textBoxImieRez.Enabled = true;
             textBoxNazwiskoRez.Enabled = true;
-            buttonZapisz.Enabled = true;
+            buttonZapisz.Visible = true;
+            buttonDodajPrzedstawienie.Visible = false;
+            buttonAktualizujPrzedstawienie.Visible = false;
+            buttonAnulujPrzedstawienie.Visible = true;
+            
         }
 
         private void buttonZapisz_Click(object sender, EventArgs e)
@@ -65,6 +69,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
                         textBoxImieRez.Enabled = false;
                         textBoxNazwiskoRez.Enabled = false;
                         przycisk = "";
+
                         break;
                     }
                 case "Aktualizuj":
@@ -166,9 +171,9 @@ namespace Dyplom_Dariusz_Petasz_Z709
             {
                 case "Dodaj":
                     {
-                        int idRez = Convert.ToInt32(labelIdRezyser.Text),
-                        idKom = Convert.ToInt32(labelIdKompozytor.Text),
-                        idRodz = Convert.ToInt32(labelIdRodzaj.Text);
+                        int idRez = ((this.pokazRezyserBindingSource.Current as DataRowView).Row as TWDataSet.pokazRezyserRow).idrezyser,
+                        idKom = ((this.pokazKompozytorBindingSource.Current as DataRowView).Row as TWDataSet.pokazKompozytorRow).idkompozytor,
+                        idRodz = ((this.pokazRodzajBindingSource.Current as DataRowView).Row as TWDataSet.pokazRodzajRow).idrodzaj;
 
                         kom = db.ZapiszPrzedstawienie(idKom, idRez, idRodz, textBoxNazwaPrzedstawienia.Text.ToString(), dateTimePickerDataPremiery.Value);
                         labelWynikPrzedstawienie.Text = kom;
@@ -183,24 +188,28 @@ namespace Dyplom_Dariusz_Petasz_Z709
                         dateTimePickerDlugoscPrzedstawienia.Enabled = false;
                         richTextBoxOpisPrzedstawienie.Enabled = false;
 
-                        labelIdKompozytor.Visible = false;
-                        labelIdPrzedstawienie.Visible = false;
-                        labelIdRezyser.Visible = false;
-                        labelIdRodzaj.Visible = false;
+                        buttonDodajPrzedstawienie.Visible = true; ;
+                        buttonAktualizujPrzedstawienie.Visible = true; 
+
                         przycisk = "";
+                        PokazDane();
                         break;
                     }
                 case "Aktualizuj":
                     {
-                        int idRez = Convert.ToInt32(labelIdRezyser.Text),
-                        idKom = Convert.ToInt32(labelIdKompozytor.Text),
-                        idRodz = Convert.ToInt32(labelIdRodzaj.Text),
-                        idPrzed = Convert.ToInt32(labelIdPrzedstawienie.Text);
+                        int idRez = ((this.pokazRezyserBindingSource.Current as DataRowView).Row as TWDataSet.pokazRezyserRow).idrezyser,
+                        idKom = ((this.pokazKompozytorBindingSource.Current as DataRowView).Row as TWDataSet.pokazKompozytorRow).idkompozytor,
+                        idRodz = ((this.pokazRodzajBindingSource.Current as DataRowView).Row as TWDataSet.pokazRodzajRow).idrodzaj,
+                        idPrzed = ((this.pokazPrzedstawienieBindingSource.Current as DataRowView).Row as TWDataSet.pokazPrzedstawienieRow).idprzed;
                         kom = db.AktualizujPrzedstawienie(idPrzed, idKom, idRez, idRodz, 
                             textBoxNazwaPrzedstawienia.Text.ToString(), dateTimePickerDataPremiery.Value, 
                             TimeSpan.Parse(dateTimePickerDlugoscPrzedstawienia.Text), 
                             richTextBoxOpisPrzedstawienie.Text.ToString());
                         labelWynikPrzedstawienie.Text = kom;
+
+                        buttonDodajPrzedstawienie.Visible = true; ;
+                        buttonAktualizujPrzedstawienie.Visible = true; 
+
                         PokazDane();
                         break;
                     }
@@ -217,21 +226,21 @@ namespace Dyplom_Dariusz_Petasz_Z709
         private void buttonDodajPrzedstawienie_Click(object sender, EventArgs e)
         {
             przycisk = "Dodaj";
+
             comboBoxPrzedstawienieRezyser.Enabled = true;
             comboBoxPrzedstawienieRezyser.Enabled = true;
             comboBoxPrzedstawienieKompozytor.Enabled = true;
             comboBoxPrzedstawienieRodzaj.Enabled = true;
+
             textBoxNazwaPrzedstawienia.Enabled = true;
             textBoxNazwaPrzedstawienia.Text = "";
-            buttonZapiszPrzedstawienie.Visible = true;
+            
             dateTimePickerDataPremiery.Enabled = true;
 
-            labelIdKompozytor.Visible = true;
-            //labelIdPrzedstawienie.Visible = true;
-            labelIdRezyser.Visible = true;
-            labelIdRodzaj.Visible = true;
-            //dateTimePickerDlugoscPrzedstawienia.Enabled = true;
-            //richTextBoxOpisPrzedstawienie.Enabled = true;
+            buttonZapiszPrzedstawienie.Visible = true;
+            buttonAktualizujPrzedstawienie.Visible = false;
+            buttonAnulujPrzedstawienie.Visible = true;
+            buttonDodajPrzedstawienie.Visible = false;
 
         }
 
@@ -243,13 +252,14 @@ namespace Dyplom_Dariusz_Petasz_Z709
             comboBoxPrzedstawienieKompozytor.Enabled = true;
             comboBoxPrzedstawienieRodzaj.Enabled = true;
             textBoxNazwaPrzedstawienia.Enabled = true;
-            buttonZapiszPrzedstawienie.Visible = true;
+            
             dateTimePickerDataPremiery.Enabled = true;
 
-            labelIdKompozytor.Visible = true;
-            labelIdPrzedstawienie.Visible = true;
-            labelIdRezyser.Visible = true;
-            labelIdRodzaj.Visible = true;
+            buttonZapiszPrzedstawienie.Visible = true;
+            buttonAnulujPrzedstawienie.Visible = true;
+            buttonDodajPrzedstawienie.Visible = false;
+            buttonAktualizujPrzedstawienie.Visible = false;
+
             dateTimePickerDlugoscPrzedstawienia.Enabled = true;
             richTextBoxOpisPrzedstawienie.Enabled = true;
         }
@@ -262,15 +272,15 @@ namespace Dyplom_Dariusz_Petasz_Z709
             comboBoxPrzedstawienieKompozytor.Enabled = false;
             comboBoxPrzedstawienieRodzaj.Enabled = false;
             textBoxNazwaPrzedstawienia.Enabled = false;
-            buttonZapiszPrzedstawienie.Visible = false;
+            
             dateTimePickerDataPremiery.Enabled = false;
             dateTimePickerDlugoscPrzedstawienia.Enabled = false;
             richTextBoxOpisPrzedstawienie.Enabled = false;
 
-            labelIdKompozytor.Visible = false;
-            labelIdPrzedstawienie.Visible = false;
-            labelIdRezyser.Visible = false;
-            labelIdRodzaj.Visible = false;
+            buttonAnulujPrzedstawienie.Visible = false;
+            buttonZapiszPrzedstawienie.Visible = false;
+            buttonDodajPrzedstawienie.Visible = true; ;
+            buttonAktualizujPrzedstawienie.Visible = true; ;
             przycisk = "";
         }
 

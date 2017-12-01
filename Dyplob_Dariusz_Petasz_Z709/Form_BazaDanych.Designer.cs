@@ -31,20 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.tabControlBazaDanych = new System.Windows.Forms.TabControl();
             this.tabPagePrzedstawienie = new System.Windows.Forms.TabPage();
+            this.buttonAnulujPrzedstawienie = new System.Windows.Forms.Button();
+            this.dateTimePickerDlugoscPrzedstawienia = new System.Windows.Forms.DateTimePicker();
+            this.pokazPrzedstawienieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tWDataSet1 = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
             this.labelOpisPrzedstawienie = new System.Windows.Forms.Label();
             this.richTextBoxOpisPrzedstawienie = new System.Windows.Forms.RichTextBox();
-            this.tWDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
             this.labelDlugoscPrzedstawienie = new System.Windows.Forms.Label();
             this.buttonDodajPrzedstawienie = new System.Windows.Forms.Button();
             this.buttonAktualizujPrzedstawienie = new System.Windows.Forms.Button();
-            this.labelIdPrzedstawienie = new System.Windows.Forms.Label();
             this.labelWynikPrzedstawienie = new System.Windows.Forms.Label();
-            this.labelIdRodzaj = new System.Windows.Forms.Label();
-            this.pokazRodzajBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.labelIdKompozytor = new System.Windows.Forms.Label();
-            this.pokazKompozytorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.labelIdRezyser = new System.Windows.Forms.Label();
-            this.pokazRezyserBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonZapiszPrzedstawienie = new System.Windows.Forms.Button();
             this.textBoxNazwaPrzedstawienia = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -52,10 +48,14 @@
             this.dateTimePickerDataPremiery = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxPrzedstawienieRezyser = new System.Windows.Forms.ComboBox();
+            this.pokazRezyserBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tWDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBoxPrzedstawienieKompozytor = new System.Windows.Forms.ComboBox();
+            this.pokazKompozytorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label10 = new System.Windows.Forms.Label();
             this.comboBoxPrzedstawienieRodzaj = new System.Windows.Forms.ComboBox();
+            this.pokazRodzajBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxPrzedstawienie = new System.Windows.Forms.ComboBox();
             this.tabPageKomRezRodz = new System.Windows.Forms.TabPage();
@@ -101,24 +101,20 @@
             this.pokazNowyRezTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazNowyRezTableAdapter();
             this.pokazKompozytorTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazKompozytorTableAdapter();
             this.pokazRodzajTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazRodzajTableAdapter();
-            this.tWDataSet1 = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
-            this.pokazPrzedstawienieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokazPrzedstawienieTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazPrzedstawienieTableAdapter();
-            this.dateTimePickerDlugoscPrzedstawienia = new System.Windows.Forms.DateTimePicker();
-            this.buttonAnulujPrzedstawienie = new System.Windows.Forms.Button();
             this.tabControlBazaDanych.SuspendLayout();
             this.tabPagePrzedstawienie.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pokazRodzajBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pokazKompozytorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazPrzedstawienieBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tWDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazRezyserBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazKompozytorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazRodzajBindingSource)).BeginInit();
             this.tabPageKomRezRodz.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelKompozytor.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazNowyRezBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tWDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pokazPrzedstawienieBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlBazaDanych
@@ -142,11 +138,7 @@
             this.tabPagePrzedstawienie.Controls.Add(this.labelDlugoscPrzedstawienie);
             this.tabPagePrzedstawienie.Controls.Add(this.buttonDodajPrzedstawienie);
             this.tabPagePrzedstawienie.Controls.Add(this.buttonAktualizujPrzedstawienie);
-            this.tabPagePrzedstawienie.Controls.Add(this.labelIdPrzedstawienie);
             this.tabPagePrzedstawienie.Controls.Add(this.labelWynikPrzedstawienie);
-            this.tabPagePrzedstawienie.Controls.Add(this.labelIdRodzaj);
-            this.tabPagePrzedstawienie.Controls.Add(this.labelIdKompozytor);
-            this.tabPagePrzedstawienie.Controls.Add(this.labelIdRezyser);
             this.tabPagePrzedstawienie.Controls.Add(this.buttonZapiszPrzedstawienie);
             this.tabPagePrzedstawienie.Controls.Add(this.textBoxNazwaPrzedstawienia);
             this.tabPagePrzedstawienie.Controls.Add(this.label12);
@@ -168,6 +160,38 @@
             this.tabPagePrzedstawienie.TabIndex = 0;
             this.tabPagePrzedstawienie.Text = "Przedstawienie";
             // 
+            // buttonAnulujPrzedstawienie
+            // 
+            this.buttonAnulujPrzedstawienie.Location = new System.Drawing.Point(849, 300);
+            this.buttonAnulujPrzedstawienie.Name = "buttonAnulujPrzedstawienie";
+            this.buttonAnulujPrzedstawienie.Size = new System.Drawing.Size(108, 30);
+            this.buttonAnulujPrzedstawienie.TabIndex = 25;
+            this.buttonAnulujPrzedstawienie.Text = "Anuluj";
+            this.buttonAnulujPrzedstawienie.UseVisualStyleBackColor = true;
+            this.buttonAnulujPrzedstawienie.Visible = false;
+            this.buttonAnulujPrzedstawienie.Click += new System.EventHandler(this.buttonAnulujPrzedstawienie_Click);
+            // 
+            // dateTimePickerDlugoscPrzedstawienia
+            // 
+            this.dateTimePickerDlugoscPrzedstawienia.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazPrzedstawienieBindingSource, "dlugosc", true));
+            this.dateTimePickerDlugoscPrzedstawienia.Enabled = false;
+            this.dateTimePickerDlugoscPrzedstawienia.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePickerDlugoscPrzedstawienia.Location = new System.Drawing.Point(890, 101);
+            this.dateTimePickerDlugoscPrzedstawienia.Name = "dateTimePickerDlugoscPrzedstawienia";
+            this.dateTimePickerDlugoscPrzedstawienia.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePickerDlugoscPrzedstawienia.TabIndex = 24;
+            this.dateTimePickerDlugoscPrzedstawienia.Value = new System.DateTime(2017, 11, 21, 18, 33, 0, 0);
+            // 
+            // pokazPrzedstawienieBindingSource
+            // 
+            this.pokazPrzedstawienieBindingSource.DataMember = "pokazPrzedstawienie";
+            this.pokazPrzedstawienieBindingSource.DataSource = this.tWDataSet1;
+            // 
+            // tWDataSet1
+            // 
+            this.tWDataSet1.DataSetName = "TWDataSet";
+            this.tWDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // labelOpisPrzedstawienie
             // 
             this.labelOpisPrzedstawienie.AutoSize = true;
@@ -187,11 +211,6 @@
             this.richTextBoxOpisPrzedstawienie.Size = new System.Drawing.Size(545, 96);
             this.richTextBoxOpisPrzedstawienie.TabIndex = 22;
             this.richTextBoxOpisPrzedstawienie.Text = "";
-            // 
-            // tWDataSet
-            // 
-            this.tWDataSet.DataSetName = "TWDataSet";
-            this.tWDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // labelDlugoscPrzedstawienie
             // 
@@ -223,18 +242,6 @@
             this.buttonAktualizujPrzedstawienie.UseVisualStyleBackColor = true;
             this.buttonAktualizujPrzedstawienie.Click += new System.EventHandler(this.buttonAktualizujPrzedstawienie_Click);
             // 
-            // labelIdPrzedstawienie
-            // 
-            this.labelIdPrzedstawienie.AutoSize = true;
-            this.labelIdPrzedstawienie.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazPrzedstawienieBindingSource, "idprzed", true));
-            this.labelIdPrzedstawienie.ForeColor = System.Drawing.Color.Cornsilk;
-            this.labelIdPrzedstawienie.Location = new System.Drawing.Point(14, 45);
-            this.labelIdPrzedstawienie.Name = "labelIdPrzedstawienie";
-            this.labelIdPrzedstawienie.Size = new System.Drawing.Size(22, 19);
-            this.labelIdPrzedstawienie.TabIndex = 17;
-            this.labelIdPrzedstawienie.Text = "Id";
-            this.labelIdPrzedstawienie.Visible = false;
-            // 
             // labelWynikPrzedstawienie
             // 
             this.labelWynikPrzedstawienie.AutoSize = true;
@@ -244,57 +251,6 @@
             this.labelWynikPrzedstawienie.Size = new System.Drawing.Size(89, 19);
             this.labelWynikPrzedstawienie.TabIndex = 16;
             this.labelWynikPrzedstawienie.Text = "Wynik zapisu";
-            // 
-            // labelIdRodzaj
-            // 
-            this.labelIdRodzaj.AutoSize = true;
-            this.labelIdRodzaj.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazRodzajBindingSource, "idrodzaj", true));
-            this.labelIdRodzaj.ForeColor = System.Drawing.Color.Cornsilk;
-            this.labelIdRodzaj.Location = new System.Drawing.Point(467, 254);
-            this.labelIdRodzaj.Name = "labelIdRodzaj";
-            this.labelIdRodzaj.Size = new System.Drawing.Size(22, 19);
-            this.labelIdRodzaj.TabIndex = 15;
-            this.labelIdRodzaj.Text = "Id";
-            this.labelIdRodzaj.Visible = false;
-            // 
-            // pokazRodzajBindingSource
-            // 
-            this.pokazRodzajBindingSource.DataMember = "pokazRodzaj";
-            this.pokazRodzajBindingSource.DataSource = this.tWDataSet;
-            // 
-            // labelIdKompozytor
-            // 
-            this.labelIdKompozytor.AutoSize = true;
-            this.labelIdKompozytor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazKompozytorBindingSource, "idkompozytor", true));
-            this.labelIdKompozytor.ForeColor = System.Drawing.Color.Cornsilk;
-            this.labelIdKompozytor.Location = new System.Drawing.Point(467, 200);
-            this.labelIdKompozytor.Name = "labelIdKompozytor";
-            this.labelIdKompozytor.Size = new System.Drawing.Size(22, 19);
-            this.labelIdKompozytor.TabIndex = 14;
-            this.labelIdKompozytor.Text = "Id";
-            this.labelIdKompozytor.Visible = false;
-            // 
-            // pokazKompozytorBindingSource
-            // 
-            this.pokazKompozytorBindingSource.DataMember = "pokazKompozytor";
-            this.pokazKompozytorBindingSource.DataSource = this.tWDataSet;
-            // 
-            // labelIdRezyser
-            // 
-            this.labelIdRezyser.AutoSize = true;
-            this.labelIdRezyser.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazRezyserBindingSource, "idrezyser", true));
-            this.labelIdRezyser.ForeColor = System.Drawing.Color.Cornsilk;
-            this.labelIdRezyser.Location = new System.Drawing.Point(467, 148);
-            this.labelIdRezyser.Name = "labelIdRezyser";
-            this.labelIdRezyser.Size = new System.Drawing.Size(22, 19);
-            this.labelIdRezyser.TabIndex = 13;
-            this.labelIdRezyser.Text = "Id";
-            this.labelIdRezyser.Visible = false;
-            // 
-            // pokazRezyserBindingSource
-            // 
-            this.pokazRezyserBindingSource.DataMember = "pokazRezyser";
-            this.pokazRezyserBindingSource.DataSource = this.tWDataSet;
             // 
             // buttonZapiszPrzedstawienie
             // 
@@ -368,6 +324,16 @@
             this.comboBoxPrzedstawienieRezyser.TabIndex = 2;
             this.comboBoxPrzedstawienieRezyser.ValueMember = "idrezyser";
             // 
+            // pokazRezyserBindingSource
+            // 
+            this.pokazRezyserBindingSource.DataMember = "pokazRezyser";
+            this.pokazRezyserBindingSource.DataSource = this.tWDataSet;
+            // 
+            // tWDataSet
+            // 
+            this.tWDataSet.DataSetName = "TWDataSet";
+            this.tWDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -391,6 +357,11 @@
             this.comboBoxPrzedstawienieKompozytor.TabIndex = 3;
             this.comboBoxPrzedstawienieKompozytor.ValueMember = "idkompozytor";
             // 
+            // pokazKompozytorBindingSource
+            // 
+            this.pokazKompozytorBindingSource.DataMember = "pokazKompozytor";
+            this.pokazKompozytorBindingSource.DataSource = this.tWDataSet;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -413,6 +384,11 @@
             this.comboBoxPrzedstawienieRodzaj.Size = new System.Drawing.Size(267, 27);
             this.comboBoxPrzedstawienieRodzaj.TabIndex = 4;
             this.comboBoxPrzedstawienieRodzaj.ValueMember = "idrodzaj";
+            // 
+            // pokazRodzajBindingSource
+            // 
+            this.pokazRodzajBindingSource.DataMember = "pokazRodzaj";
+            this.pokazRodzajBindingSource.DataSource = this.tWDataSet;
             // 
             // label3
             // 
@@ -865,40 +841,9 @@
             // 
             this.pokazRodzajTableAdapter.ClearBeforeFill = true;
             // 
-            // tWDataSet1
-            // 
-            this.tWDataSet1.DataSetName = "TWDataSet";
-            this.tWDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pokazPrzedstawienieBindingSource
-            // 
-            this.pokazPrzedstawienieBindingSource.DataMember = "pokazPrzedstawienie";
-            this.pokazPrzedstawienieBindingSource.DataSource = this.tWDataSet1;
-            // 
             // pokazPrzedstawienieTableAdapter
             // 
             this.pokazPrzedstawienieTableAdapter.ClearBeforeFill = true;
-            // 
-            // dateTimePickerDlugoscPrzedstawienia
-            // 
-            this.dateTimePickerDlugoscPrzedstawienia.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazPrzedstawienieBindingSource, "dlugosc", true));
-            this.dateTimePickerDlugoscPrzedstawienia.Enabled = false;
-            this.dateTimePickerDlugoscPrzedstawienia.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePickerDlugoscPrzedstawienia.Location = new System.Drawing.Point(890, 101);
-            this.dateTimePickerDlugoscPrzedstawienia.Name = "dateTimePickerDlugoscPrzedstawienia";
-            this.dateTimePickerDlugoscPrzedstawienia.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePickerDlugoscPrzedstawienia.TabIndex = 24;
-            this.dateTimePickerDlugoscPrzedstawienia.Value = new System.DateTime(2017, 11, 21, 18, 33, 0, 0);
-            // 
-            // buttonAnulujPrzedstawienie
-            // 
-            this.buttonAnulujPrzedstawienie.Location = new System.Drawing.Point(849, 300);
-            this.buttonAnulujPrzedstawienie.Name = "buttonAnulujPrzedstawienie";
-            this.buttonAnulujPrzedstawienie.Size = new System.Drawing.Size(108, 30);
-            this.buttonAnulujPrzedstawienie.TabIndex = 25;
-            this.buttonAnulujPrzedstawienie.Text = "Anuluj";
-            this.buttonAnulujPrzedstawienie.UseVisualStyleBackColor = true;
-            this.buttonAnulujPrzedstawienie.Click += new System.EventHandler(this.buttonAnulujPrzedstawienie_Click);
             // 
             // Form_BazaDanych
             // 
@@ -913,10 +858,12 @@
             this.tabControlBazaDanych.ResumeLayout(false);
             this.tabPagePrzedstawienie.ResumeLayout(false);
             this.tabPagePrzedstawienie.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pokazRodzajBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pokazKompozytorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazPrzedstawienieBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tWDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazRezyserBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazKompozytorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazRodzajBindingSource)).EndInit();
             this.tabPageKomRezRodz.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -925,8 +872,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazNowyRezBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tWDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pokazPrzedstawienieBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -995,16 +940,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBoxPrzedstawienieRodzaj;
         private System.Windows.Forms.Button buttonZapiszPrzedstawienie;
-        private System.Windows.Forms.Label labelIdRezyser;
-        private System.Windows.Forms.Label labelIdRodzaj;
-        private System.Windows.Forms.Label labelIdKompozytor;
         private System.Windows.Forms.Label labelWynikPrzedstawienie;
         private System.Windows.Forms.Label labelOpisPrzedstawienie;
         private System.Windows.Forms.RichTextBox richTextBoxOpisPrzedstawienie;
         private System.Windows.Forms.Label labelDlugoscPrzedstawienie;
         private System.Windows.Forms.Button buttonDodajPrzedstawienie;
         private System.Windows.Forms.Button buttonAktualizujPrzedstawienie;
-        private System.Windows.Forms.Label labelIdPrzedstawienie;
         private TWDataSet tWDataSet1;
         private System.Windows.Forms.BindingSource pokazPrzedstawienieBindingSource;
         private TWDataSetTableAdapters.pokazPrzedstawienieTableAdapter pokazPrzedstawienieTableAdapter;

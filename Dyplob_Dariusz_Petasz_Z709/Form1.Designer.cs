@@ -41,6 +41,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bazaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dodajPrzedstawienieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.widokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelLogowanie = new System.Windows.Forms.Panel();
@@ -54,7 +55,6 @@
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pokazLoginTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazLoginTableAdapter();
-            this.dodajPrzedstawienieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelPrzyciski.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -194,9 +194,9 @@
             this.labelTextPrzyciski.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelTextPrzyciski.Location = new System.Drawing.Point(13, 8);
             this.labelTextPrzyciski.Name = "labelTextPrzyciski";
-            this.labelTextPrzyciski.Size = new System.Drawing.Size(94, 20);
+            this.labelTextPrzyciski.Size = new System.Drawing.Size(97, 20);
             this.labelTextPrzyciski.TabIndex = 1;
-            this.labelTextPrzyciski.Text = "Zalogowany";
+            this.labelTextPrzyciski.Text = "Wylogowany";
             // 
             // menuStrip1
             // 
@@ -225,6 +225,13 @@
             this.bazaToolStripMenuItem.Name = "bazaToolStripMenuItem";
             this.bazaToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.bazaToolStripMenuItem.Text = "Baza";
+            // 
+            // dodajPrzedstawienieToolStripMenuItem
+            // 
+            this.dodajPrzedstawienieToolStripMenuItem.Name = "dodajPrzedstawienieToolStripMenuItem";
+            this.dodajPrzedstawienieToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.dodajPrzedstawienieToolStripMenuItem.Text = "DodajPrzedstawienie";
+            this.dodajPrzedstawienieToolStripMenuItem.Click += new System.EventHandler(this.dodajPrzedstawienieToolStripMenuItem_Click);
             // 
             // widokToolStripMenuItem
             // 
@@ -353,13 +360,6 @@
             // pokazLoginTableAdapter
             // 
             this.pokazLoginTableAdapter.ClearBeforeFill = true;
-            // 
-            // dodajPrzedstawienieToolStripMenuItem
-            // 
-            this.dodajPrzedstawienieToolStripMenuItem.Name = "dodajPrzedstawienieToolStripMenuItem";
-            this.dodajPrzedstawienieToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.dodajPrzedstawienieToolStripMenuItem.Text = "DodajPrzedstawienie";
-            this.dodajPrzedstawienieToolStripMenuItem.Click += new System.EventHandler(this.dodajPrzedstawienieToolStripMenuItem_Click);
             // 
             // Form1
             // 
