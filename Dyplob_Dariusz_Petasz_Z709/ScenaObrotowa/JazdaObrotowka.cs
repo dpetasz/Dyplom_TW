@@ -11,7 +11,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
     public class JazdaObrotowka: IJazdaObrotowka
     {
         private float o = 0f;
-        string plik = @"C:\Users\dpeta\OneDrive\Documents\Visual Studio 2013\Projects\Dyplob_Dariusz_Petasz_Z709\Dyplob_Dariusz_Petasz_Z709\Resources\Pozycja_Obrotowka.txt";
+        string plik = @"C:\Users\Darek\Downloads\wwsi\pracaInżynierska\Dyplom_TW-master\ZGita\Dyplom_TW\Dyplob_Dariusz_Petasz_Z709\Resources\Pozycja_Obrotowka.txt";
         public float PozycjaObrotowka()
         {
             try

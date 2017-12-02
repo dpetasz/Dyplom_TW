@@ -49,6 +49,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
             textBoxImieRez.Clear();
             textBoxImieRez.Enabled = true;
             textBoxNazwiskoRez.Enabled = true;
+
             buttonZapisz.Visible = true;
             buttonDodajPrzedstawienie.Visible = false;
             buttonAktualizujPrzedstawienie.Visible = false;

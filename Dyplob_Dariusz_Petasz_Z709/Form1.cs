@@ -25,8 +25,17 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            try
+            {
+                this.pokazLoginTableAdapter.Fill(this.tWDataSet.pokazLogin);
+
+            }
+            catch (Exception)
+            {
+
+                
+            }
             // TODO: This line of code loads data into the 'tWDataSet.pokazLogin' table. You can move, or remove it, as needed.
-            this.pokazLoginTableAdapter.Fill(this.tWDataSet.pokazLogin);
 
         }
 

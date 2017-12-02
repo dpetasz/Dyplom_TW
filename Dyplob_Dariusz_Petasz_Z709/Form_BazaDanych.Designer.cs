@@ -98,7 +98,6 @@
             this.comboBoxRezyser = new System.Windows.Forms.ComboBox();
             this.pokazRezyserTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazRezyserTableAdapter();
             this.pokazNowyRezBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pokazNowyRezTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazNowyRezTableAdapter();
             this.pokazKompozytorTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazKompozytorTableAdapter();
             this.pokazRodzajTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazRodzajTableAdapter();
             this.pokazPrzedstawienieTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazPrzedstawienieTableAdapter();
@@ -761,7 +760,6 @@
             // 
             // buttonZapisz
             // 
-            this.buttonZapisz.Enabled = false;
             this.buttonZapisz.Location = new System.Drawing.Point(240, 286);
             this.buttonZapisz.Name = "buttonZapisz";
             this.buttonZapisz.Size = new System.Drawing.Size(83, 29);
@@ -828,10 +826,6 @@
             // 
             this.pokazNowyRezBindingSource.DataMember = "pokazNowyRez";
             this.pokazNowyRezBindingSource.DataSource = this.tWDataSet;
-            // 
-            // pokazNowyRezTableAdapter
-            // 
-            this.pokazNowyRezTableAdapter.ClearBeforeFill = true;
             // 
             // pokazKompozytorTableAdapter
             // 
@@ -920,7 +914,6 @@
         private TWDataSetTableAdapters.pokazRezyserTableAdapter pokazRezyserTableAdapter;
         private System.Windows.Forms.Label labelWynikRez;
         private System.Windows.Forms.BindingSource pokazNowyRezBindingSource;
-        private TWDataSetTableAdapters.pokazNowyRezTableAdapter pokazNowyRezTableAdapter;
         private System.Windows.Forms.Label labelWynikKomp;
         private System.Windows.Forms.BindingSource pokazKompozytorBindingSource;
         private TWDataSetTableAdapters.pokazKompozytorTableAdapter pokazKompozytorTableAdapter;
