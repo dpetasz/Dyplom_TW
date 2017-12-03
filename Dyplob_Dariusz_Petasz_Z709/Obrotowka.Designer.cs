@@ -48,7 +48,7 @@
             this.trackBarKierunek = new System.Windows.Forms.TrackBar();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
+            this.buttonJazdaTechniczna = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.buttonStartStop = new System.Windows.Forms.Button();
             this.buttonJazdaProgramowa = new System.Windows.Forms.Button();
@@ -164,6 +164,7 @@
             // 
             // textBoxPozycjaZadanaObrotowka
             // 
+            this.textBoxPozycjaZadanaObrotowka.Enabled = false;
             this.textBoxPozycjaZadanaObrotowka.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.textBoxPozycjaZadanaObrotowka.Location = new System.Drawing.Point(153, 63);
             this.textBoxPozycjaZadanaObrotowka.Name = "textBoxPozycjaZadanaObrotowka";
@@ -225,7 +226,7 @@
             this.panelSterowanie.Controls.Add(this.trackBarKierunek);
             this.panelSterowanie.Controls.Add(this.label11);
             this.panelSterowanie.Controls.Add(this.label10);
-            this.panelSterowanie.Controls.Add(this.button10);
+            this.panelSterowanie.Controls.Add(this.buttonJazdaTechniczna);
             this.panelSterowanie.Controls.Add(this.label9);
             this.panelSterowanie.Controls.Add(this.buttonStartStop);
             this.panelSterowanie.Controls.Add(this.buttonJazdaProgramowa);
@@ -245,6 +246,7 @@
             this.buttonJazdaDoPozycji.TabIndex = 15;
             this.buttonJazdaDoPozycji.Text = "Jazda do pozycji";
             this.buttonJazdaDoPozycji.UseVisualStyleBackColor = false;
+            this.buttonJazdaDoPozycji.Click += new System.EventHandler(this.buttonJazdaDoPozycji_Click);
             // 
             // trackBarPredkoscObrotowka
             // 
@@ -315,17 +317,19 @@
             this.label10.TabIndex = 6;
             this.label10.Text = "- 100";
             // 
-            // button10
+            // buttonJazdaTechniczna
             // 
-            this.button10.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button10.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.button10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button10.Location = new System.Drawing.Point(22, 29);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(161, 35);
-            this.button10.TabIndex = 5;
-            this.button10.Text = "Jazda techniczna";
-            this.button10.UseVisualStyleBackColor = false;
+            this.buttonJazdaTechniczna.BackColor = System.Drawing.Color.Maroon;
+            this.buttonJazdaTechniczna.Enabled = false;
+            this.buttonJazdaTechniczna.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.buttonJazdaTechniczna.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonJazdaTechniczna.Location = new System.Drawing.Point(22, 29);
+            this.buttonJazdaTechniczna.Name = "buttonJazdaTechniczna";
+            this.buttonJazdaTechniczna.Size = new System.Drawing.Size(161, 35);
+            this.buttonJazdaTechniczna.TabIndex = 5;
+            this.buttonJazdaTechniczna.Text = "Jazda techniczna";
+            this.buttonJazdaTechniczna.UseVisualStyleBackColor = false;
+            this.buttonJazdaTechniczna.Click += new System.EventHandler(this.buttonJazdaTechniczna_Click);
             // 
             // label9
             // 
@@ -366,6 +370,7 @@
             this.buttonJazdaProgramowa.TabIndex = 0;
             this.buttonJazdaProgramowa.Text = "Jazda programowa";
             this.buttonJazdaProgramowa.UseVisualStyleBackColor = false;
+            this.buttonJazdaProgramowa.Click += new System.EventHandler(this.buttonJazdaProgramowa_Click);
             // 
             // panelBazaDanych
             // 
@@ -387,6 +392,7 @@
             this.panelBazaDanych.Controls.Add(this.label3);
             this.panelBazaDanych.Controls.Add(this.label2);
             this.panelBazaDanych.Controls.Add(this.label1);
+            this.panelBazaDanych.Enabled = false;
             this.panelBazaDanych.Location = new System.Drawing.Point(23, 693);
             this.panelBazaDanych.Name = "panelBazaDanych";
             this.panelBazaDanych.Size = new System.Drawing.Size(957, 171);
@@ -766,7 +772,7 @@
         private System.Windows.Forms.TrackBar trackBarKierunek;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button buttonJazdaTechniczna;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button buttonStartStop;
         private System.Windows.Forms.Button buttonJazdaProgramowa;

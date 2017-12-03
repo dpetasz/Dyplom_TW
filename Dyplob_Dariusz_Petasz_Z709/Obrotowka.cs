@@ -172,6 +172,55 @@ namespace Dyplom_Dariusz_Petasz_Z709
             
         }
 
+        private void buttonJazdaDoPozycji_Click(object sender, EventArgs e)
+        {
+            jazdaDoPozycji();
+            
+        }
+        void jazdaDoPozycji()
+        {
+            buttonJazdaDoPozycji.BackColor = Color.Maroon;
+            buttonJazdaDoPozycji.Enabled = false;
+
+            buttonJazdaTechniczna.BackColor = Color.LightSteelBlue;
+            buttonJazdaTechniczna.Enabled = true;
+
+            buttonJazdaProgramowa.BackColor = Color.LightSteelBlue;
+            buttonJazdaProgramowa.Enabled = true;
+        }
+        void jazdaProgramowa()
+        {
+            buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
+            buttonJazdaDoPozycji.Enabled = true;
+
+            buttonJazdaTechniczna.BackColor = Color.LightSteelBlue;
+            buttonJazdaTechniczna.Enabled = true;
+
+            buttonJazdaProgramowa.BackColor = Color.Maroon;
+            buttonJazdaProgramowa.Enabled = false;
+        }
+        void jazdaTechniczna()
+        {
+            buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
+            buttonJazdaDoPozycji.Enabled = true;
+
+            buttonJazdaTechniczna.BackColor = Color.Maroon;
+            buttonJazdaTechniczna.Enabled = false;
+
+            buttonJazdaProgramowa.BackColor = Color.LightSteelBlue;
+            buttonJazdaProgramowa.Enabled = true;
+        }
+
+        private void buttonJazdaTechniczna_Click(object sender, EventArgs e)
+        {
+            jazdaTechniczna();
+        }
+
+        private void buttonJazdaProgramowa_Click(object sender, EventArgs e)
+        {
+            jazdaProgramowa();
+        }
+
         
     }
 }
