@@ -57,6 +57,8 @@
             this.button8 = new System.Windows.Forms.Button();
             this.buttonDodajFxObrotowka = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.pokazFxObrotowkaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tWDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.buttonDodajAkt = new System.Windows.Forms.Button();
@@ -65,7 +67,6 @@
             this.richTextBoxOpis = new System.Windows.Forms.RichTextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.pokazAktBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tWDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pokazPrzedstawienieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
@@ -84,7 +85,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.pokazAktTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazAktTableAdapter();
             this.pokazAktBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.pokazFxObrotowkaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokazFxObrotowkaTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFxObrotowkaTableAdapter();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -92,13 +92,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPredkoscObrotowka)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarKierunek)).BeginInit();
             this.panelBazaDanych.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazFxObrotowkaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazPrzedstawienieBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTarcza)).BeginInit();
             this.panelDodajAkt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pokazFxObrotowkaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -440,6 +440,16 @@
             this.comboBox3.TabIndex = 16;
             this.comboBox3.ValueMember = "idfx_obrotowka";
             // 
+            // pokazFxObrotowkaBindingSource
+            // 
+            this.pokazFxObrotowkaBindingSource.DataMember = "pokazFxObrotowka";
+            this.pokazFxObrotowkaBindingSource.DataSource = this.tWDataSet;
+            // 
+            // tWDataSet
+            // 
+            this.tWDataSet.DataSetName = "TWDataSet";
+            this.tWDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -528,11 +538,6 @@
             this.pokazAktBindingSource.DataMember = "pokazAkt";
             this.pokazAktBindingSource.DataSource = this.tWDataSet;
             this.pokazAktBindingSource.CurrentChanged += new System.EventHandler(this.pokazAktBindingSource_CurrentChanged);
-            // 
-            // tWDataSet
-            // 
-            this.tWDataSet.DataSetName = "TWDataSet";
-            this.tWDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // comboBox1
             // 
@@ -699,11 +704,6 @@
             this.pokazAktBindingSource1.DataMember = "pokazAkt";
             this.pokazAktBindingSource1.DataSource = this.tWDataSet;
             // 
-            // pokazFxObrotowkaBindingSource
-            // 
-            this.pokazFxObrotowkaBindingSource.DataMember = "pokazFxObrotowka";
-            this.pokazFxObrotowkaBindingSource.DataSource = this.tWDataSet;
-            // 
             // pokazFxObrotowkaTableAdapter
             // 
             this.pokazFxObrotowkaTableAdapter.ClearBeforeFill = true;
@@ -734,14 +734,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarKierunek)).EndInit();
             this.panelBazaDanych.ResumeLayout(false);
             this.panelBazaDanych.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazFxObrotowkaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazPrzedstawienieBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTarcza)).EndInit();
             this.panelDodajAkt.ResumeLayout(false);
             this.panelDodajAkt.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pokazFxObrotowkaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -68,25 +68,33 @@ namespace Dyplom_Dariusz_Petasz_Z709
         }
         private void green()
         {
+            
             timer1.Enabled = false;
             buttonStartStop.BackColor = Color.Green;
             buttonStartStop.Text = "Start";
+            this.stanWyp = new Wypelnienie1();
+            pictureBoxTarcza.Invalidate();
+
         }
         private void red()
         {
             timer1.Enabled = true;
             buttonStartStop.BackColor = Color.Red;
             buttonStartStop.Text = "Stop";
+            this.stanWyp = new WypelnienieJazda();
+            pictureBoxTarcza.Invalidate();
         }
 
         private void buttonStartStop_Click(object sender, EventArgs e)
         {
             if (timer1.Enabled == false)
             {
+                
                 red();
             }
             else
             {
+                
                 jazda.ZapisPozycja(pozycja);
                 green();
             }
@@ -163,5 +171,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
             }
             
         }
+
+        
     }
 }
