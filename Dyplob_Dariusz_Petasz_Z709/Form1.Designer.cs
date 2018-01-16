@@ -141,6 +141,7 @@
             this.buttonWozki.TabIndex = 6;
             this.buttonWozki.Text = "Wózki";
             this.buttonWozki.UseVisualStyleBackColor = false;
+            this.buttonWozki.Click += new System.EventHandler(this.buttonWozki_Click);
             // 
             // buttonSztankiety
             // 

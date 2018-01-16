@@ -85,6 +85,14 @@
       <DependentUpon>TWDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="BD_TW\ZapiszBazaPrzedstawienie.cs" />
+    <Compile Include="Wozki\RysujWozek.cs" />
+    <Compile Include="Wozki\StanWypWozki.cs" />
+    <Compile Include="Wozki\WozkiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wozki\WozkiForm.Designer.cs">
+      <DependentUpon>WozkiForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +112,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Wozki\WozkiForm.resx">
+      <DependentUpon>WozkiForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dyplom_Dariusz_Petasz_Z709.Wozki;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -90,6 +91,10 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
         }
 
-        
+        private void buttonWozki_Click(object sender, EventArgs e)
+        {
+            WozkiForm wozki = new WozkiForm();
+            wozki.Show();
+        }
     }
 }
