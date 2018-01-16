@@ -9,6 +9,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 {
     public class RysujWozek
     {
+        StanWypWozki wyp = new Wypelnienie1();
         Pen pioroLinia, pioro;
         SolidBrush pioro1, pioro2, pioro3, kolorLiczby;
         Font textFont;
@@ -79,7 +80,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                 kolorLiczby = value;
             }
         }
-         public Font TextFont
+        public Font TextFont
         {
             get
             {
@@ -91,15 +92,61 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             }
         }
 
-        public void Wozek(Graphics g)
+        public void Wozek1(Graphics g, float x)
         {
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            g.FillRectangle(pioro3, 10, 10, 414, 220);
+            
+            g.FillRectangle(pioro1, x, 20, 460, 90);
+            g.DrawRectangle(pioro, x, 20, 460, 90);
+            
+
+        }
+        public void Wozek2(Graphics g, float x)
+        {
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            g.FillRectangle(pioro1, x, 110, 460, 90);
+            g.DrawRectangle(pioro, x, 110, 460, 90);
+
+
+        }
+        public void Wozek3(Graphics g, float x)
+        {
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            g.FillRectangle(pioro1, x, 200, 460, 90);
+            g.DrawRectangle(pioro, x, 200, 460, 90);
+
+
+        }
+        public void Wozek4(Graphics g, float x)
+        {
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            g.FillRectangle(pioro1, x, 290, 460, 90);
+            g.DrawRectangle(pioro, x, 290, 460, 90);
+
+
+        }
+        public void Zascenie(Graphics g)
+        {
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            g.FillRectangle(pioro3, 20, 20, 460, 360);
+            //g.DrawRectangle(pioroLinia, 20, 20, 460, 360);
+
+
         }
         public void Scena(Graphics g)
         {
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            g.FillRectangle(pioro3, 600, 10, 414, 220);
+            g.DrawRectangle(pioro, 620, 20, 460, 360);
+
+        }
+        public void Wypelnienie()
+        {
+            wyp.Wypelnienie(this);
+
         }
     }
 }
