@@ -43,7 +43,7 @@
             this.bazaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajPrzedstawienieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.widokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxZdjecieTW = new System.Windows.Forms.PictureBox();
             this.panelLogowanie = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.labelKom = new System.Windows.Forms.Label();
@@ -55,16 +55,19 @@
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pokazLoginTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazLoginTableAdapter();
+            this.panel_Glowny = new System.Windows.Forms.Panel();
             this.panelPrzyciski.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxZdjecieTW)).BeginInit();
             this.panelLogowanie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazLoginBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).BeginInit();
+            this.panel_Glowny.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelPrzyciski
             // 
+            this.panelPrzyciski.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelPrzyciski.Controls.Add(this.buttonKoniec);
             this.panelPrzyciski.Controls.Add(this.buttonWyloguj);
             this.panelPrzyciski.Controls.Add(this.buttonMosty);
@@ -73,9 +76,10 @@
             this.panelPrzyciski.Controls.Add(this.buttonZapadnie);
             this.panelPrzyciski.Controls.Add(this.buttonObrotowka);
             this.panelPrzyciski.Controls.Add(this.labelTextPrzyciski);
-            this.panelPrzyciski.Location = new System.Drawing.Point(0, 25);
+            this.panelPrzyciski.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelPrzyciski.Location = new System.Drawing.Point(0, 24);
             this.panelPrzyciski.Name = "panelPrzyciski";
-            this.panelPrzyciski.Size = new System.Drawing.Size(867, 122);
+            this.panelPrzyciski.Size = new System.Drawing.Size(885, 120);
             this.panelPrzyciski.TabIndex = 4;
             // 
             // buttonKoniec
@@ -87,7 +91,7 @@
             this.buttonKoniec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonKoniec.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonKoniec.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonKoniec.Location = new System.Drawing.Point(765, 72);
+            this.buttonKoniec.Location = new System.Drawing.Point(763, 67);
             this.buttonKoniec.Name = "buttonKoniec";
             this.buttonKoniec.Size = new System.Drawing.Size(90, 37);
             this.buttonKoniec.TabIndex = 9;
@@ -103,7 +107,7 @@
             this.buttonWyloguj.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkKhaki;
             this.buttonWyloguj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonWyloguj.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonWyloguj.Location = new System.Drawing.Point(646, 72);
+            this.buttonWyloguj.Location = new System.Drawing.Point(644, 67);
             this.buttonWyloguj.Name = "buttonWyloguj";
             this.buttonWyloguj.Size = new System.Drawing.Size(90, 37);
             this.buttonWyloguj.TabIndex = 8;
@@ -119,7 +123,7 @@
             this.buttonMosty.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(146)))), ((int)(((byte)(120)))));
             this.buttonMosty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMosty.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonMosty.Location = new System.Drawing.Point(521, 41);
+            this.buttonMosty.Location = new System.Drawing.Point(519, 36);
             this.buttonMosty.Name = "buttonMosty";
             this.buttonMosty.Size = new System.Drawing.Size(90, 68);
             this.buttonMosty.TabIndex = 7;
@@ -135,7 +139,7 @@
             this.buttonWozki.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(146)))), ((int)(((byte)(120)))));
             this.buttonWozki.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonWozki.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonWozki.Location = new System.Drawing.Point(397, 41);
+            this.buttonWozki.Location = new System.Drawing.Point(395, 36);
             this.buttonWozki.Name = "buttonWozki";
             this.buttonWozki.Size = new System.Drawing.Size(90, 68);
             this.buttonWozki.TabIndex = 6;
@@ -151,7 +155,7 @@
             this.buttonSztankiety.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(146)))), ((int)(((byte)(120)))));
             this.buttonSztankiety.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSztankiety.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSztankiety.Location = new System.Drawing.Point(271, 41);
+            this.buttonSztankiety.Location = new System.Drawing.Point(269, 36);
             this.buttonSztankiety.Name = "buttonSztankiety";
             this.buttonSztankiety.Size = new System.Drawing.Size(90, 68);
             this.buttonSztankiety.TabIndex = 5;
@@ -166,7 +170,7 @@
             this.buttonZapadnie.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(146)))), ((int)(((byte)(120)))));
             this.buttonZapadnie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonZapadnie.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonZapadnie.Location = new System.Drawing.Point(150, 41);
+            this.buttonZapadnie.Location = new System.Drawing.Point(148, 36);
             this.buttonZapadnie.Name = "buttonZapadnie";
             this.buttonZapadnie.Size = new System.Drawing.Size(90, 68);
             this.buttonZapadnie.TabIndex = 4;
@@ -181,7 +185,7 @@
             this.buttonObrotowka.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(146)))), ((int)(((byte)(120)))));
             this.buttonObrotowka.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonObrotowka.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonObrotowka.Location = new System.Drawing.Point(28, 41);
+            this.buttonObrotowka.Location = new System.Drawing.Point(26, 36);
             this.buttonObrotowka.Name = "buttonObrotowka";
             this.buttonObrotowka.Size = new System.Drawing.Size(94, 68);
             this.buttonObrotowka.TabIndex = 3;
@@ -207,7 +211,7 @@
             this.widokToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(867, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(885, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -241,19 +245,23 @@
             this.widokToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.widokToolStripMenuItem.Text = "Widok";
             // 
-            // pictureBox1
+            // pictureBoxZdjecieTW
             // 
-            this.pictureBox1.Image = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.TeatrWielki;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 154);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(870, 577);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxZdjecieTW.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxZdjecieTW.Image = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.TeatrWielki;
+            this.pictureBoxZdjecieTW.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxZdjecieTW.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBoxZdjecieTW.Name = "pictureBoxZdjecieTW";
+            this.pictureBoxZdjecieTW.Padding = new System.Windows.Forms.Padding(5);
+            this.pictureBoxZdjecieTW.Size = new System.Drawing.Size(884, 591);
+            this.pictureBoxZdjecieTW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxZdjecieTW.TabIndex = 6;
+            this.pictureBoxZdjecieTW.TabStop = false;
             // 
             // panelLogowanie
             // 
             this.panelLogowanie.BackColor = System.Drawing.Color.Tan;
+            this.panelLogowanie.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelLogowanie.Controls.Add(this.button2);
             this.panelLogowanie.Controls.Add(this.labelKom);
             this.panelLogowanie.Controls.Add(this.buttonWejscie);
@@ -261,7 +269,7 @@
             this.panelLogowanie.Controls.Add(this.comboBoxLogin);
             this.panelLogowanie.Controls.Add(this.textBoxPassword);
             this.panelLogowanie.Controls.Add(this.label1);
-            this.panelLogowanie.Location = new System.Drawing.Point(279, 199);
+            this.panelLogowanie.Location = new System.Drawing.Point(269, 61);
             this.panelLogowanie.Name = "panelLogowanie";
             this.panelLogowanie.Size = new System.Drawing.Size(309, 273);
             this.panelLogowanie.TabIndex = 7;
@@ -362,29 +370,41 @@
             // 
             this.pokazLoginTableAdapter.ClearBeforeFill = true;
             // 
+            // panel_Glowny
+            // 
+            this.panel_Glowny.Controls.Add(this.panelLogowanie);
+            this.panel_Glowny.Controls.Add(this.pictureBoxZdjecieTW);
+            this.panel_Glowny.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Glowny.Location = new System.Drawing.Point(0, 144);
+            this.panel_Glowny.Name = "panel_Glowny";
+            this.panel_Glowny.Size = new System.Drawing.Size(885, 592);
+            this.panel_Glowny.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(867, 671);
-            this.Controls.Add(this.panelLogowanie);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(885, 736);
+            this.Controls.Add(this.panel_Glowny);
             this.Controls.Add(this.panelPrzyciski);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "System sterowania urządzeń scenicznych TW";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelPrzyciski.ResumeLayout(false);
             this.panelPrzyciski.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxZdjecieTW)).EndInit();
             this.panelLogowanie.ResumeLayout(false);
             this.panelLogowanie.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazLoginBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).EndInit();
+            this.panel_Glowny.ResumeLayout(false);
+            this.panel_Glowny.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,7 +418,7 @@
         private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bazaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem widokToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxZdjecieTW;
         private System.Windows.Forms.Button buttonZapadnie;
         private System.Windows.Forms.Button buttonObrotowka;
         private System.Windows.Forms.Button buttonMosty;
@@ -418,6 +438,7 @@
         private TWDataSetTableAdapters.pokazLoginTableAdapter pokazLoginTableAdapter;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem dodajPrzedstawienieToolStripMenuItem;
+        private System.Windows.Forms.Panel panel_Glowny;
     }
 }
 

@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 
 namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 {
-    public class RysujWozek
+    public class RysujWozek 
     {
+        static public List<RysujWozek> ListaWozek = new List<RysujWozek>();
+        
         StanWypWozki wyp = new Wypelnienie1();
-        Pen pioroLinia, pioro;
-        SolidBrush pioro1, pioro2, pioro3, kolorLiczby;
-        Font textFont;
 
+        StanWozek w = new Wozek1();
+
+        Pen pioroLinia, pioro;
         public Pen PioroLinia
         {
             get
@@ -36,6 +38,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                 pioro = value;
             }
         }
+
+        SolidBrush pioro1, pioro2, pioro3, kolorLiczby;
         public SolidBrush Pioro1
         {
             get
@@ -80,6 +84,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                 kolorLiczby = value;
             }
         }
+       
+        Font textFont;
         public Font TextFont
         {
             get
@@ -92,61 +98,89 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             }
         }
 
-        public void Wozek1(Graphics g, float x)
+        string nazwa;
+        public string Nazwa
         {
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            get { return nazwa; }
+            set { nazwa = value; }
+        }
+
+        int pozycja;
+        public int Pozycja
+        {
+            get { return pozycja; }
+            set { pozycja = value; }
+        }
+        float jazda;
+        public float Jazda
+        {
+            get { return jazda; }
+            set { jazda = value; }
+        }
+        int predkoscMax;
+        public int PredkoscMax
+        {
+            get { return predkoscMax; }
+            set { predkoscMax = value; }
+        }
+        public RysujWozek()
+        {
             
-            g.FillRectangle(pioro1, x, 20, 460, 90);
-            g.DrawRectangle(pioro, x, 20, 460, 90);
+        }
+        
+        public RysujWozek(float x, int y, int vmax, string name)
+        {
+            Pozycja = y;
+            Jazda = x;
+            PredkoscMax = vmax;
+            Nazwa = name;
             
-
         }
-        public void Wozek2(Graphics g, float x)
+
+
+        public void Wozek(Graphics g)
         {
+            
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-
-            g.FillRectangle(pioro1, x, 110, 460, 90);
-            g.DrawRectangle(pioro, x, 110, 460, 90);
+            //rysuje wozek
+            g.FillRectangle(pioro1, jazda + 20, pozycja, 460, 90);
+            g.DrawRectangle(pioro, jazda + 20, pozycja, 460, 90);
+            //napis
+            g.DrawString(Nazwa.ToString(), textFont, KolorLiczby, jazda+20 , pozycja);
 
 
         }
-        public void Wozek3(Graphics g, float x)
+        public void WozekJazda(Graphics g, float x)
         {
+            Jazda = x;
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-
-            g.FillRectangle(pioro1, x, 200, 460, 90);
-            g.DrawRectangle(pioro, x, 200, 460, 90);
+            //rysuje wozek
+            g.FillRectangle(pioro1, jazda+20, pozycja, 460, 90);
+            g.DrawRectangle(pioro, jazda+20, pozycja, 460, 90);
+            //napis
+            g.DrawString(Nazwa.ToString(), textFont, KolorLiczby, jazda, pozycja);
 
 
         }
-        public void Wozek4(Graphics g, float x)
-        {
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-
-            g.FillRectangle(pioro1, x, 290, 460, 90);
-            g.DrawRectangle(pioro, x, 290, 460, 90);
-
-
-        }
-        public void Zascenie(Graphics g)
+        
+        public void Scena(Graphics g)
         {
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
             g.FillRectangle(pioro3, 20, 20, 460, 360);
-            //g.DrawRectangle(pioroLinia, 20, 20, 460, 360);
-
-
-        }
-        public void Scena(Graphics g)
-        {
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            g.DrawRectangle(pioro, 20, 20, 460, 360);
+            g.DrawRectangle(pioro, 480, 20, 140, 360);
             g.DrawRectangle(pioro, 620, 20, 460, 360);
-
         }
+       
         public void Wypelnienie()
         {
             wyp.Wypelnienie(this);
 
+        }
+        public void WozekPokaz()
+        {
+            w.WozekTworz(this);
         }
     }
 }

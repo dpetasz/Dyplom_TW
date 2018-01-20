@@ -44,8 +44,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BD_TW\AktualizujAkt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BD_TW\AktualizujAkt.Designer.cs">
+      <DependentUpon>AktualizujAkt.cs</DependentUpon>
+    </Compile>
     <Compile Include="BD_TW\IZapiszAkt.cs" />
-    <Compile Include="BD_TW\PokazBaza.cs" />
+    <Compile Include="BD_TW\PokazBaza.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BD_TW\Przedstawienia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BD_TW\Przedstawienia.Designer.cs">
+      <DependentUpon>Przedstawienia.cs</DependentUpon>
+    </Compile>
     <Compile Include="BD_TW\ZapiszAkt.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -78,6 +92,7 @@
     </Compile>
     <Compile Include="TWDataSet.cs">
       <DependentUpon>TWDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="TWDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -85,7 +100,15 @@
       <DependentUpon>TWDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="BD_TW\ZapiszBazaPrzedstawienie.cs" />
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wozki\IRysujWozek.cs" />
     <Compile Include="Wozki\RysujWozek.cs" />
+    <Compile Include="Wozki\StanWozek.cs" />
     <Compile Include="Wozki\StanWypWozki.cs" />
     <Compile Include="Wozki\WozkiForm.cs">
       <SubType>Form</SubType>
@@ -93,6 +116,12 @@
     <Compile Include="Wozki\WozkiForm.Designer.cs">
       <DependentUpon>WozkiForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BD_TW\AktualizujAkt.resx">
+      <DependentUpon>AktualizujAkt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BD_TW\Przedstawienia.resx">
+      <DependentUpon>Przedstawienia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

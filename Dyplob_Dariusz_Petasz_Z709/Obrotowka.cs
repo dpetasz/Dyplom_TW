@@ -16,6 +16,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
 {
     public partial class Obrotowka : Form
     {
+        Form1 f1 = new Form1();
         RysujTarcza tarcza = new RysujTarcza();
         Graphics g;
         StanWypelnienie stanWyp = new Wypelnienie1();
@@ -34,6 +35,16 @@ namespace Dyplom_Dariusz_Petasz_Z709
             textBoxPozycjaObrotowka.Text = pozycja.ToString();
             
         }
+        public Obrotowka(Form1 f)
+        {
+            InitializeComponent();
+            f1 = f;
+            predkosc = trackBarPredkoscObrotowka.Value;
+            textBoxPredkoscObrotowka.Text = trackBarPredkoscObrotowka.Value.ToString();
+            pozycja = jazda.PozycjaObrotowka();
+            textBoxPozycjaObrotowka.Text = pozycja.ToString();
+
+        }
 
         private void pictureBoxTarcza_Paint(object sender, PaintEventArgs e)
         {
@@ -48,6 +59,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
         private void buttonDodajBaza_Click(object sender, EventArgs e)
         {
             Form_BazaDanych formBazaDanych = new Form_BazaDanych();
+            //formBazaDanych.MdiParent = this;
             formBazaDanych.Show();
         }
 
@@ -118,6 +130,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
         private void buttonOpisPrzedstawienie_Click(object sender, EventArgs e)
         {
+            richTextBoxOpis.Clear();
             richTextBoxOpis.Text = ((this.pokazPrzedstawienieBindingSource.Current as DataRowView).Row as TWDataSet.pokazPrzedstawienieRow).opis;
             
         }
@@ -187,6 +200,8 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
             buttonJazdaProgramowa.BackColor = Color.LightSteelBlue;
             buttonJazdaProgramowa.Enabled = true;
+
+            panelBazaDanych.Enabled = false;
         }
         void jazdaProgramowa()
         {
@@ -198,6 +213,8 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
             buttonJazdaProgramowa.BackColor = Color.Maroon;
             buttonJazdaProgramowa.Enabled = false;
+
+            panelBazaDanych.Enabled = true;
         }
         void jazdaTechniczna()
         {
@@ -209,6 +226,8 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
             buttonJazdaProgramowa.BackColor = Color.LightSteelBlue;
             buttonJazdaProgramowa.Enabled = true;
+
+            panelBazaDanych.Enabled = false;
         }
 
         private void buttonJazdaTechniczna_Click(object sender, EventArgs e)
@@ -220,6 +239,19 @@ namespace Dyplom_Dariusz_Petasz_Z709
         {
             jazdaProgramowa();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            richTextBoxOpis.Clear();
+            richTextBoxOpis.Text = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).opis;
+        }
+
+        private void Obrotowka_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            f1.Visible = true;
+        }
+
+        
 
         
     }

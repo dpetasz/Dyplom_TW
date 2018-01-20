@@ -20,7 +20,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             x.Pioro1 = new SolidBrush(Color.SkyBlue);
             x.Pioro2 = new SolidBrush(Color.HotPink);
             x.Pioro3 = new SolidBrush(Color.Green);
-            x.TextFont = new Font("Century", 12F, FontStyle.Bold);
+            x.TextFont = new Font("Century", 18F, FontStyle.Bold);
             x.KolorLiczby = new SolidBrush(Color.FromArgb(10, 10, 10));
             x.Pioro = new Pen(Color.Gray);
         }
@@ -34,7 +34,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             x.Pioro1 = new SolidBrush(Color.Olive);
             x.Pioro2 = new SolidBrush(Color.HotPink);
             x.Pioro3 = new SolidBrush(Color.Green);
-            x.TextFont = new Font("Century", 12F, FontStyle.Bold);
+            x.TextFont = new Font("Century", 18F, FontStyle.Bold);
             x.KolorLiczby = new SolidBrush(Color.FromArgb(10, 10, 10));
             x.Pioro = new Pen(Color.Gray);
         }

@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bazaDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ekranToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBoxPredkoscObrotowka = new System.Windows.Forms.TextBox();
             this.textBoxPozycjaZadanaObrotowka = new System.Windows.Forms.TextBox();
@@ -86,7 +82,11 @@
             this.pokazAktTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazAktTableAdapter();
             this.pokazAktBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pokazFxObrotowkaTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFxObrotowkaTableAdapter();
-            this.menuStrip1.SuspendLayout();
+            this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bazaDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ekranToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel2.SuspendLayout();
             this.panelSterowanie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPredkoscObrotowka)).BeginInit();
@@ -99,45 +99,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTarcza)).BeginInit();
             this.panelDodajAkt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(12)))));
-            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.plikToolStripMenuItem,
-            this.bazaDanychToolStripMenuItem,
-            this.ekranToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(1008, 25);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // plikToolStripMenuItem
-            // 
-            this.plikToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(12)))));
-            this.plikToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.plikToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
-            this.plikToolStripMenuItem.Size = new System.Drawing.Size(42, 21);
-            this.plikToolStripMenuItem.Text = "Plik";
-            // 
-            // bazaDanychToolStripMenuItem
-            // 
-            this.bazaDanychToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bazaDanychToolStripMenuItem.Name = "bazaDanychToolStripMenuItem";
-            this.bazaDanychToolStripMenuItem.Size = new System.Drawing.Size(96, 21);
-            this.bazaDanychToolStripMenuItem.Text = "Baza danych";
-            // 
-            // ekranToolStripMenuItem
-            // 
-            this.ekranToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ekranToolStripMenuItem.Name = "ekranToolStripMenuItem";
-            this.ekranToolStripMenuItem.Size = new System.Drawing.Size(55, 21);
-            this.ekranToolStripMenuItem.Text = "Ekran";
             // 
             // panel2
             // 
@@ -467,6 +430,7 @@
             this.button4.TabIndex = 14;
             this.button4.Text = "Opis";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -714,6 +678,53 @@
             // 
             this.pokazFxObrotowkaTableAdapter.ClearBeforeFill = true;
             // 
+            // plikToolStripMenuItem
+            // 
+            this.plikToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(12)))));
+            this.plikToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.plikToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.zamknijToolStripMenuItem});
+            this.plikToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
+            this.plikToolStripMenuItem.Size = new System.Drawing.Size(42, 21);
+            this.plikToolStripMenuItem.Text = "Plik";
+            // 
+            // zamknijToolStripMenuItem
+            // 
+            this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
+            this.zamknijToolStripMenuItem.ShowShortcutKeys = false;
+            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.zamknijToolStripMenuItem.Text = "Zamknij";
+            // 
+            // bazaDanychToolStripMenuItem
+            // 
+            this.bazaDanychToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.bazaDanychToolStripMenuItem.Name = "bazaDanychToolStripMenuItem";
+            this.bazaDanychToolStripMenuItem.Size = new System.Drawing.Size(96, 21);
+            this.bazaDanychToolStripMenuItem.Text = "Baza danych";
+            // 
+            // ekranToolStripMenuItem
+            // 
+            this.ekranToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ekranToolStripMenuItem.Name = "ekranToolStripMenuItem";
+            this.ekranToolStripMenuItem.Size = new System.Drawing.Size(55, 21);
+            this.ekranToolStripMenuItem.Text = "Ekran";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(12)))));
+            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.plikToolStripMenuItem,
+            this.bazaDanychToolStripMenuItem,
+            this.ekranToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStrip1.Size = new System.Drawing.Size(1008, 25);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
             // Obrotowka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -728,10 +739,10 @@
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.Name = "Obrotowka";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Obrotowka";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Obrotowka_FormClosing);
             this.Load += new System.EventHandler(this.Obrotowka_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelSterowanie.ResumeLayout(false);
@@ -748,6 +759,8 @@
             this.panelDodajAkt.ResumeLayout(false);
             this.panelDodajAkt.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -755,10 +768,6 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bazaDanychToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ekranToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBoxPredkoscObrotowka;
         private System.Windows.Forms.TextBox textBoxPozycjaZadanaObrotowka;
@@ -812,5 +821,10 @@
         private System.Windows.Forms.BindingSource pokazAktBindingSource1;
         private System.Windows.Forms.BindingSource pokazFxObrotowkaBindingSource;
         private TWDataSetTableAdapters.pokazFxObrotowkaTableAdapter pokazFxObrotowkaTableAdapter;
+        private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zamknijToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bazaDanychToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ekranToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }

@@ -865,7 +865,7 @@
             this.panelKompozytor.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pokazNowyRezBindingSource)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.pokazNowyRezBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

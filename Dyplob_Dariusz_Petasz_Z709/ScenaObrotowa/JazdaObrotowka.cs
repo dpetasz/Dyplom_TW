@@ -11,8 +11,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
     public class JazdaObrotowka: IJazdaObrotowka
     {
         private float o = 0f;
-        string plik = @"C:\Users\Darek\Desktop\Dyplom\Dyplom_TW\Dyplob_Dariusz_Petasz_Z709\Resources\Pozycja_Obrotowka.txt
-";
+        string plik = @"C:\GitHub\Dyplom\Dyplom_TW\Dyplob_Dariusz_Petasz_Z709\Resources\Pozycja_Obrotowka.txt";
         public float PozycjaObrotowka()
         {
             try

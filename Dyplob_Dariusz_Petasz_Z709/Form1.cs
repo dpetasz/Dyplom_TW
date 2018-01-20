@@ -76,7 +76,8 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
         private void buttonObrotowka_Click(object sender, EventArgs e)
         {
-            Obrotowka obrotowka = new Obrotowka();
+            Obrotowka obrotowka = new Obrotowka(this);
+            this.Visible = false;
             obrotowka.Show();
         }
 
@@ -93,7 +94,8 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
         private void buttonWozki_Click(object sender, EventArgs e)
         {
-            WozkiForm wozki = new WozkiForm();
+            WozkiForm wozki = new WozkiForm(this);
+            this.Visible = false;
             wozki.Show();
         }
     }
