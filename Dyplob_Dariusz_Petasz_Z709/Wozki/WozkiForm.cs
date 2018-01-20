@@ -19,12 +19,13 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         Graphics g;
         StanWypWozki stanWyp = new Wypelnienie1();
         //StanWozek stanWozek;
-        float jazda = 20.00f;
-        float Jazda
+        List<float> jazda = new List<float>();
+        List<bool> aktywacja = new List<bool>();
+        /*float Jazda
         {
             get { return jazda; }
             set { jazda = value; }
-        }
+        }*/
         Przedstawienia przedstawienia = new Przedstawienia();
         public WozkiForm()
         {
@@ -40,20 +41,32 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         }
         public void LadujWozek()
         {
-            int wys = 290;
-            foreach (DataRow w in tWDataSet.pokazWozki.Rows)
+            if (RysujWozek.ListaJest == null)
             {
+                int wys = 290;
+                int i = 0;
+                foreach (DataRow w in tWDataSet.pokazWozki.Rows)
+                {
+
+                    float p = (float)(Convert.ToDouble(w["pozycja"].ToString()));
+                    jazda.Add(p);
+                    RysujWozek.ListaAktywuj.Add(false);
+                    RysujWozek.ListaJest.Add(true);
+                    RysujWozek.ListaJazda.Add(jazda[i]);
 
 
-                Jazda = (float)(Convert.ToDouble(w["pozycja"].ToString()));
-                RysujWozek wozek = new RysujWozek(jazda,
-                                                    wys,
-                                                    Convert.ToInt32(w["predkosc_max"].ToString()),
-                                                    w["nazwa"].ToString());
-                RysujWozek.ListaWozek.Add(wozek);
-                /*stanWyp.Wypelnienie(wozek);
-                wozek.Wozek(g);*/
-                wys -= 90;
+                    RysujWozek wozek = new RysujWozek(jazda[i],
+                                                        wys,
+                                                        Convert.ToInt32(w["predkosc_max"].ToString()),
+                                                        w["nazwa"].ToString());
+                    RysujWozek.ListaWozek.Add(wozek);
+
+
+
+
+                    i++;
+                    wys -= 90;
+                }
             }
         }
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
@@ -63,42 +76,47 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             scena = new RysujWozek();
             stanWyp.Wypelnienie(scena);
             scena.Scena(g);
-
-            foreach(RysujWozek w in RysujWozek.ListaWozek)
+            int i = 0;
+            if (RysujWozek.ListaJest == null)
             {
-                stanWyp.Wypelnienie(w);
-                w.Wozek(g);
+                foreach (RysujWozek w in RysujWozek.ListaWozek)
+                {
+                    stanWyp.Wypelnienie(w);
+                    w.WozekJazda(g, jazda[i]);
+                    i++;
+                }
             }
-            
-            
-            //scena.Scena(g);
+            foreach (RysujWozek w in RysujWozek.ListaWozek)
+            {
+                if (w.Aktywacja == true && w.Jest == true)
+                {
+                    stanWyp.Wypelnienie(w);
+                    w.WozekJazda(g, jazda[i]);
+                }
 
-            /*tmp.Wozek1(g, x1);
-            tmp.Wozek2(g, x2);
-            tmp.Wozek3(g, x3);
-            tmp.Wozek4(g, x4);
-            stanWozek = new Wozek1();
-            stanWozek.WozekTworz(tmp);
-            tmp.Wozek(g, x1);
-            */
 
+
+                i++;
+            }
         }
         private void pictureBox1_LoadCompleted(object sender, AsyncCompletedEventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Jazda += 0.55f;
-
+            jazda[0] += 0.455f;
+            jazda[1] += 0.155f;
+            jazda[2] += 0.455f;
+            jazda[3] += 0.155f;
             pictureBox1.Invalidate();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Jazda -= 0.55f;
-
+            jazda[0] -= 0.55f;
+            jazda[1] -= 0.155f;
             pictureBox1.Invalidate();
         }
 
@@ -120,10 +138,69 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             f1.Visible = true;
         }
 
-        
+        private void buttonAktywujW1_Click(object sender, EventArgs e)
+        {
+            if (RysujWozek.ListaAktywuj[0] == false)
+            {
+                RysujWozek.ListaAktywuj[0] = true;
+                buttonAktywujW1.BackColor = Color.Red;
+                buttonAktywujW1.Text = "Aktywny W1";
+            }
+            else
+            {
+                RysujWozek.ListaAktywuj[0] = false;
+                buttonAktywujW1.BackColor = Color.LawnGreen;
+                buttonAktywujW1.Text = "Atywuj W1";
+            }
 
+        }
 
+        private void buttonAktywujW2_Click(object sender, EventArgs e)
+        {
+            if (RysujWozek.ListaAktywuj[1] == false)
+            {
+                RysujWozek.ListaAktywuj[1] = true;
+                buttonAktywujW2.BackColor = Color.Red;
+                buttonAktywujW2.Text = "Aktywny W2";
+            }
+            else
+            {
+                RysujWozek.ListaAktywuj[1] = false;
+                buttonAktywujW2.BackColor = Color.LawnGreen;
+                buttonAktywujW2.Text = "Atywuj W2";
+            }
+        }
 
+        private void buttonAktywuj3_Click(object sender, EventArgs e)
+        {
+            if (RysujWozek.ListaAktywuj[2] == false)
+            {
+                RysujWozek.ListaAktywuj[2] = true;
+                buttonAktywujW3.BackColor = Color.Red;
+                buttonAktywujW3.Text = "Aktywny W3";
+            }
+            else
+            {
+                RysujWozek.ListaAktywuj[2] = false;
+                buttonAktywujW3.BackColor = Color.LawnGreen;
+                buttonAktywujW3.Text = "Atywuj W3";
+            }
+        }
 
+        private void buttonAktywujW4_Click(object sender, EventArgs e)
+        {
+            if (RysujWozek.ListaAktywuj[3] == false)
+            {
+                RysujWozek.ListaAktywuj[3] = true;
+                buttonAktywujW4.BackColor = Color.Red;
+                buttonAktywujW4.Text = "Aktywny W4";
+            }
+            else
+            {
+                RysujWozek.ListaAktywuj[3] = false;
+                buttonAktywujW4.BackColor = Color.LawnGreen;
+                buttonAktywujW4.Text = "Atywuj W4";
+            }
+        }
     }
 }

@@ -9,8 +9,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 {
     public class RysujWozek 
     {
+        static public List<float> ListaJazda = new List<float>();
         static public List<RysujWozek> ListaWozek = new List<RysujWozek>();
-        
+        static public List<bool> ListaAktywuj = new List<bool>();
+        static public List<bool> ListaJest = new List<bool>();
         StanWypWozki wyp = new Wypelnienie1();
 
         StanWozek w = new Wozek1();
@@ -104,7 +106,18 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             get { return nazwa; }
             set { nazwa = value; }
         }
-
+        bool jest;
+        public bool Jest
+        {
+            get { return jest; }
+            set { jest = value; }
+        }
+        bool aktywacja;
+        public bool Aktywacja
+        {
+            get { return aktywacja; }
+            set { aktywacja = value; }
+        }
         int pozycja;
         public int Pozycja
         {
@@ -158,7 +171,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             g.FillRectangle(pioro1, jazda+20, pozycja, 460, 90);
             g.DrawRectangle(pioro, jazda+20, pozycja, 460, 90);
             //napis
-            g.DrawString(Nazwa.ToString(), textFont, KolorLiczby, jazda, pozycja);
+            g.DrawString(Nazwa.ToString(), textFont, KolorLiczby, jazda+180, pozycja+30);
 
 
         }
