@@ -9,11 +9,11 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 {
     abstract class StanWypWozki
     {
-        public abstract void Wypelnienie(RysujWozek x);
+        public abstract void Wypelnienie(Wozek x);
     }
     class Wypelnienie1 : StanWypWozki
     {
-        public override void Wypelnienie(RysujWozek x)
+        public override void Wypelnienie(Wozek x)
         {
             x.PioroLinia = new Pen(Color.Black);
             
@@ -27,7 +27,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
     }
     class WypelnienieJazdaWozek : StanWypWozki
     {
-        public override void Wypelnienie(RysujWozek x)
+        public override void Wypelnienie(Wozek x)
         {
             x.PioroLinia = new Pen(Color.Black);
             

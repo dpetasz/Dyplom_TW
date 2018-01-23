@@ -1,17 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 {
-    public class RysujWozek
+    public partial class Wozek : UserControl
     {
-
-        static public List<RysujWozek> ListaWozek = new List<RysujWozek>();
-
+        public Wozek()
+        {
+            InitializeComponent();
+        }
+        static public List<Wozek> ListaWozek = new List<Wozek>();
+        Graphics g;
 
         StanWypWozki wyp = new Wypelnienie1();
 
@@ -119,12 +125,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             get { return aktywacja; }
             set { aktywacja = value; }
         }
-        int pozycja;
-        public int Pozycja
-        {
-            get { return pozycja; }
-            set { pozycja = value; }
-        }
+
         int przychamowanie;
         public int Przychamowanie
         {
@@ -144,19 +145,25 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             set { predkoscMax = value; }
         }
         int predkosc;
+
+        private void Wozek_Paint(object sender, PaintEventArgs e)
+        {
+            g = e.Graphics;
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            Wypelnienie();
+            Scena(g);
+            //WozekJazda(g, Jazda);
+        }
+
         public int Predkosc
         {
             get { return predkosc; }
             set { predkosc = value; }
         }
-        public RysujWozek()
+        public Wozek(float x, int vmax, string name)
         {
+            InitializeComponent();
 
-        }
-
-        public RysujWozek(float x, int p, int vmax, string name)
-        {
-            Pozycja = p;
             Jazda = x;
             PredkoscMax = vmax;
             Nazwa = name;
@@ -165,73 +172,31 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             Przychamowanie = 10;
             ListaWozek.Add(this);
         }
-
-
-        public void Wozek(Graphics g)
-        {
-
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            //rysuje wozek
-            g.FillRectangle(pioro1, jazda + 20, pozycja, 460, 90);
-            g.DrawRectangle(pioro, jazda + 20, pozycja, 460, 90);
-            //napis
-            g.DrawString(Nazwa.ToString(), textFont, KolorLiczby, jazda + 20, pozycja);
-
-
-        }
         public void WozekJazda(Graphics g, float x)
         {
             Jazda = x;
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             //rysuje wozek
-            g.FillRectangle(pioro1, jazda + 20, pozycja, 460, 90);
-            g.DrawRectangle(pioro, jazda + 20, pozycja, 460, 90);
+            g.FillRectangle(pioro1, jazda, 0, 460, 100);
+            g.DrawRectangle(pioro, jazda, 0, 460, 100);
             //napis
-            g.DrawString(Nazwa.ToString(), textFont, KolorLiczby, jazda + 180, pozycja + 30);
+            g.DrawString(Nazwa.ToString(), textFont, KolorLiczby, jazda + 180, 30);
 
 
         }
-
         public void Scena(Graphics g)
         {
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-            g.FillRectangle(pioro3, 20, 20, 460, 360);
-            g.DrawRectangle(pioro, 20, 20, 460, 360);
-            g.DrawRectangle(pioro, 480, 20, 140, 360);
-            g.DrawRectangle(pioro, 620, 20, 460, 360);
+            g.FillRectangle(pioro3, 0, 0, 460, 100);
+            g.DrawRectangle(pioro, 0, 0, 460, 100);
+            //g.DrawRectangle(pioro, 480, 20, 140, 360);
+            g.DrawRectangle(pioro, 600,0, 460, 100);
         }
-
-        public float ruch(bool kierunek, int v)
-        {
-            switch (kierunek)
-            {
-                case true:
-                    {
-                        this.Jazda += v * 0.002f;
-                        if (Math.Round(Jazda, 1) == 29) Jazda += 5 * 0.002f;
-                        if (Math.Round(Jazda, 1) == 30) break;
-                        break;
-                    }
-                case false:
-                    {
-                        this.Jazda -= v * 0.002f;
-                        if (Math.Round(Jazda, 1) == 1) Jazda -= 5 * 0.002f;
-                        if (Math.Round(Jazda, 1) == 0) break;
-                        break;
-                    }
-            }
-            return (float)Math.Round(Jazda, 1);
-
-        }
-        /*public void Wypelnienie()
+        public void Wypelnienie()
         {
             wyp.Wypelnienie(this);
 
-        }*/
-        public void WozekPokaz()
-        {
-            w.WozekTworz(this);
         }
     }
 }

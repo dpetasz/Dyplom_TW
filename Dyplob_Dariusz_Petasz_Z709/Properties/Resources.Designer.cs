@@ -63,6 +63,26 @@ namespace Dyplom_Dariusz_Petasz_Z709.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lewo {
+            get {
+                object obj = ResourceManager.GetObject("lewo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap prowo {
+            get {
+                object obj = ResourceManager.GetObject("prowo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TeatrWielki {
             get {
                 object obj = ResourceManager.GetObject("TeatrWielki", resourceCulture);

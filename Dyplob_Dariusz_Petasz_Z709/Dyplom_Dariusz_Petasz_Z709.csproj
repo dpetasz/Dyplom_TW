@@ -51,9 +51,7 @@
       <DependentUpon>AktualizujAkt.cs</DependentUpon>
     </Compile>
     <Compile Include="BD_TW\IZapiszAkt.cs" />
-    <Compile Include="BD_TW\PokazBaza.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="BD_TW\PokazBaza.cs" />
     <Compile Include="BD_TW\Przedstawienia.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -92,7 +90,6 @@
     </Compile>
     <Compile Include="TWDataSet.cs">
       <DependentUpon>TWDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="TWDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -110,6 +107,18 @@
     <Compile Include="Wozki\RysujWozek.cs" />
     <Compile Include="Wozki\StanWozek.cs" />
     <Compile Include="Wozki\StanWypWozki.cs" />
+    <Compile Include="Wozki\Wozek.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wozki\Wozek.Designer.cs">
+      <DependentUpon>Wozek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wozki\WozekControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wozki\WozekControl.Designer.cs">
+      <DependentUpon>WozekControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Wozki\WozkiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +150,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Wozki\Wozek.resx">
+      <DependentUpon>Wozek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wozki\WozekControl.resx">
+      <DependentUpon>WozekControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Wozki\WozkiForm.resx">
       <DependentUpon>WozkiForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,7 +187,9 @@
     <None Include="Resources\TeatrWielki.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\lewo.png" />
     <Content Include="Resources\Pozycja_Obrotowka.txt" />
+    <Content Include="Resources\prowo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
