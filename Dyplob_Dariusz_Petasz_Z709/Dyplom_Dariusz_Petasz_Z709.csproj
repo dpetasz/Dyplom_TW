@@ -111,19 +111,12 @@
     </Compile>
     <Compile Include="Wozki\IRysujWozek.cs" />
     <Compile Include="Wozki\RysujWozek.cs" />
-    <Compile Include="Wozki\StanWozek.cs" />
     <Compile Include="Wozki\StanWypWozki.cs" />
     <Compile Include="Wozki\Wozek.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Wozki\Wozek.Designer.cs">
       <DependentUpon>Wozek.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Wozki\WozekControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Wozki\WozekControl.Designer.cs">
-      <DependentUpon>WozekControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Wozki\WozkiForm.cs">
       <SubType>Form</SubType>
@@ -153,9 +146,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Wozki\Wozek.resx">
       <DependentUpon>Wozek.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Wozki\WozekControl.resx">
-      <DependentUpon>WozekControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Wozki\WozkiForm.resx">
       <DependentUpon>WozkiForm.cs</DependentUpon>

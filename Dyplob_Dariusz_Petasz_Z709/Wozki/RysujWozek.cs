@@ -15,7 +15,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
         StanWypWozki wyp = new Wypelnienie1();
 
-        StanWozek w = new Wozek1();
+        
 
         Pen pioroLinia, pioro;
         public Pen PioroLinia
@@ -231,7 +231,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         }*/
         public void WozekPokaz()
         {
-            w.WozekTworz(this);
+            //w.WozekTworz(this);
         }
     }
 }

@@ -21,8 +21,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
         StanWypWozki wyp = new Wypelnienie1();
 
-        StanWozek w = new Wozek1();
-
         Pen pioroLinia, pioro;
         public Pen PioroLinia
         {
@@ -165,7 +163,12 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
         }
 
+        public void Wypelnienie()
+        {
+            wyp.Wypelnienie(this);
 
+        }
+        
         public Wozek(float x, int vmax, string name, int idW)
         {
             InitializeComponent();
@@ -180,6 +183,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             ListaWozek.Add(this);
             LadujPrzyciski();
         }
+       
         public void WozekJazda(Graphics g, float x)
         {
             Jazda = x;
@@ -207,28 +211,25 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             textBoxPredkosc.Text = Predkosc.ToString();
             buttonAktywuj.Text = "Aktywuj W-" + Id;
             LadujAktywuj();
+            LadujKierunek();
         }
-        public void Wypelnienie()
-        {
-            wyp.Wypelnienie(this);
 
-        }
         void LadujAktywuj()
         {
             if (Aktywacja == true)
             {
-                
+
                 Red();
             }
             else
             {
-                
+
                 Green();
             }
         }
         void Green()
         {
-            
+
             buttonAktywuj.BackColor = Color.Green;
             buttonAktywuj.Text = "Aktywuj W-" + Id;
             this.wyp = new Wypelnienie1();
@@ -236,26 +237,69 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         }
         void Red()
         {
-            
+
             buttonAktywuj.BackColor = Color.Firebrick;
             buttonAktywuj.Text = "Aktywny W-" + Id;
             this.wyp = new WypelnienieJazdaWozek();
             Invalidate();
         }
 
+        void LadujKierunek()
+        {
+            if (Kierunek == false)
+            {
+                buttonLewo.BackColor = Color.Firebrick;
+                buttonPrawo.BackColor = Color.Green;
+            } else
+            {
+                buttonLewo.BackColor = Color.Green;
+                buttonPrawo.BackColor = Color.Firebrick;
+            }
+        }
+        
         private void buttonAktywuj_Click(object sender, EventArgs e)
         {
-            if(Aktywacja==false)
-            { Aktywacja = true;
+            if (Aktywacja == false)
+            {
+                Aktywacja = true;
                 LadujAktywuj();
-            }else
+            }
+            else
             {
                 Aktywacja = false;
                 LadujAktywuj();
             }
-            
 
-            
+
+
+        }
+
+        private void buttonLewo_Click(object sender, EventArgs e)
+        {
+            if (Kierunek == true)
+            {
+                Kierunek = false;
+                LadujKierunek();
+            }
+            else
+            {
+                Kierunek = true;
+                LadujKierunek();
+            }
+        }
+
+        private void buttonPrawo_Click(object sender, EventArgs e)
+        {
+            if (Kierunek == true)
+            {
+                Kierunek = false;
+                LadujKierunek();
+            }
+            else
+            {
+                Kierunek = true;
+                LadujKierunek();
+            }
         }
     }
 }

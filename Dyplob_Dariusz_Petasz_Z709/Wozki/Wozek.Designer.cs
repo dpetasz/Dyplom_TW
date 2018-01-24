@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panelPrzyciski = new System.Windows.Forms.Panel();
+            this.buttonPrawo = new System.Windows.Forms.Button();
+            this.buttonLewo = new System.Windows.Forms.Button();
             this.buttonAktywuj = new System.Windows.Forms.Button();
             this.textBoxPozycja = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,8 +38,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxPredkosc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonPrawo = new System.Windows.Forms.Button();
-            this.buttonLewo = new System.Windows.Forms.Button();
             this.panelPrzyciski.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +60,30 @@
             this.panelPrzyciski.Size = new System.Drawing.Size(300, 106);
             this.panelPrzyciski.TabIndex = 0;
             // 
+            // buttonPrawo
+            // 
+            this.buttonPrawo.BackColor = System.Drawing.Color.Green;
+            this.buttonPrawo.BackgroundImage = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.P;
+            this.buttonPrawo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonPrawo.Location = new System.Drawing.Point(83, 41);
+            this.buttonPrawo.Name = "buttonPrawo";
+            this.buttonPrawo.Size = new System.Drawing.Size(62, 52);
+            this.buttonPrawo.TabIndex = 19;
+            this.buttonPrawo.UseVisualStyleBackColor = false;
+            this.buttonPrawo.Click += new System.EventHandler(this.buttonPrawo_Click);
+            // 
+            // buttonLewo
+            // 
+            this.buttonLewo.BackColor = System.Drawing.Color.Green;
+            this.buttonLewo.BackgroundImage = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.L;
+            this.buttonLewo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonLewo.Location = new System.Drawing.Point(4, 41);
+            this.buttonLewo.Name = "buttonLewo";
+            this.buttonLewo.Size = new System.Drawing.Size(62, 52);
+            this.buttonLewo.TabIndex = 18;
+            this.buttonLewo.UseVisualStyleBackColor = false;
+            this.buttonLewo.Click += new System.EventHandler(this.buttonLewo_Click);
+            // 
             // buttonAktywuj
             // 
             this.buttonAktywuj.BackColor = System.Drawing.Color.Green;
@@ -77,6 +101,7 @@
             this.textBoxPozycja.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxPozycja.Location = new System.Drawing.Point(192, 67);
             this.textBoxPozycja.Name = "textBoxPozycja";
+            this.textBoxPozycja.ReadOnly = true;
             this.textBoxPozycja.Size = new System.Drawing.Size(100, 26);
             this.textBoxPozycja.TabIndex = 16;
             // 
@@ -126,36 +151,13 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "V";
             // 
-            // buttonPrawo
-            // 
-            this.buttonPrawo.BackColor = System.Drawing.Color.Green;
-            this.buttonPrawo.BackgroundImage = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.P;
-            this.buttonPrawo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonPrawo.Location = new System.Drawing.Point(83, 41);
-            this.buttonPrawo.Name = "buttonPrawo";
-            this.buttonPrawo.Size = new System.Drawing.Size(62, 52);
-            this.buttonPrawo.TabIndex = 19;
-            this.buttonPrawo.Text = "button3";
-            this.buttonPrawo.UseVisualStyleBackColor = false;
-            // 
-            // buttonLewo
-            // 
-            this.buttonLewo.BackColor = System.Drawing.Color.Green;
-            this.buttonLewo.BackgroundImage = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.L;
-            this.buttonLewo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonLewo.Location = new System.Drawing.Point(4, 41);
-            this.buttonLewo.Name = "buttonLewo";
-            this.buttonLewo.Size = new System.Drawing.Size(62, 52);
-            this.buttonLewo.TabIndex = 18;
-            this.buttonLewo.Text = "button2";
-            this.buttonLewo.UseVisualStyleBackColor = false;
-            // 
             // Wozek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.Controls.Add(this.panelPrzyciski);
+            this.DoubleBuffered = true;
             this.Name = "Wozek";
             this.Size = new System.Drawing.Size(1400, 106);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Wozek_Paint);
