@@ -43,7 +43,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         public void LadujWozek()
         {
 
-            int wys = 290;
+            int wys = 328;
 
             foreach (DataRow w in tWDataSet.pokazWozki.Rows)
             {
@@ -52,12 +52,12 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                 //aktywacja.Add(false);
                 //kierunek.Add(false);
                 //RysujWozek wozek = new RysujWozek(p,wys, Convert.ToInt32(w["predkosc_max"].ToString()), w["nazwa"].ToString());
-                Wozek wozek = new Wozek(p, Convert.ToInt32(w["predkosc_max"].ToString()), w["nazwa"].ToString());
+                Wozek wozek = new Wozek(p, Convert.ToInt32(w["predkosc_max"].ToString()), w["nazwa"].ToString(), (Convert.ToInt32(w["idwozek"].ToString())));
                 //RysujWozek.ListaWozek.Add(wozek);
                 wozek.Parent = pictureBox1;
-                wozek.Top = 0;
-                wozek.Left = 0;
-                wys -= 90;
+                wozek.Top = wys;
+                wozek.Left = 10;
+                wys -= 106;
             }
         }
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
@@ -122,7 +122,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             f1.Visible = true;
         }
 
-        private void buttonAktywujW1_Click(object sender, EventArgs e)
+        /*private void buttonAktywujW1_Click(object sender, EventArgs e)
         {
             if (RysujWozek.ListaWozek[0].Aktywacja == false)
             {
@@ -185,7 +185,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                 buttonAktywujW4.BackColor = Color.LawnGreen;
                 buttonAktywujW4.Text = "Atywuj W4";
             }
-        }
+        }*/
 
         private void timer1_Tick(object sender, EventArgs e)
         {

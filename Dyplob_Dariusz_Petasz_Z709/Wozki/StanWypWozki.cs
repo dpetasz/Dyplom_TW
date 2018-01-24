@@ -31,7 +31,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         {
             x.PioroLinia = new Pen(Color.Black);
             
-            x.Pioro1 = new SolidBrush(Color.Olive);
+            x.Pioro1 = new SolidBrush(Color.Firebrick);
             x.Pioro2 = new SolidBrush(Color.HotPink);
             x.Pioro3 = new SolidBrush(Color.Green);
             x.TextFont = new Font("Century", 18F, FontStyle.Bold);

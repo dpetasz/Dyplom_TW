@@ -63,9 +63,9 @@ namespace Dyplom_Dariusz_Petasz_Z709.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lewo {
+        internal static System.Drawing.Bitmap L {
             get {
-                object obj = ResourceManager.GetObject("lewo", resourceCulture);
+                object obj = ResourceManager.GetObject("L", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,29 @@ namespace Dyplom_Dariusz_Petasz_Z709.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap prowo {
+        internal static System.Drawing.Bitmap lewo1 {
             get {
-                object obj = ResourceManager.GetObject("prowo", resourceCulture);
+                object obj = ResourceManager.GetObject("lewo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap P {
+            get {
+                object obj = ResourceManager.GetObject("P", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap prowo1 {
+            get {
+                object obj = ResourceManager.GetObject("prowo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
