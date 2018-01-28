@@ -248,12 +248,16 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         {
             if (Kierunek == false)
             {
-                buttonLewo.BackColor = Color.Firebrick;
+                buttonLewo.BackColor = Color.Maroon;
                 buttonPrawo.BackColor = Color.Green;
+                buttonLewo.Enabled = false;
+                buttonPrawo.Enabled = true;
             } else
             {
                 buttonLewo.BackColor = Color.Green;
-                buttonPrawo.BackColor = Color.Firebrick;
+                buttonPrawo.BackColor = Color.Maroon;
+                buttonPrawo.Enabled = false;
+                buttonLewo.Enabled = true;
             }
         }
         

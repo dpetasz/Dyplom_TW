@@ -1,4 +1,5 @@
 ﻿using Dyplom_Dariusz_Petasz_Z709.Wozki;
+using Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,11 +37,12 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
                 
             }
+            
             // TODO: This line of code loads data into the 'tWDataSet.pokazLogin' table. You can move, or remove it, as needed.
 
         }
 
-        private void buttonWejscie_Click(object sender, EventArgs e)
+       private void buttonWejscie_Click(object sender, EventArgs e)
         {
             string kom = "";
             proceduryDB.logowanie(comboBoxLogin.Text, textBoxPassword.Text, ref kom);
@@ -76,9 +78,16 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
         private void buttonObrotowka_Click(object sender, EventArgs e)
         {
-            Obrotowka obrotowka = new Obrotowka(this);
+           /* ObrotowkaPanel obrotowka = new ObrotowkaPanel();
+            obrotowka.Parent = panel_Glowny;*/
+            pictureBox1.Visible = false;
+            panelPrzyciski.Visible = false;
+            ObrotowkaPanel O = new ObrotowkaPanel();
+            O.Parent = panel_Glowny;
+            /*Obrotowka obrotowka = new Obrotowka(this);
             this.Visible = false;
-            obrotowka.Show();
+            obrotowka.Show();*/
+            //obrotowka.Parent = Form1.ActiveForm;
         }
 
         private void dodajPrzedstawienieToolStripMenuItem_Click(object sender, EventArgs e)

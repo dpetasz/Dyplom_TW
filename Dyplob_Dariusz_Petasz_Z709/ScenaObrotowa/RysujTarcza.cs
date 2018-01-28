@@ -73,7 +73,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
         }
         public void Wypelnienie()
         {
-            stanWyp.Wypelnienie(this);
+            //stanWyp.Wypelnienie(this);
 
         }
         

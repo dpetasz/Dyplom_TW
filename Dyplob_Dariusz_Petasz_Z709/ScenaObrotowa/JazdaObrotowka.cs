@@ -10,7 +10,12 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 {
     public class JazdaObrotowka: IJazdaObrotowka
     {
-        private float o = 0f;
+        float obrot;
+        float Obrot
+        {
+            get { return obrot; }
+            set { obrot = value; }
+        }
         string plik = @"C:\GitHub\Dyplom_TW\Dyplob_Dariusz_Petasz_Z709\Resources\Pozycja_Obrotowka.txt";
         public float PozycjaObrotowka()
         {
@@ -23,12 +28,12 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
                 string txt = sr.ReadToEnd();
                 sr.Close();
                 fs.Close();
-                this.o = float.Parse(txt);
+                this.Obrot = float.Parse(txt);
                 
 
             }
-            catch { o = 0;  }
-            return o;
+            catch { Obrot = 0; }
+            return Obrot;
 
         }
         public void ZapisPozycja(float x)
@@ -53,18 +58,18 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             {
                 case 1:
                     {
-                        this.o += v * 0.001f;
-                        if (Math.Round(o, 1) == 360) o = 0;
+                        this.Obrot += v * 0.001f;
+                        if (Math.Round(Obrot, 1) == 360) Obrot = 0;
                         break;
                     }
                 case 0:
                     {
-                        this.o -= v * 0.001f;
-                        if (Math.Round(o, 1) == 0) o = 360;
+                        this.Obrot -= v * 0.001f;
+                        if (Math.Round(Obrot, 1) == 0) Obrot = 360;
                         break;
                     }
             }
-            return (float)Math.Round(o, 1);
+            return (float)Math.Round(Obrot, 1);
 
         }
     }

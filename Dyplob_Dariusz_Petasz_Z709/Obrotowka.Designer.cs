@@ -356,9 +356,9 @@
             this.panelBazaDanych.Controls.Add(this.label2);
             this.panelBazaDanych.Controls.Add(this.label1);
             this.panelBazaDanych.Enabled = false;
-            this.panelBazaDanych.Location = new System.Drawing.Point(23, 693);
+            this.panelBazaDanych.Location = new System.Drawing.Point(1004, 40);
             this.panelBazaDanych.Name = "panelBazaDanych";
-            this.panelBazaDanych.Size = new System.Drawing.Size(957, 171);
+            this.panelBazaDanych.Size = new System.Drawing.Size(334, 484);
             this.panelBazaDanych.TabIndex = 7;
             // 
             // button7
@@ -366,7 +366,7 @@
             this.button7.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button7.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.button7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button7.Location = new System.Drawing.Point(463, 123);
+            this.button7.Location = new System.Drawing.Point(129, 224);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(82, 32);
             this.button7.TabIndex = 19;
@@ -378,7 +378,7 @@
             this.button8.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button8.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.button8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button8.Location = new System.Drawing.Point(576, 123);
+            this.button8.Location = new System.Drawing.Point(229, 224);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(88, 32);
             this.button8.TabIndex = 18;
@@ -390,7 +390,7 @@
             this.buttonDodajFxObrotowka.BackColor = System.Drawing.Color.LightSteelBlue;
             this.buttonDodajFxObrotowka.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.buttonDodajFxObrotowka.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonDodajFxObrotowka.Location = new System.Drawing.Point(351, 123);
+            this.buttonDodajFxObrotowka.Location = new System.Drawing.Point(42, 224);
             this.buttonDodajFxObrotowka.Name = "buttonDodajFxObrotowka";
             this.buttonDodajFxObrotowka.Size = new System.Drawing.Size(81, 32);
             this.buttonDodajFxObrotowka.TabIndex = 17;
@@ -403,7 +403,7 @@
             this.comboBox3.DisplayMember = "nazwa";
             this.comboBox3.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(126, 127);
+            this.comboBox3.Location = new System.Drawing.Point(113, 178);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(203, 27);
             this.comboBox3.TabIndex = 16;
@@ -424,7 +424,7 @@
             this.button4.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button4.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.button4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button4.Location = new System.Drawing.Point(463, 69);
+            this.button4.Location = new System.Drawing.Point(129, 124);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(82, 32);
             this.button4.TabIndex = 14;
@@ -437,7 +437,7 @@
             this.button5.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button5.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.button5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button5.Location = new System.Drawing.Point(576, 69);
+            this.button5.Location = new System.Drawing.Point(228, 124);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(88, 32);
             this.button5.TabIndex = 13;
@@ -449,7 +449,7 @@
             this.buttonDodajAkt.BackColor = System.Drawing.Color.LightSteelBlue;
             this.buttonDodajAkt.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.buttonDodajAkt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonDodajAkt.Location = new System.Drawing.Point(351, 69);
+            this.buttonDodajAkt.Location = new System.Drawing.Point(42, 124);
             this.buttonDodajAkt.Name = "buttonDodajAkt";
             this.buttonDodajAkt.Size = new System.Drawing.Size(81, 32);
             this.buttonDodajAkt.TabIndex = 12;
@@ -462,7 +462,7 @@
             this.buttonOpisPrzedstawienie.BackColor = System.Drawing.Color.LightSteelBlue;
             this.buttonOpisPrzedstawienie.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.buttonOpisPrzedstawienie.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonOpisPrzedstawienie.Location = new System.Drawing.Point(463, 15);
+            this.buttonOpisPrzedstawienie.Location = new System.Drawing.Point(235, 43);
             this.buttonOpisPrzedstawienie.Name = "buttonOpisPrzedstawienie";
             this.buttonOpisPrzedstawienie.Size = new System.Drawing.Size(82, 32);
             this.buttonOpisPrzedstawienie.TabIndex = 11;
@@ -475,7 +475,7 @@
             this.buttonDodajBaza.BackColor = System.Drawing.Color.LightSteelBlue;
             this.buttonDodajBaza.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.buttonDodajBaza.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonDodajBaza.Location = new System.Drawing.Point(351, 15);
+            this.buttonDodajBaza.Location = new System.Drawing.Point(123, 43);
             this.buttonDodajBaza.Name = "buttonDodajBaza";
             this.buttonDodajBaza.Size = new System.Drawing.Size(81, 32);
             this.buttonDodajBaza.TabIndex = 9;
@@ -485,7 +485,7 @@
             // 
             // richTextBoxOpis
             // 
-            this.richTextBoxOpis.Location = new System.Drawing.Point(726, 15);
+            this.richTextBoxOpis.Location = new System.Drawing.Point(105, 276);
             this.richTextBoxOpis.Name = "richTextBoxOpis";
             this.richTextBoxOpis.Size = new System.Drawing.Size(211, 140);
             this.richTextBoxOpis.TabIndex = 8;
@@ -497,7 +497,7 @@
             this.comboBox2.DisplayMember = "nazwa";
             this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(126, 73);
+            this.comboBox2.Location = new System.Drawing.Point(113, 91);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(203, 27);
             this.comboBox2.TabIndex = 6;
@@ -515,7 +515,7 @@
             this.comboBox1.DisplayMember = "nazwa";
             this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(126, 19);
+            this.comboBox1.Location = new System.Drawing.Point(113, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(203, 27);
             this.comboBox1.TabIndex = 5;
@@ -533,7 +533,7 @@
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.label4.ForeColor = System.Drawing.Color.LavenderBlush;
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(678, 22);
+            this.label4.Location = new System.Drawing.Point(57, 283);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 19);
             this.label4.TabIndex = 4;
@@ -545,7 +545,7 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.label3.ForeColor = System.Drawing.Color.LavenderBlush;
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(12, 130);
+            this.label3.Location = new System.Drawing.Point(-1, 181);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 19);
             this.label3.TabIndex = 3;
@@ -557,7 +557,7 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.label2.ForeColor = System.Drawing.Color.LavenderBlush;
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(88, 76);
+            this.label2.Location = new System.Drawing.Point(75, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 19);
             this.label2.TabIndex = 2;
@@ -569,7 +569,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.label1.ForeColor = System.Drawing.Color.LavenderBlush;
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(21, 22);
+            this.label1.Location = new System.Drawing.Point(8, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 19);
             this.label1.TabIndex = 1;
@@ -721,7 +721,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(1008, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1350, 25);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -730,7 +730,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1008, 891);
+            this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.panelDodajAkt);
             this.Controls.Add(this.pictureBoxTarcza);
             this.Controls.Add(this.panelBazaDanych);

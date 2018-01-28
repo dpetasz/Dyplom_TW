@@ -50,7 +50,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
         {
             g = e.Graphics;
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            stanWyp.Wypelnienie(tarcza);
+            //stanWyp.Wypelnienie(tarcza);
             
             tarcza.Tarcza(g);
             tarcza.Obrot(g, pozycja);
