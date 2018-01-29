@@ -35,7 +35,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
         }
         string plik = @"C:\GitHub\Dyplom_TW\Dyplob_Dariusz_Petasz_Z709\Resources\Pozycja_Obrotowka.txt";
 
-        int predkosc; 
+        int predkosc;
         int Predkosc
         {
             get { return predkosc; }
@@ -53,7 +53,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             get { return pozycja; }
             set { pozycja = value; }
         }
-       
+
         public ObrotowkaPanel()
         {
             InitializeComponent();
@@ -62,7 +62,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 
         private void ObrotowkaPanel_Load(object sender, EventArgs e)
         {
-            
+            this.pokazPrzedstawienieTableAdapter.Fill(this.tWDataSet.pokazPrzedstawienie);
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
@@ -131,7 +131,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 
         }
 
-        
+
         public float PozycjaObrotowka()
         {
             try
@@ -166,18 +166,18 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             }
             catch { }
         }
-        public float ruch(int kierunek, int v)
+        public float ruch(bool direct, int v)
         {
 
-            switch (kierunek)
+            switch (direct)
             {
-                case 1:
+                case true:
                     {
                         this.Obrot += v * 0.001f;
                         if (Math.Round(Obrot, 1) == 360) Obrot = 0;
                         break;
                     }
-                case 0:
+                case false:
                     {
                         this.Obrot -= v * 0.001f;
                         if (Math.Round(Obrot, 1) == 0) Obrot = 360;
@@ -188,5 +188,146 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 
         }
 
+        private void green()
+        {
+
+            timer1.Enabled = false;
+            buttonStartStop.BackColor = Color.Green;
+            buttonStartStop.Text = "Start";
+            this.stanWyp = new Wypelnienie1();
+            pictureBox1.Invalidate();
+
+        }
+        private void red()
+        {
+            timer1.Enabled = true;
+            buttonStartStop.BackColor = Color.Red;
+            buttonStartStop.Text = "Stop";
+            this.stanWyp = new WypelnienieJazda();
+            pictureBox1.Invalidate();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            pozycja = ruch(Kierunek, predkosc);
+            textBoxPozycjaObrotowka.Text = pozycja.ToString();
+            pictureBox1.Invalidate();
+        }
+
+        private void trackBarKierunek_Scroll(object sender, EventArgs e)
+        {
+            if (trackBarKierunek.Value == 1)
+                Kierunek = true;
+
+            else Kierunek = false;
+        }
+
+        private void buttonStartStop_Click(object sender, EventArgs e)
+        {
+            if (timer1.Enabled == false)
+            {
+
+                red();
+            }
+            else
+            {
+
+                ZapisPozycja(pozycja);
+                green();
+            }
+        }
+
+        private void trackBarPredkoscObrotowka_Scroll(object sender, EventArgs e)
+        {
+            textBoxPredkoscObrotowka.Text = trackBarPredkoscObrotowka.Value.ToString();
+            Predkosc = trackBarPredkoscObrotowka.Value;
+        }
+
+        void jazdaDoPozycji()
+        {
+            buttonJazdaDoPozycji.BackColor = Color.Maroon;
+            buttonJazdaDoPozycji.Enabled = false;
+
+            buttonJazdaTechniczna.BackColor = Color.LightSteelBlue;
+            buttonJazdaTechniczna.Enabled = true;
+
+            buttonJazdaProgramowa.BackColor = Color.LightSteelBlue;
+            buttonJazdaProgramowa.Enabled = true;
+
+            //panelBazaDanych.Enabled = false;
+        }
+        void jazdaProgramowa()
+        {
+            buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
+            buttonJazdaDoPozycji.Enabled = true;
+
+            buttonJazdaTechniczna.BackColor = Color.LightSteelBlue;
+            buttonJazdaTechniczna.Enabled = true;
+
+            buttonJazdaProgramowa.BackColor = Color.Maroon;
+            buttonJazdaProgramowa.Enabled = false;
+
+            //panelBazaDanych.Enabled = true;
+        }
+        void jazdaTechniczna()
+        {
+            buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
+            buttonJazdaDoPozycji.Enabled = true;
+
+            buttonJazdaTechniczna.BackColor = Color.Maroon;
+            buttonJazdaTechniczna.Enabled = false;
+
+            buttonJazdaProgramowa.BackColor = Color.LightSteelBlue;
+            buttonJazdaProgramowa.Enabled = true;
+
+           // panelBazaDanych.Enabled = false;
+        }
+
+       
+
+
+
+        private void buttonJazdaTechniczna_Click(object sender, EventArgs e)
+        {
+            jazdaTechniczna();
+        }
+
+        private void buttonJazdaProgramowa_Click(object sender, EventArgs e)
+        {
+            jazdaProgramowa();
+        }
+
+        private void buttonJazdaDoPozycji_Click(object sender, EventArgs e)
+        {
+            jazdaDoPozycji();
+        }
+
+        private void pokazPrzedstawienieBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int idPrzed = ((this.pokazPrzedstawienieBindingSource.Current as DataRowView).Row as TWDataSet.pokazPrzedstawienieRow).idprzed;
+                this.pokazAktTableAdapter.Fill(this.tWDataSet.pokazAkt, idPrzed);
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+        private void pokazAktBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int idAkt = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
+                this.pokazFxObrotowkaTableAdapter.Fill(this.tWDataSet.pokazFxObrotowka, idAkt);
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
     }
 }

@@ -244,6 +244,11 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             Invalidate();
         }
 
+        private void Wozek_Load(object sender, EventArgs e)
+        {
+
+        }
+
         void LadujKierunek()
         {
             if (Kierunek == false)

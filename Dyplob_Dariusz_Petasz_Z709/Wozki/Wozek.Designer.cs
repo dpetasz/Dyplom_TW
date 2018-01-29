@@ -55,9 +55,9 @@
             this.panelPrzyciski.Controls.Add(this.textBoxPredkosc);
             this.panelPrzyciski.Controls.Add(this.label1);
             this.panelPrzyciski.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelPrzyciski.Location = new System.Drawing.Point(1100, 0);
+            this.panelPrzyciski.Location = new System.Drawing.Point(1088, 0);
             this.panelPrzyciski.Name = "panelPrzyciski";
-            this.panelPrzyciski.Size = new System.Drawing.Size(300, 106);
+            this.panelPrzyciski.Size = new System.Drawing.Size(262, 106);
             this.panelPrzyciski.TabIndex = 0;
             // 
             // buttonPrawo
@@ -65,9 +65,9 @@
             this.buttonPrawo.BackColor = System.Drawing.Color.Green;
             this.buttonPrawo.BackgroundImage = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.P;
             this.buttonPrawo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonPrawo.Location = new System.Drawing.Point(83, 41);
+            this.buttonPrawo.Location = new System.Drawing.Point(64, 41);
             this.buttonPrawo.Name = "buttonPrawo";
-            this.buttonPrawo.Size = new System.Drawing.Size(62, 52);
+            this.buttonPrawo.Size = new System.Drawing.Size(54, 52);
             this.buttonPrawo.TabIndex = 19;
             this.buttonPrawo.UseVisualStyleBackColor = false;
             this.buttonPrawo.Click += new System.EventHandler(this.buttonPrawo_Click);
@@ -79,7 +79,7 @@
             this.buttonLewo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonLewo.Location = new System.Drawing.Point(4, 41);
             this.buttonLewo.Name = "buttonLewo";
-            this.buttonLewo.Size = new System.Drawing.Size(62, 52);
+            this.buttonLewo.Size = new System.Drawing.Size(54, 52);
             this.buttonLewo.TabIndex = 18;
             this.buttonLewo.UseVisualStyleBackColor = false;
             this.buttonLewo.Click += new System.EventHandler(this.buttonLewo_Click);
@@ -90,7 +90,7 @@
             this.buttonAktywuj.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonAktywuj.Location = new System.Drawing.Point(3, 3);
             this.buttonAktywuj.Name = "buttonAktywuj";
-            this.buttonAktywuj.Size = new System.Drawing.Size(142, 37);
+            this.buttonAktywuj.Size = new System.Drawing.Size(115, 37);
             this.buttonAktywuj.TabIndex = 17;
             this.buttonAktywuj.Text = "Aktywuj";
             this.buttonAktywuj.UseVisualStyleBackColor = false;
@@ -99,17 +99,17 @@
             // textBoxPozycja
             // 
             this.textBoxPozycja.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxPozycja.Location = new System.Drawing.Point(192, 67);
+            this.textBoxPozycja.Location = new System.Drawing.Point(170, 67);
             this.textBoxPozycja.Name = "textBoxPozycja";
             this.textBoxPozycja.ReadOnly = true;
-            this.textBoxPozycja.Size = new System.Drawing.Size(100, 26);
+            this.textBoxPozycja.Size = new System.Drawing.Size(80, 26);
             this.textBoxPozycja.TabIndex = 16;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(150, 70);
+            this.label3.Location = new System.Drawing.Point(128, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 19);
             this.label3.TabIndex = 15;
@@ -118,16 +118,16 @@
             // textBoxStop
             // 
             this.textBoxStop.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxStop.Location = new System.Drawing.Point(192, 35);
+            this.textBoxStop.Location = new System.Drawing.Point(170, 35);
             this.textBoxStop.Name = "textBoxStop";
-            this.textBoxStop.Size = new System.Drawing.Size(100, 26);
+            this.textBoxStop.Size = new System.Drawing.Size(80, 26);
             this.textBoxStop.TabIndex = 14;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(148, 38);
+            this.label2.Location = new System.Drawing.Point(126, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 19);
             this.label2.TabIndex = 13;
@@ -136,16 +136,16 @@
             // textBoxPredkosc
             // 
             this.textBoxPredkosc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxPredkosc.Location = new System.Drawing.Point(192, 3);
+            this.textBoxPredkosc.Location = new System.Drawing.Point(170, 3);
             this.textBoxPredkosc.Name = "textBoxPredkosc";
-            this.textBoxPredkosc.Size = new System.Drawing.Size(100, 26);
+            this.textBoxPredkosc.Size = new System.Drawing.Size(80, 26);
             this.textBoxPredkosc.TabIndex = 12;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(166, 6);
+            this.label1.Location = new System.Drawing.Point(144, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 19);
             this.label1.TabIndex = 11;
@@ -159,7 +159,8 @@
             this.Controls.Add(this.panelPrzyciski);
             this.DoubleBuffered = true;
             this.Name = "Wozek";
-            this.Size = new System.Drawing.Size(1400, 106);
+            this.Size = new System.Drawing.Size(1350, 106);
+            this.Load += new System.EventHandler(this.Wozek_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Wozek_Paint);
             this.panelPrzyciski.ResumeLayout(false);
             this.panelPrzyciski.PerformLayout();
