@@ -92,7 +92,8 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
         private void dodajPrzedstawienieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_BazaDanych baza = new Form_BazaDanych();
+            Form_BazaDanych baza = new Form_BazaDanych(this);
+            this.Enabled = false;
             baza.Show();
         }
 

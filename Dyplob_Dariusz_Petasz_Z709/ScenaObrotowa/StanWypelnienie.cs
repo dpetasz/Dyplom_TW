@@ -10,11 +10,11 @@ namespace Dyplom_Dariusz_Petasz_Z709
 {
     abstract class StanWypelnienie
     {
-        public abstract void Wypelnienie(ObrotowkaPanel x);
+        public abstract void Wypelnienie(RysujTarcza x);
     }
     class Wypelnienie1 : StanWypelnienie
     {
-        public override void Wypelnienie(ObrotowkaPanel x)
+        public override void Wypelnienie(RysujTarcza x)
         {
             x.pioroLinia = new Pen(Color.Black);
             x.wypelnienieTrojkat = new SolidBrush(Color.Green);
@@ -28,7 +28,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
     }
     class WypelnienieJazda : StanWypelnienie
     {
-        public override void Wypelnienie(ObrotowkaPanel x)
+        public override void Wypelnienie(RysujTarcza x)
         {
             x.pioroLinia = new Pen(Color.Black);
             x.wypelnienieTrojkat = new SolidBrush(Color.Red);

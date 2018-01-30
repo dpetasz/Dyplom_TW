@@ -23,7 +23,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
         IJazdaObrotowka jazda = new JazdaObrotowka();
         IZapiszAkt zapiszAkt = new ZapiszAkt();
 
-        int predkosc = 0, kierunek = 0;
+        int predkosc = 0; bool kierunek = true;
         float pozycja = 0f;
 
         public Obrotowka()
@@ -76,7 +76,11 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
         private void trackBarKierunek_Scroll(object sender, EventArgs e)
         {
-            kierunek = trackBarKierunek.Value;
+            if (trackBarKierunek.Value == 1)
+            kierunek = true;
+            if (trackBarKierunek.Value == 0)
+                kierunek = false;
+
         }
         private void green()
         {

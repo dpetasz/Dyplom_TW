@@ -50,10 +50,14 @@
     <Compile Include="BD_TW\AktualizujAkt.Designer.cs">
       <DependentUpon>AktualizujAkt.cs</DependentUpon>
     </Compile>
-    <Compile Include="BD_TW\IZapiszAkt.cs" />
-    <Compile Include="BD_TW\PokazBaza.cs">
-      <SubType>Component</SubType>
+    <Compile Include="BD_TW\DodajFX_Obrotowka.cs">
+      <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="BD_TW\DodajFX_Obrotowka.Designer.cs">
+      <DependentUpon>DodajFX_Obrotowka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BD_TW\IZapiszAkt.cs" />
+    <Compile Include="BD_TW\PokazBaza.cs" />
     <Compile Include="BD_TW\Przedstawienia.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -109,7 +113,6 @@
     </Compile>
     <Compile Include="TWDataSet.cs">
       <DependentUpon>TWDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="TWDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -140,6 +143,9 @@
     </Compile>
     <EmbeddedResource Include="BD_TW\AktualizujAkt.resx">
       <DependentUpon>AktualizujAkt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BD_TW\DodajFX_Obrotowka.resx">
+      <DependentUpon>DodajFX_Obrotowka.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BD_TW\Przedstawienia.resx">
       <DependentUpon>Przedstawienia.cs</DependentUpon>

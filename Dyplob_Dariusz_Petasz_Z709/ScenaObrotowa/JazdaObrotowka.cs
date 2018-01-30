@@ -51,18 +51,18 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             }
             catch {  }
         }
-        public float ruch(int kierunek, int v)
+        public float ruch(bool kierunek, int v)
         {
            
             switch (kierunek)
             {
-                case 1:
+                case true:
                     {
                         this.Obrot += v * 0.001f;
                         if (Math.Round(Obrot, 1) == 360) Obrot = 0;
                         break;
                     }
-                case 0:
+                case false:
                     {
                         this.Obrot -= v * 0.001f;
                         if (Math.Round(Obrot, 1) == 0) Obrot = 360;

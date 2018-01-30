@@ -10,6 +10,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
     {
         float PozycjaObrotowka();
         void ZapisPozycja(float x);
-        float ruch(int kierunek, int v);
+        float ruch(bool kierunek, int v);
     }
 }

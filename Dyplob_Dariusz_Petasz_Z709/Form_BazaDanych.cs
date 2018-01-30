@@ -14,11 +14,17 @@ namespace Dyplom_Dariusz_Petasz_Z709
     {
 
         IZapiszBazaPrzedstawienie db = new ZapiszBazaPrzedstawienie();
+        Form1 f1 = new Form1();
         string przycisk = "";
 
         public Form_BazaDanych()
         {
             InitializeComponent();
+        }
+        public Form_BazaDanych(Form1 f)
+        {
+            InitializeComponent();
+            f1 = f;
         }
 
         private void Form_BazaDanych_Load(object sender, EventArgs e)
@@ -285,10 +291,9 @@ namespace Dyplom_Dariusz_Petasz_Z709
             przycisk = "";
         }
 
-
-
-
-
-
+        private void Form_BazaDanych_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            f1.Enabled = true;
+        }
     }
 }

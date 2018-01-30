@@ -848,6 +848,7 @@
             this.Controls.Add(this.tabControlBazaDanych);
             this.Name = "Form_BazaDanych";
             this.Text = "Form_BazaDanych";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_BazaDanych_FormClosing);
             this.Load += new System.EventHandler(this.Form_BazaDanych_Load);
             this.tabControlBazaDanych.ResumeLayout(false);
             this.tabPagePrzedstawienie.ResumeLayout(false);
