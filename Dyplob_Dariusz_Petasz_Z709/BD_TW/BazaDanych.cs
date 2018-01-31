@@ -14,7 +14,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
     {
         PokazPrzedstawienia pp = new PokazPrzedstawienia();
         PokazKompozytor pa = new PokazKompozytor();
-        DodajPrzedstawienie dp = new DodajPrzedstawienie();
+        
+        
         public BazaDanych()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
         {
             pp.Dispose();
             pa.Dispose();
-            dp.Dispose();
+            
         }
         void ladujWidok(string txt)
         {
@@ -40,17 +41,15 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
                 case "Przedstawienie":
                     {
                         pp = new PokazPrzedstawienia();
-                        pp.Parent = tabControl1.TabPages[0];
-
-                        dp = new DodajPrzedstawienie();
-                        dp.Parent = tabControl1.TabPages[1];
+                        pp.Parent = panelBazaPokaz;
+                        
                         break;
                     }
                 case "Akt":
                     {
-
                         pa = new PokazKompozytor();
-                        pa.Parent = tabControl1.TabPages[0];
+                        pa.Parent = panelBazaPokaz;
+                        
                         break;
                     }
                 case "Rezyser":
@@ -71,6 +70,11 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
                 default: break;
 
             }
+        }
+
+        private void BazaDanych_Load(object sender, EventArgs e)
+        {
+            ladujWidok(comboBox1.Text);
         }
     }
 }

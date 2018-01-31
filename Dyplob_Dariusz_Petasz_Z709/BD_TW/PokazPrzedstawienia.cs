@@ -12,6 +12,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
 {
     public partial class PokazPrzedstawienia : UserControl
     {
+        IZapiszBazaPrzedstawienie db = new ZapiszBazaPrzedstawienie();
 
         public PokazPrzedstawienia()
         {
@@ -20,7 +21,14 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
 
         private void Przedstawienia_Load(object sender, EventArgs e)
         {
+            ladujDane();
+        }
+        void ladujDane()
+        {
             this.pokazPrzedstawienieTableAdapter.Fill(this.tWDataSet.pokazPrzedstawienie);
+            this.pokazKompozytorTableAdapter.Fill(this.tWDataSet.pokazKompozytor);
+            this.pokazRezyserTableAdapter.Fill(this.tWDataSet.pokazRezyser);
+            this.pokazRodzajTableAdapter.Fill(this.tWDataSet.pokazRodzaj);
         }
 
         private void pokazPrzedstawienieBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -35,6 +43,24 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
 
 
             }
+        }
+
+        
+
+        private void buttonZapiszNowePrzedstawienie_Click(object sender, EventArgs e)
+        {
+            string kom = "";
+            try
+            {
+                int idRez = ((this.pokazRezyserBindingSource.Current as DataRowView).Row as TWDataSet.pokazRezyserRow).idrezyser,
+                        idKom = ((this.pokazKompozytorBindingSource.Current as DataRowView).Row as TWDataSet.pokazKompozytorRow).idkompozytor,
+                        idRodz = ((this.pokazRodzajBindingSource.Current as DataRowView).Row as TWDataSet.pokazRodzajRow).idrodzaj;
+                kom = db.ZapiszPrzedstawienie(idKom, idRez, idRodz, textBoxNazwaPrzedstawieniaDodaj.Text.ToString(), dateTimePicker1.Value);
+                labelWynikZpisz.Text = kom;
+                ladujDane();
+            }
+            catch { }
+
         }
     }
 }
