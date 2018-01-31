@@ -56,14 +56,15 @@
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.labelWynikAktualizujAkt = new System.Windows.Forms.Label();
+            this.dateTimePickerDlugoscAktualizuj = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxNazwaAktualizuj = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxOpisAktualizuj = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -111,7 +112,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1123, 381);
+            this.tabControl1.Size = new System.Drawing.Size(950, 381);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -128,7 +129,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1115, 348);
+            this.tabPage1.Size = new System.Drawing.Size(942, 348);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Akt";
             // 
@@ -151,7 +152,7 @@
             this.richTextBox1.ForeColor = System.Drawing.Color.LightGray;
             this.richTextBox1.Location = new System.Drawing.Point(519, 53);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(508, 265);
+            this.richTextBox1.Size = new System.Drawing.Size(400, 265);
             this.richTextBox1.TabIndex = 50;
             this.richTextBox1.Text = "";
             // 
@@ -252,7 +253,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1115, 348);
+            this.tabPage2.Size = new System.Drawing.Size(942, 348);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Dodaj Akt";
             // 
@@ -321,7 +322,7 @@
             this.richTextBoxDodajOpisAkt.ForeColor = System.Drawing.Color.LightGray;
             this.richTextBoxDodajOpisAkt.Location = new System.Drawing.Point(519, 53);
             this.richTextBoxDodajOpisAkt.Name = "richTextBoxDodajOpisAkt";
-            this.richTextBoxDodajOpisAkt.Size = new System.Drawing.Size(508, 265);
+            this.richTextBoxDodajOpisAkt.Size = new System.Drawing.Size(400, 265);
             this.richTextBoxDodajOpisAkt.TabIndex = 58;
             this.richTextBoxDodajOpisAkt.Text = "";
             // 
@@ -382,23 +383,51 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
+            this.tabPage3.Controls.Add(this.labelWynikAktualizujAkt);
+            this.tabPage3.Controls.Add(this.dateTimePickerDlugoscAktualizuj);
             this.tabPage3.Controls.Add(this.label13);
             this.tabPage3.Controls.Add(this.comboBox5);
             this.tabPage3.Controls.Add(this.button2);
-            this.tabPage3.Controls.Add(this.textBox2);
+            this.tabPage3.Controls.Add(this.textBoxNazwaAktualizuj);
             this.tabPage3.Controls.Add(this.label9);
-            this.tabPage3.Controls.Add(this.richTextBox3);
+            this.tabPage3.Controls.Add(this.richTextBoxOpisAktualizuj);
             this.tabPage3.Controls.Add(this.label10);
-            this.tabPage3.Controls.Add(this.textBox3);
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.comboBox3);
             this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1115, 348);
+            this.tabPage3.Size = new System.Drawing.Size(942, 348);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Aktualizuj Akt";
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // labelWynikAktualizujAkt
+            // 
+            this.labelWynikAktualizujAkt.AutoSize = true;
+            this.labelWynikAktualizujAkt.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.labelWynikAktualizujAkt.ForeColor = System.Drawing.Color.Red;
+            this.labelWynikAktualizujAkt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelWynikAktualizujAkt.Location = new System.Drawing.Point(26, 12);
+            this.labelWynikAktualizujAkt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelWynikAktualizujAkt.Name = "labelWynikAktualizujAkt";
+            this.labelWynikAktualizujAkt.Size = new System.Drawing.Size(48, 19);
+            this.labelWynikAktualizujAkt.TabIndex = 74;
+            this.labelWynikAktualizujAkt.Text = "Wynik";
+            // 
+            // dateTimePickerDlugoscAktualizuj
+            // 
+            this.dateTimePickerDlugoscAktualizuj.CalendarForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dateTimePickerDlugoscAktualizuj.CalendarMonthBackground = System.Drawing.SystemColors.MenuHighlight;
+            this.dateTimePickerDlugoscAktualizuj.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.pokazAktBindingSource, "dlugosc", true));
+            this.dateTimePickerDlugoscAktualizuj.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePickerDlugoscAktualizuj.Location = new System.Drawing.Point(202, 216);
+            this.dateTimePickerDlugoscAktualizuj.Name = "dateTimePickerDlugoscAktualizuj";
+            this.dateTimePickerDlugoscAktualizuj.ShowUpDown = true;
+            this.dateTimePickerDlugoscAktualizuj.Size = new System.Drawing.Size(286, 26);
+            this.dateTimePickerDlugoscAktualizuj.TabIndex = 73;
+            this.dateTimePickerDlugoscAktualizuj.Value = new System.DateTime(2018, 1, 31, 1, 0, 0, 0);
             // 
             // label13
             // 
@@ -435,19 +464,21 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(136, 35);
             this.button2.TabIndex = 70;
-            this.button2.Text = "Zapisz";
+            this.button2.Text = "Aktualizuj";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox2
+            // textBoxNazwaAktualizuj
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazAktBindingSource, "nazwa", true));
-            this.textBox2.ForeColor = System.Drawing.Color.LightGray;
-            this.textBox2.Location = new System.Drawing.Point(202, 162);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(286, 26);
-            this.textBox2.TabIndex = 69;
+            this.textBoxNazwaAktualizuj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.textBoxNazwaAktualizuj.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazAktBindingSource, "nazwa", true));
+            this.textBoxNazwaAktualizuj.ForeColor = System.Drawing.Color.LightGray;
+            this.textBoxNazwaAktualizuj.Location = new System.Drawing.Point(202, 162);
+            this.textBoxNazwaAktualizuj.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxNazwaAktualizuj.Name = "textBoxNazwaAktualizuj";
+            this.textBoxNazwaAktualizuj.Size = new System.Drawing.Size(286, 26);
+            this.textBoxNazwaAktualizuj.TabIndex = 69;
+            this.textBoxNazwaAktualizuj.Click += new System.EventHandler(this.textBoxNazwaAktualizuj_Click);
             // 
             // label9
             // 
@@ -461,16 +492,16 @@
             this.label9.TabIndex = 68;
             this.label9.Text = "Opis ";
             // 
-            // richTextBox3
+            // richTextBoxOpisAktualizuj
             // 
-            this.richTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.richTextBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazAktBindingSource, "opis", true));
-            this.richTextBox3.ForeColor = System.Drawing.Color.LightGray;
-            this.richTextBox3.Location = new System.Drawing.Point(519, 53);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(508, 265);
-            this.richTextBox3.TabIndex = 67;
-            this.richTextBox3.Text = "";
+            this.richTextBoxOpisAktualizuj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.richTextBoxOpisAktualizuj.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazAktBindingSource, "opis", true));
+            this.richTextBoxOpisAktualizuj.ForeColor = System.Drawing.Color.LightGray;
+            this.richTextBoxOpisAktualizuj.Location = new System.Drawing.Point(519, 53);
+            this.richTextBoxOpisAktualizuj.Name = "richTextBoxOpisAktualizuj";
+            this.richTextBoxOpisAktualizuj.Size = new System.Drawing.Size(379, 265);
+            this.richTextBoxOpisAktualizuj.TabIndex = 67;
+            this.richTextBoxOpisAktualizuj.Text = "";
             // 
             // label10
             // 
@@ -484,17 +515,6 @@
             this.label10.Size = new System.Drawing.Size(58, 19);
             this.label10.TabIndex = 66;
             this.label10.Text = "Długość";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazAktBindingSource, "dlugosc", true));
-            this.textBox3.ForeColor = System.Drawing.Color.LightGray;
-            this.textBox3.Location = new System.Drawing.Point(202, 218);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(286, 26);
-            this.textBox3.TabIndex = 65;
             // 
             // label11
             // 
@@ -556,7 +576,7 @@
             this.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PokazKompozytor";
-            this.Size = new System.Drawing.Size(1123, 381);
+            this.Size = new System.Drawing.Size(950, 381);
             this.Load += new System.EventHandler(this.PokazAkt_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pokazPrzedstawienieBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).EndInit();
@@ -603,14 +623,15 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxNazwaAktualizuj;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.RichTextBox richTextBoxOpisAktualizuj;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDlugoscAktualizuj;
+        private System.Windows.Forms.Label labelWynikAktualizujAkt;
     }
 }

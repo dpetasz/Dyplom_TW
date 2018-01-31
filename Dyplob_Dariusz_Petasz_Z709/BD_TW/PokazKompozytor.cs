@@ -55,5 +55,31 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
             {
             }
         }
+
+        private void textBoxNazwaAktualizuj_Click(object sender, EventArgs e)
+        {
+            textBoxNazwaAktualizuj.Clear();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string kom = "";
+            try
+            {
+                
+                //int idPrzed = ((this.pokazPrzedstawienieBindingSource.Current as DataRowView).Row as TWDataSet.pokazPrzedstawienieRow).idprzed;
+                int idAkt = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
+                kom = db.AktualizujAkt(idAkt, textBoxNazwaAktualizuj.Text, richTextBoxOpisAktualizuj.Text, TimeSpan.Parse(dateTimePickerDlugoscAktualizuj.Text));
+                labelWynikAktualizujAkt.Text = kom;
+                ladujDane();
+            }
+            catch { }
+            
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
