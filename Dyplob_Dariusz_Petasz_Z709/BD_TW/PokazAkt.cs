@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
 {
-    public partial class Przedstawienia : UserControl
+    public partial class PokazKompozytor : UserControl
     {
-        public Przedstawienia()
+        public PokazKompozytor()
         {
             InitializeComponent();
         }
 
-        private void Przedstawienia_Load(object sender, EventArgs e)
+        private void PokazAkt_Load(object sender, EventArgs e)
         {
             this.pokazPrzedstawienieTableAdapter.Fill(this.tWDataSet.pokazPrzedstawienie);
         }

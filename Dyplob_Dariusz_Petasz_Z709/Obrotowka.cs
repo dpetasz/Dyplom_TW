@@ -154,7 +154,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
         private void buttonZapiszNowyAkt_Click(object sender, EventArgs e)
         {
             int idPrzed = ((this.pokazPrzedstawienieBindingSource.Current as DataRowView).Row as TWDataSet.pokazPrzedstawienieRow).idprzed;
-            richTextBoxOpis.Text = zapiszAkt.DodajAkt(idPrzed, textBoxNazwaAktDodaj.Text);
+            //richTextBoxOpis.Text = zapiszAkt.DodajAkt(idPrzed, textBoxNazwaAktDodaj.Text);
             panelDodajAkt.Visible = false;
             this.pokazAktTableAdapter.Fill(this.tWDataSet.pokazAkt, idPrzed);
         }

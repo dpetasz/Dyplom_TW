@@ -248,7 +248,7 @@
         private TWDataSet tWDataSet;
         private System.Windows.Forms.BindingSource pokazPrzedstawienieBindingSource;
         private TWDataSetTableAdapters.pokazPrzedstawienieTableAdapter pokazPrzedstawienieTableAdapter;
-        private BD_TW.Przedstawienia przedstawienia1;
+        private BD_TW.PokazPrzedstawienia przedstawienia1;
         private TWDataSetTableAdapters.pokazWozkiTableAdapter pokazWozkiTableAdapter;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button3;

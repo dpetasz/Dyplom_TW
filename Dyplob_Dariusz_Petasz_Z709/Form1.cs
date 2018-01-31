@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dyplom_Dariusz_Petasz_Z709.BD_TW;
 
 namespace Dyplom_Dariusz_Petasz_Z709
 {
@@ -92,9 +93,11 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
         private void dodajPrzedstawienieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_BazaDanych baza = new Form_BazaDanych(this);
-            this.Enabled = false;
+            BazaDanych baza = new BazaDanych();
             baza.Show();
+            /*Form_BazaDanych baza = new Form_BazaDanych(this);
+            this.Enabled = false;
+            baza.Show();*/
         }
 
         private void buttonMosty_Click(object sender, EventArgs e)

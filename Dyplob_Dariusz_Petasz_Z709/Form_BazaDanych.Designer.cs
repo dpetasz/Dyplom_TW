@@ -96,11 +96,31 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxRezyser = new System.Windows.Forms.ComboBox();
+            this.tabPageAkt = new System.Windows.Forms.TabPage();
+            this.buttonUsunAkt = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.buttonAktualizujAkt = new System.Windows.Forms.Button();
+            this.labelWynikAkt = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.pokazRezyserTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazRezyserTableAdapter();
             this.pokazNowyRezBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokazKompozytorTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazKompozytorTableAdapter();
             this.pokazRodzajTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazRodzajTableAdapter();
             this.pokazPrzedstawienieTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazPrzedstawienieTableAdapter();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.pokazAktBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pokazAktTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazAktTableAdapter();
             this.tabControlBazaDanych.SuspendLayout();
             this.tabPagePrzedstawienie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazPrzedstawienieBindingSource)).BeginInit();
@@ -113,13 +133,17 @@
             this.panel2.SuspendLayout();
             this.panelKompozytor.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabPageAkt.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazNowyRezBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlBazaDanych
             // 
             this.tabControlBazaDanych.Controls.Add(this.tabPagePrzedstawienie);
             this.tabControlBazaDanych.Controls.Add(this.tabPageKomRezRodz);
+            this.tabControlBazaDanych.Controls.Add(this.tabPageAkt);
             this.tabControlBazaDanych.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabControlBazaDanych.Location = new System.Drawing.Point(32, 21);
             this.tabControlBazaDanych.Name = "tabControlBazaDanych";
@@ -179,7 +203,7 @@
             this.dateTimePickerDlugoscPrzedstawienia.Name = "dateTimePickerDlugoscPrzedstawienia";
             this.dateTimePickerDlugoscPrzedstawienia.Size = new System.Drawing.Size(200, 26);
             this.dateTimePickerDlugoscPrzedstawienia.TabIndex = 24;
-            this.dateTimePickerDlugoscPrzedstawienia.Value = new System.DateTime(2017, 11, 21, 18, 33, 0, 0);
+            this.dateTimePickerDlugoscPrzedstawienia.Value = new System.DateTime(2018, 1, 31, 9, 0, 27, 0);
             // 
             // pokazPrzedstawienieBindingSource
             // 
@@ -818,6 +842,174 @@
             this.comboBoxRezyser.TabIndex = 0;
             this.comboBoxRezyser.ValueMember = "idrezyser";
             // 
+            // tabPageAkt
+            // 
+            this.tabPageAkt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(10)))), ((int)(((byte)(94)))));
+            this.tabPageAkt.Controls.Add(this.buttonUsunAkt);
+            this.tabPageAkt.Controls.Add(this.panel3);
+            this.tabPageAkt.Controls.Add(this.button2);
+            this.tabPageAkt.Controls.Add(this.button3);
+            this.tabPageAkt.Controls.Add(this.buttonAktualizujAkt);
+            this.tabPageAkt.Controls.Add(this.labelWynikAkt);
+            this.tabPageAkt.Controls.Add(this.button5);
+            this.tabPageAkt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tabPageAkt.Location = new System.Drawing.Point(4, 28);
+            this.tabPageAkt.Name = "tabPageAkt";
+            this.tabPageAkt.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAkt.Size = new System.Drawing.Size(1133, 382);
+            this.tabPageAkt.TabIndex = 3;
+            this.tabPageAkt.Text = "Akt";
+            // 
+            // buttonUsunAkt
+            // 
+            this.buttonUsunAkt.Location = new System.Drawing.Point(408, 300);
+            this.buttonUsunAkt.Name = "buttonUsunAkt";
+            this.buttonUsunAkt.Size = new System.Drawing.Size(108, 30);
+            this.buttonUsunAkt.TabIndex = 27;
+            this.buttonUsunAkt.Text = "Usuń";
+            this.buttonUsunAkt.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.comboBox2);
+            this.panel3.Controls.Add(this.richTextBox1);
+            this.panel3.Controls.Add(this.dateTimePicker1);
+            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.label21);
+            this.panel3.Controls.Add(this.label16);
+            this.panel3.Controls.Add(this.label13);
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Location = new System.Drawing.Point(19, 59);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1081, 222);
+            this.panel3.TabIndex = 26;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(505, 60);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(536, 96);
+            this.richTextBox1.TabIndex = 27;
+            this.richTextBox1.Text = "";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker1.Location = new System.Drawing.Point(134, 167);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(269, 26);
+            this.dateTimePicker1.TabIndex = 26;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(134, 115);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(269, 26);
+            this.textBox1.TabIndex = 25;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.pokazPrzedstawienieBindingSource;
+            this.comboBox1.DisplayMember = "nazwa";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(134, 21);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(269, 27);
+            this.comboBox1.TabIndex = 24;
+            this.comboBox1.ValueMember = "idprzed";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.ForeColor = System.Drawing.Color.Cornsilk;
+            this.label21.Location = new System.Drawing.Point(20, 24);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(99, 19);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Przedstawienie";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.Color.Cornsilk;
+            this.label16.Location = new System.Drawing.Point(67, 118);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(52, 19);
+            this.label16.TabIndex = 10;
+            this.label16.Text = "Nazwa";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.Cornsilk;
+            this.label13.Location = new System.Drawing.Point(501, 24);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(38, 19);
+            this.label13.TabIndex = 23;
+            this.label13.Text = "Opis";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.Cornsilk;
+            this.label14.Location = new System.Drawing.Point(57, 169);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(62, 19);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "Długość ";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(849, 300);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(108, 30);
+            this.button2.TabIndex = 25;
+            this.button2.Text = "Anuluj";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(699, 300);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(108, 30);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "Dodaj";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // buttonAktualizujAkt
+            // 
+            this.buttonAktualizujAkt.Location = new System.Drawing.Point(555, 300);
+            this.buttonAktualizujAkt.Name = "buttonAktualizujAkt";
+            this.buttonAktualizujAkt.Size = new System.Drawing.Size(108, 30);
+            this.buttonAktualizujAkt.TabIndex = 18;
+            this.buttonAktualizujAkt.Text = "Aktualizuj";
+            this.buttonAktualizujAkt.UseVisualStyleBackColor = true;
+            // 
+            // labelWynikAkt
+            // 
+            this.labelWynikAkt.AutoSize = true;
+            this.labelWynikAkt.ForeColor = System.Drawing.Color.Cornsilk;
+            this.labelWynikAkt.Location = new System.Drawing.Point(42, 15);
+            this.labelWynikAkt.Name = "labelWynikAkt";
+            this.labelWynikAkt.Size = new System.Drawing.Size(89, 19);
+            this.labelWynikAkt.TabIndex = 16;
+            this.labelWynikAkt.Text = "Wynik zapisu";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(992, 300);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(108, 30);
+            this.button5.TabIndex = 12;
+            this.button5.Text = "ZAPISZ";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Visible = false;
+            // 
             // pokazRezyserTableAdapter
             // 
             this.pokazRezyserTableAdapter.ClearBeforeFill = true;
@@ -838,6 +1030,35 @@
             // pokazPrzedstawienieTableAdapter
             // 
             this.pokazPrzedstawienieTableAdapter.ClearBeforeFill = true;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DataSource = this.pokazAktBindingSource;
+            this.comboBox2.DisplayMember = "nazwa";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(134, 69);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(269, 27);
+            this.comboBox2.TabIndex = 28;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.Color.Cornsilk;
+            this.label15.Location = new System.Drawing.Point(67, 72);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(32, 19);
+            this.label15.TabIndex = 29;
+            this.label15.Text = "Akt";
+            // 
+            // pokazAktBindingSource
+            // 
+            this.pokazAktBindingSource.DataMember = "pokazAkt";
+            this.pokazAktBindingSource.DataSource = this.tWDataSet1;
+            // 
+            // pokazAktTableAdapter
+            // 
+            this.pokazAktTableAdapter.ClearBeforeFill = true;
             // 
             // Form_BazaDanych
             // 
@@ -866,7 +1087,12 @@
             this.panelKompozytor.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.pokazNowyRezBindingSource)).EndInit();
+            this.tabPageAkt.ResumeLayout(false);
+            this.tabPageAkt.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazNowyRezBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -945,5 +1171,25 @@
         private TWDataSetTableAdapters.pokazPrzedstawienieTableAdapter pokazPrzedstawienieTableAdapter;
         private System.Windows.Forms.DateTimePicker dateTimePickerDlugoscPrzedstawienia;
         private System.Windows.Forms.Button buttonAnulujPrzedstawienie;
+        private System.Windows.Forms.TabPage tabPageAkt;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonAktualizujAkt;
+        private System.Windows.Forms.Label labelWynikAkt;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button buttonUsunAkt;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.BindingSource pokazAktBindingSource;
+        private TWDataSetTableAdapters.pokazAktTableAdapter pokazAktTableAdapter;
     }
 }

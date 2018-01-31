@@ -14,7 +14,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
     public partial class WozkiForm : Form
     {
         Form1 f1 = new Form1();
-        RysujWozek scena;
+        //RysujWozek scena;
 
         Graphics g;
         StanWypWozki stanWyp = new Wypelnienie1();
@@ -27,7 +27,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             get { return jazda; }
             set { jazda = value; }
         }*/
-        Przedstawienia przedstawienia = new Przedstawienia();
+        PokazPrzedstawienia przedstawienia = new PokazPrzedstawienia();
         public WozkiForm()
         {
             InitializeComponent();

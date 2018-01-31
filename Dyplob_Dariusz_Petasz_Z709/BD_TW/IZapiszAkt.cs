@@ -8,7 +8,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
 {
     public interface IZapiszAkt
     {
-        string DodajAkt(int idPrzed, string nazwa);
+        string DodajAkt(int idPrzed, string nazwa, string opis, TimeSpan dlugosc);
         string AktualizujAkt(int idAkt, string nazwa, string opis, TimeSpan dlugosc);
     }
 }

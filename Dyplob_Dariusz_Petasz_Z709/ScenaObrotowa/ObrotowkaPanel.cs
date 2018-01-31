@@ -18,6 +18,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
         StanWypelnienie stanWyp = new Wypelnienie1();
         IZapiszAkt zapiszAkt = new ZapiszAkt();
         IJazdaObrotowka Jazda = new JazdaObrotowka();
+        IZapiszFX_Obrotowka db = new ZapiszFX_Obrotowka();
         RysujTarcza Rysuj = new RysujTarcza();
 
         public Pen pioroLinia;
@@ -59,6 +60,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
         private void ObrotowkaPanel_Load(object sender, EventArgs e)
         {
             this.pokazPrzedstawienieTableAdapter.Fill(this.tWDataSet.pokazPrzedstawienie);
+            jazdaTechniczna();
+
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
@@ -145,7 +148,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             buttonJazdaProgramowa.BackColor = Color.LightSteelBlue;
             buttonJazdaProgramowa.Enabled = true;
 
-            
+            textBoxPozycjaZadanaObrotowka.ReadOnly = false;
             //panelBazaDanych.Enabled = false;
         }
         void jazdaProgramowa()
@@ -158,6 +161,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 
             buttonJazdaProgramowa.BackColor = Color.Maroon;
             buttonJazdaProgramowa.Enabled = false;
+
+            textBoxPozycjaZadanaObrotowka.ReadOnly = true;
 
             //panelBazaDanych.Enabled = true;
         }
@@ -172,6 +177,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             buttonJazdaProgramowa.BackColor = Color.LightSteelBlue;
             buttonJazdaProgramowa.Enabled = true;
 
+            textBoxPozycjaZadanaObrotowka.ReadOnly = true;
            // panelBazaDanych.Enabled = false;
         }
 
@@ -220,6 +226,22 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 
 
             }
+        }
+
+        private void buttonZapiszFX_Click(object sender, EventArgs e)
+        {
+            int idAkt;
+            try
+            {
+                idAkt = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
+            }
+            catch (Exception)
+            {
+
+                idAkt = 0;
+            }
+            
+            textBoxNazwaFX.Text = idAkt.ToString();
         }
     }
 }

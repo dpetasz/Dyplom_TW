@@ -58,22 +58,27 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pokazFxObrotowkaTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFxObrotowkaTableAdapter();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.buttonZapiszFX = new System.Windows.Forms.Button();
+            this.comboBoxAkt = new System.Windows.Forms.ComboBox();
+            this.comboBoxPrzedstawienie = new System.Windows.Forms.ComboBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControlBazaDanych = new System.Windows.Forms.TabControl();
+            this.textBoxNazwaFX = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.labelWynikDodajFX_Ob = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelSterowanie.SuspendLayout();
@@ -115,7 +120,9 @@
             // 
             // textBoxPredkoscObrotowka
             // 
+            this.textBoxPredkoscObrotowka.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.textBoxPredkoscObrotowka.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.textBoxPredkoscObrotowka.ForeColor = System.Drawing.Color.LightGray;
             this.textBoxPredkoscObrotowka.Location = new System.Drawing.Point(135, 104);
             this.textBoxPredkoscObrotowka.Name = "textBoxPredkoscObrotowka";
             this.textBoxPredkoscObrotowka.Size = new System.Drawing.Size(126, 26);
@@ -123,18 +130,23 @@
             // 
             // textBoxPozycjaZadanaObrotowka
             // 
-            this.textBoxPozycjaZadanaObrotowka.Enabled = false;
+            this.textBoxPozycjaZadanaObrotowka.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.textBoxPozycjaZadanaObrotowka.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.textBoxPozycjaZadanaObrotowka.ForeColor = System.Drawing.Color.LightGray;
             this.textBoxPozycjaZadanaObrotowka.Location = new System.Drawing.Point(135, 63);
             this.textBoxPozycjaZadanaObrotowka.Name = "textBoxPozycjaZadanaObrotowka";
+            this.textBoxPozycjaZadanaObrotowka.ReadOnly = true;
             this.textBoxPozycjaZadanaObrotowka.Size = new System.Drawing.Size(126, 26);
             this.textBoxPozycjaZadanaObrotowka.TabIndex = 5;
             // 
             // textBoxPozycjaObrotowka
             // 
+            this.textBoxPozycjaObrotowka.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.textBoxPozycjaObrotowka.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.textBoxPozycjaObrotowka.ForeColor = System.Drawing.Color.LightGray;
             this.textBoxPozycjaObrotowka.Location = new System.Drawing.Point(135, 23);
             this.textBoxPozycjaObrotowka.Name = "textBoxPozycjaObrotowka";
+            this.textBoxPozycjaObrotowka.ReadOnly = true;
             this.textBoxPozycjaObrotowka.Size = new System.Drawing.Size(126, 26);
             this.textBoxPozycjaObrotowka.TabIndex = 4;
             // 
@@ -373,9 +385,14 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(70)))));
             this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage2.Controls.Add(this.comboBox4);
+            this.tabPage2.Controls.Add(this.labelWynikDodajFX_Ob);
+            this.tabPage2.Controls.Add(this.textBoxNazwaFX);
+            this.tabPage2.Controls.Add(this.label16);
+            this.tabPage2.Controls.Add(this.buttonZapiszFX);
+            this.tabPage2.Controls.Add(this.comboBoxAkt);
+            this.tabPage2.Controls.Add(this.comboBoxPrzedstawienie);
+            this.tabPage2.Controls.Add(this.richTextBox3);
             this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.comboBox5);
             this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.richTextBox2);
@@ -386,6 +403,92 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Dodaj FX";
             // 
+            // buttonZapiszFX
+            // 
+            this.buttonZapiszFX.Location = new System.Drawing.Point(221, 192);
+            this.buttonZapiszFX.Name = "buttonZapiszFX";
+            this.buttonZapiszFX.Size = new System.Drawing.Size(94, 32);
+            this.buttonZapiszFX.TabIndex = 30;
+            this.buttonZapiszFX.Text = "Zapisz";
+            this.buttonZapiszFX.UseVisualStyleBackColor = true;
+            this.buttonZapiszFX.Click += new System.EventHandler(this.buttonZapiszFX_Click);
+            // 
+            // comboBoxAkt
+            // 
+            this.comboBoxAkt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.comboBoxAkt.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.pokazAktBindingSource, "idakt", true));
+            this.comboBoxAkt.DataSource = this.pokazAktBindingSource;
+            this.comboBoxAkt.DisplayMember = "nazwa";
+            this.comboBoxAkt.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBoxAkt.ForeColor = System.Drawing.Color.LightGray;
+            this.comboBoxAkt.FormattingEnabled = true;
+            this.comboBoxAkt.Location = new System.Drawing.Point(112, 93);
+            this.comboBoxAkt.Name = "comboBoxAkt";
+            this.comboBoxAkt.Size = new System.Drawing.Size(203, 27);
+            this.comboBoxAkt.TabIndex = 29;
+            this.comboBoxAkt.ValueMember = "idakt";
+            // 
+            // comboBoxPrzedstawienie
+            // 
+            this.comboBoxPrzedstawienie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.comboBoxPrzedstawienie.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.pokazPrzedstawienieBindingSource, "idprzed", true));
+            this.comboBoxPrzedstawienie.DataSource = this.pokazPrzedstawienieBindingSource;
+            this.comboBoxPrzedstawienie.DisplayMember = "nazwa";
+            this.comboBoxPrzedstawienie.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBoxPrzedstawienie.ForeColor = System.Drawing.Color.LightGray;
+            this.comboBoxPrzedstawienie.FormattingEnabled = true;
+            this.comboBoxPrzedstawienie.Location = new System.Drawing.Point(112, 48);
+            this.comboBoxPrzedstawienie.Name = "comboBoxPrzedstawienie";
+            this.comboBoxPrzedstawienie.Size = new System.Drawing.Size(203, 27);
+            this.comboBoxPrzedstawienie.TabIndex = 28;
+            this.comboBoxPrzedstawienie.ValueMember = "idprzed";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.richTextBox3.ForeColor = System.Drawing.Color.LightGray;
+            this.richTextBox3.Location = new System.Drawing.Point(11, 253);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(304, 331);
+            this.richTextBox3.TabIndex = 27;
+            this.richTextBox3.Text = "";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label14.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label14.Location = new System.Drawing.Point(74, 96);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(32, 19);
+            this.label14.TabIndex = 25;
+            this.label14.Text = "Akt";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label15.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label15.Location = new System.Drawing.Point(7, 51);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(106, 19);
+            this.label15.TabIndex = 23;
+            this.label15.Text = "Przedstawienie: ";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label12.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label12.Location = new System.Drawing.Point(7, 220);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(42, 19);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "Opis ";
+            // 
             // richTextBox2
             // 
             this.richTextBox2.Location = new System.Drawing.Point(-313, -171);
@@ -394,69 +497,10 @@
             this.richTextBox2.TabIndex = 21;
             this.richTextBox2.Text = "";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.label12.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.label12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label12.Location = new System.Drawing.Point(7, 160);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(42, 19);
-            this.label12.TabIndex = 22;
-            this.label12.Text = "Opis ";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.label15.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.label15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label15.Location = new System.Drawing.Point(7, 9);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(106, 19);
-            this.label15.TabIndex = 23;
-            this.label15.Text = "Przedstawienie: ";
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.DataSource = this.pokazPrzedstawienieBindingSource;
-            this.comboBox5.DisplayMember = "nazwa";
-            this.comboBox5.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(112, 6);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(203, 27);
-            this.comboBox5.TabIndex = 24;
-            this.comboBox5.ValueMember = "idprzed";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.label14.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.label14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label14.Location = new System.Drawing.Point(74, 54);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(32, 19);
-            this.label14.TabIndex = 25;
-            this.label14.Text = "Akt";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.DataSource = this.pokazAktBindingSource;
-            this.comboBox4.DisplayMember = "nazwa";
-            this.comboBox4.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(112, 51);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(203, 27);
-            this.comboBox4.TabIndex = 26;
-            this.comboBox4.ValueMember = "idakt";
-            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(60)))));
+            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.richTextBox1);
             this.tabPage1.Controls.Add(this.comboBox3);
@@ -465,92 +509,13 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.comboBox1);
             this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.ForeColor = System.Drawing.SystemColors.InfoText;
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(329, 598);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Jazda Programowa";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.label1.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(8, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 19);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Przedstawienie: ";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.pokazPrzedstawienieBindingSource;
-            this.comboBox1.DisplayMember = "nazwa";
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(113, 17);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(203, 27);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.ValueMember = "idprzed";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.label2.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(75, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 19);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Akt";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DataSource = this.pokazAktBindingSource;
-            this.comboBox2.DisplayMember = "nazwa";
-            this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(113, 62);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(203, 27);
-            this.comboBox2.TabIndex = 9;
-            this.comboBox2.ValueMember = "idakt";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.label3.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(-1, 108);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 19);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "FX_Obrotówka";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DataSource = this.pokazFxObrotowkaBindingSource;
-            this.comboBox3.DisplayMember = "nazwa";
-            this.comboBox3.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(113, 105);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(203, 27);
-            this.comboBox3.TabIndex = 18;
-            this.comboBox3.ValueMember = "idfx_obrotowka";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 193);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(304, 392);
-            this.richTextBox1.TabIndex = 19;
-            this.richTextBox1.Text = "";
             // 
             // label4
             // 
@@ -564,6 +529,94 @@
             this.label4.TabIndex = 20;
             this.label4.Text = "Opis ";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.richTextBox1.ForeColor = System.Drawing.Color.LightGray;
+            this.richTextBox1.Location = new System.Drawing.Point(12, 193);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(304, 392);
+            this.richTextBox1.TabIndex = 19;
+            this.richTextBox1.Text = "";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.comboBox3.DataSource = this.pokazFxObrotowkaBindingSource;
+            this.comboBox3.DisplayMember = "nazwa";
+            this.comboBox3.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBox3.ForeColor = System.Drawing.Color.LightGray;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(113, 105);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(203, 27);
+            this.comboBox3.TabIndex = 18;
+            this.comboBox3.ValueMember = "idfx_obrotowka";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label3.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(-1, 108);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(108, 19);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "FX_Obrotówka";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.comboBox2.DataSource = this.pokazAktBindingSource;
+            this.comboBox2.DisplayMember = "nazwa";
+            this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBox2.ForeColor = System.Drawing.Color.LightGray;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(113, 62);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(203, 27);
+            this.comboBox2.TabIndex = 9;
+            this.comboBox2.ValueMember = "idakt";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label2.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(75, 65);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 19);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Akt";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.comboBox1.DataSource = this.pokazPrzedstawienieBindingSource;
+            this.comboBox1.DisplayMember = "nazwa";
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBox1.ForeColor = System.Drawing.Color.LightGray;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(113, 17);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(203, 27);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.ValueMember = "idprzed";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label1.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(8, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 19);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Przedstawienie: ";
+            // 
             // tabControlBazaDanych
             // 
             this.tabControlBazaDanych.Controls.Add(this.tabPage1);
@@ -574,6 +627,40 @@
             this.tabControlBazaDanych.SelectedIndex = 0;
             this.tabControlBazaDanych.Size = new System.Drawing.Size(337, 630);
             this.tabControlBazaDanych.TabIndex = 8;
+            // 
+            // textBoxNazwaFX
+            // 
+            this.textBoxNazwaFX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.textBoxNazwaFX.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.textBoxNazwaFX.ForeColor = System.Drawing.Color.LightGray;
+            this.textBoxNazwaFX.Location = new System.Drawing.Point(112, 143);
+            this.textBoxNazwaFX.Name = "textBoxNazwaFX";
+            this.textBoxNazwaFX.Size = new System.Drawing.Size(203, 26);
+            this.textBoxNazwaFX.TabIndex = 32;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label16.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label16.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label16.Location = new System.Drawing.Point(39, 146);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(52, 19);
+            this.label16.TabIndex = 31;
+            this.label16.Text = "Nazwa";
+            // 
+            // labelWynikDodajFX_Ob
+            // 
+            this.labelWynikDodajFX_Ob.AutoSize = true;
+            this.labelWynikDodajFX_Ob.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.labelWynikDodajFX_Ob.ForeColor = System.Drawing.Color.Salmon;
+            this.labelWynikDodajFX_Ob.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelWynikDodajFX_Ob.Location = new System.Drawing.Point(7, 14);
+            this.labelWynikDodajFX_Ob.Name = "labelWynikDodajFX_Ob";
+            this.labelWynikDodajFX_Ob.Size = new System.Drawing.Size(65, 19);
+            this.labelWynikDodajFX_Ob.TabIndex = 33;
+            this.labelWynikDodajFX_Ob.Text = "Dodano: ";
             // 
             // ObrotowkaPanel
             // 
@@ -639,9 +726,7 @@
         private System.Windows.Forms.BindingSource pokazFxObrotowkaBindingSource;
         private TWDataSetTableAdapters.pokazFxObrotowkaTableAdapter pokazFxObrotowkaTableAdapter;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.RichTextBox richTextBox2;
@@ -655,5 +740,12 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControlBazaDanych;
+        private System.Windows.Forms.Button buttonZapiszFX;
+        private System.Windows.Forms.ComboBox comboBoxAkt;
+        private System.Windows.Forms.ComboBox comboBoxPrzedstawienie;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.Label labelWynikDodajFX_Ob;
+        private System.Windows.Forms.TextBox textBoxNazwaFX;
+        private System.Windows.Forms.Label label16;
     }
 }

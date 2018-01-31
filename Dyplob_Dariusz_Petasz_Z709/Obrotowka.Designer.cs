@@ -131,6 +131,7 @@
             this.textBoxPozycjaZadanaObrotowka.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.textBoxPozycjaZadanaObrotowka.Location = new System.Drawing.Point(153, 63);
             this.textBoxPozycjaZadanaObrotowka.Name = "textBoxPozycjaZadanaObrotowka";
+            this.textBoxPozycjaZadanaObrotowka.ReadOnly = true;
             this.textBoxPozycjaZadanaObrotowka.Size = new System.Drawing.Size(96, 26);
             this.textBoxPozycjaZadanaObrotowka.TabIndex = 5;
             // 
@@ -139,6 +140,7 @@
             this.textBoxPozycjaObrotowka.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.textBoxPozycjaObrotowka.Location = new System.Drawing.Point(153, 23);
             this.textBoxPozycjaObrotowka.Name = "textBoxPozycjaObrotowka";
+            this.textBoxPozycjaObrotowka.ReadOnly = true;
             this.textBoxPozycjaObrotowka.Size = new System.Drawing.Size(96, 26);
             this.textBoxPozycjaObrotowka.TabIndex = 4;
             // 

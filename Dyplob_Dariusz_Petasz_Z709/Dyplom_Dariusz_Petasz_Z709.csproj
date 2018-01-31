@@ -50,21 +50,49 @@
     <Compile Include="BD_TW\AktualizujAkt.Designer.cs">
       <DependentUpon>AktualizujAkt.cs</DependentUpon>
     </Compile>
+    <Compile Include="BD_TW\BazaDanych.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BD_TW\BazaDanych.Designer.cs">
+      <DependentUpon>BazaDanych.cs</DependentUpon>
+    </Compile>
     <Compile Include="BD_TW\DodajFX_Obrotowka.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="BD_TW\DodajFX_Obrotowka.Designer.cs">
       <DependentUpon>DodajFX_Obrotowka.cs</DependentUpon>
     </Compile>
-    <Compile Include="BD_TW\IZapiszAkt.cs" />
-    <Compile Include="BD_TW\PokazBaza.cs" />
-    <Compile Include="BD_TW\Przedstawienia.cs">
+    <Compile Include="BD_TW\DodajPrzedstawienie.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BD_TW\Przedstawienia.Designer.cs">
-      <DependentUpon>Przedstawienia.cs</DependentUpon>
+    <Compile Include="BD_TW\DodajPrzedstawienie.Designer.cs">
+      <DependentUpon>DodajPrzedstawienie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BD_TW\IZapiszAkt.cs" />
+    <Compile Include="BD_TW\IZapiszFX_Obrotowka.cs" />
+    <Compile Include="BD_TW\PokazKompozytor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BD_TW\PokazKompozytor.Designer.cs">
+      <DependentUpon>PokazKompozytor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BD_TW\PokazAkt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BD_TW\PokazAkt.Designer.cs">
+      <DependentUpon>PokazAkt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BD_TW\PokazBaza.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BD_TW\PokazPrzedstawienia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BD_TW\PokazPrzedstawienia.Designer.cs">
+      <DependentUpon>PokazPrzedstawienia.cs</DependentUpon>
     </Compile>
     <Compile Include="BD_TW\ZapiszAkt.cs" />
+    <Compile Include="BD_TW\ZapiszFX_Obrotowka.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +141,7 @@
     </Compile>
     <Compile Include="TWDataSet.cs">
       <DependentUpon>TWDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="TWDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -144,11 +173,23 @@
     <EmbeddedResource Include="BD_TW\AktualizujAkt.resx">
       <DependentUpon>AktualizujAkt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BD_TW\BazaDanych.resx">
+      <DependentUpon>BazaDanych.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BD_TW\DodajFX_Obrotowka.resx">
       <DependentUpon>DodajFX_Obrotowka.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BD_TW\Przedstawienia.resx">
-      <DependentUpon>Przedstawienia.cs</DependentUpon>
+    <EmbeddedResource Include="BD_TW\DodajPrzedstawienie.resx">
+      <DependentUpon>DodajPrzedstawienie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BD_TW\PokazKompozytor.resx">
+      <DependentUpon>PokazKompozytor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BD_TW\PokazAkt.resx">
+      <DependentUpon>PokazAkt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BD_TW\PokazPrzedstawienia.resx">
+      <DependentUpon>PokazPrzedstawienia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
