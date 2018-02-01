@@ -47,7 +47,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
             try
             {
                 int idPrzed = ((this.pokazPrzedstawienieBindingSource.Current as DataRowView).Row as TWDataSet.pokazPrzedstawienieRow).idprzed;
-                kom = db.DodajAkt(idPrzed, textBoxNazwaAktDodaj.Text, richTextBoxDodajOpisAkt.Text, TimeSpan.Parse(dateTimePickerDodajDlugosc.Text));
+                kom = db.DodajAkt(idPrzed, textBoxNazwaAktDodaj.Text, richTextBoxDodajOpisAkt.Text, dateTimePickerDodajDlugosc.Text);
                 labelWynikDodajAkt.Text = kom;
                 ladujDane();
             }
@@ -58,7 +58,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
 
         private void textBoxNazwaAktualizuj_Click(object sender, EventArgs e)
         {
-            textBoxNazwaAktualizuj.Clear();
+            textBoxNazwaAktualizuj.Text = "Akt ";
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -67,9 +68,9 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
             try
             {
                 
-                //int idPrzed = ((this.pokazPrzedstawienieBindingSource.Current as DataRowView).Row as TWDataSet.pokazPrzedstawienieRow).idprzed;
+                int idPrzed = ((this.pokazPrzedstawienieBindingSource.Current as DataRowView).Row as TWDataSet.pokazPrzedstawienieRow).idprzed;
                 int idAkt = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
-                kom = db.AktualizujAkt(idAkt, textBoxNazwaAktualizuj.Text, richTextBoxOpisAktualizuj.Text, TimeSpan.Parse(dateTimePickerDlugoscAktualizuj.Text));
+                kom = db.AktualizujAkt(idAkt,idPrzed, textBoxNazwaAktualizuj.Text, richTextBoxOpisAktualizuj.Text, dateTimePickerDlugoscAktualizuj.Text);
                 labelWynikAktualizujAkt.Text = kom;
                 ladujDane();
             }

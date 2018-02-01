@@ -210,7 +210,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
                         idPrzed = ((this.pokazPrzedstawienieBindingSource.Current as DataRowView).Row as TWDataSet.pokazPrzedstawienieRow).idprzed;
                         kom = db.AktualizujPrzedstawienie(idPrzed, idKom, idRez, idRodz, 
                             textBoxNazwaPrzedstawienia.Text.ToString(), dateTimePickerDataPremiery.Value, 
-                            TimeSpan.Parse(dateTimePickerDlugoscPrzedstawienia.Text), 
+                            dateTimePickerDlugoscPrzedstawienia.Text, 
                             richTextBoxOpisPrzedstawienie.Text.ToString());
                         labelWynikPrzedstawienie.Text = kom;
 

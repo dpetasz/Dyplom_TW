@@ -10,7 +10,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
     {
         TWDataSetTableAdapters.QueriesTableAdapter db = new TWDataSetTableAdapters.QueriesTableAdapter();
 
-        public string DodajAkt(int idPrzed, string nazwa, string opis, TimeSpan dlugosc)
+        public string DodajAkt(int idPrzed, string nazwa, string opis, string dlugosc)
         {
             string kom = "";
 
@@ -20,11 +20,11 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
 
         }
 
-        public string AktualizujAkt(int idAkt, string nazwa, string opis, TimeSpan dlugosc)
+        public string AktualizujAkt(int idAkt, int idPrzed, string nazwa, string opis, string dlugosc)
         {
             string kom = "";
 
-            db.AktualizujAkt(idAkt, nazwa, opis, dlugosc,ref kom);
+            db.AktualizujAkt(idAkt, idPrzed, nazwa, opis, dlugosc,ref kom);
 
             return kom;
         }

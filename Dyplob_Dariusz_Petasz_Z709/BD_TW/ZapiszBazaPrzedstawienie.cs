@@ -35,7 +35,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
             return kom;
         }
-        public string AktualizujPrzedstawienie(int idprzed, int komp, int rez, int rodz, string nazwa, DateTime data, TimeSpan dl, string opis)
+        public string AktualizujPrzedstawienie(int idprzed, int komp, int rez, int rodz, string nazwa, DateTime data, string dl, string opis)
         {
             string kom = "";
             db.AktualizujPrzedstawienie(idprzed, komp, rez, rodz, nazwa, data, dl, opis, ref kom);
