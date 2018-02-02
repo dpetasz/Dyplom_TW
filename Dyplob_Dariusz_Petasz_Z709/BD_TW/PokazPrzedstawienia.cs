@@ -46,7 +46,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
         }
 
         
-
+        //zapisuje nowe przedstawienie
         private void buttonZapiszNowePrzedstawienie_Click(object sender, EventArgs e)
         {
             string kom = "";

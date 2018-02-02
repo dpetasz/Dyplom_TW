@@ -58,10 +58,13 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pokazFxObrotowkaTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFxObrotowkaTableAdapter();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.labelWynikDodajFX_Ob = new System.Windows.Forms.Label();
+            this.textBoxNazwaFX = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.buttonZapiszFX = new System.Windows.Forms.Button();
             this.comboBoxAkt = new System.Windows.Forms.ComboBox();
             this.comboBoxPrzedstawienie = new System.Windows.Forms.ComboBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxOpisZapisFx = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -76,9 +79,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControlBazaDanych = new System.Windows.Forms.TabControl();
-            this.textBoxNazwaFX = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.labelWynikDodajFX_Ob = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelSterowanie.SuspendLayout();
@@ -391,7 +391,7 @@
             this.tabPage2.Controls.Add(this.buttonZapiszFX);
             this.tabPage2.Controls.Add(this.comboBoxAkt);
             this.tabPage2.Controls.Add(this.comboBoxPrzedstawienie);
-            this.tabPage2.Controls.Add(this.richTextBox3);
+            this.tabPage2.Controls.Add(this.richTextBoxOpisZapisFx);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.label12);
@@ -402,6 +402,40 @@
             this.tabPage2.Size = new System.Drawing.Size(329, 598);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Dodaj FX";
+            // 
+            // labelWynikDodajFX_Ob
+            // 
+            this.labelWynikDodajFX_Ob.AutoSize = true;
+            this.labelWynikDodajFX_Ob.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.labelWynikDodajFX_Ob.ForeColor = System.Drawing.Color.Salmon;
+            this.labelWynikDodajFX_Ob.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelWynikDodajFX_Ob.Location = new System.Drawing.Point(7, 14);
+            this.labelWynikDodajFX_Ob.Name = "labelWynikDodajFX_Ob";
+            this.labelWynikDodajFX_Ob.Size = new System.Drawing.Size(65, 19);
+            this.labelWynikDodajFX_Ob.TabIndex = 33;
+            this.labelWynikDodajFX_Ob.Text = "Dodano: ";
+            // 
+            // textBoxNazwaFX
+            // 
+            this.textBoxNazwaFX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.textBoxNazwaFX.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.textBoxNazwaFX.ForeColor = System.Drawing.Color.LightGray;
+            this.textBoxNazwaFX.Location = new System.Drawing.Point(112, 143);
+            this.textBoxNazwaFX.Name = "textBoxNazwaFX";
+            this.textBoxNazwaFX.Size = new System.Drawing.Size(203, 26);
+            this.textBoxNazwaFX.TabIndex = 32;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label16.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label16.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label16.Location = new System.Drawing.Point(39, 146);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(52, 19);
+            this.label16.TabIndex = 31;
+            this.label16.Text = "Nazwa";
             // 
             // buttonZapiszFX
             // 
@@ -443,15 +477,15 @@
             this.comboBoxPrzedstawienie.TabIndex = 28;
             this.comboBoxPrzedstawienie.ValueMember = "idprzed";
             // 
-            // richTextBox3
+            // richTextBoxOpisZapisFx
             // 
-            this.richTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.richTextBox3.ForeColor = System.Drawing.Color.LightGray;
-            this.richTextBox3.Location = new System.Drawing.Point(11, 253);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(304, 331);
-            this.richTextBox3.TabIndex = 27;
-            this.richTextBox3.Text = "";
+            this.richTextBoxOpisZapisFx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.richTextBoxOpisZapisFx.ForeColor = System.Drawing.Color.LightGray;
+            this.richTextBoxOpisZapisFx.Location = new System.Drawing.Point(11, 253);
+            this.richTextBoxOpisZapisFx.Name = "richTextBoxOpisZapisFx";
+            this.richTextBoxOpisZapisFx.Size = new System.Drawing.Size(304, 331);
+            this.richTextBoxOpisZapisFx.TabIndex = 27;
+            this.richTextBoxOpisZapisFx.Text = "";
             // 
             // label14
             // 
@@ -535,7 +569,7 @@
             this.richTextBox1.ForeColor = System.Drawing.Color.LightGray;
             this.richTextBox1.Location = new System.Drawing.Point(12, 193);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(304, 392);
+            this.richTextBox1.Size = new System.Drawing.Size(304, 378);
             this.richTextBox1.TabIndex = 19;
             this.richTextBox1.Text = "";
             // 
@@ -628,40 +662,6 @@
             this.tabControlBazaDanych.Size = new System.Drawing.Size(337, 630);
             this.tabControlBazaDanych.TabIndex = 8;
             // 
-            // textBoxNazwaFX
-            // 
-            this.textBoxNazwaFX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.textBoxNazwaFX.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.textBoxNazwaFX.ForeColor = System.Drawing.Color.LightGray;
-            this.textBoxNazwaFX.Location = new System.Drawing.Point(112, 143);
-            this.textBoxNazwaFX.Name = "textBoxNazwaFX";
-            this.textBoxNazwaFX.Size = new System.Drawing.Size(203, 26);
-            this.textBoxNazwaFX.TabIndex = 32;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.label16.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.label16.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label16.Location = new System.Drawing.Point(39, 146);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(52, 19);
-            this.label16.TabIndex = 31;
-            this.label16.Text = "Nazwa";
-            // 
-            // labelWynikDodajFX_Ob
-            // 
-            this.labelWynikDodajFX_Ob.AutoSize = true;
-            this.labelWynikDodajFX_Ob.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.labelWynikDodajFX_Ob.ForeColor = System.Drawing.Color.Salmon;
-            this.labelWynikDodajFX_Ob.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelWynikDodajFX_Ob.Location = new System.Drawing.Point(7, 14);
-            this.labelWynikDodajFX_Ob.Name = "labelWynikDodajFX_Ob";
-            this.labelWynikDodajFX_Ob.Size = new System.Drawing.Size(65, 19);
-            this.labelWynikDodajFX_Ob.TabIndex = 33;
-            this.labelWynikDodajFX_Ob.Text = "Dodano: ";
-            // 
             // ObrotowkaPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -743,7 +743,7 @@
         private System.Windows.Forms.Button buttonZapiszFX;
         private System.Windows.Forms.ComboBox comboBoxAkt;
         private System.Windows.Forms.ComboBox comboBoxPrzedstawienie;
-        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.RichTextBox richTextBoxOpisZapisFx;
         private System.Windows.Forms.Label labelWynikDodajFX_Ob;
         private System.Windows.Forms.TextBox textBoxNazwaFX;
         private System.Windows.Forms.Label label16;

@@ -27,6 +27,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
             this.pokazPrzedstawienieTableAdapter.Fill(this.tWDataSet.pokazPrzedstawienie);
         }
 
+        //przypisanie idPrzedstawienia dla wyświetlania aktu
         private void pokazPrzedstawienieBindingSource_CurrentChanged(object sender, EventArgs e)
         {
             try
@@ -41,6 +42,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
             }
         }
 
+        //dodawanie nowego aktu
         private void button1_Click(object sender, EventArgs e)
         {
             string kom = "";
@@ -61,7 +63,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
             textBoxNazwaAktualizuj.Text = "Akt ";
             
         }
-
+        //Aktualizacja aktu
         private void button2_Click(object sender, EventArgs e)
         {
             string kom = "";

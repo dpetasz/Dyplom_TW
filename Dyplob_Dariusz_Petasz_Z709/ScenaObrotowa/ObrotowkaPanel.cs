@@ -80,7 +80,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             stanWyp.Wypelnienie(Rysuj);
 
         }
-
+        
 
         private void green()
         {
@@ -240,8 +240,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 
                 idAkt = 0;
             }
-            
-            textBoxNazwaFX.Text = idAkt.ToString();
+
+            labelWynikDodajFX_Ob.Text = db.DodajFX(idAkt, textBoxNazwaFX.Text, Predkosc, Kierunek, (decimal)Pozycja, richTextBoxOpisZapisFx.Text);
         }
     }
 }

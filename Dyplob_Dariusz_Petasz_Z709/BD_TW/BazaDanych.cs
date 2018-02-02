@@ -42,13 +42,16 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
                     {
                         pp = new PokazPrzedstawienia();
                         pp.Parent = panelBazaPokaz;
-                        
+                        //pp.Top = 30;
+                        pp.Left = 30;
                         break;
                     }
                 case "Akt":
                     {
                         pa = new PokazKompozytor();
                         pa.Parent = panelBazaPokaz;
+                        //pa.Top = 30;
+                        pa.Left = 30;
                         
                         break;
                     }

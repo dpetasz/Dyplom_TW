@@ -71,7 +71,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(270, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1014, 20);
+            this.panel2.Size = new System.Drawing.Size(1044, 20);
             this.panel2.TabIndex = 2;
             // 
             // panelBazaPokaz
@@ -79,7 +79,7 @@
             this.panelBazaPokaz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBazaPokaz.Location = new System.Drawing.Point(270, 20);
             this.panelBazaPokaz.Name = "panelBazaPokaz";
-            this.panelBazaPokaz.Size = new System.Drawing.Size(1014, 487);
+            this.panelBazaPokaz.Size = new System.Drawing.Size(1044, 487);
             this.panelBazaPokaz.TabIndex = 3;
             // 
             // panel3
@@ -87,13 +87,13 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(270, 487);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1014, 20);
+            this.panel3.Size = new System.Drawing.Size(1044, 20);
             this.panel3.TabIndex = 0;
             // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(1264, 20);
+            this.panel4.Location = new System.Drawing.Point(1294, 20);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(20, 467);
             this.panel4.TabIndex = 4;
@@ -103,7 +103,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1284, 507);
+            this.ClientSize = new System.Drawing.Size(1314, 507);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelBazaPokaz);
