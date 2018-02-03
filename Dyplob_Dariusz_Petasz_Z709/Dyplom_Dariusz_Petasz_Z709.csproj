@@ -91,6 +91,22 @@
     <Compile Include="Logowanie\LogowaniePanel.Designer.cs">
       <DependentUpon>LogowaniePanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mosty\IJazdaMost.cs" />
+    <Compile Include="Mosty\IRysujMost.cs" />
+    <Compile Include="Mosty\JazdaMost.cs" />
+    <Compile Include="Mosty\Most.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mosty\Most.Designer.cs">
+      <DependentUpon>Most.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mosty\MostyPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mosty\MostyPanel.Designer.cs">
+      <DependentUpon>MostyPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mosty\RysujMost.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -121,6 +137,7 @@
     </Compile>
     <Compile Include="TWDataSet.cs">
       <DependentUpon>TWDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="TWDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -128,6 +145,7 @@
       <DependentUpon>TWDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="BD_TW\ZapiszBazaPrzedstawienie.cs" />
+    <Compile Include="Urzadzenie.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -169,6 +187,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logowanie\LogowaniePanel.resx">
       <DependentUpon>LogowaniePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mosty\Most.resx">
+      <DependentUpon>Most.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mosty\MostyPanel.resx">
+      <DependentUpon>MostyPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obrotowka.resx">
       <DependentUpon>Obrotowka.cs</DependentUpon>
@@ -217,6 +241,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\L.png" />
+    <None Include="Resources\G.png" />
+    <None Include="Resources\D.png" />
     <Content Include="Resources\lewo.png" />
     <Content Include="Resources\lewo1.png" />
     <None Include="Resources\P.png" />

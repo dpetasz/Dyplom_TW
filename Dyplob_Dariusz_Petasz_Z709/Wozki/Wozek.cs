@@ -189,10 +189,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             Jazda = x;
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             //rysuje wozek
-            g.FillRectangle(pioro1, jazda, 1, 460, 104);
-            g.DrawRectangle(pioro, jazda, 1, 460, 104);
+            g.FillRectangle(pioro1, Jazda, 1, 460, 104);
+            g.DrawRectangle(pioro, Jazda, 1, 460, 104);
             //napis
-            g.DrawString(Nazwa.ToString(), textFont, KolorLiczby, jazda + 180, 30);
+            g.DrawString(Nazwa.ToString(), textFont, KolorLiczby, Jazda + 180, 30);
 
 
         }

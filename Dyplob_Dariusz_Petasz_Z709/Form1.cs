@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dyplom_Dariusz_Petasz_Z709.BD_TW;
+using Dyplom_Dariusz_Petasz_Z709.Mosty;
 
 namespace Dyplom_Dariusz_Petasz_Z709
 {
@@ -102,7 +103,10 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
         private void buttonMosty_Click(object sender, EventArgs e)
         {
-
+            pictureBox1.Visible = false;
+            panelPrzyciski.Visible = false;
+            MostyPanel m = new MostyPanel();
+            m.Parent = panel_Glowny;
         }
 
         private void buttonWozki_Click(object sender, EventArgs e)
