@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.twDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
+            this.pokazMostyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pokazMostyTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazMostyTableAdapter();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazMostyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -74,6 +78,15 @@
             this.twDataSet.DataSetName = "TWDataSet";
             this.twDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // pokazMostyBindingSource
+            // 
+            this.pokazMostyBindingSource.DataMember = "pokazMosty";
+            this.pokazMostyBindingSource.DataSource = this.twDataSet;
+            // 
+            // pokazMostyTableAdapter
+            // 
+            this.pokazMostyTableAdapter.ClearBeforeFill = true;
+            // 
             // MostyPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -86,6 +99,7 @@
             this.Load += new System.EventHandler(this.MostyPanel_Load);
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazMostyBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -96,5 +110,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private TWDataSet twDataSet;
+        private System.Windows.Forms.BindingSource pokazMostyBindingSource;
+        private TWDataSetTableAdapters.pokazMostyTableAdapter pokazMostyTableAdapter;
     }
 }

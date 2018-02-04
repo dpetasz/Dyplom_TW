@@ -19,8 +19,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
         void LadujMost()
         {
             
-            int wys = 3;
-            int szer = 3;
+            int wys = 5;
+            int szer = 5;
             foreach (DataRow m in twDataSet.pokazMosty.Rows)
             {
                 float p = (float)(Convert.ToDouble(m["pozycja"].ToString()));
@@ -36,8 +36,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
                     most.Parent = tabControl1.TabPages[0];
                     most.Top = wys;
                     most.Left = szer;
-                    szer += 250;
-                    if (szer == 753) { szer = 3; wys = 296; }
+                    szer += 255;
+                    if (szer == 770) { szer = 5; wys = 305; }
                 }
                 else
                 {
@@ -46,7 +46,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
                     most.Parent = tabControl1.TabPages[0];
                     most.Top = wys;
                     most.Left = szer;
-                    szer += 250;
+                    szer += 255;
                 }
                 
 
@@ -55,6 +55,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
 
         private void MostyPanel_Load(object sender, EventArgs e)
         {
+            //this.pokazWozkiTableAdapter.Fill(this.tWDataSet.pokazWozki);
+            this.pokazMostyTableAdapter.Fill(this.twDataSet.pokazMosty);
             LadujMost();
         }
     }
