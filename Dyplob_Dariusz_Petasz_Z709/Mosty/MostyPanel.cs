@@ -30,23 +30,23 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
                 float kd = (float)(Convert.ToDouble(m["krancowa_dol"].ToString()));
                 float kg = (float)(Convert.ToDouble(m["krancowa_gora"].ToString()));
                 int przych = Convert.ToInt32(m["przychamowanie"].ToString());
-                if(szer < 753)
+                if(szer < 700)
                 {
                     Most most = new Most(id, name, p, vmax, przych);
-                    most.Parent = tabControl1.TabPages[0];
+                    most.Parent = panelMosty;
                     most.Top = wys;
                     most.Left = szer;
-                    szer += 255;
-                    if (szer == 770) { szer = 5; wys = 305; }
+                    szer += 230;
+                    if (szer == 925) { szer = 5; wys = 310; }
                 }
                 else
                 {
                     
                     Most most = new Most(id, name, p, vmax, przych);
-                    most.Parent = tabControl1.TabPages[0];
+                    most.Parent = panelMosty;
                     most.Top = wys;
                     most.Left = szer;
-                    szer += 255;
+                    szer += 230;
                 }
                 
 

@@ -119,16 +119,16 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
             
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             //rysuje most
-            g.FillRectangle(Pioro1, 1, x, 44, 18);
-            g.DrawRectangle(Pioro, 1, x, 44, 18);
+            g.FillRectangle(Pioro1, 0, 0, 25, 125);
+            g.DrawRectangle(Pioro, 0, 0, 25, 125);
            
         }
         public void Obramowanie(Graphics g)
         {
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-            g.FillRectangle(Pioro3, 0, 0, 200, 20);
-            g.DrawRectangle(Pioro, 0, 0, 200, 20);
+            g.FillRectangle(Pioro3, 0, 0, 25, 250);
+            g.DrawRectangle(Pioro, 0, 0, 25, 250);
         }
 
     }
