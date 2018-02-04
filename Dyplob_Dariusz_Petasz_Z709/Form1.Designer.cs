@@ -46,6 +46,7 @@
             this.tWDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
             this.pokazLoginTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazLoginTableAdapter();
             this.panel_Glowny = new System.Windows.Forms.Panel();
+            this.panelPrzyciski = new System.Windows.Forms.Panel();
             this.panelLogowanie = new System.Windows.Forms.Panel();
             this.comboBoxLogin = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -55,14 +56,13 @@
             this.buttonWejscie = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelPrzyciski = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazLoginBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).BeginInit();
             this.panel_Glowny.SuspendLayout();
+            this.panelPrzyciski.SuspendLayout();
             this.panelLogowanie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelPrzyciski.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonKoniec
@@ -187,6 +187,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.CadetBlue;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.plikToolStripMenuItem,
             this.bazaToolStripMenuItem,
@@ -252,6 +253,22 @@
             this.panel_Glowny.Name = "panel_Glowny";
             this.panel_Glowny.Size = new System.Drawing.Size(1350, 705);
             this.panel_Glowny.TabIndex = 8;
+            // 
+            // panelPrzyciski
+            // 
+            this.panelPrzyciski.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panelPrzyciski.Controls.Add(this.labelTextPrzyciski);
+            this.panelPrzyciski.Controls.Add(this.buttonKoniec);
+            this.panelPrzyciski.Controls.Add(this.buttonObrotowka);
+            this.panelPrzyciski.Controls.Add(this.buttonWyloguj);
+            this.panelPrzyciski.Controls.Add(this.buttonZapadnie);
+            this.panelPrzyciski.Controls.Add(this.buttonMosty);
+            this.panelPrzyciski.Controls.Add(this.buttonSztankiety);
+            this.panelPrzyciski.Controls.Add(this.buttonWozki);
+            this.panelPrzyciski.Location = new System.Drawing.Point(0, 0);
+            this.panelPrzyciski.Name = "panelPrzyciski";
+            this.panelPrzyciski.Size = new System.Drawing.Size(1347, 85);
+            this.panelPrzyciski.TabIndex = 10;
             // 
             // panelLogowanie
             // 
@@ -362,22 +379,6 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // panelPrzyciski
-            // 
-            this.panelPrzyciski.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.panelPrzyciski.Controls.Add(this.labelTextPrzyciski);
-            this.panelPrzyciski.Controls.Add(this.buttonKoniec);
-            this.panelPrzyciski.Controls.Add(this.buttonObrotowka);
-            this.panelPrzyciski.Controls.Add(this.buttonWyloguj);
-            this.panelPrzyciski.Controls.Add(this.buttonZapadnie);
-            this.panelPrzyciski.Controls.Add(this.buttonMosty);
-            this.panelPrzyciski.Controls.Add(this.buttonSztankiety);
-            this.panelPrzyciski.Controls.Add(this.buttonWozki);
-            this.panelPrzyciski.Location = new System.Drawing.Point(0, 0);
-            this.panelPrzyciski.Name = "panelPrzyciski";
-            this.panelPrzyciski.Size = new System.Drawing.Size(1347, 85);
-            this.panelPrzyciski.TabIndex = 10;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,11 +397,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pokazLoginBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).EndInit();
             this.panel_Glowny.ResumeLayout(false);
+            this.panelPrzyciski.ResumeLayout(false);
+            this.panelPrzyciski.PerformLayout();
             this.panelLogowanie.ResumeLayout(false);
             this.panelLogowanie.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelPrzyciski.ResumeLayout(false);
-            this.panelPrzyciski.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
