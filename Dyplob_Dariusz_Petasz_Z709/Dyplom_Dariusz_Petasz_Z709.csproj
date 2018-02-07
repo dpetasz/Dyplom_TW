@@ -145,7 +145,9 @@
       <DependentUpon>TWDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="BD_TW\ZapiszBazaPrzedstawienie.cs" />
-    <Compile Include="Urzadzenie.cs" />
+    <Compile Include="Urzadzenia\JazdaUrzadzenie.cs" />
+    <Compile Include="Urzadzenia\RysujUrzadzenie.cs" />
+    <Compile Include="Urzadzenia\Urzadzenie.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +155,7 @@
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="Wozki\IRysujWozek.cs" />
+    <Compile Include="Wozki\JazdaWozek.cs" />
     <Compile Include="Wozki\RysujWozek.cs" />
     <Compile Include="Wozki\StanWypWozki.cs" />
     <Compile Include="Wozki\Wozek.cs">

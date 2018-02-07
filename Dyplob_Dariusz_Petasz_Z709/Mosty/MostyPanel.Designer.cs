@@ -39,8 +39,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -49,6 +47,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.trackBarJoystick = new System.Windows.Forms.TrackBar();
+            this.buttonPrgramowa = new System.Windows.Forms.Button();
+            this.buttonJazdaDoPozycji = new System.Windows.Forms.Button();
+            this.buttonManual = new System.Windows.Forms.Button();
+            this.buttonJoystick = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).BeginInit();
@@ -56,6 +67,9 @@
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarJoystick)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -154,24 +168,6 @@
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Jazda Programowa";
             // 
-            // tabPage4
-            // 
-            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(12)))), ((int)(((byte)(40)))));
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(369, 383);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "Dodaj Efekt";
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 422);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(377, 279);
-            this.panel2.TabIndex = 0;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -269,6 +265,159 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Przedstawienie: ";
             // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(12)))), ((int)(((byte)(40)))));
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(369, 383);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "Dodaj Efekt";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.buttonPrgramowa);
+            this.panel2.Controls.Add(this.buttonJazdaDoPozycji);
+            this.panel2.Controls.Add(this.buttonManual);
+            this.panel2.Controls.Add(this.buttonJoystick);
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 422);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(377, 279);
+            this.panel2.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.trackBarJoystick);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(282, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(95, 279);
+            this.panel3.TabIndex = 25;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Info;
+            this.label5.Location = new System.Drawing.Point(42, 248);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 24);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "- 100";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Info;
+            this.label6.Location = new System.Drawing.Point(42, -2);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 24);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "- 100";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Info;
+            this.label7.Location = new System.Drawing.Point(42, 124);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 24);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "- 0";
+            // 
+            // trackBarJoystick
+            // 
+            this.trackBarJoystick.Dock = System.Windows.Forms.DockStyle.Left;
+            this.trackBarJoystick.Location = new System.Drawing.Point(0, 0);
+            this.trackBarJoystick.Maximum = 100;
+            this.trackBarJoystick.Minimum = -100;
+            this.trackBarJoystick.Name = "trackBarJoystick";
+            this.trackBarJoystick.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBarJoystick.Size = new System.Drawing.Size(45, 275);
+            this.trackBarJoystick.TabIndex = 0;
+            this.trackBarJoystick.TickFrequency = 10;
+            this.trackBarJoystick.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.trackBarJoystick.Scroll += new System.EventHandler(this.trackBarJoystick_Scroll);
+            this.trackBarJoystick.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBarJoystick_MouseUp);
+            // 
+            // buttonPrgramowa
+            // 
+            this.buttonPrgramowa.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonPrgramowa.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.buttonPrgramowa.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonPrgramowa.Location = new System.Drawing.Point(141, 54);
+            this.buttonPrgramowa.Name = "buttonPrgramowa";
+            this.buttonPrgramowa.Size = new System.Drawing.Size(112, 35);
+            this.buttonPrgramowa.TabIndex = 24;
+            this.buttonPrgramowa.Text = "Programowa";
+            this.buttonPrgramowa.UseVisualStyleBackColor = false;
+            // 
+            // buttonJazdaDoPozycji
+            // 
+            this.buttonJazdaDoPozycji.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonJazdaDoPozycji.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.buttonJazdaDoPozycji.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonJazdaDoPozycji.Location = new System.Drawing.Point(7, 54);
+            this.buttonJazdaDoPozycji.Name = "buttonJazdaDoPozycji";
+            this.buttonJazdaDoPozycji.Size = new System.Drawing.Size(112, 35);
+            this.buttonJazdaDoPozycji.TabIndex = 23;
+            this.buttonJazdaDoPozycji.Text = "Do pozycji";
+            this.buttonJazdaDoPozycji.UseVisualStyleBackColor = false;
+            this.buttonJazdaDoPozycji.Click += new System.EventHandler(this.buttonJazdaDoPozycji_Click);
+            // 
+            // buttonManual
+            // 
+            this.buttonManual.BackColor = System.Drawing.Color.Maroon;
+            this.buttonManual.Enabled = false;
+            this.buttonManual.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.buttonManual.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonManual.Location = new System.Drawing.Point(7, 3);
+            this.buttonManual.Name = "buttonManual";
+            this.buttonManual.Size = new System.Drawing.Size(112, 35);
+            this.buttonManual.TabIndex = 22;
+            this.buttonManual.Text = "Manual";
+            this.buttonManual.UseVisualStyleBackColor = false;
+            // 
+            // buttonJoystick
+            // 
+            this.buttonJoystick.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonJoystick.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.buttonJoystick.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonJoystick.Location = new System.Drawing.Point(141, 3);
+            this.buttonJoystick.Name = "buttonJoystick";
+            this.buttonJoystick.Size = new System.Drawing.Size(112, 35);
+            this.buttonJoystick.TabIndex = 21;
+            this.buttonJoystick.Text = "Joystick";
+            this.buttonJoystick.UseVisualStyleBackColor = false;
+            this.buttonJoystick.Click += new System.EventHandler(this.buttonJoystick_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Green;
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button3.Location = new System.Drawing.Point(63, 122);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(134, 125);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "Start";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 50;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // MostyPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,6 +437,10 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarJoystick)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -314,5 +467,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonPrgramowa;
+        private System.Windows.Forms.Button buttonJazdaDoPozycji;
+        private System.Windows.Forms.Button buttonManual;
+        private System.Windows.Forms.Button buttonJoystick;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TrackBar trackBarJoystick;
+        private System.Windows.Forms.Timer timer1;
     }
 }

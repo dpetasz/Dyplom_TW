@@ -17,7 +17,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         //RysujWozek scena;
 
         Graphics g;
-        StanWypWozki stanWyp = new Wypelnienie1();
+        //StanWypWozki stanWyp = new Wypelnienie1();
         //StanWozek stanWozek;
         List<float> jazda = new List<float>();
         List<bool> aktywacja = new List<bool>();
@@ -48,12 +48,9 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             foreach (DataRow w in tWDataSet.pokazWozki.Rows)
             {
                 float p = (float)(Convert.ToDouble(w["pozycja"].ToString()));
-                //jazda.Add(p);
-                //aktywacja.Add(false);
-                //kierunek.Add(false);
-                //RysujWozek wozek = new RysujWozek(p,wys, Convert.ToInt32(w["predkosc_max"].ToString()), w["nazwa"].ToString());
+                
                 Wozek wozek = new Wozek(p, Convert.ToInt32(w["predkosc_max"].ToString()), w["nazwa"].ToString(), (Convert.ToInt32(w["idwozek"].ToString())));
-                //RysujWozek.ListaWozek.Add(wozek);
+                
                 wozek.Parent = pictureBox1;
                 wozek.Top = wys;
                 wozek.Left = 10;
@@ -87,15 +84,15 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach(RysujWozek w in RysujWozek.ListaWozek)
+            foreach(Wozek w in Wozek.ListaWozek)
             {
-                w.Kierunek = true;
+                 w.Kierunek = true;
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            foreach (RysujWozek w in RysujWozek.ListaWozek)
+            foreach (Wozek w in Wozek.ListaWozek)
             {
                 w.Kierunek = false;
             }
@@ -116,7 +113,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
         private void WozkiForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            RysujWozek.ListaWozek.Clear();
+            Wozek.ListaWozek.Clear();
             jazda.Clear();
             aktywacja.Clear();
             f1.Visible = true;
@@ -189,7 +186,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            foreach(RysujWozek w in RysujWozek.ListaWozek)
+            /*foreach(Wozek w in Wozek.ListaWozek)
             {
                 if (w.Jazda <= 0 && w.Kierunek == false && w.Aktywacja == true)
                 {
@@ -208,7 +205,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                 
                 if (w.Aktywacja == true)w.Jazda = w.ruch(w.Kierunek, 100);
             }
-            pictureBox1.Invalidate();
+            pictureBox1.Invalidate();*/
         }
         private void green()
         {
@@ -239,6 +236,11 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                 
                 green();
             }
+        }
+
+        private void trackBarJoystick_MouseUp(object sender, MouseEventArgs e)
+        {
+            trackBarJoystick.Value = 0;
         }
 
        

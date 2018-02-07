@@ -12,6 +12,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
 {
     public partial class MostyPanel : UserControl
     {
+        Most most ;
         public MostyPanel()
         {
             InitializeComponent();
@@ -32,7 +33,9 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
                 int przych = Convert.ToInt32(m["przychamowanie"].ToString());
                 if(szer < 700)
                 {
-                    Most most = new Most(id, name, p, vmax, przych);
+                    most = new Most(id, name, p, vmax, przych);
+                    most.Kg = kg ;
+                    most.Kd = kd ;
                     most.Parent = panelMosty;
                     most.Top = wys;
                     most.Left = szer;
@@ -42,7 +45,9 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
                 else
                 {
                     
-                    Most most = new Most(id, name, p, vmax, przych);
+                    most = new Most(id, name, p, vmax, przych);
+                    most.Kg = kg ;
+                    most.Kd = kd ;
                     most.Parent = panelMosty;
                     most.Top = wys;
                     most.Left = szer;
@@ -51,13 +56,78 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
                 
 
             }
-        }
+                    }
 
         private void MostyPanel_Load(object sender, EventArgs e)
         {
             //this.pokazWozkiTableAdapter.Fill(this.tWDataSet.pokazWozki);
             this.pokazMostyTableAdapter.Fill(this.twDataSet.pokazMosty);
             LadujMost();
+            
+            
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBarJoystick_MouseUp(object sender, MouseEventArgs e)
+        {
+            trackBarJoystick.Value = 0;
+            foreach (Most m in Most.ListaMost)
+            {
+                
+                    m.Predkosc = trackBarJoystick.Value;
+
+                    m.Odswiez();
+                
+            }
+        }
+
+        private void buttonJoystick_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            foreach (Most m in Most.ListaMost)
+            {
+                if (m.Aktywacja == true)
+                {
+                    
+                     m.Joystick();
+                     if (m.Pozycja >= m.Kg) timer1.Enabled = false;
+                     if (m.Pozycja <= m.Kd) timer1.Enabled = false;
+                }
+            }
+        }
+
+        private void trackBarJoystick_Scroll(object sender, EventArgs e)
+        {
+            foreach (Most m in Most.ListaMost)
+            {
+                if (m.Aktywacja == true)
+                {
+                    
+                    m.Predkosc = trackBarJoystick.Value ;
+                    
+                    
+                    //m.Odswiez();
+                }
+            }
+        }
+
+        private void buttonJazdaDoPozycji_Click(object sender, EventArgs e)
+        {
+            foreach (Most m in Most.ListaMost)
+            {
+                m.Pozycja = 100;
+                m.Odswiez();
+            }
+        }
+
+        
     }
 }

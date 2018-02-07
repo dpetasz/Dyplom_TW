@@ -41,19 +41,22 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.buttonJazdaDoPozycji = new System.Windows.Forms.Button();
             this.buttonJazdaTechniczna = new System.Windows.Forms.Button();
             this.buttonJazdaProgramowa = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.button1 = new System.Windows.Forms.Button();
+            this.trackBarJoystick = new System.Windows.Forms.TrackBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazPrzedstawienieBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarJoystick)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -137,9 +140,9 @@
             // 
             this.button3.BackColor = System.Drawing.Color.Green;
             this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(267, 68);
+            this.button3.Location = new System.Drawing.Point(261, 46);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 97);
+            this.button3.Size = new System.Drawing.Size(130, 130);
             this.button3.TabIndex = 10;
             this.button3.Text = "Start";
             this.button3.UseVisualStyleBackColor = false;
@@ -158,6 +161,18 @@
             this.panel1.Size = new System.Drawing.Size(466, 229);
             this.panel1.TabIndex = 11;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button1.Location = new System.Drawing.Point(33, 170);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(161, 35);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Programowa";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // buttonJazdaDoPozycji
             // 
             this.buttonJazdaDoPozycji.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -167,7 +182,7 @@
             this.buttonJazdaDoPozycji.Name = "buttonJazdaDoPozycji";
             this.buttonJazdaDoPozycji.Size = new System.Drawing.Size(161, 35);
             this.buttonJazdaDoPozycji.TabIndex = 18;
-            this.buttonJazdaDoPozycji.Text = "Jazda do pozycji";
+            this.buttonJazdaDoPozycji.Text = "Do pozycji";
             this.buttonJazdaDoPozycji.UseVisualStyleBackColor = false;
             // 
             // buttonJazdaTechniczna
@@ -180,7 +195,7 @@
             this.buttonJazdaTechniczna.Name = "buttonJazdaTechniczna";
             this.buttonJazdaTechniczna.Size = new System.Drawing.Size(161, 35);
             this.buttonJazdaTechniczna.TabIndex = 17;
-            this.buttonJazdaTechniczna.Text = "Jazda techniczna";
+            this.buttonJazdaTechniczna.Text = "Manual";
             this.buttonJazdaTechniczna.UseVisualStyleBackColor = false;
             // 
             // buttonJazdaProgramowa
@@ -198,34 +213,60 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.trackBar1);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.trackBarJoystick);
             this.panel2.Location = new System.Drawing.Point(1154, 467);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(142, 232);
             this.panel2.TabIndex = 12;
             // 
-            // trackBar1
+            // trackBarJoystick
             // 
-            this.trackBar1.Location = new System.Drawing.Point(52, 3);
-            this.trackBar1.Maximum = 100;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar1.Size = new System.Drawing.Size(45, 222);
-            this.trackBar1.TabIndex = 0;
-            this.trackBar1.TickFrequency = 10;
-            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.trackBarJoystick.Location = new System.Drawing.Point(28, 3);
+            this.trackBarJoystick.Maximum = 100;
+            this.trackBarJoystick.Minimum = -100;
+            this.trackBarJoystick.Name = "trackBarJoystick";
+            this.trackBarJoystick.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBarJoystick.Size = new System.Drawing.Size(45, 222);
+            this.trackBarJoystick.TabIndex = 0;
+            this.trackBarJoystick.TickFrequency = 10;
+            this.trackBarJoystick.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.trackBarJoystick.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBarJoystick_MouseUp);
             // 
-            // button1
+            // label1
             // 
-            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(33, 170);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 35);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Jazda programowa";
-            this.button1.UseVisualStyleBackColor = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Info;
+            this.label1.Location = new System.Drawing.Point(79, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 24);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "- 0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Info;
+            this.label2.Location = new System.Drawing.Point(79, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 24);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "- 100";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Info;
+            this.label3.Location = new System.Drawing.Point(79, 201);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 24);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "- 100";
             // 
             // WozkiForm
             // 
@@ -249,7 +290,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarJoystick)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -269,10 +310,13 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar trackBarJoystick;
         private System.Windows.Forms.Button buttonJazdaDoPozycji;
         private System.Windows.Forms.Button buttonJazdaTechniczna;
         private System.Windows.Forms.Button buttonJazdaProgramowa;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

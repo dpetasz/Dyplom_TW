@@ -43,7 +43,7 @@
             // 
             // panelPrzyciski
             // 
-            this.panelPrzyciski.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelPrzyciski.BackColor = System.Drawing.Color.SkyBlue;
             this.panelPrzyciski.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelPrzyciski.Controls.Add(this.buttonPrawo);
             this.panelPrzyciski.Controls.Add(this.buttonLewo);

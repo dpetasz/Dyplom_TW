@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBoxNazwa = new System.Windows.Forms.TextBox();
             this.buttonAktywacja = new System.Windows.Forms.Button();
             this.textBoxKD = new System.Windows.Forms.TextBox();
@@ -37,11 +38,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxPozycja = new System.Windows.Forms.TextBox();
+            this.textBoxPozycjaZadana = new System.Windows.Forms.TextBox();
+            this.textBoxPredkosc = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +61,7 @@
             // 
             // buttonAktywacja
             // 
-            this.buttonAktywacja.BackColor = System.Drawing.Color.CadetBlue;
+            this.buttonAktywacja.BackColor = System.Drawing.Color.SkyBlue;
             this.buttonAktywacja.Location = new System.Drawing.Point(58, 58);
             this.buttonAktywacja.Name = "buttonAktywacja";
             this.buttonAktywacja.Size = new System.Drawing.Size(125, 31);
@@ -152,33 +154,33 @@
             this.textBox3.Text = "Prędkość";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox4
+            // textBoxPozycja
             // 
-            this.textBox4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox4.Location = new System.Drawing.Point(139, 183);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(78, 26);
-            this.textBox4.TabIndex = 11;
+            this.textBoxPozycja.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBoxPozycja.Location = new System.Drawing.Point(139, 183);
+            this.textBoxPozycja.Name = "textBoxPozycja";
+            this.textBoxPozycja.Size = new System.Drawing.Size(78, 26);
+            this.textBoxPozycja.TabIndex = 11;
             // 
-            // textBox5
+            // textBoxPozycjaZadana
             // 
-            this.textBox5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox5.Location = new System.Drawing.Point(139, 215);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(78, 26);
-            this.textBox5.TabIndex = 12;
+            this.textBoxPozycjaZadana.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBoxPozycjaZadana.Location = new System.Drawing.Point(139, 215);
+            this.textBoxPozycjaZadana.Name = "textBoxPozycjaZadana";
+            this.textBoxPozycjaZadana.Size = new System.Drawing.Size(78, 26);
+            this.textBoxPozycjaZadana.TabIndex = 12;
             // 
-            // textBox6
+            // textBoxPredkosc
             // 
-            this.textBox6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox6.Location = new System.Drawing.Point(139, 247);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(78, 26);
-            this.textBox6.TabIndex = 13;
+            this.textBoxPredkosc.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBoxPredkosc.Location = new System.Drawing.Point(139, 247);
+            this.textBoxPredkosc.Name = "textBoxPredkosc";
+            this.textBoxPredkosc.Size = new System.Drawing.Size(78, 26);
+            this.textBoxPredkosc.TabIndex = 13;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.CadetBlue;
+            this.button2.BackColor = System.Drawing.Color.SkyBlue;
             this.button2.BackgroundImage = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.D;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Location = new System.Drawing.Point(129, 102);
@@ -189,7 +191,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.CadetBlue;
+            this.button1.BackColor = System.Drawing.Color.SkyBlue;
             this.button1.BackgroundImage = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.G;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Location = new System.Drawing.Point(48, 102);
@@ -198,15 +200,19 @@
             this.button1.TabIndex = 9;
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Most
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBoxPredkosc);
+            this.Controls.Add(this.textBoxPozycjaZadana);
+            this.Controls.Add(this.textBoxPozycja);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox3);
@@ -241,8 +247,9 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBoxPozycja;
+        private System.Windows.Forms.TextBox textBoxPozycjaZadana;
+        private System.Windows.Forms.TextBox textBoxPredkosc;
+        private System.Windows.Forms.Timer timer1;
     }
 }
