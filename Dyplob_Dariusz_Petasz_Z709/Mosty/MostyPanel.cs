@@ -87,6 +87,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
 
         private void buttonJoystick_Click(object sender, EventArgs e)
         {
+            
             timer1.Enabled = true;
         }
 
@@ -97,9 +98,22 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
                 if (m.Aktywacja == true)
                 {
                     
+                     
+                     if (m.Pozycja >= m.Kg && trackBarJoystick.Value > 0)
+                     { 
+                         timer1.Enabled = false;
+                         m.Aktywacja = false;
+                         m.ZmianaAktywacja();
+                         m.ZmianaKrancowa();
+                     }
+                     if (m.Pozycja <= m.Kd && trackBarJoystick.Value < 0)
+                     {
+                         timer1.Enabled = false;
+                         m.Aktywacja = false;
+                         m.ZmianaAktywacja();
+                         m.ZmianaKrancowa();
+                     }
                      m.Joystick();
-                     if (m.Pozycja >= m.Kg) timer1.Enabled = false;
-                     if (m.Pozycja <= m.Kd) timer1.Enabled = false;
                 }
             }
         }
@@ -112,7 +126,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
                 {
                     
                     m.Predkosc = trackBarJoystick.Value ;
-                    
+                    m.ZmianaKrancowa();
                     
                     //m.Odswiez();
                 }

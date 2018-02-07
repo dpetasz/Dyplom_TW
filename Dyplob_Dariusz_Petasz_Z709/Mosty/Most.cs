@@ -85,7 +85,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
             this.Aktywacja = false;
             rysujMost.PredkoscMax = PredkoscMax;
             this.Predkosc = 0;
-            rysujMost.Przychamowanie = Przychamowanie;
+            this.Przychamowanie = Przychamowanie;
             rysujMost.Wypelnienie();
             ListaMost.Add(this);
             
@@ -129,17 +129,18 @@ namespace Dyplom_Dariusz_Petasz_Z709
         }
         public void Joystick()
         {
-            if (Pozycja < (Kg - 10) || Pozycja > (Kd + 10))
-            {
-                Pozycja = jazdaMost.jazdaJoystick(Predkosc, Pozycja);
-
-                Odswiez();
-            }
-            else
+            float x = Kg -3, y = Kd +3;
+            if ((Pozycja > x) && Predkosc > 0)
             {
                 Pozycja = jazdaMost.jazdaJoystick(Przychamowanie, Pozycja);
-
                 Odswiez();
+            }else if ((Pozycja < y) && Predkosc<0)
+            {
+                Pozycja = jazdaMost.jazdaJoystick(Przychamowanie, Pozycja);
+                Odswiez();
+            }
+            else { Pozycja = jazdaMost.jazdaJoystick(Predkosc, Pozycja);
+            Odswiez();
             }
         }
         public void DoPozycji()
@@ -154,12 +155,25 @@ namespace Dyplom_Dariusz_Petasz_Z709
             pictureBox1.Invalidate();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            
-        }
+        
        
+        public void ZmianaAktywacja()
+        {
+            if(Aktywacja == false)
+            { 
 
+            buttonAktywacja.BackColor = Color.SkyBlue;
+            }
+            else {
+                
+                buttonAktywacja.BackColor = Color.Maroon;
+            }
+        }
+        public void ZmianaKrancowa()
+        {
+            if (Pozycja >= Kg) { textBoxKG.BackColor = Color.Red; } else { textBoxKG.BackColor = Color.DarkSeaGreen; }
+            if (Pozycja <= Kd) { textBoxKD.BackColor = Color.Red; } else { textBoxKD.BackColor = Color.DarkSeaGreen; }
+        }
         
     }
 }

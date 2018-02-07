@@ -35,12 +35,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
             set { aktywacja = value; }
         }
 
-        int przychamowanie;
-        public int Przychamowanie
-        {
-            get { return przychamowanie; }
-            set { przychamowanie = value; }
-        }
+        
         float pozycja;
         public float Pozycja
         {

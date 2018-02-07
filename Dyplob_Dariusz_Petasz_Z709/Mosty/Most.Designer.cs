@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.textBoxNazwa = new System.Windows.Forms.TextBox();
             this.buttonAktywacja = new System.Windows.Forms.Button();
             this.textBoxKD = new System.Windows.Forms.TextBox();
@@ -43,7 +42,6 @@
             this.textBoxPredkosc = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -200,10 +198,6 @@
             this.button1.TabIndex = 9;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // Most
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -250,6 +244,5 @@
         private System.Windows.Forms.TextBox textBoxPozycja;
         private System.Windows.Forms.TextBox textBoxPozycjaZadana;
         private System.Windows.Forms.TextBox textBoxPredkosc;
-        private System.Windows.Forms.Timer timer1;
     }
 }
