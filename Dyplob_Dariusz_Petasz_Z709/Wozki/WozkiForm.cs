@@ -14,19 +14,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
     public partial class WozkiForm : Form
     {
         Form1 f1 = new Form1();
-        //RysujWozek scena;
 
         Graphics g;
-        //StanWypWozki stanWyp = new Wypelnienie1();
-        //StanWozek stanWozek;
-        List<float> jazda = new List<float>();
-        List<bool> aktywacja = new List<bool>();
-        List<bool> kierunek = new List<bool>();
-        /*float Jazda
-        {
-            get { return jazda; }
-            set { jazda = value; }
-        }*/
+        
+       
         PokazPrzedstawienia przedstawienia = new PokazPrzedstawienia();
         public WozkiForm()
         {
@@ -50,7 +41,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                 float p = (float)(Convert.ToDouble(w["pozycja"].ToString()));
                 
                 Wozek wozek = new Wozek(p, Convert.ToInt32(w["predkosc_max"].ToString()), w["nazwa"].ToString(), (Convert.ToInt32(w["idwozek"].ToString())));
-                
+                wozek.Przychamowanie = Convert.ToInt32(w["przychamowanie"].ToString());
                 wozek.Parent = pictureBox1;
                 wozek.Top = wys;
                 wozek.Left = 10;
@@ -114,8 +105,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         private void WozkiForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Wozek.ListaWozek.Clear();
-            jazda.Clear();
-            aktywacja.Clear();
+            
             f1.Visible = true;
         }
 

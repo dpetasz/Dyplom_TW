@@ -64,7 +64,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             rysujWozek.Nazwa = name;
             this.Aktywacja = false;
             this.Kierunek = false;
-            this.Przychamowanie = 10;
+            //this.Przychamowanie = 10;
             rysujWozek.Wypelnienie();
             ListaWozek.Add(this);
 
