@@ -62,7 +62,7 @@
             // 
             // buttonPrawo
             // 
-            this.buttonPrawo.BackColor = System.Drawing.Color.Green;
+            this.buttonPrawo.BackColor = System.Drawing.Color.AliceBlue;
             this.buttonPrawo.BackgroundImage = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.P;
             this.buttonPrawo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonPrawo.Location = new System.Drawing.Point(64, 41);
@@ -74,7 +74,7 @@
             // 
             // buttonLewo
             // 
-            this.buttonLewo.BackColor = System.Drawing.Color.Green;
+            this.buttonLewo.BackColor = System.Drawing.Color.AliceBlue;
             this.buttonLewo.BackgroundImage = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.L;
             this.buttonLewo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonLewo.Location = new System.Drawing.Point(4, 41);
@@ -86,7 +86,7 @@
             // 
             // buttonAktywuj
             // 
-            this.buttonAktywuj.BackColor = System.Drawing.Color.Green;
+            this.buttonAktywuj.BackColor = System.Drawing.Color.AliceBlue;
             this.buttonAktywuj.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonAktywuj.Location = new System.Drawing.Point(3, 3);
             this.buttonAktywuj.Name = "buttonAktywuj";

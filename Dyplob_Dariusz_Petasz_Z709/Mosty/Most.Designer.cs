@@ -53,6 +53,7 @@
             this.textBoxNazwa.Font = new System.Drawing.Font("Arial Narrow", 14F);
             this.textBoxNazwa.Location = new System.Drawing.Point(36, 12);
             this.textBoxNazwa.Name = "textBoxNazwa";
+            this.textBoxNazwa.ReadOnly = true;
             this.textBoxNazwa.Size = new System.Drawing.Size(173, 29);
             this.textBoxNazwa.TabIndex = 0;
             this.textBoxNazwa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -157,22 +158,27 @@
             this.textBoxPozycja.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxPozycja.Location = new System.Drawing.Point(139, 183);
             this.textBoxPozycja.Name = "textBoxPozycja";
+            this.textBoxPozycja.ReadOnly = true;
             this.textBoxPozycja.Size = new System.Drawing.Size(78, 26);
             this.textBoxPozycja.TabIndex = 11;
             // 
             // textBoxPozycjaZadana
             // 
             this.textBoxPozycjaZadana.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBoxPozycjaZadana.Enabled = false;
             this.textBoxPozycjaZadana.Location = new System.Drawing.Point(139, 215);
             this.textBoxPozycjaZadana.Name = "textBoxPozycjaZadana";
+            this.textBoxPozycjaZadana.ReadOnly = true;
             this.textBoxPozycjaZadana.Size = new System.Drawing.Size(78, 26);
             this.textBoxPozycjaZadana.TabIndex = 12;
+            this.textBoxPozycjaZadana.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBoxPozycjaZadana_MouseClick);
             // 
             // textBoxPredkosc
             // 
             this.textBoxPredkosc.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxPredkosc.Location = new System.Drawing.Point(139, 247);
             this.textBoxPredkosc.Name = "textBoxPredkosc";
+            this.textBoxPredkosc.ReadOnly = true;
             this.textBoxPredkosc.Size = new System.Drawing.Size(78, 26);
             this.textBoxPredkosc.TabIndex = 13;
             // 

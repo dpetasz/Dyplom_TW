@@ -44,18 +44,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.buttonJazdaDoPozycji = new System.Windows.Forms.Button();
             this.buttonJazdaTechniczna = new System.Windows.Forms.Button();
-            this.buttonJazdaProgramowa = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.trackBarJoystick = new System.Windows.Forms.TrackBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.buttonJoystick = new System.Windows.Forms.Button();
+            this.panelJoystick = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.trackBarJoystick = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazPrzedstawienieBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelJoystick.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarJoystick)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,7 +146,6 @@
             this.button3.TabIndex = 10;
             this.button3.Text = "Start";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel1
             // 
@@ -154,7 +153,7 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.buttonJazdaDoPozycji);
             this.panel1.Controls.Add(this.buttonJazdaTechniczna);
-            this.panel1.Controls.Add(this.buttonJazdaProgramowa);
+            this.panel1.Controls.Add(this.buttonJoystick);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Location = new System.Drawing.Point(606, 470);
             this.panel1.Name = "panel1";
@@ -198,64 +197,31 @@
             this.buttonJazdaTechniczna.Text = "Manual";
             this.buttonJazdaTechniczna.UseVisualStyleBackColor = false;
             // 
-            // buttonJazdaProgramowa
+            // buttonJoystick
             // 
-            this.buttonJazdaProgramowa.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.buttonJazdaProgramowa.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.buttonJazdaProgramowa.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonJazdaProgramowa.Location = new System.Drawing.Point(33, 119);
-            this.buttonJazdaProgramowa.Name = "buttonJazdaProgramowa";
-            this.buttonJazdaProgramowa.Size = new System.Drawing.Size(161, 35);
-            this.buttonJazdaProgramowa.TabIndex = 16;
-            this.buttonJazdaProgramowa.Text = "Joystick";
-            this.buttonJazdaProgramowa.UseVisualStyleBackColor = false;
+            this.buttonJoystick.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonJoystick.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.buttonJoystick.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonJoystick.Location = new System.Drawing.Point(33, 119);
+            this.buttonJoystick.Name = "buttonJoystick";
+            this.buttonJoystick.Size = new System.Drawing.Size(161, 35);
+            this.buttonJoystick.TabIndex = 16;
+            this.buttonJoystick.Text = "Joystick";
+            this.buttonJoystick.UseVisualStyleBackColor = false;
+            this.buttonJoystick.Click += new System.EventHandler(this.buttonJazdaProgramowa_Click);
             // 
-            // panel2
+            // panelJoystick
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.trackBarJoystick);
-            this.panel2.Location = new System.Drawing.Point(1154, 467);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(142, 232);
-            this.panel2.TabIndex = 12;
-            // 
-            // trackBarJoystick
-            // 
-            this.trackBarJoystick.Location = new System.Drawing.Point(28, 3);
-            this.trackBarJoystick.Maximum = 100;
-            this.trackBarJoystick.Minimum = -100;
-            this.trackBarJoystick.Name = "trackBarJoystick";
-            this.trackBarJoystick.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBarJoystick.Size = new System.Drawing.Size(45, 222);
-            this.trackBarJoystick.TabIndex = 0;
-            this.trackBarJoystick.TickFrequency = 10;
-            this.trackBarJoystick.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.trackBarJoystick.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBarJoystick_MouseUp);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Info;
-            this.label1.Location = new System.Drawing.Point(79, 101);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "- 0";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Info;
-            this.label2.Location = new System.Drawing.Point(79, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "- 100";
+            this.panelJoystick.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelJoystick.Controls.Add(this.label3);
+            this.panelJoystick.Controls.Add(this.label2);
+            this.panelJoystick.Controls.Add(this.label1);
+            this.panelJoystick.Controls.Add(this.trackBarJoystick);
+            this.panelJoystick.Enabled = false;
+            this.panelJoystick.Location = new System.Drawing.Point(1154, 467);
+            this.panelJoystick.Name = "panelJoystick";
+            this.panelJoystick.Size = new System.Drawing.Size(142, 232);
+            this.panelJoystick.TabIndex = 12;
             // 
             // label3
             // 
@@ -268,6 +234,42 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "- 100";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Info;
+            this.label2.Location = new System.Drawing.Point(79, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 24);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "- 100";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Info;
+            this.label1.Location = new System.Drawing.Point(79, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 24);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "- 0";
+            // 
+            // trackBarJoystick
+            // 
+            this.trackBarJoystick.Location = new System.Drawing.Point(28, 3);
+            this.trackBarJoystick.Maximum = 100;
+            this.trackBarJoystick.Minimum = -100;
+            this.trackBarJoystick.Name = "trackBarJoystick";
+            this.trackBarJoystick.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBarJoystick.Size = new System.Drawing.Size(45, 222);
+            this.trackBarJoystick.TabIndex = 0;
+            this.trackBarJoystick.TickFrequency = 10;
+            this.trackBarJoystick.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.trackBarJoystick.Scroll += new System.EventHandler(this.trackBarJoystick_Scroll);
+            this.trackBarJoystick.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBarJoystick_MouseUp);
+            // 
             // WozkiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,7 +277,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelJoystick);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBox1);
@@ -288,8 +290,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pokazPrzedstawienieBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelJoystick.ResumeLayout(false);
+            this.panelJoystick.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarJoystick)).EndInit();
             this.ResumeLayout(false);
 
@@ -304,16 +306,16 @@
         private TWDataSet tWDataSet;
         private System.Windows.Forms.BindingSource pokazPrzedstawienieBindingSource;
         private TWDataSetTableAdapters.pokazPrzedstawienieTableAdapter pokazPrzedstawienieTableAdapter;
-        private BD_TW.PokazPrzedstawienia przedstawienia1;
+       
         private TWDataSetTableAdapters.pokazWozkiTableAdapter pokazWozkiTableAdapter;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelJoystick;
         private System.Windows.Forms.TrackBar trackBarJoystick;
         private System.Windows.Forms.Button buttonJazdaDoPozycji;
         private System.Windows.Forms.Button buttonJazdaTechniczna;
-        private System.Windows.Forms.Button buttonJazdaProgramowa;
+        private System.Windows.Forms.Button buttonJoystick;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

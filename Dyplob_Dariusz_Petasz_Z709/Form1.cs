@@ -115,5 +115,10 @@ namespace Dyplom_Dariusz_Petasz_Z709
             this.Visible = false;
             wozki.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

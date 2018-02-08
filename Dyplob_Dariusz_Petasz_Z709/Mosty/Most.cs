@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dyplom_Dariusz_Petasz_Z709.Mosty;
+using Dyplom_Dariusz_Petasz_Z709.Urzadzenia;
 
 namespace Dyplom_Dariusz_Petasz_Z709
 {
@@ -83,7 +84,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
             rysujMost.Nazwa = Nazwa;
             this.Pozycja = Pozycja ;
             this.Aktywacja = false;
-            rysujMost.PredkoscMax = PredkoscMax;
+            this.PredkoscMax = PredkoscMax;
             this.Predkosc = 0;
             this.Przychamowanie = Przychamowanie;
             rysujMost.Wypelnienie();
@@ -105,7 +106,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
             if (Aktywacja == false)
             {
                 Aktywacja = true;
-                buttonAktywacja.BackColor = Color.Green;
+                buttonAktywacja.BackColor = Color.IndianRed;
             }
             else
             {
@@ -130,13 +131,14 @@ namespace Dyplom_Dariusz_Petasz_Z709
         public void Joystick()
         {
             float x = Kg -3, y = Kd +3;
-            if ((Pozycja > x) && Predkosc > 0)
+            if ((Pozycja >= x) && Predkosc > 0)
             {
                 Pozycja = jazdaMost.jazdaJoystick(Przychamowanie, Pozycja);
                 Odswiez();
-            }else if ((Pozycja < y) && Predkosc<0)
+            }else if ((Pozycja <= y) && Predkosc<0)
             {
-                Pozycja = jazdaMost.jazdaJoystick(Przychamowanie, Pozycja);
+
+                Pozycja = jazdaMost.jazdaJoystick(Przychamowanie * -1, Pozycja);
                 Odswiez();
             }
             else { Pozycja = jazdaMost.jazdaJoystick(Predkosc, Pozycja);
@@ -174,6 +176,17 @@ namespace Dyplom_Dariusz_Petasz_Z709
             if (Pozycja >= Kg) { textBoxKG.BackColor = Color.Red; } else { textBoxKG.BackColor = Color.DarkSeaGreen; }
             if (Pozycja <= Kd) { textBoxKD.BackColor = Color.Red; } else { textBoxKD.BackColor = Color.DarkSeaGreen; }
         }
-        
+
+        private void textBoxPozycjaZadana_MouseClick(object sender, MouseEventArgs e)
+        {
+            
+
+        }
+        public void ZmianaDoPozycji()
+        {
+            if(textBoxPozycjaZadana.Enabled == true)
+            textBoxPozycjaZadana.Enabled = false;
+            else textBoxPozycjaZadana.Enabled = true;
+        }
     }
 }

@@ -187,7 +187,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.CadetBlue;
+            this.menuStrip1.BackColor = System.Drawing.Color.GhostWhite;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.plikToolStripMenuItem,
             this.bazaToolStripMenuItem,
@@ -265,6 +265,7 @@
             this.panelPrzyciski.Controls.Add(this.buttonMosty);
             this.panelPrzyciski.Controls.Add(this.buttonSztankiety);
             this.panelPrzyciski.Controls.Add(this.buttonWozki);
+            this.panelPrzyciski.Enabled = false;
             this.panelPrzyciski.Location = new System.Drawing.Point(0, 0);
             this.panelPrzyciski.Name = "panelPrzyciski";
             this.panelPrzyciski.Size = new System.Drawing.Size(1347, 85);
@@ -312,6 +313,7 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "WYJŚCIE";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 

@@ -22,38 +22,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
             set { nazwa = value; }
         }
 
-        bool kierunek;
-        public bool Kierunek
-        {
-            get { return kierunek; }
-            set { kierunek = value; }
-        }
-        bool aktywacja;
-        public bool Aktywacja
-        {
-            get { return aktywacja; }
-            set { aktywacja = value; }
-        }
-
         
-        float pozycja;
-        public float Pozycja
-        {
-            get { return pozycja; }
-            set { pozycja = value; }
-        }
-        int predkoscMax;
-        public int PredkoscMax
-        {
-            get { return predkoscMax; }
-            set { predkoscMax = value; }
-        }
-        int predkosc;
-        public int Predkosc
-        {
-            get { return predkosc; }
-            set { predkosc = value; }
-        }
 
 
         Pen pioroLinia, pioro;
@@ -146,7 +115,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
             Pioro1 = new SolidBrush(Color.SkyBlue);
             Pioro2 = new SolidBrush(Color.HotPink);
             Pioro3 = new SolidBrush(Color.Green);
-            textFont = new Font("Century", 12F, FontStyle.Bold);
+            TextFont = new Font("Century", 12F, FontStyle.Bold);
             KolorLiczby = new SolidBrush(Color.FromArgb(10, 10, 10));
             pioro = new Pen(Color.Gray);
         }
@@ -154,7 +123,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
         {
             //pioroLinia = new Pen(Color.Black);
 
-            Pioro1 = new SolidBrush(Color.Olive);
+            this.Pioro1 = new SolidBrush(Color.DeepSkyBlue);
             //Pioro2 = new SolidBrush(Color.HotPink);
             //Pioro3 = new SolidBrush(Color.Green);
             //textFont = new Font("Century", 12F, FontStyle.Bold);

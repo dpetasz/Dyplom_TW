@@ -14,10 +14,16 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
     {
         static public List<Wozek> ListaWozek = new List<Wozek>();
 
-        RysujWozek rysujWozek = new RysujWozek(); 
+        RysujWozek rysujWozek = new RysujWozek();
+        JazdaWozek jazdaWozek = new JazdaWozek();
         Graphics g;
-        
 
+        int predkoscMax;
+        int PredkoscMax
+        {
+            get { return predkoscMax; }
+            set { predkoscMax = value; }
+        }
         bool kierunek;
         public bool Kierunek
         {
@@ -36,14 +42,14 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             get { return przychamowanie; }
             set { przychamowanie = value; }
         }
-        
+
         float pozycja;
         public float Pozycja
         {
             get { return pozycja; }
             set { pozycja = value; }
         }
-        
+
         int predkosc;
         public int Predkosc
         {
@@ -57,172 +63,43 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         public Wozek(float x, int vmax, string name, int idW)
         {
             InitializeComponent();
-            
+
             rysujWozek.Id = idW;
-            this.Pozycja = x;
-            rysujWozek.PredkoscMax = vmax;
             rysujWozek.Nazwa = name;
+            this.Pozycja = x;
+            this.PredkoscMax = vmax;
+
             this.Aktywacja = false;
             this.Kierunek = false;
             //this.Przychamowanie = 10;
             rysujWozek.Wypelnienie();
             ListaWozek.Add(this);
-
+            this.Predkosc = 0;
             LadujPrzyciski();
-        }
-        
-/*
-        StanWypWozki wyp = new Wypelnienie1();
-
-        Pen pioroLinia, pioro;
-        public Pen PioroLinia
-        {
-            get
-            {
-                return pioroLinia;
-            }
-            set
-            {
-                pioroLinia = value;
-            }
-        }
-        public Pen Pioro
-        {
-            get
-            {
-                return pioro;
-            }
-            set
-            {
-                pioro = value;
-            }
+            rysujWozek.Wypelnienie();
         }
 
-        SolidBrush pioro1, pioro2, pioro3, kolorLiczby;
-        public SolidBrush Pioro1
-        {
-            get
-            {
-                return pioro1;
-            }
-            set
-            {
-                pioro1 = value;
-            }
-        }
-        public SolidBrush Pioro2
-        {
-            get
-            {
-                return pioro2;
-            }
-            set
-            {
-                pioro2 = value;
-            }
-        }
-        public SolidBrush Pioro3
-        {
-            get
-            {
-                return pioro3;
-            }
-            set
-            {
-                pioro3 = value;
-            }
-        }
-        public SolidBrush KolorLiczby
-        {
-            get
-            {
-                return kolorLiczby;
-            }
-            set
-            {
-                kolorLiczby = value;
-            }
-        }
 
-        Font textFont;
-        public Font TextFont
-        {
-            get
-            {
-                return textFont;
-            }
-            set
-            {
-                textFont = value;
-            }
-        }
-        int id;
-        int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
-        string nazwa;
-        string Nazwa
-        {
-            get { return nazwa; }
-            set { nazwa = value; }
-        }
 
-        bool kierunek;
-        public bool Kierunek
-        {
-            get { return kierunek; }
-            set { kierunek = value; }
-        }
-        bool aktywacja;
-        public bool Aktywacja
-        {
-            get { return aktywacja; }
-            set { aktywacja = value; }
-        }
 
-        int przychamowanie;
-        public int Przychamowanie
-        {
-            get { return przychamowanie; }
-            set { przychamowanie = value; }
-        }
-        float jazda;
-        public float Jazda
-        {
-            get { return jazda; }
-            set { jazda = value; }
-        }
-        int predkoscMax;
-        int PredkoscMax
-        {
-            get { return predkoscMax; }
-            set { predkoscMax = value; }
-        }
-        int predkosc;
-        public int Predkosc
-        {
-            get { return predkosc; }
-            set { predkosc = value; }
-        }*/
+
         private void Wozek_Paint(object sender, PaintEventArgs e)
         {
             g = e.Graphics;
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            rysujWozek.Wypelnienie();
+
             Scena(g);
             WozekJazda(g, Pozycja);
 
         }
 
-        
-        
-        
-       
+
+
+
+
         public void WozekJazda(Graphics g, float x)
         {
-            
+
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             //rysuje wozek
             g.FillRectangle(rysujWozek.Pioro1, x, 1, 460, 104);
@@ -243,41 +120,59 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         }
         void LadujPrzyciski()
         {
-            textBoxPozycja.Text = rysujWozek.Pozycja.ToString();
-            textBoxPredkosc.Text = rysujWozek.Predkosc.ToString();
+            textBoxPozycja.Text = (Pozycja/20).ToString();
+            textBoxPredkosc.Text = Predkosc.ToString();
             buttonAktywuj.Text = "Aktywuj W-" + rysujWozek.Id;
             LadujAktywuj();
             LadujKierunek();
+            Invalidate();
         }
 
-        void LadujAktywuj()
+        public void LadujAktywuj()
         {
-            if (rysujWozek.Aktywacja == true)
+            if (Aktywacja == true)
             {
-
+                rysujWozek.WypelnienieJazda();
                 Red();
             }
             else
             {
-
+                rysujWozek.Wypelnienie();
                 Green();
             }
         }
         void Green()
         {
 
-            buttonAktywuj.BackColor = Color.Green;
+            buttonAktywuj.BackColor = Color.AliceBlue;
             buttonAktywuj.Text = "Aktywuj W-" + rysujWozek.Id;
-            rysujWozek.WypelnienieJazda();
+            rysujWozek.Wypelnienie();
             Invalidate();
         }
         void Red()
         {
 
-            buttonAktywuj.BackColor = Color.Firebrick;
+            buttonAktywuj.BackColor = Color.IndianRed;
             buttonAktywuj.Text = "Aktywny W-" + rysujWozek.Id;
-            rysujWozek.Wypelnienie();
+            rysujWozek.WypelnienieJazda();
             Invalidate();
+        }
+        public void Joystick()
+        {
+            if (Pozycja >= 590 && Predkosc > 0)
+            {
+                Pozycja = jazdaWozek.jazdaJoystick(Przychamowanie, Pozycja);
+                LadujPrzyciski();
+            } else if (Pozycja <= 10 && Predkosc < 0)
+            {
+                Pozycja = jazdaWozek.jazdaJoystick(Przychamowanie * -1, Pozycja);
+                LadujPrzyciski();
+            }
+            else
+            {
+                Pozycja = jazdaWozek.jazdaJoystick(Predkosc, Pozycja);
+                LadujPrzyciski();
+            }
         }
 
         private void Wozek_Load(object sender, EventArgs e)
@@ -287,31 +182,32 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
         void LadujKierunek()
         {
-            if (rysujWozek.Kierunek == false)
+            if (Kierunek == false)
             {
-                buttonLewo.BackColor = Color.Maroon;
-                buttonPrawo.BackColor = Color.Green;
+                buttonLewo.BackColor = Color.DarkSeaGreen;
+                buttonPrawo.BackColor = Color.AliceBlue;
                 buttonLewo.Enabled = false;
                 buttonPrawo.Enabled = true;
-            } else
+            }
+            else
             {
-                buttonLewo.BackColor = Color.Green;
-                buttonPrawo.BackColor = Color.Maroon;
+                buttonLewo.BackColor = Color.AliceBlue;
+                buttonPrawo.BackColor = Color.DarkSeaGreen;
                 buttonPrawo.Enabled = false;
                 buttonLewo.Enabled = true;
             }
         }
-        
+
         private void buttonAktywuj_Click(object sender, EventArgs e)
         {
-            if (rysujWozek.Aktywacja == false)
+            if (Aktywacja == false)
             {
-                rysujWozek.Aktywacja = true;
+                Aktywacja = true;
                 LadujAktywuj();
             }
             else
             {
-                rysujWozek.Aktywacja = false;
+                Aktywacja = false;
                 LadujAktywuj();
             }
 
@@ -321,28 +217,28 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
         private void buttonLewo_Click(object sender, EventArgs e)
         {
-            if (rysujWozek.Kierunek == true)
+            if (Kierunek == true)
             {
-                rysujWozek.Kierunek = false;
+                Kierunek = false;
                 LadujKierunek();
             }
             else
             {
-                rysujWozek.Kierunek = true;
+                Kierunek = true;
                 LadujKierunek();
             }
         }
 
         private void buttonPrawo_Click(object sender, EventArgs e)
         {
-            if (rysujWozek.Kierunek == true)
+            if (Kierunek == true)
             {
-                rysujWozek.Kierunek = false;
+                Kierunek = false;
                 LadujKierunek();
             }
             else
             {
-                rysujWozek.Kierunek = true;
+                Kierunek = true;
                 LadujKierunek();
             }
         }

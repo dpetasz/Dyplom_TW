@@ -16,8 +16,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         Form1 f1 = new Form1();
 
         Graphics g;
-        
-       
+
+
         PokazPrzedstawienia przedstawienia = new PokazPrzedstawienia();
         public WozkiForm()
         {
@@ -39,7 +39,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             foreach (DataRow w in tWDataSet.pokazWozki.Rows)
             {
                 float p = (float)(Convert.ToDouble(w["pozycja"].ToString()));
-                
+
                 Wozek wozek = new Wozek(p, Convert.ToInt32(w["predkosc_max"].ToString()), w["nazwa"].ToString(), (Convert.ToInt32(w["idwozek"].ToString())));
                 wozek.Przychamowanie = Convert.ToInt32(w["przychamowanie"].ToString());
                 wozek.Parent = pictureBox1;
@@ -52,21 +52,9 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         {
             g = e.Graphics;
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            //scena = new RysujWozek();
-            //stanWyp.Wypelnienie(scena);
-            //scena.Scena(g);
-            //int i = 0;
-            /*
-                        foreach (RysujWozek w in RysujWozek.ListaWozek)
-                        {
-                            stanWyp.Wypelnienie(w);
-                            w.WozekJazda(g, w.Jazda);
-                            //i++;
-                        }*/
-            //i = 0;
-            //stanWyp.Wypelnienie(Wozek.ListaWozek[0]);
-            //Wozek.ListaWozek[0].WozekJazda(g, 1);
-            
+
+
+
         }
         private void pictureBox1_LoadCompleted(object sender, AsyncCompletedEventArgs e)
         {
@@ -75,9 +63,9 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach(Wozek w in Wozek.ListaWozek)
+            foreach (Wozek w in Wozek.ListaWozek)
             {
-                 w.Kierunek = true;
+                w.Kierunek = true;
             }
         }
 
@@ -105,97 +93,32 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         private void WozkiForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Wozek.ListaWozek.Clear();
-            
+
             f1.Visible = true;
         }
 
-        /*private void buttonAktywujW1_Click(object sender, EventArgs e)
-        {
-            if (RysujWozek.ListaWozek[0].Aktywacja == false)
-            {
-                RysujWozek.ListaWozek[0].Aktywacja = true;
-                buttonAktywujW1.BackColor = Color.Red;
-                buttonAktywujW1.Text = "Aktywny W1";
-            }
-            else
-            {
-                RysujWozek.ListaWozek[0].Aktywacja = false;
-                buttonAktywujW1.BackColor = Color.LawnGreen;
-                buttonAktywujW1.Text = "Atywuj W1";
-            }
 
-        }
-
-        private void buttonAktywujW2_Click(object sender, EventArgs e)
-        {
-            if (RysujWozek.ListaWozek[1].Aktywacja == false)
-            {
-                RysujWozek.ListaWozek[1].Aktywacja = true;
-                buttonAktywujW2.BackColor = Color.Red;
-                buttonAktywujW2.Text = "Aktywny W2";
-            }
-            else
-            {
-                RysujWozek.ListaWozek[1].Aktywacja = false;
-                buttonAktywujW2.BackColor = Color.LawnGreen;
-                buttonAktywujW2.Text = "Atywuj W2";
-            }
-        }
-
-        private void buttonAktywuj3_Click(object sender, EventArgs e)
-        {
-            if (RysujWozek.ListaWozek[2].Aktywacja == false)
-            {
-                RysujWozek.ListaWozek[2].Aktywacja = true;
-                buttonAktywujW3.BackColor = Color.Red;
-                buttonAktywujW3.Text = "Aktywny W3";
-            }
-            else
-            {
-                RysujWozek.ListaWozek[2].Aktywacja = false;
-                buttonAktywujW3.BackColor = Color.LawnGreen;
-                buttonAktywujW3.Text = "Atywuj W3";
-            }
-        }
-
-        private void buttonAktywujW4_Click(object sender, EventArgs e)
-        {
-            if (RysujWozek.ListaWozek[3].Aktywacja == false)
-            {
-                RysujWozek.ListaWozek[3].Aktywacja = true;
-                buttonAktywujW4.BackColor = Color.Red;
-                buttonAktywujW4.Text = "Aktywny W4";
-            }
-            else
-            {
-                RysujWozek.ListaWozek[3].Aktywacja = false;
-                buttonAktywujW4.BackColor = Color.LawnGreen;
-                buttonAktywujW4.Text = "Atywuj W4";
-            }
-        }*/
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            /*foreach(Wozek w in Wozek.ListaWozek)
+            foreach (Wozek w in Wozek.ListaWozek)
             {
-                if (w.Jazda <= 0 && w.Kierunek == false && w.Aktywacja == true)
+                if (w.Aktywacja == true)
                 {
-                    w.Aktywacja = false;
-                    Invalidate();
-                    
-                } 
-                if (w.Jazda < 100 && w.Kierunek == false && w.Aktywacja == true) w.Jazda = w.ruch(w.Kierunek, w.Przychamowanie);
-
-                if (w.Jazda >= 600 && w.Kierunek == true && w.Aktywacja == true)
-                {
-                    w.Aktywacja = false;
-                    Invalidate();
+                    if (w.Pozycja >= 600 && trackBarJoystick.Value > 0)
+                    {
+                        w.Aktywacja = false;
+                        w.LadujAktywuj();
+                    }
+                    if (w.Pozycja <= 0 && trackBarJoystick.Value < 0)
+                    {
+                        w.Aktywacja = false;
+                        w.LadujAktywuj();
+                    }
+                    w.Joystick();
                 }
-                if (w.Jazda >500 && w.Kierunek == true && w.Aktywacja == true) w.Jazda = w.ruch(w.Kierunek, w.Przychamowanie);
-                
-                if (w.Aktywacja == true)w.Jazda = w.ruch(w.Kierunek, 100);
             }
-            pictureBox1.Invalidate();*/
+            pictureBox1.Invalidate();
         }
         private void green()
         {
@@ -203,7 +126,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             timer1.Enabled = false;
             button3.BackColor = Color.Green;
             button3.Text = "Start";
-            
+
 
         }
         private void red()
@@ -223,16 +146,46 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             else
             {
 
-                
+
                 green();
             }
         }
 
         private void trackBarJoystick_MouseUp(object sender, MouseEventArgs e)
         {
+            timer1.Enabled = false;
             trackBarJoystick.Value = 0;
+            foreach(Wozek w in Wozek.ListaWozek)
+            {
+                w.Predkosc = trackBarJoystick.Value;
+                w.LadujAktywuj();
+            }
         }
 
-       
+        private void buttonJazdaProgramowa_Click(object sender, EventArgs e)
+        {
+            if (panelJoystick.Enabled == true)
+            {
+                buttonJoystick.BackColor = Color.LightSteelBlue;
+                panelJoystick.Enabled = false;
+            }
+            else
+            {
+                buttonJoystick.BackColor = Color.IndianRed;
+                panelJoystick.Enabled = true;
+            }
+        }
+
+        private void trackBarJoystick_Scroll(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+            foreach (Wozek w in Wozek.ListaWozek)
+            {
+                if (w.Aktywacja == true)
+                {
+                    w.Predkosc = trackBarJoystick.Value;
+                }
+            }
+        }
     }
 }

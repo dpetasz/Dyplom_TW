@@ -59,9 +59,13 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 
         private void ObrotowkaPanel_Load(object sender, EventArgs e)
         {
-            this.pokazPrzedstawienieTableAdapter.Fill(this.tWDataSet.pokazPrzedstawienie);
+            LadujBaza();
             jazdaTechniczna();
 
+        }
+        void LadujBaza()
+        {
+            this.pokazPrzedstawienieTableAdapter.Fill(this.tWDataSet.pokazPrzedstawienie);
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)

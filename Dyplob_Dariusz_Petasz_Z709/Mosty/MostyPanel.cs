@@ -12,14 +12,14 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
 {
     public partial class MostyPanel : UserControl
     {
-        Most most ;
+        Most most;
         public MostyPanel()
         {
             InitializeComponent();
         }
         void LadujMost()
         {
-            
+
             int wys = 5;
             int szer = 5;
             foreach (DataRow m in twDataSet.pokazMosty.Rows)
@@ -31,11 +31,11 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
                 float kd = (float)(Convert.ToDouble(m["krancowa_dol"].ToString()));
                 float kg = (float)(Convert.ToDouble(m["krancowa_gora"].ToString()));
                 int przych = Convert.ToInt32(m["przychamowanie"].ToString());
-                if(szer < 700)
+                if (szer < 700)
                 {
                     most = new Most(id, name, p, vmax, przych);
-                    most.Kg = kg ;
-                    most.Kd = kd ;
+                    most.Kg = kg;
+                    most.Kd = kd;
                     most.Parent = panelMosty;
                     most.Top = wys;
                     most.Left = szer;
@@ -44,27 +44,31 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
                 }
                 else
                 {
-                    
+
                     most = new Most(id, name, p, vmax, przych);
-                    most.Kg = kg ;
-                    most.Kd = kd ;
+                    most.Kg = kg;
+                    most.Kd = kd;
                     most.Parent = panelMosty;
                     most.Top = wys;
                     most.Left = szer;
                     szer += 230;
                 }
-                
+
 
             }
-                    }
+        }
 
         private void MostyPanel_Load(object sender, EventArgs e)
         {
             //this.pokazWozkiTableAdapter.Fill(this.tWDataSet.pokazWozki);
             this.pokazMostyTableAdapter.Fill(this.twDataSet.pokazMosty);
             LadujMost();
-            
-            
+            LadujBaza();
+
+        }
+        void LadujBaza()
+        {
+            this.pokazPrzedstawienieTableAdapter.Fill(this.twDataSet.pokazPrzedstawienie);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -74,21 +78,30 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
 
         private void trackBarJoystick_MouseUp(object sender, MouseEventArgs e)
         {
+            timer1.Enabled = false;
             trackBarJoystick.Value = 0;
             foreach (Most m in Most.ListaMost)
             {
-                
-                    m.Predkosc = trackBarJoystick.Value;
 
-                    m.Odswiez();
-                
+                m.Predkosc = trackBarJoystick.Value;
+
+                m.Odswiez();
+
             }
         }
 
         private void buttonJoystick_Click(object sender, EventArgs e)
         {
-            
-            timer1.Enabled = true;
+            if (panelJoystick.Enabled == true)
+            {
+                buttonJoystick.BackColor = Color.LightSteelBlue;
+                panelJoystick.Enabled = false;
+            }
+            else {
+                buttonJoystick.BackColor = Color.IndianRed;
+                panelJoystick.Enabled = true;
+            }
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -97,37 +110,36 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
             {
                 if (m.Aktywacja == true)
                 {
-                    
-                     
-                     if (m.Pozycja >= m.Kg && trackBarJoystick.Value > 0)
-                     { 
-                         timer1.Enabled = false;
-                         m.Aktywacja = false;
-                         m.ZmianaAktywacja();
-                         m.ZmianaKrancowa();
-                     }
-                     if (m.Pozycja <= m.Kd && trackBarJoystick.Value < 0)
-                     {
-                         timer1.Enabled = false;
-                         m.Aktywacja = false;
-                         m.ZmianaAktywacja();
-                         m.ZmianaKrancowa();
-                     }
-                     m.Joystick();
+
+
+                    if (m.Pozycja > m.Kg && trackBarJoystick.Value > 0)
+                    {
+                        m.Aktywacja = false;
+                        m.ZmianaAktywacja();
+                        m.ZmianaKrancowa();
+                    }
+                    if (m.Pozycja < m.Kd && trackBarJoystick.Value < 0)
+                    {
+                        m.Aktywacja = false;
+                        m.ZmianaAktywacja();
+                        m.ZmianaKrancowa();
+                    }
+                    m.Joystick();
                 }
             }
         }
 
         private void trackBarJoystick_Scroll(object sender, EventArgs e)
         {
+            timer1.Enabled = true;
             foreach (Most m in Most.ListaMost)
             {
                 if (m.Aktywacja == true)
                 {
-                    
-                    m.Predkosc = trackBarJoystick.Value ;
+
+                    m.Predkosc = trackBarJoystick.Value;
                     m.ZmianaKrancowa();
-                    
+
                     //m.Odswiez();
                 }
             }
@@ -135,13 +147,30 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
 
         private void buttonJazdaDoPozycji_Click(object sender, EventArgs e)
         {
+
             foreach (Most m in Most.ListaMost)
             {
-                m.Pozycja = 100;
-                m.Odswiez();
+                m.ZmianaDoPozycji();
             }
         }
 
-        
+        private void pokazPrzedstawienieBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int idPrzed = ((this.pokazPrzedstawienieBindingSource.Current as DataRowView).Row as TWDataSet.pokazPrzedstawienieRow).idprzed;
+                this.pokazAktTableAdapter.Fill(this.twDataSet.pokazAkt, idPrzed);
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+        private void buttonManual_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

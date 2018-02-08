@@ -34,9 +34,9 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
         }
         public virtual float jazdaJoystick(int v, float pozycja)
         {
-            float x = pozycja;
-            x += v * 0.001f;
-            return (float)Math.Round(x, 2);
+            //float x = pozycja;
+            pozycja += v * 0.01f;
+            return (float)Math.Round(pozycja, 2);
         }
     }
 }
