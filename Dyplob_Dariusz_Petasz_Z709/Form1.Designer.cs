@@ -158,6 +158,7 @@
             this.buttonZapadnie.TabIndex = 4;
             this.buttonZapadnie.Text = "Zapadnie";
             this.buttonZapadnie.UseVisualStyleBackColor = false;
+            this.buttonZapadnie.Click += new System.EventHandler(this.buttonZapadnie_Click);
             // 
             // buttonObrotowka
             // 

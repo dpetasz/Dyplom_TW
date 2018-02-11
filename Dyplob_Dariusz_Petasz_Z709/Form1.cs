@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dyplom_Dariusz_Petasz_Z709.BD_TW;
 using Dyplom_Dariusz_Petasz_Z709.Mosty;
+using Dyplom_Dariusz_Petasz_Z709.Zapadnie;
 
 namespace Dyplom_Dariusz_Petasz_Z709
 {
@@ -119,6 +120,14 @@ namespace Dyplom_Dariusz_Petasz_Z709
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void buttonZapadnie_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = false;
+            panelPrzyciski.Visible = false;
+            ZapadniePanel z = new ZapadniePanel();
+            z.Parent = panel_Glowny;
         }
     }
 }

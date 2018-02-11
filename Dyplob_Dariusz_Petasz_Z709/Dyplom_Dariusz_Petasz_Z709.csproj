@@ -79,18 +79,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_BazaDanych.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_BazaDanych.Designer.cs">
-      <DependentUpon>Form_BazaDanych.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Logowanie\LogowaniePanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Logowanie\LogowaniePanel.Designer.cs">
-      <DependentUpon>LogowaniePanel.cs</DependentUpon>
-    </Compile>
     <Compile Include="Mosty\IJazdaMost.cs" />
     <Compile Include="Mosty\IRysujMost.cs" />
     <Compile Include="Mosty\JazdaMost.cs" />
@@ -114,12 +102,6 @@
     </Compile>
     <Compile Include="ScenaObrotowa\IRysujTarcza.cs" />
     <Compile Include="BD_TW\IZapiszBazaPrzedstawienie.cs" />
-    <Compile Include="Obrotowka.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Obrotowka.Designer.cs">
-      <DependentUpon>Obrotowka.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScenaObrotowa\ObrotowkaPanel.cs">
@@ -137,6 +119,7 @@
     </Compile>
     <Compile Include="TWDataSet.cs">
       <DependentUpon>TWDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="TWDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -169,6 +152,19 @@
     <Compile Include="Wozki\WozkiForm.Designer.cs">
       <DependentUpon>WozkiForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Zapadnie\RysujZapadnia.cs" />
+    <Compile Include="Zapadnie\Zapadnia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Zapadnie\Zapadnia.Designer.cs">
+      <DependentUpon>Zapadnia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zapadnie\ZapadniePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Zapadnie\ZapadniePanel.Designer.cs">
+      <DependentUpon>ZapadniePanel.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BD_TW\AktualizujAkt.resx">
       <DependentUpon>AktualizujAkt.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,20 +180,11 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_BazaDanych.resx">
-      <DependentUpon>Form_BazaDanych.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Logowanie\LogowaniePanel.resx">
-      <DependentUpon>LogowaniePanel.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Mosty\Most.resx">
       <DependentUpon>Most.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mosty\MostyPanel.resx">
       <DependentUpon>MostyPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Obrotowka.resx">
-      <DependentUpon>Obrotowka.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -212,6 +199,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Wozki\WozkiForm.resx">
       <DependentUpon>WozkiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zapadnie\Zapadnia.resx">
+      <DependentUpon>Zapadnia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zapadnie\ZapadniePanel.resx">
+      <DependentUpon>ZapadniePanel.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

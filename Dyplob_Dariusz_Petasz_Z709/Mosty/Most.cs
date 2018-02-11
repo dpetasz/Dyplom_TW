@@ -97,7 +97,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
         private void Most_Load(object sender, EventArgs e)
         {
             textBoxNazwa.Text = rysujMost.Nazwa;
-            textBoxPozycja.Text = Pozycja.ToString();
+            textBoxPozycja.Text = (Pozycja / 10).ToString();
             textBoxPredkosc.Text = Predkosc.ToString();
         }
 
@@ -151,7 +151,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
         }
         public void Odswiez()
         {
-            textBoxPozycja.Text = (Pozycja).ToString();
+            textBoxPozycja.Text = (Pozycja/10).ToString();
             textBoxPredkosc.Text = Predkosc.ToString();
             
             pictureBox1.Invalidate();
