@@ -16,6 +16,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 
         RysujZapadnia rysujZapadnia = new RysujZapadnia();
 
+        Graphics g;
+
         bool kierunek;
         public bool Kierunek
         {
@@ -99,6 +101,14 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         private void Zapadnia_Load(object sender, EventArgs e)
         {
             LadujDane();
+        }
+
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+            g = e.Graphics;
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            rysujZapadnia.Obramowanie(g);
+            rysujZapadnia.ZapadniaJazda(g);
         }
     }
 }

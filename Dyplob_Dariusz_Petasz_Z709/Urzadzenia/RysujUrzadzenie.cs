@@ -115,8 +115,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
             Pioro1 = new SolidBrush(Color.SkyBlue);
             Pioro2 = new SolidBrush(Color.HotPink);
             Pioro3 = new SolidBrush(Color.Green);
-            TextFont = new Font("Century", 12F, FontStyle.Bold);
-            KolorLiczby = new SolidBrush(Color.FromArgb(10, 10, 10));
+            TextFont = new Font("Century", 7F, FontStyle.Bold);
+            KolorLiczby = new SolidBrush(Color.Gray);
             pioro = new Pen(Color.Gray);
         }
         public virtual void WypelnienieJazda()
