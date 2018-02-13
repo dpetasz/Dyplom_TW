@@ -152,6 +152,7 @@
     <Compile Include="Wozki\WozkiForm.Designer.cs">
       <DependentUpon>WozkiForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Zapadnie\JazdaZapadnia.cs" />
     <Compile Include="Zapadnie\RysujZapadnia.cs" />
     <Compile Include="Zapadnie\Zapadnia.cs">
       <SubType>UserControl</SubType>

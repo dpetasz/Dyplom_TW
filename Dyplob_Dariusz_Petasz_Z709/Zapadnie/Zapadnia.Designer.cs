@@ -76,6 +76,7 @@
             this.buttonZmianaRozstaw.TabIndex = 20;
             this.buttonZmianaRozstaw.Text = "Zmiana Rozstaw";
             this.buttonZmianaRozstaw.UseVisualStyleBackColor = false;
+            this.buttonZmianaRozstaw.Click += new System.EventHandler(this.buttonZmianaRozstaw_Click);
             // 
             // textBoxPredkosc
             // 
@@ -184,6 +185,7 @@
             this.buttonAktywacja.TabIndex = 2;
             this.buttonAktywacja.Text = "Aktywuj";
             this.buttonAktywacja.UseVisualStyleBackColor = false;
+            this.buttonAktywacja.Click += new System.EventHandler(this.buttonAktywacja_Click);
             // 
             // textBoxPozycja
             // 
