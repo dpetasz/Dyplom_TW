@@ -144,7 +144,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         void Green()
         {
 
-            buttonAktywuj.BackColor = Color.AliceBlue;
+            buttonAktywuj.BackColor = Color.SkyBlue;
             buttonAktywuj.Text = "Aktywuj W-" + rysujWozek.Id;
             rysujWozek.Wypelnienie();
             Invalidate();
@@ -185,13 +185,13 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             if (Kierunek == false)
             {
                 buttonLewo.BackColor = Color.DarkSeaGreen;
-                buttonPrawo.BackColor = Color.AliceBlue;
+                buttonPrawo.BackColor = Color.SkyBlue;
                 buttonLewo.Enabled = false;
                 buttonPrawo.Enabled = true;
             }
             else
             {
-                buttonLewo.BackColor = Color.AliceBlue;
+                buttonLewo.BackColor = Color.SkyBlue;
                 buttonPrawo.BackColor = Color.DarkSeaGreen;
                 buttonPrawo.Enabled = false;
                 buttonLewo.Enabled = true;

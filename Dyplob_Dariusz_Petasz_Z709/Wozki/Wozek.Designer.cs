@@ -33,27 +33,27 @@
             this.buttonLewo = new System.Windows.Forms.Button();
             this.buttonAktywuj = new System.Windows.Forms.Button();
             this.textBoxPozycja = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.textBoxStop = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.textBoxPredkosc = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panelPrzyciski.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelPrzyciski
             // 
-            this.panelPrzyciski.BackColor = System.Drawing.Color.SkyBlue;
+            this.panelPrzyciski.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.panelPrzyciski.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelPrzyciski.Controls.Add(this.textBox2);
+            this.panelPrzyciski.Controls.Add(this.textBox1);
+            this.panelPrzyciski.Controls.Add(this.textBox3);
             this.panelPrzyciski.Controls.Add(this.buttonPrawo);
             this.panelPrzyciski.Controls.Add(this.buttonLewo);
             this.panelPrzyciski.Controls.Add(this.buttonAktywuj);
             this.panelPrzyciski.Controls.Add(this.textBoxPozycja);
-            this.panelPrzyciski.Controls.Add(this.label3);
             this.panelPrzyciski.Controls.Add(this.textBoxStop);
-            this.panelPrzyciski.Controls.Add(this.label2);
             this.panelPrzyciski.Controls.Add(this.textBoxPredkosc);
-            this.panelPrzyciski.Controls.Add(this.label1);
             this.panelPrzyciski.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelPrzyciski.Location = new System.Drawing.Point(1088, 0);
             this.panelPrzyciski.Name = "panelPrzyciski";
@@ -62,7 +62,7 @@
             // 
             // buttonPrawo
             // 
-            this.buttonPrawo.BackColor = System.Drawing.Color.AliceBlue;
+            this.buttonPrawo.BackColor = System.Drawing.Color.SkyBlue;
             this.buttonPrawo.BackgroundImage = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.P;
             this.buttonPrawo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonPrawo.Location = new System.Drawing.Point(64, 41);
@@ -74,7 +74,7 @@
             // 
             // buttonLewo
             // 
-            this.buttonLewo.BackColor = System.Drawing.Color.AliceBlue;
+            this.buttonLewo.BackColor = System.Drawing.Color.SkyBlue;
             this.buttonLewo.BackgroundImage = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.L;
             this.buttonLewo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonLewo.Location = new System.Drawing.Point(4, 41);
@@ -86,7 +86,7 @@
             // 
             // buttonAktywuj
             // 
-            this.buttonAktywuj.BackColor = System.Drawing.Color.AliceBlue;
+            this.buttonAktywuj.BackColor = System.Drawing.Color.SkyBlue;
             this.buttonAktywuj.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonAktywuj.Location = new System.Drawing.Point(3, 3);
             this.buttonAktywuj.Name = "buttonAktywuj";
@@ -98,6 +98,7 @@
             // 
             // textBoxPozycja
             // 
+            this.textBoxPozycja.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxPozycja.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxPozycja.Location = new System.Drawing.Point(170, 67);
             this.textBoxPozycja.Name = "textBoxPozycja";
@@ -105,51 +106,62 @@
             this.textBoxPozycja.Size = new System.Drawing.Size(80, 26);
             this.textBoxPozycja.TabIndex = 16;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(128, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 19);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Poz.";
-            // 
             // textBoxStop
             // 
+            this.textBoxStop.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxStop.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxStop.Location = new System.Drawing.Point(170, 35);
             this.textBoxStop.Name = "textBoxStop";
             this.textBoxStop.Size = new System.Drawing.Size(80, 26);
             this.textBoxStop.TabIndex = 14;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(126, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 19);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Stop";
-            // 
             // textBoxPredkosc
             // 
+            this.textBoxPredkosc.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxPredkosc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxPredkosc.Location = new System.Drawing.Point(170, 3);
             this.textBoxPredkosc.Name = "textBoxPredkosc";
             this.textBoxPredkosc.Size = new System.Drawing.Size(80, 26);
             this.textBoxPredkosc.TabIndex = 12;
             // 
-            // label1
+            // textBox3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(144, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 19);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "V";
+            this.textBox3.BackColor = System.Drawing.Color.Moccasin;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox3.Location = new System.Drawing.Point(123, 4);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(41, 25);
+            this.textBox3.TabIndex = 20;
+            this.textBox3.Text = "V";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Moccasin;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox1.Location = new System.Drawing.Point(123, 36);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(41, 25);
+            this.textBox1.TabIndex = 21;
+            this.textBox1.Text = "Stop";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.Moccasin;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox2.Location = new System.Drawing.Point(123, 67);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(41, 25);
+            this.textBox2.TabIndex = 22;
+            this.textBox2.Text = "Poz.";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Wozek
             // 
@@ -173,12 +185,12 @@
         private System.Windows.Forms.Panel panelPrzyciski;
         private System.Windows.Forms.Button buttonAktywuj;
         private System.Windows.Forms.TextBox textBoxPozycja;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxStop;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxPredkosc;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonPrawo;
         private System.Windows.Forms.Button buttonLewo;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
