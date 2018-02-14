@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 {
@@ -84,6 +85,13 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             get { return predkosc; }
             set { predkosc = value; }
         }
+        int uspienie;
+        public int Uspienie
+        {
+            get { return uspienie; }
+            set { uspienie = value; }
+        }
+
         public Zapadnia(int Id, string Nazwa, float Pozycja, int PredkoscMax, int Przychamowanie)
         {
             InitializeComponent();
@@ -95,6 +103,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             this.Predkosc = 0;
             this.Przychamowanie = Przychamowanie;
             this.Rozstaw = false;
+            this.Uspienie = 0;
             rysujZapadnia.Wypelnienie();
             ListaZapadnia.Add(this);
         }
@@ -215,6 +224,23 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                     buttonZmianaRozstaw.BackColor = Color.SkyBlue;
                 }
             }
+        }
+        public void Opoznienie()
+        {
+            
+            try { Uspienie = Convert.ToInt32(textBoxOpoznienie.Text); }
+            catch { MessageBox.Show("Podałeś złe dane dla opóźnienia!!!"); } 
+                       
+        }
+        public void DoPozycji()
+        {
+            try { PozycjaZadana = float.Parse(textBoxMiejsceStop.Text); }
+            catch { MessageBox.Show("Podałeś złe dane dla miejsca stop!!!"); } 
+           
+        }
+        public void JazdaDoPozycji()
+        {
+            
         }
     }
 }

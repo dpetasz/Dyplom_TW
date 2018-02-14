@@ -200,6 +200,7 @@
             this.textBoxOpoznienie.ReadOnly = true;
             this.textBoxOpoznienie.Size = new System.Drawing.Size(84, 26);
             this.textBoxOpoznienie.TabIndex = 22;
+            this.textBoxOpoznienie.Text = "0 ";
             // 
             // textBox2
             // 

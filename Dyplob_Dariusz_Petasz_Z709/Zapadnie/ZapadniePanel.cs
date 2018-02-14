@@ -157,5 +157,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 rozstaw = true;
             }
         }
+
+        private void buttonJazdaDoPozycji_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

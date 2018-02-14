@@ -192,6 +192,7 @@
             this.buttonJazdaDoPozycji.TabIndex = 23;
             this.buttonJazdaDoPozycji.Text = "Do pozycji";
             this.buttonJazdaDoPozycji.UseVisualStyleBackColor = false;
+            this.buttonJazdaDoPozycji.Click += new System.EventHandler(this.buttonJazdaDoPozycji_Click);
             // 
             // buttonRozstaw
             // 
