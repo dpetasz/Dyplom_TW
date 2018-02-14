@@ -75,12 +75,12 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 {
                     if (z.Aktywacja == true)
                     {
-                        if (z.Pozycja >= 0 && trackBarJoystick.Value > 0)
+                        if (z.Pozycja >= z.Kg && trackBarJoystick.Value > 0)
                         {
                             z.Aktywacja = false;
                             z.ZmianaAktywacja();
                         }
-                        if (z.Pozycja <= -190 && trackBarJoystick.Value < 0)
+                        if (z.Pozycja <= z.Kd && trackBarJoystick.Value < 0)
                         {
                             z.Aktywacja = false;
                             z.ZmianaAktywacja();
@@ -98,12 +98,12 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                             z.Rozstaw = false;
                             z.ZmianaAktywacja();
                         }
-                        if (z.Pozycja >= 0 && trackBarJoystick.Value > 0)
+                        if (z.Pozycja >= z.Kg && trackBarJoystick.Value > 0)
                         {
                             z.Aktywacja = false;
                             z.ZmianaAktywacja();
                         }
-                        if (z.Pozycja <= -190 && trackBarJoystick.Value < 0)
+                        if (z.Pozycja <= z.Kd && trackBarJoystick.Value < 0)
                         {
                             z.Aktywacja = false;
                             z.Rozstaw = false;

@@ -101,8 +101,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         void LadujDane()
         {
             textBoxNazwa.Text = rysujZapadnia.Nazwa;
-            textBoxPozycja.Text = (Pozycja / 20).ToString();
-            textBoxRozstaw.Text = ((PozycjaPortal - Pozycja) / 20).ToString();
+            textBoxPozycja.Text = ((float)Math.Round((Pozycja / 20), 2)).ToString() + " m";
+            textBoxRozstaw.Text = ((float)Math.Round(((PozycjaPortal - Pozycja) /20), 2)).ToString() + " m";
             textBoxPredkosc.Text = Predkosc.ToString();
         }
 
@@ -166,8 +166,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 
         public void Odswiez()
         {
-            textBoxPozycja.Text = (Pozycja / 20).ToString();
-            textBoxRozstaw.Text = ((PozycjaPortal - Pozycja) / 20).ToString();
+            textBoxPozycja.Text = ((float)Math.Round((Pozycja / 20), 2)).ToString() + " m";
+            textBoxRozstaw.Text = ((float)Math.Round(((PozycjaPortal - Pozycja) / 20), 2)).ToString() + " m";
             textBoxPredkosc.Text = Predkosc.ToString();
             pictureBox1.Invalidate();
         }
