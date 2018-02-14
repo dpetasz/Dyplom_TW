@@ -147,7 +147,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
         }
         public void DoPozycji()
         {
-            Pozycja = jazdaMost.jazdaDoPozycji( PozycjaZadana,Predkosc,Pozycja);
+            Pozycja = jazdaMost.jazdaDoPozycjiDown(Predkosc,Pozycja);
         }
         public void Odswiez()
         {

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panelOpisZapadnia = new System.Windows.Forms.Panel();
+            this.textBoxOpoznienie = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.buttonZmianaRozstaw = new System.Windows.Forms.Button();
             this.textBoxPredkosc = new System.Windows.Forms.TextBox();
             this.textBoxMiejsceStop = new System.Windows.Forms.TextBox();
@@ -41,8 +43,6 @@
             this.textBoxPozycja = new System.Windows.Forms.TextBox();
             this.textBoxNazwa = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBoxOpoznienie = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panelOpisZapadnia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +67,28 @@
             this.panelOpisZapadnia.Size = new System.Drawing.Size(151, 227);
             this.panelOpisZapadnia.TabIndex = 1;
             // 
+            // textBoxOpoznienie
+            // 
+            this.textBoxOpoznienie.Location = new System.Drawing.Point(65, 198);
+            this.textBoxOpoznienie.Name = "textBoxOpoznienie";
+            this.textBoxOpoznienie.ReadOnly = true;
+            this.textBoxOpoznienie.Size = new System.Drawing.Size(84, 26);
+            this.textBoxOpoznienie.TabIndex = 22;
+            this.textBoxOpoznienie.Text = "0 ";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.Moccasin;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox2.Location = new System.Drawing.Point(7, 199);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(52, 25);
+            this.textBox2.TabIndex = 21;
+            this.textBox2.Text = "Opóź.";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // buttonZmianaRozstaw
             // 
             this.buttonZmianaRozstaw.BackColor = System.Drawing.Color.SkyBlue;
@@ -90,9 +112,9 @@
             // 
             this.textBoxMiejsceStop.Location = new System.Drawing.Point(65, 138);
             this.textBoxMiejsceStop.Name = "textBoxMiejsceStop";
-            this.textBoxMiejsceStop.ReadOnly = true;
             this.textBoxMiejsceStop.Size = new System.Drawing.Size(84, 26);
             this.textBoxMiejsceStop.TabIndex = 18;
+            this.textBoxMiejsceStop.Text = "0";
             // 
             // textBox7
             // 
@@ -192,28 +214,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
-            // 
-            // textBoxOpoznienie
-            // 
-            this.textBoxOpoznienie.Location = new System.Drawing.Point(65, 198);
-            this.textBoxOpoznienie.Name = "textBoxOpoznienie";
-            this.textBoxOpoznienie.ReadOnly = true;
-            this.textBoxOpoznienie.Size = new System.Drawing.Size(84, 26);
-            this.textBoxOpoznienie.TabIndex = 22;
-            this.textBoxOpoznienie.Text = "0 ";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.Moccasin;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.Location = new System.Drawing.Point(7, 199);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(52, 25);
-            this.textBox2.TabIndex = 21;
-            this.textBox2.Text = "Opóź.";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Zapadnia
             // 

@@ -56,6 +56,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timerJazdaDoPozycji = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -115,7 +116,6 @@
             this.panelJoystick.Controls.Add(this.label7);
             this.panelJoystick.Controls.Add(this.trackBarJoystick);
             this.panelJoystick.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelJoystick.Enabled = false;
             this.panelJoystick.Location = new System.Drawing.Point(295, 0);
             this.panelJoystick.Name = "panelJoystick";
             this.panelJoystick.Size = new System.Drawing.Size(95, 281);
@@ -429,5 +429,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timerJazdaDoPozycji;
     }
 }

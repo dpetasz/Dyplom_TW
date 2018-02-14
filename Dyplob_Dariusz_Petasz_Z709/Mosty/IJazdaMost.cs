@@ -9,7 +9,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
     public interface IJazdaMost
     {
         float jazdaManual(bool kierunek, int v, float pozycja);
-        float jazdaDoPozycji(float pozycjaZadana, int v, float pozycja);
+        float jazdaDoPozycjiUp(int v, float pozycja);
+        float jazdaDoPozycjiDown(int v, float pozycja);
         float jazdaJoystick(int v, float pozycja);
     }
 }

@@ -37,6 +37,12 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             get { return rozstaw; }
             set { rozstaw = value; }
         }
+        bool doPozycji;
+        public bool DoPozycji
+        {
+            get { return doPozycji; }
+            set { doPozycji = value; }
+        }
         float pozycjaZadana;
         public float PozycjaZadana
         {
@@ -104,6 +110,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             this.Przychamowanie = Przychamowanie;
             this.Rozstaw = false;
             this.Uspienie = 0;
+            this.DoPozycji = false;
             rysujZapadnia.Wypelnienie();
             ListaZapadnia.Add(this);
         }
@@ -111,7 +118,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         {
             textBoxNazwa.Text = rysujZapadnia.Nazwa;
             textBoxPozycja.Text = ((float)Math.Round((Pozycja / 20), 2)).ToString() + " m";
-            textBoxRozstaw.Text = ((float)Math.Round(((PozycjaPortal - Pozycja) /20), 2)).ToString() + " m";
+            textBoxRozstaw.Text = ((float)Math.Round(((PozycjaPortal - Pozycja) / 20), 2)).ToString() + " m";
             textBoxPredkosc.Text = Predkosc.ToString();
         }
 
@@ -227,20 +234,40 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         }
         public void Opoznienie()
         {
-            
+
             try { Uspienie = Convert.ToInt32(textBoxOpoznienie.Text); }
-            catch { MessageBox.Show("Podałeś złe dane dla opóźnienia!!!"); } 
-                       
+            catch { MessageBox.Show("Podałeś złe dane dla opóźnienia!!!"); }
+
         }
-        public void DoPozycji()
+        public void AktywujDoPozycji()
         {
-            try { PozycjaZadana = float.Parse(textBoxMiejsceStop.Text); }
-            catch { MessageBox.Show("Podałeś złe dane dla miejsca stop!!!"); } 
-           
+            
+                PozycjaZadana = float.Parse(textBoxMiejsceStop.Text);
+                DoPozycji = true;
+                //textBoxMiejsceStop.ReadOnly = false;
+            
+
         }
         public void JazdaDoPozycji()
         {
-            
+            if (Pozycja < pozycjaZadana)
+            {
+                Pozycja = jazdaZapadnia.jazdaDoPozycjiUp(Predkosc, Pozycja);
+                PozycjaPortal = jazdaZapadnia.jazdaDoPozycjiUp(Predkosc, PozycjaPortal);
+                Odswiez();
+            }
+             if (Pozycja > pozycjaZadana)
+            {
+                Pozycja = jazdaZapadnia.jazdaDoPozycjiDown(Predkosc, Pozycja);
+                PozycjaPortal = jazdaZapadnia.jazdaDoPozycjiDown(Predkosc, PozycjaPortal);
+                Odswiez();
+            }
+            if (Pozycja == PozycjaZadana)
+            {
+                DoPozycji = false;
+            }
+
+
         }
     }
 }

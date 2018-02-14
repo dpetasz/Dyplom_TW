@@ -13,7 +13,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
     public partial class ZapadniePanel : UserControl
     {
         Zapadnia zapadnia;
-        bool rozstaw = false, joystick = false;
+        bool rozstaw = false, joystick = false, doPozycji = false, programowa = false;
         public ZapadniePanel()
         {
             InitializeComponent();
@@ -50,16 +50,16 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 
         private void buttonJoystick_Click(object sender, EventArgs e)
         {
-            if (panelJoystick.Enabled == true)
+            if (joystick == true)
             {
                 buttonJoystick.BackColor = Color.LightSteelBlue;
-                panelJoystick.Enabled = false;
+                
                 joystick = false;
             }
             else
             {
                 buttonJoystick.BackColor = Color.IndianRed;
-                panelJoystick.Enabled = true;
+                
                 joystick = true;
             }
         }
@@ -92,7 +92,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 {
                     if (z.Aktywacja == true && z.Rozstaw == true)
                     {
-                        if ((z.PozycjaPortal - z.Pozycja) <=60 && trackBarJoystick.Value > 0)
+                        if ((z.PozycjaPortal - z.Pozycja) <= 60 && trackBarJoystick.Value > 0)
                         {
                             z.Aktywacja = false;
                             z.Rozstaw = false;
@@ -112,6 +112,14 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                         z.JazdaRozstaw();
                     }
                 }
+                if (doPozycji == true)
+                {
+                    if (z.DoPozycji == true && z.Aktywacja == true)
+                    {
+                        z.JazdaDoPozycji();
+                    }
+
+                }
 
             }
         }
@@ -119,15 +127,30 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 
         private void trackBarJoystick_Scroll(object sender, EventArgs e)
         {
-
-            timer1.Enabled = true;
-            foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+            if (doPozycji == true)
             {
-                if (z.Aktywacja == true)
+                timer1.Enabled = true;
+                foreach (Zapadnia z in Zapadnia.ListaZapadnia)
                 {
-                    z.Predkosc = trackBarJoystick.Value;
+                    if (z.Aktywacja == true )
+                    {
+                        z.AktywujDoPozycji();
+                        z.Predkosc = trackBarJoystick.Value;
+                    }
                 }
             }
+            if(joystick == true || rozstaw == true)
+            {
+                timer1.Enabled = true;
+                foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+                {
+                    if (z.Aktywacja == true)
+                    {
+                        z.Predkosc = trackBarJoystick.Value;
+                    }
+                }
+            }
+            
         }
 
         private void trackBarJoystick_MouseUp(object sender, MouseEventArgs e)
@@ -144,23 +167,36 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 
         private void buttonRozstaw_Click(object sender, EventArgs e)
         {
-            if (panelJoystick.Enabled == true)
+            if (rozstaw == true)
             {
                 buttonRozstaw.BackColor = Color.LightSteelBlue;
-                panelJoystick.Enabled = false;
+                
                 rozstaw = false;
             }
             else
             {
                 buttonRozstaw.BackColor = Color.IndianRed;
-                panelJoystick.Enabled = true;
+                
                 rozstaw = true;
             }
         }
 
         private void buttonJazdaDoPozycji_Click(object sender, EventArgs e)
         {
-
+            if (doPozycji == true)
+            {
+                buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
+               
+                doPozycji = false;
+                
+            }
+            else
+            {
+                buttonJazdaDoPozycji.BackColor = Color.IndianRed;
+             
+                doPozycji = true;
+                
+            }
         }
     }
 }
