@@ -92,23 +92,23 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 {
                     if (z.Aktywacja == true && z.Rozstaw == true)
                     {
-                        if ((z.PozycjaPortal - z.Pozycja) <= 60 && trackBarJoystick.Value > 0)
-                        {
-                            z.Aktywacja = false;
-                            z.Rozstaw = false;
-                            z.ZmianaAktywacja();
-                        }
-                        if (z.Pozycja >= z.Kg && trackBarJoystick.Value > 0)
-                        {
-                            z.Aktywacja = false;
-                            z.ZmianaAktywacja();
-                        }
-                        if (z.Pozycja <= z.Kd && trackBarJoystick.Value < 0)
-                        {
-                            z.Aktywacja = false;
-                            z.Rozstaw = false;
-                            z.ZmianaAktywacja();
-                        }
+                        //if ((z.PozycjaPortal - z.Pozycja) <= 60 && trackBarJoystick.Value > 0)
+                        //{
+                        //    z.Aktywacja = false;
+                        //    z.Rozstaw = false;
+                        //    z.ZmianaAktywacja();
+                        //}
+                        //if (z.Pozycja >= z.Kg && trackBarJoystick.Value > 0)
+                        //{
+                        //    z.Aktywacja = false;
+                        //    z.ZmianaAktywacja();
+                        //}
+                        //if (z.Pozycja <= z.Kd && trackBarJoystick.Value < 0)
+                        //{
+                        //    z.Aktywacja = false;
+                        //    z.Rozstaw = false;
+                        //    z.ZmianaAktywacja();
+                        //}
                         z.JazdaRozstaw();
                     }
                 }
@@ -139,13 +139,25 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                     }
                 }
             }
-            if(joystick == true || rozstaw == true)
+            if(joystick == true )
             {
                 timer1.Enabled = true;
                 foreach (Zapadnia z in Zapadnia.ListaZapadnia)
                 {
                     if (z.Aktywacja == true)
                     {
+                        z.Predkosc = trackBarJoystick.Value;
+                    }
+                }
+            }
+            if(rozstaw == true)
+            {
+                timer1.Enabled = true;
+                foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+                {
+                    if (z.Aktywacja == true)
+                    {
+                        z.AktywujRozstaw();
                         z.Predkosc = trackBarJoystick.Value;
                     }
                 }

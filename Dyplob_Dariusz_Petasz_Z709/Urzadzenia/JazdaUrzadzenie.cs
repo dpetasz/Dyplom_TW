@@ -23,19 +23,19 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
                         break;
                     }
             }
-            return (float)Math.Round(pozycja, 1);
+            return (float)Math.Round(pozycja, 2);
         }
         public virtual float jazdaDoPozycjiUp(int v, float pozycja)
         {
             pozycja += Math.Abs(v) * 0.01f;
             
-            return (float)Math.Round(pozycja, 1);
+            return pozycja;
         }
         public virtual float jazdaDoPozycjiDown( int v, float pozycja)
         {
              pozycja -= Math.Abs(v) * 0.01f;
              
-            return (float)Math.Round(pozycja, 1);
+            return pozycja;
         }
         public virtual float jazdaJoystick(int v, float pozycja)
         {
