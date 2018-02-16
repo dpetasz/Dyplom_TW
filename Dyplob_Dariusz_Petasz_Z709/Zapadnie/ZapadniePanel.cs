@@ -47,21 +47,113 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 szer += 154;
             }
         }
+        void LadujDoPozycji()
+        {
+            doPozycji = true;
+            buttonJazdaDoPozycji.BackColor = Color.IndianRed;
+            buttonJazdaDoPozycji.Enabled = false;
+            LadujJazdaDoPozycji();
 
+            joystick = false;
+            buttonJoystick.BackColor = Color.LightSteelBlue;
+            buttonJoystick.Enabled = true;
+
+            rozstaw = false;
+            buttonRozstaw.BackColor = Color.LightSteelBlue;
+            buttonRozstaw.Enabled = true;
+
+
+            programowa = false;
+            buttonPrgramowa.BackColor = Color.LightSteelBlue;
+            buttonPrgramowa.Enabled = true;
+        }
+        void LadujJoystick()
+        {
+            doPozycji = false;
+            buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
+            buttonJazdaDoPozycji.Enabled = true;
+
+            joystick = true;
+            buttonJoystick.BackColor = Color.IndianRed;
+            buttonJoystick.Enabled = false;
+            LadujJazdaJoystick();
+
+            rozstaw = false;
+            buttonRozstaw.BackColor = Color.LightSteelBlue;
+            buttonRozstaw.Enabled = true;
+
+
+            programowa = false;
+            buttonPrgramowa.BackColor = Color.LightSteelBlue;
+            buttonPrgramowa.Enabled = true;
+        }
+        void LadujRozstaw()
+        {
+            doPozycji = false;
+            buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
+            buttonJazdaDoPozycji.Enabled = true;
+
+            joystick = false;
+            buttonJoystick.BackColor = Color.LightSteelBlue;
+            buttonJoystick.Enabled = true;
+
+            rozstaw = true;
+            buttonRozstaw.BackColor = Color.IndianRed;
+            buttonRozstaw.Enabled = false;
+            LadujJazdaRozstaw();
+
+            programowa = false;
+            buttonPrgramowa.BackColor = Color.LightSteelBlue;
+            buttonPrgramowa.Enabled = true;
+        }
+        void LadujProgramowa()
+        {
+            doPozycji = false;
+            buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
+            buttonJazdaDoPozycji.Enabled = true;
+
+            joystick = false;
+            buttonJoystick.BackColor = Color.LightSteelBlue;
+            buttonJoystick.Enabled = true;
+
+            rozstaw = false;
+            buttonRozstaw.BackColor = Color.LightSteelBlue;
+            buttonRozstaw.Enabled = true;
+
+
+            programowa = true;
+            buttonPrgramowa.BackColor = Color.IndianRed;
+            buttonPrgramowa.Enabled = false;
+            LadujJazdaDoPozycji();
+        }
+        void LadujJazdaDoPozycji()
+        {
+            buttonStartStop.Enabled = true;
+            foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+            {
+                z.AktywujDoPozycji();
+                z.zmianaPrzyciskRozstawNie();
+            }
+        }
+        void LadujJazdaRozstaw()
+        {
+            foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+            {
+                z.ZmianaAktywacja();
+                z.zmianaPrzyciskRozstawTak();
+            }
+        }
+        void LadujJazdaJoystick()
+        {
+            foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+            {
+                z.ZmianaAktywacja();
+                z.zmianaPrzyciskRozstawNie();
+            }
+        }
         private void buttonJoystick_Click(object sender, EventArgs e)
         {
-            if (joystick == true)
-            {
-                buttonJoystick.BackColor = Color.LightSteelBlue;
-                
-                joystick = false;
-            }
-            else
-            {
-                buttonJoystick.BackColor = Color.IndianRed;
-                
-                joystick = true;
-            }
+            LadujJoystick();
         }
 
 
@@ -69,9 +161,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+
+            if (joystick == true)
             {
-                if (joystick == true)
+                foreach (Zapadnia z in Zapadnia.ListaZapadnia)
                 {
                     if (z.Aktywacja == true)
                     {
@@ -88,39 +181,30 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                         z.Joystick();
                     }
                 }
-                if (rozstaw == true)
+            }
+            if (rozstaw == true)
+            {
+                foreach (Zapadnia z in Zapadnia.ListaZapadnia)
                 {
                     if (z.Aktywacja == true && z.Rozstaw == true)
                     {
-                        //if ((z.PozycjaPortal - z.Pozycja) <= 60 && trackBarJoystick.Value > 0)
-                        //{
-                        //    z.Aktywacja = false;
-                        //    z.Rozstaw = false;
-                        //    z.ZmianaAktywacja();
-                        //}
-                        //if (z.Pozycja >= z.Kg && trackBarJoystick.Value > 0)
-                        //{
-                        //    z.Aktywacja = false;
-                        //    z.ZmianaAktywacja();
-                        //}
-                        //if (z.Pozycja <= z.Kd && trackBarJoystick.Value < 0)
-                        //{
-                        //    z.Aktywacja = false;
-                        //    z.Rozstaw = false;
-                        //    z.ZmianaAktywacja();
-                        //}
+
                         z.JazdaRozstaw();
                     }
                 }
-                if (doPozycji == true)
+            }
+
+            if (doPozycji == true)
+            {
+                foreach (Zapadnia z in Zapadnia.ListaZapadnia)
                 {
                     if (z.DoPozycji == true && z.Aktywacja == true)
                     {
                         z.JazdaDoPozycji();
                     }
+                    
 
                 }
-
             }
         }
 
@@ -132,14 +216,14 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 timer1.Enabled = true;
                 foreach (Zapadnia z in Zapadnia.ListaZapadnia)
                 {
-                    if (z.Aktywacja == true )
+                    if (z.Aktywacja == true)
                     {
                         z.AktywujDoPozycji();
                         z.Predkosc = trackBarJoystick.Value;
                     }
                 }
             }
-            if(joystick == true )
+            if (joystick == true)
             {
                 timer1.Enabled = true;
                 foreach (Zapadnia z in Zapadnia.ListaZapadnia)
@@ -150,19 +234,20 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                     }
                 }
             }
-            if(rozstaw == true)
+            if (rozstaw == true)
             {
                 timer1.Enabled = true;
                 foreach (Zapadnia z in Zapadnia.ListaZapadnia)
                 {
-                    if (z.Aktywacja == true)
+                    if (z.Aktywacja == true && z.Rozstaw == true)
                     {
-                        z.AktywujRozstaw();
+                        //z.AktywujRozstaw();
                         z.Predkosc = trackBarJoystick.Value;
+                        z.Odswiez();
                     }
                 }
             }
-            
+
         }
 
         private void trackBarJoystick_MouseUp(object sender, MouseEventArgs e)
@@ -171,44 +256,99 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             trackBarJoystick.Value = 0;
             foreach (Zapadnia z in Zapadnia.ListaZapadnia)
             {
+                if (z.Aktywacja == true)
+                {
+                    z.Predkosc = trackBarJoystick.Value;
+                    z.Odswiez();
+                }
 
-                z.Predkosc = trackBarJoystick.Value;
-                z.Odswiez();
             }
         }
 
         private void buttonRozstaw_Click(object sender, EventArgs e)
         {
-            if (rozstaw == true)
-            {
-                buttonRozstaw.BackColor = Color.LightSteelBlue;
-                
-                rozstaw = false;
-            }
-            else
-            {
-                buttonRozstaw.BackColor = Color.IndianRed;
-                
-                rozstaw = true;
-            }
-        }
+            LadujRozstaw();
+            //if (rozstaw == true)
+            //{
+            //    buttonRozstaw.BackColor = Color.LightSteelBlue;
 
+            //    rozstaw = false;
+            //    foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+            //    {
+            //        z.zmianaPrzyciskRozstawNie();
+            //        z.ZmianaAktywacja();
+            //    }
+            //}
+            //else
+            //{
+            //    buttonRozstaw.BackColor = Color.IndianRed;
+            //    rozstaw = true;
+            //    foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+            //    {
+            //        z.zmianaPrzyciskRozstawTak();
+            //    }
+            //}
+
+        }
+       
         private void buttonJazdaDoPozycji_Click(object sender, EventArgs e)
         {
-            if (doPozycji == true)
+            LadujDoPozycji();
+            //if (doPozycji == true)
+            //{
+            //    buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
+            //    buttonStartStop.Enabled = false;
+            //    doPozycji = false;
+            //    foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+            //    {
+            //        z.DoPozycji = false;
+            //    }
+            //}
+            //else
+            //{
+            //    buttonJazdaDoPozycji.BackColor = Color.IndianRed;
+            //    buttonStartStop.Enabled = true;
+
+            //    doPozycji = true;
+            //    foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+            //    {
+            //        z.AktywujDoPozycji();
+            //    }
+
+            //}
+        }
+
+        private void buttonStartStop_Click(object sender, EventArgs e)
+        {
+            StartStop();
+
+        }
+        void StartStop()
+        {
+
+            if (timer1.Enabled == false)
             {
-                buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
-               
-                doPozycji = false;
-                
+                Start();
             }
             else
             {
-                buttonJazdaDoPozycji.BackColor = Color.IndianRed;
-             
-                doPozycji = true;
-                
+                Stop();
             }
         }
+        void Start()
+        {
+            timer1.Enabled = true;
+            buttonStartStop.BackColor = Color.IndianRed;
+            buttonStartStop.Text = "Stop";
+
+        }
+        void Stop()
+        {
+            timer1.Enabled = false;
+            buttonStartStop.BackColor = Color.Green;
+            buttonStartStop.Text = "Start";
+        }
+
+
     }
 }

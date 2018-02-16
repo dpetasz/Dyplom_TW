@@ -120,8 +120,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             textBoxPozycja.Text = ((float)Math.Round((Pozycja / 20), 2)).ToString() + " m";
             textBoxRozstaw.Text = ((float)Math.Round(((PozycjaPortal - Pozycja) / 20), 2)).ToString() + " m";
             textBoxPredkosc.Text = Predkosc.ToString();
-            textBoxMiejsceStop.Text = (Pozycja/20).ToString();
-            WczytajMiejsceStop(Math.Abs((Pozycja/20)).ToString());
+            textBoxMiejsceStop.Text = (Pozycja / 20).ToString();
+            WczytajMiejsceStop(Math.Abs((Pozycja / 20)).ToString());
         }
 
         private void Zapadnia_Load(object sender, EventArgs e)
@@ -166,19 +166,20 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 {
                     Aktywacja = false;
                     DoPozycji = false;
+                    Predkosc = 0;
                     ZmianaAktywacja();
                     Odswiez();
                 }
                 else if (Pozycja > PozycjaZadana - 10)
                 {
                     Pozycja = jazdaZapadnia.jazdaDoPozycjiUp(Przychamowanie, Pozycja);
-                    
+
                     Odswiez();
                 }
                 else
                 {
                     Pozycja = jazdaZapadnia.jazdaDoPozycjiUp(Predkosc, Pozycja);
-                    
+
                     Odswiez();
                 }
             }
@@ -187,6 +188,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
                 {
                     Aktywacja = false;
+                    DoPozycji = false;
+                    Predkosc = 0;
                     ZmianaAktywacja();
                     Odswiez();
                 }
@@ -211,6 +214,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
                 {
                     Aktywacja = false;
+                    Predkosc = 0;
                     ZmianaAktywacja();
                     Odswiez();
                 }
@@ -233,6 +237,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
                 {
                     Aktywacja = false;
+                    Predkosc = 0;
                     ZmianaAktywacja();
                     Odswiez();
                 }
@@ -262,20 +267,14 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         }
         public void ZmianaAktywacja()
         {
-            if (Aktywacja == false)
-            {
+            buttonAktywacja.BackColor = Color.SkyBlue;
+            Aktywacja = false;
+            DoPozycji = false;
+            Rozstaw = false;
+            Predkosc = 0;
+            buttonZmianaRozstaw.BackColor = Color.SkyBlue;
+            Odswiez();
 
-                buttonAktywacja.BackColor = Color.SkyBlue;
-                DoPozycji = false;
-                Rozstaw = false;
-                buttonZmianaRozstaw.BackColor = Color.SkyBlue;
-            }
-            else
-            {
-
-                buttonAktywacja.BackColor = Color.Maroon;
-
-            }
         }
         private void buttonAktywacja_Click(object sender, EventArgs e)
         {
@@ -318,20 +317,13 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         }
         public void AktywujDoPozycji()
         {
-
-            //PozycjaZadana = float.Parse(textBoxMiejsceStop.Text);
             DoPozycji = true;
-            //textBoxMiejsceStop.ReadOnly = false;
-
-
+            Rozstaw = false;
+            buttonZmianaRozstaw.BackColor = Color.SkyBlue;
+            buttonZmianaRozstaw.Enabled = false;
         }
 
-        public void AktywujRozstaw()
-        {
-            Rozstaw = true;
-        }
         
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             g = e.Graphics;
@@ -342,9 +334,9 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             for (int i = 0; i <= 9; i++)
             {
                 g.DrawLine(pioro, 2, x, 120, x);
-                g.DrawString("- " + i, textFont, kolor, 122, x-8);
+                g.DrawString("- " + i, textFont, kolor, 122, x - 8);
                 x += 65;
-                
+
             }
 
         }
@@ -360,10 +352,19 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         void WczytajMiejsceStop(string x)
         {
             PozycjaZadana = float.Parse(x) * -20;
-            textBoxMiejsceStop.Text = "- "+x;
+            textBoxMiejsceStop.Text = "- " + x;
             panelMiejsceStop.Visible = false;
         }
 
+        public void zmianaPrzyciskRozstawTak()
+        {
+            buttonZmianaRozstaw.Enabled = true;
+        }
+        public void zmianaPrzyciskRozstawNie()
+        {
+
+            buttonZmianaRozstaw.Enabled = false;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             WczytajMiejsceStop(button1.Text);
@@ -652,6 +653,29 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         private void button58_Click(object sender, EventArgs e)
         {
             WczytajMiejsceStop(button58.Text);
+        }
+
+
+
+        private void buttonZamknijPanelPredkosc_Click(object sender, EventArgs e)
+        {
+            panelPredkosc.Visible = false;
+        }
+
+        private void trackBarPredkosc_Scroll(object sender, EventArgs e)
+        {
+            Predkosc = trackBarPredkosc.Value;
+            textBoxPredkosc.Text = Predkosc.ToString();
+        }
+
+        private void textBoxPredkosc_MouseClick(object sender, MouseEventArgs e)
+        {
+            panelPredkosc.Visible = true;
+        }
+
+        private void trackBarPredkosc_MouseUp(object sender, MouseEventArgs e)
+        {
+            panelPredkosc.Visible = false;
         }
     }
 }

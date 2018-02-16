@@ -33,7 +33,7 @@
             this.twDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
             this.pokazZapadnieTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazZapadnieTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelSterowanie = new System.Windows.Forms.Panel();
             this.panelJoystick = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -43,7 +43,7 @@
             this.buttonJazdaDoPozycji = new System.Windows.Forms.Button();
             this.buttonRozstaw = new System.Windows.Forms.Button();
             this.buttonJoystick = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonStartStop = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             this.timerJazdaDoPozycji = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelSterowanie.SuspendLayout();
             this.panelJoystick.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarJoystick)).BeginInit();
             this.tabControl2.SuspendLayout();
@@ -93,20 +93,20 @@
             this.panel1.Size = new System.Drawing.Size(954, 701);
             this.panel1.TabIndex = 2;
             // 
-            // panel2
+            // panelSterowanie
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.panelJoystick);
-            this.panel2.Controls.Add(this.buttonPrgramowa);
-            this.panel2.Controls.Add(this.buttonJazdaDoPozycji);
-            this.panel2.Controls.Add(this.buttonRozstaw);
-            this.panel2.Controls.Add(this.buttonJoystick);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(954, 418);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(392, 283);
-            this.panel2.TabIndex = 3;
+            this.panelSterowanie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSterowanie.Controls.Add(this.panelJoystick);
+            this.panelSterowanie.Controls.Add(this.buttonPrgramowa);
+            this.panelSterowanie.Controls.Add(this.buttonJazdaDoPozycji);
+            this.panelSterowanie.Controls.Add(this.buttonRozstaw);
+            this.panelSterowanie.Controls.Add(this.buttonJoystick);
+            this.panelSterowanie.Controls.Add(this.buttonStartStop);
+            this.panelSterowanie.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelSterowanie.Location = new System.Drawing.Point(954, 418);
+            this.panelSterowanie.Name = "panelSterowanie";
+            this.panelSterowanie.Size = new System.Drawing.Size(392, 283);
+            this.panelSterowanie.TabIndex = 3;
             // 
             // panelJoystick
             // 
@@ -220,16 +220,18 @@
             this.buttonJoystick.UseVisualStyleBackColor = false;
             this.buttonJoystick.Click += new System.EventHandler(this.buttonJoystick_Click);
             // 
-            // button3
+            // buttonStartStop
             // 
-            this.button3.BackColor = System.Drawing.Color.Green;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(63, 122);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(134, 125);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Start";
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonStartStop.BackColor = System.Drawing.Color.Green;
+            this.buttonStartStop.Enabled = false;
+            this.buttonStartStop.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonStartStop.Location = new System.Drawing.Point(63, 122);
+            this.buttonStartStop.Name = "buttonStartStop";
+            this.buttonStartStop.Size = new System.Drawing.Size(134, 125);
+            this.buttonStartStop.TabIndex = 20;
+            this.buttonStartStop.Text = "Start";
+            this.buttonStartStop.UseVisualStyleBackColor = false;
+            this.buttonStartStop.Click += new System.EventHandler(this.buttonStartStop_Click);
             // 
             // tabControl2
             // 
@@ -380,7 +382,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Controls.Add(this.tabControl2);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelSterowanie);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -389,7 +391,7 @@
             this.Load += new System.EventHandler(this.ZapadniePanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.panelSterowanie.ResumeLayout(false);
             this.panelJoystick.ResumeLayout(false);
             this.panelJoystick.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarJoystick)).EndInit();
@@ -406,7 +408,7 @@
         private TWDataSet twDataSet;
         private TWDataSetTableAdapters.pokazZapadnieTableAdapter pokazZapadnieTableAdapter;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelSterowanie;
         private System.Windows.Forms.Panel panelJoystick;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -416,7 +418,7 @@
         private System.Windows.Forms.Button buttonJazdaDoPozycji;
         private System.Windows.Forms.Button buttonRozstaw;
         private System.Windows.Forms.Button buttonJoystick;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonStartStop;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label4;
