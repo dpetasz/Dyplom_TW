@@ -42,6 +42,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 zapadnia.Kd = kd;
                 zapadnia.PozycjaPortal = pp;
                 zapadnia.Parent = panelZapadnie;
+                zapadnia.Width = 150;
                 zapadnia.Top = 3;
                 zapadnia.Left = szer;
                 szer += 154;
@@ -72,6 +73,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             doPozycji = false;
             buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
             buttonJazdaDoPozycji.Enabled = true;
+            buttonStartStop.Enabled = false;
+            Stop();
 
             joystick = true;
             buttonJoystick.BackColor = Color.IndianRed;
@@ -92,6 +95,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             doPozycji = false;
             buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
             buttonJazdaDoPozycji.Enabled = true;
+            buttonStartStop.Enabled = false;
+            Stop();
 
             joystick = false;
             buttonJoystick.BackColor = Color.LightSteelBlue;
@@ -137,9 +142,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         }
         void LadujJazdaRozstaw()
         {
+
             foreach (Zapadnia z in Zapadnia.ListaZapadnia)
             {
-                z.ZmianaAktywacja();
+                z.ZmianaAktywacjaRozstaw();
                 z.zmianaPrzyciskRozstawTak();
             }
         }
@@ -147,7 +153,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         {
             foreach (Zapadnia z in Zapadnia.ListaZapadnia)
             {
-                z.ZmianaAktywacja();
+                z.ZmianaAktywacjaJoystick();
                 z.zmianaPrzyciskRozstawNie();
             }
         }
@@ -168,16 +174,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 {
                     if (z.Aktywacja == true)
                     {
-                        if (z.Pozycja >= z.Kg && trackBarJoystick.Value > 0)
-                        {
-                            z.Aktywacja = false;
-                            z.ZmianaAktywacja();
-                        }
-                        if (z.Pozycja <= z.Kd && trackBarJoystick.Value < 0)
-                        {
-                            z.Aktywacja = false;
-                            z.ZmianaAktywacja();
-                        }
                         z.Joystick();
                     }
                 }
@@ -202,7 +198,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                     {
                         z.JazdaDoPozycji();
                     }
-                    
+
 
                 }
             }
@@ -290,39 +286,14 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             //}
 
         }
-       
+
         private void buttonJazdaDoPozycji_Click(object sender, EventArgs e)
         {
             LadujDoPozycji();
-            //if (doPozycji == true)
-            //{
-            //    buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
-            //    buttonStartStop.Enabled = false;
-            //    doPozycji = false;
-            //    foreach (Zapadnia z in Zapadnia.ListaZapadnia)
-            //    {
-            //        z.DoPozycji = false;
-            //    }
-            //}
-            //else
-            //{
-            //    buttonJazdaDoPozycji.BackColor = Color.IndianRed;
-            //    buttonStartStop.Enabled = true;
-
-            //    doPozycji = true;
-            //    foreach (Zapadnia z in Zapadnia.ListaZapadnia)
-            //    {
-            //        z.AktywujDoPozycji();
-            //    }
-
-            //}
-        }
-
-        private void buttonStartStop_Click(object sender, EventArgs e)
-        {
-            StartStop();
 
         }
+
+
         void StartStop()
         {
 
@@ -348,6 +319,22 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             buttonStartStop.BackColor = Color.Green;
             buttonStartStop.Text = "Start";
         }
+
+
+
+        
+
+        private void buttonPrgramowa_Click(object sender, EventArgs e)
+        {
+            LadujProgramowa();
+        }
+
+        private void buttonStartStop_Click(object sender, EventArgs e)
+        {
+            StartStop();
+        }
+
+        
 
 
     }

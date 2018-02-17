@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.panelOpisZapadnia = new System.Windows.Forms.Panel();
-            this.textBoxOpoznienie = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxWynik = new System.Windows.Forms.TextBox();
             this.buttonZmianaRozstaw = new System.Windows.Forms.Button();
             this.textBoxPredkosc = new System.Windows.Forms.TextBox();
             this.textBoxMiejsceStop = new System.Windows.Forms.TextBox();
@@ -103,11 +102,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panelPredkosc = new System.Windows.Forms.Panel();
-            this.trackBarPredkosc = new System.Windows.Forms.TrackBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.buttonZamknijPanelPredkosc = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.trackBarPredkosc = new System.Windows.Forms.TrackBar();
             this.panelOpisZapadnia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMiejsceStop.SuspendLayout();
@@ -117,8 +116,7 @@
             // 
             // panelOpisZapadnia
             // 
-            this.panelOpisZapadnia.Controls.Add(this.textBoxOpoznienie);
-            this.panelOpisZapadnia.Controls.Add(this.textBox2);
+            this.panelOpisZapadnia.Controls.Add(this.textBoxWynik);
             this.panelOpisZapadnia.Controls.Add(this.buttonZmianaRozstaw);
             this.panelOpisZapadnia.Controls.Add(this.textBoxPredkosc);
             this.panelOpisZapadnia.Controls.Add(this.textBoxMiejsceStop);
@@ -132,36 +130,27 @@
             this.panelOpisZapadnia.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelOpisZapadnia.Location = new System.Drawing.Point(0, 438);
             this.panelOpisZapadnia.Name = "panelOpisZapadnia";
-            this.panelOpisZapadnia.Size = new System.Drawing.Size(151, 227);
+            this.panelOpisZapadnia.Size = new System.Drawing.Size(358, 227);
             this.panelOpisZapadnia.TabIndex = 1;
             // 
-            // textBoxOpoznienie
+            // textBoxWynik
             // 
-            this.textBoxOpoznienie.Location = new System.Drawing.Point(65, 198);
-            this.textBoxOpoznienie.Name = "textBoxOpoznienie";
-            this.textBoxOpoznienie.ReadOnly = true;
-            this.textBoxOpoznienie.Size = new System.Drawing.Size(84, 26);
-            this.textBoxOpoznienie.TabIndex = 22;
-            this.textBoxOpoznienie.Text = "0 ";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.Moccasin;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.Location = new System.Drawing.Point(7, 199);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(52, 25);
-            this.textBox2.TabIndex = 21;
-            this.textBox2.Text = "Opóź.";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxWynik.BackColor = System.Drawing.Color.Moccasin;
+            this.textBoxWynik.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxWynik.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxWynik.Location = new System.Drawing.Point(3, 199);
+            this.textBoxWynik.Name = "textBoxWynik";
+            this.textBoxWynik.ReadOnly = true;
+            this.textBoxWynik.Size = new System.Drawing.Size(141, 25);
+            this.textBoxWynik.TabIndex = 21;
+            this.textBoxWynik.Text = "Wynik";
+            this.textBoxWynik.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // buttonZmianaRozstaw
             // 
             this.buttonZmianaRozstaw.BackColor = System.Drawing.Color.SkyBlue;
             this.buttonZmianaRozstaw.Enabled = false;
-            this.buttonZmianaRozstaw.Location = new System.Drawing.Point(7, 40);
+            this.buttonZmianaRozstaw.Location = new System.Drawing.Point(3, 40);
             this.buttonZmianaRozstaw.Name = "buttonZmianaRozstaw";
             this.buttonZmianaRozstaw.Size = new System.Drawing.Size(142, 31);
             this.buttonZmianaRozstaw.TabIndex = 20;
@@ -171,19 +160,19 @@
             // 
             // textBoxPredkosc
             // 
-            this.textBoxPredkosc.Location = new System.Drawing.Point(65, 169);
+            this.textBoxPredkosc.Location = new System.Drawing.Point(61, 169);
             this.textBoxPredkosc.Name = "textBoxPredkosc";
             this.textBoxPredkosc.ReadOnly = true;
-            this.textBoxPredkosc.Size = new System.Drawing.Size(84, 26);
+            this.textBoxPredkosc.Size = new System.Drawing.Size(83, 26);
             this.textBoxPredkosc.TabIndex = 19;
             this.textBoxPredkosc.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBoxPredkosc_MouseClick);
             // 
             // textBoxMiejsceStop
             // 
-            this.textBoxMiejsceStop.Location = new System.Drawing.Point(65, 138);
+            this.textBoxMiejsceStop.Location = new System.Drawing.Point(61, 138);
             this.textBoxMiejsceStop.Name = "textBoxMiejsceStop";
             this.textBoxMiejsceStop.ReadOnly = true;
-            this.textBoxMiejsceStop.Size = new System.Drawing.Size(84, 26);
+            this.textBoxMiejsceStop.Size = new System.Drawing.Size(83, 26);
             this.textBoxMiejsceStop.TabIndex = 18;
             this.textBoxMiejsceStop.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBoxMiejsceStop_MouseClick);
             // 
@@ -192,7 +181,7 @@
             this.textBox7.BackColor = System.Drawing.Color.Moccasin;
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox7.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox7.Location = new System.Drawing.Point(7, 170);
+            this.textBox7.Location = new System.Drawing.Point(3, 170);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(52, 25);
@@ -205,7 +194,7 @@
             this.textBox6.BackColor = System.Drawing.Color.Moccasin;
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox6.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox6.Location = new System.Drawing.Point(7, 139);
+            this.textBox6.Location = new System.Drawing.Point(3, 139);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(52, 25);
@@ -215,10 +204,10 @@
             // 
             // textBoxRozstaw
             // 
-            this.textBoxRozstaw.Location = new System.Drawing.Point(65, 108);
+            this.textBoxRozstaw.Location = new System.Drawing.Point(61, 108);
             this.textBoxRozstaw.Name = "textBoxRozstaw";
             this.textBoxRozstaw.ReadOnly = true;
-            this.textBoxRozstaw.Size = new System.Drawing.Size(84, 26);
+            this.textBoxRozstaw.Size = new System.Drawing.Size(83, 26);
             this.textBoxRozstaw.TabIndex = 15;
             // 
             // textBox4
@@ -226,7 +215,7 @@
             this.textBox4.BackColor = System.Drawing.Color.Moccasin;
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox4.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox4.Location = new System.Drawing.Point(8, 108);
+            this.textBox4.Location = new System.Drawing.Point(4, 108);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(52, 25);
@@ -239,7 +228,7 @@
             this.textBox3.BackColor = System.Drawing.Color.Moccasin;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox3.Location = new System.Drawing.Point(7, 77);
+            this.textBox3.Location = new System.Drawing.Point(3, 77);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(52, 25);
@@ -250,7 +239,7 @@
             // buttonAktywacja
             // 
             this.buttonAktywacja.BackColor = System.Drawing.Color.SkyBlue;
-            this.buttonAktywacja.Location = new System.Drawing.Point(7, 3);
+            this.buttonAktywacja.Location = new System.Drawing.Point(3, 3);
             this.buttonAktywacja.Name = "buttonAktywacja";
             this.buttonAktywacja.Size = new System.Drawing.Size(141, 31);
             this.buttonAktywacja.TabIndex = 2;
@@ -260,10 +249,10 @@
             // 
             // textBoxPozycja
             // 
-            this.textBoxPozycja.Location = new System.Drawing.Point(65, 76);
+            this.textBoxPozycja.Location = new System.Drawing.Point(61, 76);
             this.textBoxPozycja.Name = "textBoxPozycja";
             this.textBoxPozycja.ReadOnly = true;
-            this.textBoxPozycja.Size = new System.Drawing.Size(84, 26);
+            this.textBoxPozycja.Size = new System.Drawing.Size(83, 26);
             this.textBoxPozycja.TabIndex = 0;
             // 
             // textBoxNazwa
@@ -347,7 +336,7 @@
             this.panelMiejsceStop.Controls.Add(this.button2);
             this.panelMiejsceStop.Controls.Add(this.button1);
             this.panelMiejsceStop.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.panelMiejsceStop.Location = new System.Drawing.Point(130, 14);
+            this.panelMiejsceStop.Location = new System.Drawing.Point(206, 3);
             this.panelMiejsceStop.Name = "panelMiejsceStop";
             this.panelMiejsceStop.Size = new System.Drawing.Size(149, 667);
             this.panelMiejsceStop.TabIndex = 3;
@@ -1059,11 +1048,51 @@
             this.panelPredkosc.Controls.Add(this.label2);
             this.panelPredkosc.Controls.Add(this.label1);
             this.panelPredkosc.Controls.Add(this.trackBarPredkosc);
-            this.panelPredkosc.Location = new System.Drawing.Point(8, 283);
+            this.panelPredkosc.Location = new System.Drawing.Point(21, 116);
             this.panelPredkosc.Name = "panelPredkosc";
             this.panelPredkosc.Size = new System.Drawing.Size(124, 319);
             this.panelPredkosc.TabIndex = 4;
             this.panelPredkosc.Visible = false;
+            // 
+            // buttonZamknijPanelPredkosc
+            // 
+            this.buttonZamknijPanelPredkosc.Location = new System.Drawing.Point(12, 285);
+            this.buttonZamknijPanelPredkosc.Name = "buttonZamknijPanelPredkosc";
+            this.buttonZamknijPanelPredkosc.Size = new System.Drawing.Size(93, 29);
+            this.buttonZamknijPanelPredkosc.TabIndex = 4;
+            this.buttonZamknijPanelPredkosc.Text = "Zamknij";
+            this.buttonZamknijPanelPredkosc.UseVisualStyleBackColor = true;
+            this.buttonZamknijPanelPredkosc.Click += new System.EventHandler(this.buttonZamknijPanelPredkosc_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Gray;
+            this.label3.Location = new System.Drawing.Point(57, 136);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 18);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "50";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(57, 257);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(17, 18);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(54, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 18);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "100";
             // 
             // trackBarPredkosc
             // 
@@ -1078,46 +1107,6 @@
             this.trackBarPredkosc.TickFrequency = 5;
             this.trackBarPredkosc.Scroll += new System.EventHandler(this.trackBarPredkosc_Scroll);
             this.trackBarPredkosc.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBarPredkosc_MouseUp);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(54, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 18);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "100";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(57, 257);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(17, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "0";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(57, 136);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 18);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "50";
-            // 
-            // buttonZamknijPanelPredkosc
-            // 
-            this.buttonZamknijPanelPredkosc.Location = new System.Drawing.Point(12, 285);
-            this.buttonZamknijPanelPredkosc.Name = "buttonZamknijPanelPredkosc";
-            this.buttonZamknijPanelPredkosc.Size = new System.Drawing.Size(93, 29);
-            this.buttonZamknijPanelPredkosc.TabIndex = 4;
-            this.buttonZamknijPanelPredkosc.Text = "Zamknij";
-            this.buttonZamknijPanelPredkosc.UseVisualStyleBackColor = true;
-            this.buttonZamknijPanelPredkosc.Click += new System.EventHandler(this.buttonZamknijPanelPredkosc_Click);
             // 
             // Zapadnia
             // 
@@ -1134,7 +1123,7 @@
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Zapadnia";
-            this.Size = new System.Drawing.Size(151, 665);
+            this.Size = new System.Drawing.Size(358, 665);
             this.Load += new System.EventHandler(this.Zapadnia_Load);
             this.panelOpisZapadnia.ResumeLayout(false);
             this.panelOpisZapadnia.PerformLayout();
@@ -1163,8 +1152,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button buttonZmianaRozstaw;
-        private System.Windows.Forms.TextBox textBoxOpoznienie;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxWynik;
         private System.Windows.Forms.Panel panelMiejsceStop;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;

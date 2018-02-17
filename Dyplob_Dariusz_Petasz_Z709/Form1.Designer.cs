@@ -56,6 +56,15 @@
             this.buttonWejscie = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.obrotówkaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zapadnieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mostyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wózkiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sztankietyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wylogujToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.koniecToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.koniecToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazLoginBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).BeginInit();
@@ -201,6 +210,11 @@
             // 
             // plikToolStripMenuItem
             // 
+            this.plikToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.wylogujToolStripMenuItem,
+            this.koniecToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.koniecToolStripMenuItem1});
             this.plikToolStripMenuItem.Enabled = false;
             this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
             this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
@@ -224,10 +238,16 @@
             // 
             // widokToolStripMenuItem
             // 
+            this.widokToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.obrotówkaToolStripMenuItem,
+            this.zapadnieToolStripMenuItem,
+            this.mostyToolStripMenuItem,
+            this.wózkiToolStripMenuItem,
+            this.sztankietyToolStripMenuItem});
             this.widokToolStripMenuItem.Enabled = false;
             this.widokToolStripMenuItem.Name = "widokToolStripMenuItem";
-            this.widokToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.widokToolStripMenuItem.Text = "Widok";
+            this.widokToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.widokToolStripMenuItem.Text = "Urządzenia";
             // 
             // pokazLoginBindingSource
             // 
@@ -382,6 +402,63 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // obrotówkaToolStripMenuItem
+            // 
+            this.obrotówkaToolStripMenuItem.Name = "obrotówkaToolStripMenuItem";
+            this.obrotówkaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.obrotówkaToolStripMenuItem.Text = "Obrotówka";
+            this.obrotówkaToolStripMenuItem.Click += new System.EventHandler(this.buttonObrotowka_Click);
+            // 
+            // zapadnieToolStripMenuItem
+            // 
+            this.zapadnieToolStripMenuItem.Name = "zapadnieToolStripMenuItem";
+            this.zapadnieToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.zapadnieToolStripMenuItem.Text = "Zapadnie";
+            this.zapadnieToolStripMenuItem.Click += new System.EventHandler(this.buttonZapadnie_Click);
+            // 
+            // mostyToolStripMenuItem
+            // 
+            this.mostyToolStripMenuItem.Name = "mostyToolStripMenuItem";
+            this.mostyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mostyToolStripMenuItem.Text = "Mosty";
+            this.mostyToolStripMenuItem.Click += new System.EventHandler(this.buttonMosty_Click);
+            // 
+            // wózkiToolStripMenuItem
+            // 
+            this.wózkiToolStripMenuItem.Name = "wózkiToolStripMenuItem";
+            this.wózkiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.wózkiToolStripMenuItem.Text = "Wózki";
+            this.wózkiToolStripMenuItem.Click += new System.EventHandler(this.buttonWozki_Click);
+            // 
+            // sztankietyToolStripMenuItem
+            // 
+            this.sztankietyToolStripMenuItem.Name = "sztankietyToolStripMenuItem";
+            this.sztankietyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sztankietyToolStripMenuItem.Text = "Sztankiety";
+            // 
+            // wylogujToolStripMenuItem
+            // 
+            this.wylogujToolStripMenuItem.Name = "wylogujToolStripMenuItem";
+            this.wylogujToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.wylogujToolStripMenuItem.Text = "Wyloguj";
+            // 
+            // koniecToolStripMenuItem
+            // 
+            this.koniecToolStripMenuItem.Name = "koniecToolStripMenuItem";
+            this.koniecToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.koniecToolStripMenuItem.Text = "Panel główny";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // koniecToolStripMenuItem1
+            // 
+            this.koniecToolStripMenuItem1.Name = "koniecToolStripMenuItem1";
+            this.koniecToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.koniecToolStripMenuItem1.Text = "Koniec";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -439,6 +516,15 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelLogowanie;
         private System.Windows.Forms.Panel panelPrzyciski;
+        private System.Windows.Forms.ToolStripMenuItem wylogujToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem koniecToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem obrotówkaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zapadnieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mostyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wózkiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sztankietyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem koniecToolStripMenuItem1;
     }
 }
 

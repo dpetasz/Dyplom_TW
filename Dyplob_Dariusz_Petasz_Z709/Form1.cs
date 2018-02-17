@@ -18,6 +18,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
     public partial class Form1 : Form
     {
         public static TWDataSetTableAdapters.QueriesTableAdapter proceduryDB = new TWDataSetTableAdapters.QueriesTableAdapter();
+        ObrotowkaPanel O;
         public Form1()
         {
             InitializeComponent();
@@ -38,14 +39,14 @@ namespace Dyplom_Dariusz_Petasz_Z709
             catch (Exception)
             {
 
-                
+
             }
-            
+
             // TODO: This line of code loads data into the 'tWDataSet.pokazLogin' table. You can move, or remove it, as needed.
 
         }
 
-       private void buttonWejscie_Click(object sender, EventArgs e)
+        private void buttonWejscie_Click(object sender, EventArgs e)
         {
             string kom = "";
             proceduryDB.logowanie(comboBoxLogin.Text, textBoxPassword.Text, ref kom);
@@ -81,11 +82,12 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
         private void buttonObrotowka_Click(object sender, EventArgs e)
         {
-           /* ObrotowkaPanel obrotowka = new ObrotowkaPanel();
-            obrotowka.Parent = panel_Glowny;*/
+            WyczyscPanelGlowny();
+            /* ObrotowkaPanel obrotowka = new ObrotowkaPanel();
+             obrotowka.Parent = panel_Glowny;*/
             pictureBox1.Visible = false;
             panelPrzyciski.Visible = false;
-            ObrotowkaPanel O = new ObrotowkaPanel();
+            O = new ObrotowkaPanel();
             O.Parent = panel_Glowny;
             /*Obrotowka obrotowka = new Obrotowka(this);
             this.Visible = false;
@@ -104,6 +106,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
         private void buttonMosty_Click(object sender, EventArgs e)
         {
+            WyczyscPanelGlowny();
             pictureBox1.Visible = false;
             panelPrzyciski.Visible = false;
             MostyPanel m = new MostyPanel();
@@ -124,10 +127,27 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
         private void buttonZapadnie_Click(object sender, EventArgs e)
         {
+            WyczyscPanelGlowny();
             pictureBox1.Visible = false;
             panelPrzyciski.Visible = false;
             ZapadniePanel z = new ZapadniePanel();
             z.Parent = panel_Glowny;
+        }
+
+        void WyczyscPanelGlowny()
+        {
+            foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+            {
+                z.Dispose();
+            }
+            Zapadnia.ListaZapadnia.Clear();
+            foreach (Most m in Most.ListaMost)
+            {
+                m.Dispose();
+            }
+            Most.ListaMost.Clear();
+            if(O != null) O.Dispose();
+            //panel_Glowny.Dispose();
         }
     }
 }

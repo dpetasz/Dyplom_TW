@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using Dyplom_Dariusz_Petasz_Z709.BD_TW;
 
 namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 {
@@ -17,6 +18,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 
         RysujZapadnia rysujZapadnia = new RysujZapadnia();
         JazdaZapadnia jazdaZapadnia = new JazdaZapadnia();
+        IZapiszZapadnia db = new ZapiszZapadnia();
         Graphics g;
 
         bool kierunek;
@@ -136,7 +138,50 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             rysujZapadnia.Obramowanie(g);
             rysujZapadnia.ZapadniaJazda(g, Pozycja, PozycjaPortal);
         }
+        public void ZmianaAktywacjaJoystick()
+        {
+            buttonAktywacja.BackColor = Color.SkyBlue;
+            Aktywacja = false;
+            Predkosc = 0;
+            buttonZmianaRozstaw.BackColor = Color.SkyBlue;
+            buttonZmianaRozstaw.Enabled = true;
+            textBoxWynik.BackColor = Color.Moccasin;
+            textBoxWynik.Text = db.ZapiszPozycja(rysujZapadnia.Id, (decimal)Pozycja, (decimal)PozycjaPortal);
+            Odswiez();
+            
+        }
+        public void ZmianaAktywacjaRozstaw()
+        {
+            DoPozycji = false;
+            buttonAktywacja.BackColor = Color.SkyBlue;
+            Aktywacja = false;
+            Rozstaw = false;
+            Predkosc = 0;
+            buttonZmianaRozstaw.BackColor = Color.SkyBlue;
+            buttonZmianaRozstaw.Enabled = true;
+            textBoxWynik.BackColor = Color.Moccasin;
+            textBoxWynik.Text = db.ZapiszPozycja(rysujZapadnia.Id, (decimal)Pozycja, (decimal)PozycjaPortal);
+        }
+        public void ZmianaAktywacjaDoPozycji()
+        {
+            buttonAktywacja.BackColor = Color.SkyBlue;
+            Aktywacja = false;
+            Rozstaw = false;
+            Predkosc = 0;
+            buttonZmianaRozstaw.BackColor = Color.SkyBlue;
+            buttonZmianaRozstaw.Enabled = false;
+            textBoxWynik.BackColor = Color.Moccasin;
+            textBoxWynik.Text = db.ZapiszPozycja(rysujZapadnia.Id, (decimal)Pozycja, (decimal)PozycjaPortal);
+        }
+        public void zmianaPrzyciskRozstawTak()
+        {
+            buttonZmianaRozstaw.Enabled = true;
+        }
+        public void zmianaPrzyciskRozstawNie()
+        {
 
+            buttonZmianaRozstaw.Enabled = false;
+        }
         public void Joystick()
         {
             if (Pozycja > -10 && Predkosc > 0)
@@ -144,12 +189,20 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 PozycjaPortal = jazdaZapadnia.jazdaJoystick(Przychamowanie, PozycjaPortal);
                 Pozycja = jazdaZapadnia.jazdaJoystick(Przychamowanie, Pozycja);
                 Odswiez();
+                if (Pozycja >= Kg)
+                {
+                    ZmianaAktywacjaJoystick();
+                }
             }
             else if (Pozycja < -180 && Predkosc < 0)
             {
                 PozycjaPortal = jazdaZapadnia.jazdaJoystick(Przychamowanie * -1, PozycjaPortal);
                 Pozycja = jazdaZapadnia.jazdaJoystick(Przychamowanie * -1, Pozycja);
                 Odswiez();
+                if (Pozycja <= Kg)
+                {
+                    ZmianaAktywacjaJoystick();
+                }
             }
             else
             {
@@ -162,12 +215,18 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         {
             if (Pozycja < PozycjaZadana)
             {
-                if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
+                if((PozycjaPortal - PozycjaZadana)<60)
+                {
+                    ZmianaAktywacjaRozstaw();
+                    textBoxWynik.BackColor = Color.Red;
+                    textBoxWynik.Text ="Rozstaw < 3m !!!";
+                }
+                else if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
                 {
                     Aktywacja = false;
                     DoPozycji = false;
                     Predkosc = 0;
-                    ZmianaAktywacja();
+                    ZmianaAktywacjaRozstaw();
                     Odswiez();
                 }
                 else if (Pozycja > PozycjaZadana - 10)
@@ -190,7 +249,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                     Aktywacja = false;
                     DoPozycji = false;
                     Predkosc = 0;
-                    ZmianaAktywacja();
+                    ZmianaAktywacjaRozstaw();
                     Odswiez();
                 }
                 else if (Pozycja < PozycjaZadana + 10)
@@ -215,7 +274,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 {
                     Aktywacja = false;
                     Predkosc = 0;
-                    ZmianaAktywacja();
+                    ZmianaAktywacjaDoPozycji();
                     Odswiez();
                 }
                 else if (Pozycja > PozycjaZadana - 10)
@@ -238,7 +297,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 {
                     Aktywacja = false;
                     Predkosc = 0;
-                    ZmianaAktywacja();
+                    ZmianaAktywacjaDoPozycji();
                     Odswiez();
                 }
                 else if (Pozycja < PozycjaZadana + 10)
@@ -265,17 +324,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             textBoxPredkosc.Text = Predkosc.ToString();
             pictureBox1.Invalidate();
         }
-        public void ZmianaAktywacja()
-        {
-            buttonAktywacja.BackColor = Color.SkyBlue;
-            Aktywacja = false;
-            DoPozycji = false;
-            Rozstaw = false;
-            Predkosc = 0;
-            buttonZmianaRozstaw.BackColor = Color.SkyBlue;
-            Odswiez();
-
-        }
+       
         private void buttonAktywacja_Click(object sender, EventArgs e)
         {
             if (Aktywacja == false)
@@ -289,6 +338,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 Rozstaw = false;
                 buttonAktywacja.BackColor = Color.SkyBlue;
                 buttonZmianaRozstaw.BackColor = Color.SkyBlue;
+                textBoxWynik.Text = db.ZapiszPozycja(rysujZapadnia.Id, (decimal)Pozycja, (decimal)PozycjaPortal);
+
             }
         }
 
@@ -308,13 +359,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 }
             }
         }
-        public void Opoznienie()
-        {
-
-            try { Uspienie = Convert.ToInt32(textBoxOpoznienie.Text); }
-            catch { MessageBox.Show("Podałeś złe dane dla opóźnienia!!!"); }
-
-        }
+        
         public void AktywujDoPozycji()
         {
             DoPozycji = true;
@@ -356,15 +401,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             panelMiejsceStop.Visible = false;
         }
 
-        public void zmianaPrzyciskRozstawTak()
-        {
-            buttonZmianaRozstaw.Enabled = true;
-        }
-        public void zmianaPrzyciskRozstawNie()
-        {
-
-            buttonZmianaRozstaw.Enabled = false;
-        }
+        
         private void button1_Click(object sender, EventArgs e)
         {
             WczytajMiejsceStop(button1.Text);

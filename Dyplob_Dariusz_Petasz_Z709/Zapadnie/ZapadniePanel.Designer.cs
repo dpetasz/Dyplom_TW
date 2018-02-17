@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelZapadnie = new System.Windows.Forms.Panel();
-            this.twDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
-            this.pokazZapadnieTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazZapadnieTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelSterowanie = new System.Windows.Forms.Panel();
             this.panelJoystick = new System.Windows.Forms.Panel();
@@ -57,13 +55,15 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timerJazdaDoPozycji = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).BeginInit();
+            this.twDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
+            this.pokazZapadnieTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazZapadnieTableAdapter();
             this.panel1.SuspendLayout();
             this.panelSterowanie.SuspendLayout();
             this.panelJoystick.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarJoystick)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // panelZapadnie
@@ -74,15 +74,6 @@
             this.panelZapadnie.Name = "panelZapadnie";
             this.panelZapadnie.Size = new System.Drawing.Size(930, 674);
             this.panelZapadnie.TabIndex = 1;
-            // 
-            // twDataSet
-            // 
-            this.twDataSet.DataSetName = "TWDataSet";
-            this.twDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pokazZapadnieTableAdapter
-            // 
-            this.pokazZapadnieTableAdapter.ClearBeforeFill = true;
             // 
             // panel1
             // 
@@ -180,6 +171,7 @@
             this.buttonPrgramowa.TabIndex = 24;
             this.buttonPrgramowa.Text = "Programowa";
             this.buttonPrgramowa.UseVisualStyleBackColor = false;
+            this.buttonPrgramowa.Click += new System.EventHandler(this.buttonPrgramowa_Click);
             // 
             // buttonJazdaDoPozycji
             // 
@@ -375,6 +367,15 @@
             this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // twDataSet
+            // 
+            this.twDataSet.DataSetName = "TWDataSet";
+            this.twDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pokazZapadnieTableAdapter
+            // 
+            this.pokazZapadnieTableAdapter.ClearBeforeFill = true;
+            // 
             // ZapadniePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -389,7 +390,6 @@
             this.Name = "ZapadniePanel";
             this.Size = new System.Drawing.Size(1346, 701);
             this.Load += new System.EventHandler(this.ZapadniePanel_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panelSterowanie.ResumeLayout(false);
             this.panelJoystick.ResumeLayout(false);
@@ -398,6 +398,7 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

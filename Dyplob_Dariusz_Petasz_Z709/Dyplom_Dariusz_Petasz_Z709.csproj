@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="BD_TW\IZapiszAkt.cs" />
     <Compile Include="BD_TW\IZapiszFX_Obrotowka.cs" />
+    <Compile Include="BD_TW\IZapiszZapadnia.cs" />
     <Compile Include="BD_TW\PokazKompozytor.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -73,6 +74,7 @@
     <Compile Include="BD_TW\ZapiszAkt.cs" />
     <Compile Include="BD_TW\ZapiszFxWozek.cs" />
     <Compile Include="BD_TW\ZapiszFX_Obrotowka.cs" />
+    <Compile Include="BD_TW\ZapiszZapadnia.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
