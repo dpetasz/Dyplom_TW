@@ -107,10 +107,12 @@ namespace Dyplom_Dariusz_Petasz_Z709
         private void buttonMosty_Click(object sender, EventArgs e)
         {
             WyczyscPanelGlowny();
+            
             pictureBox1.Visible = false;
             panelPrzyciski.Visible = false;
             MostyPanel m = new MostyPanel();
             m.Parent = panel_Glowny;
+            
         }
 
         private void buttonWozki_Click(object sender, EventArgs e)
@@ -147,7 +149,9 @@ namespace Dyplom_Dariusz_Petasz_Z709
             }
             Most.ListaMost.Clear();
             if(O != null) O.Dispose();
+            panel_Glowny.Invalidate();
             //panel_Glowny.Dispose();
+            panel_Glowny.Controls.Clear();
         }
     }
 }
