@@ -107,6 +107,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.trackBarPredkosc = new System.Windows.Forms.TrackBar();
+            this.buttonSprzeganie = new System.Windows.Forms.Button();
             this.panelOpisZapadnia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMiejsceStop.SuspendLayout();
@@ -116,6 +117,7 @@
             // 
             // panelOpisZapadnia
             // 
+            this.panelOpisZapadnia.Controls.Add(this.buttonSprzeganie);
             this.panelOpisZapadnia.Controls.Add(this.textBoxWynik);
             this.panelOpisZapadnia.Controls.Add(this.buttonZmianaRozstaw);
             this.panelOpisZapadnia.Controls.Add(this.textBoxPredkosc);
@@ -130,7 +132,7 @@
             this.panelOpisZapadnia.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelOpisZapadnia.Location = new System.Drawing.Point(0, 438);
             this.panelOpisZapadnia.Name = "panelOpisZapadnia";
-            this.panelOpisZapadnia.Size = new System.Drawing.Size(358, 227);
+            this.panelOpisZapadnia.Size = new System.Drawing.Size(557, 227);
             this.panelOpisZapadnia.TabIndex = 1;
             // 
             // textBoxWynik
@@ -150,7 +152,7 @@
             // 
             this.buttonZmianaRozstaw.BackColor = System.Drawing.Color.SkyBlue;
             this.buttonZmianaRozstaw.Enabled = false;
-            this.buttonZmianaRozstaw.Location = new System.Drawing.Point(3, 40);
+            this.buttonZmianaRozstaw.Location = new System.Drawing.Point(166, 39);
             this.buttonZmianaRozstaw.Name = "buttonZmianaRozstaw";
             this.buttonZmianaRozstaw.Size = new System.Drawing.Size(142, 31);
             this.buttonZmianaRozstaw.TabIndex = 20;
@@ -336,7 +338,7 @@
             this.panelMiejsceStop.Controls.Add(this.button2);
             this.panelMiejsceStop.Controls.Add(this.button1);
             this.panelMiejsceStop.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.panelMiejsceStop.Location = new System.Drawing.Point(206, 3);
+            this.panelMiejsceStop.Location = new System.Drawing.Point(410, 3);
             this.panelMiejsceStop.Name = "panelMiejsceStop";
             this.panelMiejsceStop.Size = new System.Drawing.Size(149, 667);
             this.panelMiejsceStop.TabIndex = 3;
@@ -1108,6 +1110,16 @@
             this.trackBarPredkosc.Scroll += new System.EventHandler(this.trackBarPredkosc_Scroll);
             this.trackBarPredkosc.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBarPredkosc_MouseUp);
             // 
+            // buttonSprzeganie
+            // 
+            this.buttonSprzeganie.BackColor = System.Drawing.Color.SkyBlue;
+            this.buttonSprzeganie.Location = new System.Drawing.Point(3, 39);
+            this.buttonSprzeganie.Name = "buttonSprzeganie";
+            this.buttonSprzeganie.Size = new System.Drawing.Size(141, 31);
+            this.buttonSprzeganie.TabIndex = 22;
+            this.buttonSprzeganie.Text = "Sprzeganie";
+            this.buttonSprzeganie.UseVisualStyleBackColor = false;
+            // 
             // Zapadnia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -1123,7 +1135,7 @@
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Zapadnia";
-            this.Size = new System.Drawing.Size(358, 665);
+            this.Size = new System.Drawing.Size(557, 665);
             this.Load += new System.EventHandler(this.Zapadnia_Load);
             this.panelOpisZapadnia.ResumeLayout(false);
             this.panelOpisZapadnia.PerformLayout();
@@ -1218,5 +1230,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TrackBar trackBarPredkosc;
         private System.Windows.Forms.Button buttonZamknijPanelPredkosc;
+        private System.Windows.Forms.Button buttonSprzeganie;
     }
 }

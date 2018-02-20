@@ -38,6 +38,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 float kg = (float)(Convert.ToDouble(z["krancowa_gora"].ToString()));
                 int przych = Convert.ToInt32(z["przychamowanie"].ToString());
                 zapadnia = new Zapadnia(id, name, p, vmax, przych);
+                zapadnia.Rygiel_1 = Convert.ToBoolean(z["rygiel_1"]);
+                zapadnia.Rygiel_2 = Convert.ToBoolean(z["rygiel_2"]);
+                zapadnia.Rygiel_3 = Convert.ToBoolean(z["rygiel_3"]);
+                zapadnia.Sprzeganie = Convert.ToBoolean(z["sprzeganie"]);
                 zapadnia.Kg = kg;
                 zapadnia.Kd = kd;
                 zapadnia.PozycjaPortal = pp;
@@ -137,7 +141,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             foreach (Zapadnia z in Zapadnia.ListaZapadnia)
             {
                 z.AktywujDoPozycji();
-                z.zmianaPrzyciskRozstawNie();
             }
         }
         void LadujJazdaRozstaw()
@@ -146,7 +149,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             foreach (Zapadnia z in Zapadnia.ListaZapadnia)
             {
                 z.ZmianaAktywacjaRozstaw();
-                z.zmianaPrzyciskRozstawTak();
+               
             }
         }
         void LadujJazdaJoystick()
@@ -154,7 +157,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             foreach (Zapadnia z in Zapadnia.ListaZapadnia)
             {
                 z.ZmianaAktywacjaJoystick();
-                z.zmianaPrzyciskRozstawNie();
             }
         }
         private void buttonJoystick_Click(object sender, EventArgs e)
@@ -174,7 +176,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 {
                     if (z.Aktywacja == true)
                     {
-                        z.Joystick();
+                        z.JazdaJoystick();
                     }
                 }
             }

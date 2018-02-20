@@ -49,7 +49,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
             }
         }
 
-        SolidBrush pioro1, pioro2, pioro3, kolorLiczby;
+        SolidBrush pioro1, pioro2, pioro3, kolorLiczby, rygiel_1, rygiel_2, rygiel_3;
         public SolidBrush Pioro1
         {
             get
@@ -94,7 +94,39 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
                 kolorLiczby = value;
             }
         }
-
+        public SolidBrush Rygiel_1
+        {
+            get
+            {
+                return rygiel_1;
+            }
+            set
+            {
+                rygiel_1 = value;
+            }
+        }
+        public SolidBrush Rygiel_2
+        {
+            get
+            {
+                return rygiel_2;
+            }
+            set
+            {
+                rygiel_2 = value;
+            }
+        }
+        public SolidBrush Rygiel_3
+        {
+            get
+            {
+                return rygiel_3;
+            }
+            set
+            {
+                rygiel_3 = value;
+            }
+        }
         Font textFont;
         public Font TextFont
         {
@@ -113,23 +145,44 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
             pioroLinia = new Pen(Color.Black);
 
             Pioro1 = new SolidBrush(Color.SkyBlue);
-            Pioro2 = new SolidBrush(Color.HotPink);
+            Pioro2 = new SolidBrush(Color.DeepSkyBlue);
             Pioro3 = new SolidBrush(Color.Green);
             TextFont = new Font("Century", 7F, FontStyle.Bold);
             KolorLiczby = new SolidBrush(Color.Gray);
-            pioro = new Pen(Color.Gray);
+            Pioro = new Pen(Color.Gray);
         }
         public virtual void WypelnienieJazda()
         {
-            //pioroLinia = new Pen(Color.Black);
+            pioroLinia = new Pen(Color.Black);
 
-            this.Pioro1 = new SolidBrush(Color.DeepSkyBlue);
-            //Pioro2 = new SolidBrush(Color.HotPink);
-            //Pioro3 = new SolidBrush(Color.Green);
-            //textFont = new Font("Century", 12F, FontStyle.Bold);
-            //KolorLiczby = new SolidBrush(Color.FromArgb(10, 10, 10));
+            Pioro1 = new SolidBrush(Color.DeepSkyBlue);
+            Pioro2 = new SolidBrush(Color.SkyBlue);
+            Pioro3 = new SolidBrush(Color.Green);
+            TextFont = new Font("Century", 7F, FontStyle.Bold);
+            KolorLiczby = new SolidBrush(Color.Gray);
+            Pioro = new Pen(Color.Gray);
+        }
+        public virtual void WypelnienieJazdaRozstaw()
+        {
+            Rygiel_1 = new SolidBrush(Color.IndianRed);
+            Rygiel_2 = new SolidBrush(Color.DeepSkyBlue);
+            Rygiel_3 = new SolidBrush(Color.DeepSkyBlue);
 
         }
-        
+
+        public virtual void WypelnienieJazdaZapadnia()
+        {
+            Rygiel_1 = new SolidBrush(Color.DeepSkyBlue);
+            Rygiel_2 = new SolidBrush(Color.IndianRed);
+            Rygiel_3 = new SolidBrush(Color.DeepSkyBlue);
+
+        }
+        public virtual void WypelnienieZaryglowanie()
+        {
+            Rygiel_1 = new SolidBrush(Color.IndianRed);
+            Rygiel_2 = new SolidBrush(Color.IndianRed);
+            Rygiel_3 = new SolidBrush(Color.IndianRed);
+
+        }
     }
 }
