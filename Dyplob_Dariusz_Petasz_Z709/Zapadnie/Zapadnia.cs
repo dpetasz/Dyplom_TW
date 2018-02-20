@@ -200,15 +200,21 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         }
         public void ZmianaAktywacjaJoystick()
         {
+            Ryglowanie();
             buttonAktywacja.BackColor = Color.SkyBlue;
             Aktywacja = false;
             Rozstaw = false;
             DoPozycji = false;
+            Joystick = true;
             Predkosc = 0;
             textBoxWynik.BackColor = Color.Moccasin;
-            textBoxWynik.Text = db.ZapiszPozycja(rysujZapadnia.Id, (decimal)Pozycja, (decimal)PozycjaPortal);
+            ZapiszPozycjaBaza();
             Odswiez();
 
+        }
+        void ZapiszPozycjaBaza()
+        {
+            textBoxWynik.Text = db.ZapiszPozycja(rysujZapadnia.Id, (decimal)Pozycja, (decimal)PozycjaPortal, Rygiel_1, Rygiel_2, Rygiel_3, Sprzeganie);
         }
         public void ZmianaAktywacjaRozstaw()
         {
@@ -220,7 +226,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             Rozstaw = true;
             Predkosc = 0;
             textBoxWynik.BackColor = Color.Moccasin;
-            textBoxWynik.Text = db.ZapiszPozycja(rysujZapadnia.Id, (decimal)Pozycja, (decimal)PozycjaPortal);
+            ZapiszPozycjaBaza();
         }
         public void ZmianaAktywacjaDoPozycji()
         {
@@ -233,7 +239,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             buttonZmianaRozstaw.BackColor = Color.SkyBlue;
             buttonZmianaRozstaw.Enabled = false;
             textBoxWynik.BackColor = Color.Moccasin;
-            textBoxWynik.Text = db.ZapiszPozycja(rysujZapadnia.Id, (decimal)Pozycja, (decimal)PozycjaPortal);
+            ZapiszPozycjaBaza();
         }
         public void zmianaPrzyciskRozstawTak()
         {
@@ -414,7 +420,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 //Rozstaw = false;
                 buttonAktywacja.BackColor = Color.SkyBlue;
                 buttonZmianaRozstaw.BackColor = Color.SkyBlue;
-                textBoxWynik.Text = db.ZapiszPozycja(rysujZapadnia.Id, (decimal)Pozycja, (decimal)PozycjaPortal);
+                ZapiszPozycjaBaza();
                 Ryglowanie();
                 LadujKolor();
                 pictureBox1.Invalidate();

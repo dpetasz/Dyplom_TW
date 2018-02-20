@@ -22,6 +22,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         private void ZapadniePanel_Load(object sender, EventArgs e)
         {
             this.pokazZapadnieTableAdapter.Fill(this.twDataSet.pokazZapadnie);
+            this.pokazPrzedstawienieTableAdapter.Fill(this.twDataSet.pokazPrzedstawienie);
             LadujZapadnia();
         }
         void LadujZapadnia()
@@ -334,6 +335,20 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         private void buttonStartStop_Click(object sender, EventArgs e)
         {
             StartStop();
+        }
+
+        private void pokazPrzedstawienieBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int idPrzed = ((this.pokazPrzedstawienieBindingSource.Current as DataRowView).Row as TWDataSet.pokazPrzedstawienieRow).idprzed;
+                this.pokazAktTableAdapter.Fill(this.twDataSet.pokazAkt,idPrzed);
+            }
+            catch (Exception)
+            {
+
+
+            }
         }
 
         

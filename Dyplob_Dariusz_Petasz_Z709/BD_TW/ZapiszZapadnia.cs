@@ -9,14 +9,27 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
     public class ZapiszZapadnia: IZapiszZapadnia
     {
         TWDataSetTableAdapters.QueriesTableAdapter db = new TWDataSetTableAdapters.QueriesTableAdapter();
-        public string ZapiszPozycja(int id, decimal pozycja, decimal portal)
+        public string ZapiszPozycja(int id, decimal pozycja, decimal portal, bool r1, bool r2, bool r3, bool s)
         {
             string kom = "";
 
-            db.zapisPozycjaZapadnia(id, (decimal)Math.Round(pozycja,1), (decimal)Math.Round(portal,1), ref kom);
+            db.zapisPozycjaZapadnia(id, (decimal)Math.Round(pozycja,1), (decimal)Math.Round(portal,1),r1,r2,r3,s ,ref kom);
 
             return kom;
 
         }
+        public string ZapiszFX_Zapadnia(int id, string opis)
+        {
+            string kom = "";
+            db.dodaj_FX_zapadnia(id, opis, ref kom);
+            return kom;
+        }
+        public string ZapiszFX_Zapadnia_Zapadnia(int idzap, int idfx, int v, float stop, bool spr, bool akt)
+        {
+            string kom = "";
+            db.dodaj_FX_zapadnia_zapadnia(idzap, idfx, v, (decimal)Math.Round(stop,1), spr, akt, ref kom);
+            return kom;
+        }
+        
     }
 }

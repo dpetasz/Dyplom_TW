@@ -57,13 +57,24 @@
             this.timerJazdaDoPozycji = new System.Windows.Forms.Timer(this.components);
             this.twDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
             this.pokazZapadnieTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazZapadnieTableAdapter();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pokazPrzedstawienieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pokazPrzedstawienieTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazPrzedstawienieTableAdapter();
+            this.pokazAktBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pokazAktTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazAktTableAdapter();
             this.panel1.SuspendLayout();
             this.panelSterowanie.SuspendLayout();
             this.panelJoystick.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarJoystick)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazPrzedstawienieBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelZapadnie
@@ -355,6 +366,10 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(12)))), ((int)(((byte)(40)))));
+            this.tabPage4.Controls.Add(this.comboBox4);
+            this.tabPage4.Controls.Add(this.label8);
+            this.tabPage4.Controls.Add(this.comboBox5);
+            this.tabPage4.Controls.Add(this.label9);
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -375,6 +390,77 @@
             // pokazZapadnieTableAdapter
             // 
             this.pokazZapadnieTableAdapter.ClearBeforeFill = true;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.comboBox4.DataSource = this.pokazAktBindingSource;
+            this.comboBox4.DisplayMember = "nazwa";
+            this.comboBox4.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBox4.ForeColor = System.Drawing.Color.LightGray;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(147, 60);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(203, 27);
+            this.comboBox4.TabIndex = 28;
+            this.comboBox4.ValueMember = "idakt";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label8.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label8.Location = new System.Drawing.Point(109, 63);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 19);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Akt";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.comboBox5.DataSource = this.pokazPrzedstawienieBindingSource;
+            this.comboBox5.DisplayMember = "nazwa";
+            this.comboBox5.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBox5.ForeColor = System.Drawing.Color.LightGray;
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(147, 15);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(203, 27);
+            this.comboBox5.TabIndex = 26;
+            this.comboBox5.ValueMember = "idprzed";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label9.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label9.Location = new System.Drawing.Point(42, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(106, 19);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "Przedstawienie: ";
+            // 
+            // pokazPrzedstawienieBindingSource
+            // 
+            this.pokazPrzedstawienieBindingSource.DataMember = "pokazPrzedstawienie";
+            this.pokazPrzedstawienieBindingSource.DataSource = this.twDataSet;
+            this.pokazPrzedstawienieBindingSource.CurrentChanged += new System.EventHandler(this.pokazPrzedstawienieBindingSource_CurrentChanged);
+            // 
+            // pokazPrzedstawienieTableAdapter
+            // 
+            this.pokazPrzedstawienieTableAdapter.ClearBeforeFill = true;
+            // 
+            // pokazAktBindingSource
+            // 
+            this.pokazAktBindingSource.DataMember = "pokazAkt";
+            this.pokazAktBindingSource.DataSource = this.twDataSet;
+            // 
+            // pokazAktTableAdapter
+            // 
+            this.pokazAktTableAdapter.ClearBeforeFill = true;
             // 
             // ZapadniePanel
             // 
@@ -398,7 +484,11 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazPrzedstawienieBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -433,5 +523,13 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timerJazdaDoPozycji;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.BindingSource pokazAktBindingSource;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.BindingSource pokazPrzedstawienieBindingSource;
+        private System.Windows.Forms.Label label9;
+        private TWDataSetTableAdapters.pokazPrzedstawienieTableAdapter pokazPrzedstawienieTableAdapter;
+        private TWDataSetTableAdapters.pokazAktTableAdapter pokazAktTableAdapter;
     }
 }
