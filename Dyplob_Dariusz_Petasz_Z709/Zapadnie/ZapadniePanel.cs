@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dyplom_Dariusz_Petasz_Z709.Urzadzenia;
 
 namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 {
     public partial class ZapadniePanel : UserControl
     {
         Zapadnia zapadnia;
+        Graphics g;
+        RysujPrzycisk przycisk = new RysujPrzycisk();
         bool rozstaw = false, joystick = false, doPozycji = false, programowa = false;
+        string txt = "";
         public ZapadniePanel()
         {
             InitializeComponent();
@@ -24,6 +28,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             this.pokazZapadnieTableAdapter.Fill(this.twDataSet.pokazZapadnie);
             this.pokazPrzedstawienieTableAdapter.Fill(this.twDataSet.pokazPrzedstawienie);
             LadujZapadnia();
+            Stop();
         }
         void LadujZapadnia()
         {
@@ -314,7 +319,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             timer1.Enabled = true;
             buttonStartStop.BackColor = Color.IndianRed;
             buttonStartStop.Text = "Stop";
-
         }
         void Stop()
         {
@@ -323,9 +327,15 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             buttonStartStop.Text = "Start";
         }
 
+        private void buttonStartStop_MouseDown(object sender, MouseEventArgs e)
+        {
+            Start();
+        }
 
-
-        
+        private void buttonStartStop_MouseUp(object sender, MouseEventArgs e)
+        {
+            Stop();
+        }
 
         private void buttonPrgramowa_Click(object sender, EventArgs e)
         {

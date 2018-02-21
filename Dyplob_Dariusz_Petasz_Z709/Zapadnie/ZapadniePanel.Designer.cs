@@ -53,17 +53,17 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timerJazdaDoPozycji = new System.Windows.Forms.Timer(this.components);
-            this.twDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
-            this.pokazZapadnieTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazZapadnieTableAdapter();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.pokazAktBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.twDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.pokazPrzedstawienieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label9 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timerJazdaDoPozycji = new System.Windows.Forms.Timer(this.components);
+            this.pokazZapadnieTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazZapadnieTableAdapter();
             this.pokazPrzedstawienieTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazPrzedstawienieTableAdapter();
-            this.pokazAktBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokazAktTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazAktTableAdapter();
             this.panel1.SuspendLayout();
             this.panelSterowanie.SuspendLayout();
@@ -72,9 +72,9 @@
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazPrzedstawienieBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelZapadnie
@@ -228,13 +228,14 @@
             this.buttonStartStop.BackColor = System.Drawing.Color.Green;
             this.buttonStartStop.Enabled = false;
             this.buttonStartStop.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonStartStop.Location = new System.Drawing.Point(63, 122);
+            this.buttonStartStop.Location = new System.Drawing.Point(60, 126);
             this.buttonStartStop.Name = "buttonStartStop";
             this.buttonStartStop.Size = new System.Drawing.Size(134, 125);
             this.buttonStartStop.TabIndex = 20;
             this.buttonStartStop.Text = "Start";
             this.buttonStartStop.UseVisualStyleBackColor = false;
-            this.buttonStartStop.Click += new System.EventHandler(this.buttonStartStop_Click);
+            this.buttonStartStop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonStartStop_MouseDown);
+            this.buttonStartStop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonStartStop_MouseUp);
             // 
             // tabControl2
             // 
@@ -377,20 +378,6 @@
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Dodaj Efekt";
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 50;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // twDataSet
-            // 
-            this.twDataSet.DataSetName = "TWDataSet";
-            this.twDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pokazZapadnieTableAdapter
-            // 
-            this.pokazZapadnieTableAdapter.ClearBeforeFill = true;
-            // 
             // comboBox4
             // 
             this.comboBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
@@ -404,6 +391,16 @@
             this.comboBox4.Size = new System.Drawing.Size(203, 27);
             this.comboBox4.TabIndex = 28;
             this.comboBox4.ValueMember = "idakt";
+            // 
+            // pokazAktBindingSource
+            // 
+            this.pokazAktBindingSource.DataMember = "pokazAkt";
+            this.pokazAktBindingSource.DataSource = this.twDataSet;
+            // 
+            // twDataSet
+            // 
+            this.twDataSet.DataSetName = "TWDataSet";
+            this.twDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label8
             // 
@@ -431,6 +428,12 @@
             this.comboBox5.TabIndex = 26;
             this.comboBox5.ValueMember = "idprzed";
             // 
+            // pokazPrzedstawienieBindingSource
+            // 
+            this.pokazPrzedstawienieBindingSource.DataMember = "pokazPrzedstawienie";
+            this.pokazPrzedstawienieBindingSource.DataSource = this.twDataSet;
+            this.pokazPrzedstawienieBindingSource.CurrentChanged += new System.EventHandler(this.pokazPrzedstawienieBindingSource_CurrentChanged);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -443,20 +446,18 @@
             this.label9.TabIndex = 25;
             this.label9.Text = "Przedstawienie: ";
             // 
-            // pokazPrzedstawienieBindingSource
+            // timer1
             // 
-            this.pokazPrzedstawienieBindingSource.DataMember = "pokazPrzedstawienie";
-            this.pokazPrzedstawienieBindingSource.DataSource = this.twDataSet;
-            this.pokazPrzedstawienieBindingSource.CurrentChanged += new System.EventHandler(this.pokazPrzedstawienieBindingSource_CurrentChanged);
+            this.timer1.Interval = 50;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pokazZapadnieTableAdapter
+            // 
+            this.pokazZapadnieTableAdapter.ClearBeforeFill = true;
             // 
             // pokazPrzedstawienieTableAdapter
             // 
             this.pokazPrzedstawienieTableAdapter.ClearBeforeFill = true;
-            // 
-            // pokazAktBindingSource
-            // 
-            this.pokazAktBindingSource.DataMember = "pokazAkt";
-            this.pokazAktBindingSource.DataSource = this.twDataSet;
             // 
             // pokazAktTableAdapter
             // 
@@ -486,9 +487,9 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazPrzedstawienieBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

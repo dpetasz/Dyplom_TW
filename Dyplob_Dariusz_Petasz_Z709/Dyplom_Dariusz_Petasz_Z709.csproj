@@ -121,7 +121,6 @@
     </Compile>
     <Compile Include="TWDataSet.cs">
       <DependentUpon>TWDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="TWDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -130,6 +129,7 @@
     </Compile>
     <Compile Include="BD_TW\ZapiszBazaPrzedstawienie.cs" />
     <Compile Include="Urzadzenia\JazdaUrzadzenie.cs" />
+    <Compile Include="Urzadzenia\RysujPrzycisk.cs" />
     <Compile Include="Urzadzenia\RysujUrzadzenie.cs" />
     <Compile Include="Urzadzenia\Urzadzenie.cs" />
     <Compile Include="UserControl1.cs">

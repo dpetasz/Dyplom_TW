@@ -46,5 +46,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             g.DrawLine(Pioro, 0, 190, 142, 190);
             g.DrawLine(Pioro, 0, 380, 140, 380);
         }
+        
     }
 }

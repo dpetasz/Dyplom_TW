@@ -25,7 +25,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
         
 
 
-        Pen pioroLinia, pioro;
+        Pen pioroLinia, pioro, liniaPrzycisk;
         public Pen PioroLinia
         {
             get
@@ -48,8 +48,18 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
                 pioro = value;
             }
         }
-
-        SolidBrush pioro1, pioro2, pioro3, kolorLiczby, rygiel_1, rygiel_2, rygiel_3;
+        public Pen LiniaPrzycisk
+        {
+            get
+            {
+                return liniaPrzycisk;
+            }
+            set
+            {
+                liniaPrzycisk = value;
+            }
+        }
+        SolidBrush pioro1, pioro2, pioro3, kolorLiczby, rygiel_1, rygiel_2, rygiel_3, start, kolorTextPrzycisk;
         public SolidBrush Pioro1
         {
             get
@@ -127,7 +137,29 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
                 rygiel_3 = value;
             }
         }
-        Font textFont;
+        public SolidBrush Start
+        {
+            get
+            {
+                return start;
+            }
+            set
+            {
+                start = value;
+            }
+        }
+        public SolidBrush KolorTextPrzycisk
+        {
+            get
+            {
+                return kolorTextPrzycisk;
+            }
+            set
+            {
+                kolorTextPrzycisk = value;
+            }
+        }
+        Font textFont, textPrzycisk;
         public Font TextFont
         {
             get
@@ -137,6 +169,17 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
             set
             {
                 textFont = value;
+            }
+        }
+        public Font TextPrzycisk
+        {
+            get
+            {
+                return TextPrzycisk;
+            }
+            set
+            {
+                TextPrzycisk = value;
             }
         }
 
@@ -184,5 +227,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
             Rygiel_3 = new SolidBrush(Color.IndianRed);
 
         }
+       
     }
 }
