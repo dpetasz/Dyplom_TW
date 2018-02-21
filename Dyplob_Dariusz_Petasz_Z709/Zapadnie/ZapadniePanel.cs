@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dyplom_Dariusz_Petasz_Z709.Urzadzenia;
+using Dyplom_Dariusz_Petasz_Z709.BD_TW;
 
 namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 {
@@ -15,9 +16,9 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
     {
         Zapadnia zapadnia;
         Graphics g;
-        RysujPrzycisk przycisk = new RysujPrzycisk();
+        IZapiszZapadnia zapiszZapadnia = new ZapiszZapadnia();
         bool rozstaw = false, joystick = false, doPozycji = false, programowa = false;
-        string txt = "";
+        
         public ZapadniePanel()
         {
             InitializeComponent();
@@ -155,7 +156,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             foreach (Zapadnia z in Zapadnia.ListaZapadnia)
             {
                 z.ZmianaAktywacjaRozstaw();
-               
+
             }
         }
         void LadujJazdaJoystick()
@@ -272,27 +273,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         private void buttonRozstaw_Click(object sender, EventArgs e)
         {
             LadujRozstaw();
-            //if (rozstaw == true)
-            //{
-            //    buttonRozstaw.BackColor = Color.LightSteelBlue;
-
-            //    rozstaw = false;
-            //    foreach (Zapadnia z in Zapadnia.ListaZapadnia)
-            //    {
-            //        z.zmianaPrzyciskRozstawNie();
-            //        z.ZmianaAktywacja();
-            //    }
-            //}
-            //else
-            //{
-            //    buttonRozstaw.BackColor = Color.IndianRed;
-            //    rozstaw = true;
-            //    foreach (Zapadnia z in Zapadnia.ListaZapadnia)
-            //    {
-            //        z.zmianaPrzyciskRozstawTak();
-            //    }
-            //}
-
         }
 
         private void buttonJazdaDoPozycji_Click(object sender, EventArgs e)
@@ -352,7 +332,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             try
             {
                 int idPrzed = ((this.pokazPrzedstawienieBindingSource.Current as DataRowView).Row as TWDataSet.pokazPrzedstawienieRow).idprzed;
-                this.pokazAktTableAdapter.Fill(this.twDataSet.pokazAkt,idPrzed);
+                this.pokazAktTableAdapter.Fill(this.twDataSet.pokazAkt, idPrzed);
             }
             catch (Exception)
             {
@@ -361,7 +341,65 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             }
         }
 
-        
+        private void buttonDodajFX_Click(object sender, EventArgs e)
+        {
+            int id = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
+            textBoxWynik.Text = zapiszZapadnia.ZapiszFX_Zapadnia(id,"");
+            LadujFx_Zapadnia();
+        }
+
+        private void pokazAktBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            LadujFx_Zapadnia();
+        }
+        void LadujFx_Zapadnia()
+        {
+            try
+            {
+                int idAkt = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
+                this.pokazFx_ZapadniaTableAdapter.Fill(this.twDataSet.pokazFx_Zapadnia, idAkt);
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+        void LadujFx_Zapadnia_Zapadnia()
+        {
+            try
+            {
+                int idFx = ((this.pokazFxZapadniaBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_ZapadniaRow).idfx_zapadnia;
+                this.pokazFx_Zapadnia_ZapadniaTableAdapter.Fill(this.twDataSet.pokazFx_Zapadnia_Zapadnia, idFx);
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void buttonZapiszFx_zap_zap_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idfx = ((this.pokazFxZapadniaBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_ZapadniaRow).idfx_zapadnia;
+                foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+                {
+                    textBoxWynik.Text = zapiszZapadnia.ZapiszFX_Zapadnia_Zapadnia(z.Id, idfx, z.Predkosc, z.Pozycja, z.Sprzeganie, z.Aktywacja);
+                    LadujFx_Zapadnia();
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void pokazFxZapadniaBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            LadujFx_Zapadnia_Zapadnia();
+        }
+
+
 
 
     }

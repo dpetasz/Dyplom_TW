@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelZapadnie = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelSterowanie = new System.Windows.Forms.Panel();
@@ -53,9 +54,21 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.textBoxWynik = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idfxzapadniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idzapadniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.predkoscDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miejscestopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pokazFxZapadniaZapadniaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.twDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
+            this.label10 = new System.Windows.Forms.Label();
+            this.buttonZapiszFx_zap_zap = new System.Windows.Forms.Button();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.pokazFxZapadniaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonDodajFX = new System.Windows.Forms.Button();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.pokazAktBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.twDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.pokazPrzedstawienieBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -65,6 +78,8 @@
             this.pokazZapadnieTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazZapadnieTableAdapter();
             this.pokazPrzedstawienieTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazPrzedstawienieTableAdapter();
             this.pokazAktTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazAktTableAdapter();
+            this.pokazFx_ZapadniaTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_ZapadniaTableAdapter();
+            this.pokazFx_Zapadnia_ZapadniaTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Zapadnia_ZapadniaTableAdapter();
             this.panel1.SuspendLayout();
             this.panelSterowanie.SuspendLayout();
             this.panelJoystick.SuspendLayout();
@@ -72,8 +87,11 @@
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazFxZapadniaZapadniaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazFxZapadniaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazPrzedstawienieBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -367,6 +385,12 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(12)))), ((int)(((byte)(40)))));
+            this.tabPage4.Controls.Add(this.textBoxWynik);
+            this.tabPage4.Controls.Add(this.dataGridView1);
+            this.tabPage4.Controls.Add(this.label10);
+            this.tabPage4.Controls.Add(this.buttonZapiszFx_zap_zap);
+            this.tabPage4.Controls.Add(this.comboBox6);
+            this.tabPage4.Controls.Add(this.buttonDodajFX);
             this.tabPage4.Controls.Add(this.comboBox4);
             this.tabPage4.Controls.Add(this.label8);
             this.tabPage4.Controls.Add(this.comboBox5);
@@ -378,6 +402,138 @@
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Dodaj Efekt";
             // 
+            // textBoxWynik
+            // 
+            this.textBoxWynik.BackColor = System.Drawing.Color.Moccasin;
+            this.textBoxWynik.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxWynik.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.textBoxWynik.Location = new System.Drawing.Point(7, 347);
+            this.textBoxWynik.Name = "textBoxWynik";
+            this.textBoxWynik.ReadOnly = true;
+            this.textBoxWynik.Size = new System.Drawing.Size(213, 26);
+            this.textBoxWynik.TabIndex = 35;
+            this.textBoxWynik.Text = "Wynik";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(15)))), ((int)(((byte)(52)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idfxzapadniaDataGridViewTextBoxColumn,
+            this.idzapadniaDataGridViewTextBoxColumn,
+            this.predkoscDataGridViewTextBoxColumn,
+            this.miejscestopDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.pokazFxZapadniaZapadniaBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(7, 193);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(367, 143);
+            this.dataGridView1.TabIndex = 34;
+            // 
+            // idfxzapadniaDataGridViewTextBoxColumn
+            // 
+            this.idfxzapadniaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.idfxzapadniaDataGridViewTextBoxColumn.DataPropertyName = "idfx_zapadnia";
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Moccasin;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.idfxzapadniaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.idfxzapadniaDataGridViewTextBoxColumn.HeaderText = "idfx";
+            this.idfxzapadniaDataGridViewTextBoxColumn.Name = "idfxzapadniaDataGridViewTextBoxColumn";
+            this.idfxzapadniaDataGridViewTextBoxColumn.Width = 53;
+            // 
+            // idzapadniaDataGridViewTextBoxColumn
+            // 
+            this.idzapadniaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.idzapadniaDataGridViewTextBoxColumn.DataPropertyName = "idzapadnia";
+            this.idzapadniaDataGridViewTextBoxColumn.HeaderText = "idzapadnia";
+            this.idzapadniaDataGridViewTextBoxColumn.Name = "idzapadniaDataGridViewTextBoxColumn";
+            this.idzapadniaDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // predkoscDataGridViewTextBoxColumn
+            // 
+            this.predkoscDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.predkoscDataGridViewTextBoxColumn.DataPropertyName = "predkosc";
+            this.predkoscDataGridViewTextBoxColumn.HeaderText = "v";
+            this.predkoscDataGridViewTextBoxColumn.Name = "predkoscDataGridViewTextBoxColumn";
+            this.predkoscDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // miejscestopDataGridViewTextBoxColumn
+            // 
+            this.miejscestopDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.miejscestopDataGridViewTextBoxColumn.DataPropertyName = "miejsce_stop";
+            this.miejscestopDataGridViewTextBoxColumn.HeaderText = "Stop";
+            this.miejscestopDataGridViewTextBoxColumn.Name = "miejscestopDataGridViewTextBoxColumn";
+            // 
+            // pokazFxZapadniaZapadniaBindingSource
+            // 
+            this.pokazFxZapadniaZapadniaBindingSource.DataMember = "pokazFx_Zapadnia_Zapadnia";
+            this.pokazFxZapadniaZapadniaBindingSource.DataSource = this.twDataSet;
+            // 
+            // twDataSet
+            // 
+            this.twDataSet.DataSetName = "TWDataSet";
+            this.twDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label10.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label10.Location = new System.Drawing.Point(133, 158);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(29, 19);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "FX";
+            // 
+            // buttonZapiszFx_zap_zap
+            // 
+            this.buttonZapiszFx_zap_zap.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonZapiszFx_zap_zap.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.buttonZapiszFx_zap_zap.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonZapiszFx_zap_zap.Location = new System.Drawing.Point(226, 342);
+            this.buttonZapiszFx_zap_zap.Name = "buttonZapiszFx_zap_zap";
+            this.buttonZapiszFx_zap_zap.Size = new System.Drawing.Size(148, 35);
+            this.buttonZapiszFx_zap_zap.TabIndex = 32;
+            this.buttonZapiszFx_zap_zap.Text = "Zapisz dane dla FX";
+            this.buttonZapiszFx_zap_zap.UseVisualStyleBackColor = false;
+            this.buttonZapiszFx_zap_zap.Click += new System.EventHandler(this.buttonZapiszFx_zap_zap_Click);
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.comboBox6.DataSource = this.pokazFxZapadniaBindingSource;
+            this.comboBox6.DisplayMember = "nazwa";
+            this.comboBox6.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBox6.ForeColor = System.Drawing.Color.LightGray;
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(171, 155);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(203, 27);
+            this.comboBox6.TabIndex = 31;
+            // 
+            // pokazFxZapadniaBindingSource
+            // 
+            this.pokazFxZapadniaBindingSource.DataMember = "pokazFx_Zapadnia";
+            this.pokazFxZapadniaBindingSource.DataSource = this.twDataSet;
+            this.pokazFxZapadniaBindingSource.CurrentChanged += new System.EventHandler(this.pokazFxZapadniaBindingSource_CurrentChanged);
+            // 
+            // buttonDodajFX
+            // 
+            this.buttonDodajFX.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonDodajFX.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.buttonDodajFX.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonDodajFX.Location = new System.Drawing.Point(262, 102);
+            this.buttonDodajFX.Name = "buttonDodajFX";
+            this.buttonDodajFX.Size = new System.Drawing.Size(112, 35);
+            this.buttonDodajFX.TabIndex = 29;
+            this.buttonDodajFX.Text = "Dodaj FX";
+            this.buttonDodajFX.UseVisualStyleBackColor = false;
+            this.buttonDodajFX.Click += new System.EventHandler(this.buttonDodajFX_Click);
+            // 
             // comboBox4
             // 
             this.comboBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
@@ -386,7 +542,7 @@
             this.comboBox4.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.comboBox4.ForeColor = System.Drawing.Color.LightGray;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(147, 60);
+            this.comboBox4.Location = new System.Drawing.Point(171, 57);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(203, 27);
             this.comboBox4.TabIndex = 28;
@@ -396,11 +552,7 @@
             // 
             this.pokazAktBindingSource.DataMember = "pokazAkt";
             this.pokazAktBindingSource.DataSource = this.twDataSet;
-            // 
-            // twDataSet
-            // 
-            this.twDataSet.DataSetName = "TWDataSet";
-            this.twDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.pokazAktBindingSource.CurrentChanged += new System.EventHandler(this.pokazAktBindingSource_CurrentChanged);
             // 
             // label8
             // 
@@ -408,7 +560,7 @@
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.label8.ForeColor = System.Drawing.Color.LavenderBlush;
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(109, 63);
+            this.label8.Location = new System.Drawing.Point(133, 60);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(32, 19);
             this.label8.TabIndex = 27;
@@ -422,7 +574,7 @@
             this.comboBox5.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.comboBox5.ForeColor = System.Drawing.Color.LightGray;
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(147, 15);
+            this.comboBox5.Location = new System.Drawing.Point(171, 12);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(203, 27);
             this.comboBox5.TabIndex = 26;
@@ -440,7 +592,7 @@
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.label9.ForeColor = System.Drawing.Color.LavenderBlush;
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(42, 18);
+            this.label9.Location = new System.Drawing.Point(66, 15);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(106, 19);
             this.label9.TabIndex = 25;
@@ -462,6 +614,14 @@
             // pokazAktTableAdapter
             // 
             this.pokazAktTableAdapter.ClearBeforeFill = true;
+            // 
+            // pokazFx_ZapadniaTableAdapter
+            // 
+            this.pokazFx_ZapadniaTableAdapter.ClearBeforeFill = true;
+            // 
+            // pokazFx_Zapadnia_ZapadniaTableAdapter
+            // 
+            this.pokazFx_Zapadnia_ZapadniaTableAdapter.ClearBeforeFill = true;
             // 
             // ZapadniePanel
             // 
@@ -487,8 +647,11 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazFxZapadniaZapadniaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazFxZapadniaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazPrzedstawienieBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -532,5 +695,19 @@
         private System.Windows.Forms.Label label9;
         private TWDataSetTableAdapters.pokazPrzedstawienieTableAdapter pokazPrzedstawienieTableAdapter;
         private TWDataSetTableAdapters.pokazAktTableAdapter pokazAktTableAdapter;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button buttonZapiszFx_zap_zap;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Button buttonDodajFX;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource pokazFxZapadniaZapadniaBindingSource;
+        private System.Windows.Forms.BindingSource pokazFxZapadniaBindingSource;
+        private TWDataSetTableAdapters.pokazFx_ZapadniaTableAdapter pokazFx_ZapadniaTableAdapter;
+        private TWDataSetTableAdapters.pokazFx_Zapadnia_ZapadniaTableAdapter pokazFx_Zapadnia_ZapadniaTableAdapter;
+        private System.Windows.Forms.TextBox textBoxWynik;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idfxzapadniaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idzapadniaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn predkoscDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn miejscestopDataGridViewTextBoxColumn;
     }
 }

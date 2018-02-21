@@ -86,6 +86,12 @@ namespace Dyplom_Dariusz_Petasz_Z709 {
         
         private pokazZapadnieDataTable tablepokazZapadnie;
         
+        private pokazFx_ZapadniaDataTable tablepokazFx_Zapadnia;
+        
+        private pokazFx_Zapadnia_ZapadniaDataTable tablepokazFx_Zapadnia_Zapadnia;
+        
+        private pokazFx_Zapadnia_Zapadnia_dlajednejDataTable tablepokazFx_Zapadnia_Zapadnia_dlajednej;
+        
         private global::System.Data.DataRelation relationFK_Akt_Przedstawienie;
         
         private global::System.Data.DataRelation relationFK_FX_Most_Akt;
@@ -240,6 +246,15 @@ namespace Dyplom_Dariusz_Petasz_Z709 {
                 }
                 if ((ds.Tables["pokazZapadnie"] != null)) {
                     base.Tables.Add(new pokazZapadnieDataTable(ds.Tables["pokazZapadnie"]));
+                }
+                if ((ds.Tables["pokazFx_Zapadnia"] != null)) {
+                    base.Tables.Add(new pokazFx_ZapadniaDataTable(ds.Tables["pokazFx_Zapadnia"]));
+                }
+                if ((ds.Tables["pokazFx_Zapadnia_Zapadnia"] != null)) {
+                    base.Tables.Add(new pokazFx_Zapadnia_ZapadniaDataTable(ds.Tables["pokazFx_Zapadnia_Zapadnia"]));
+                }
+                if ((ds.Tables["pokazFx_Zapadnia_Zapadnia_dlajednej"] != null)) {
+                    base.Tables.Add(new pokazFx_Zapadnia_Zapadnia_dlajednejDataTable(ds.Tables["pokazFx_Zapadnia_Zapadnia_dlajednej"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -571,6 +586,36 @@ namespace Dyplom_Dariusz_Petasz_Z709 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public pokazFx_ZapadniaDataTable pokazFx_Zapadnia {
+            get {
+                return this.tablepokazFx_Zapadnia;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public pokazFx_Zapadnia_ZapadniaDataTable pokazFx_Zapadnia_Zapadnia {
+            get {
+                return this.tablepokazFx_Zapadnia_Zapadnia;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public pokazFx_Zapadnia_Zapadnia_dlajednejDataTable pokazFx_Zapadnia_Zapadnia_dlajednej {
+            get {
+                return this.tablepokazFx_Zapadnia_Zapadnia_dlajednej;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -728,6 +773,15 @@ namespace Dyplom_Dariusz_Petasz_Z709 {
                 }
                 if ((ds.Tables["pokazZapadnie"] != null)) {
                     base.Tables.Add(new pokazZapadnieDataTable(ds.Tables["pokazZapadnie"]));
+                }
+                if ((ds.Tables["pokazFx_Zapadnia"] != null)) {
+                    base.Tables.Add(new pokazFx_ZapadniaDataTable(ds.Tables["pokazFx_Zapadnia"]));
+                }
+                if ((ds.Tables["pokazFx_Zapadnia_Zapadnia"] != null)) {
+                    base.Tables.Add(new pokazFx_Zapadnia_ZapadniaDataTable(ds.Tables["pokazFx_Zapadnia_Zapadnia"]));
+                }
+                if ((ds.Tables["pokazFx_Zapadnia_Zapadnia_dlajednej"] != null)) {
+                    base.Tables.Add(new pokazFx_Zapadnia_Zapadnia_dlajednejDataTable(ds.Tables["pokazFx_Zapadnia_Zapadnia_dlajednej"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -948,6 +1002,24 @@ namespace Dyplom_Dariusz_Petasz_Z709 {
                     this.tablepokazZapadnie.InitVars();
                 }
             }
+            this.tablepokazFx_Zapadnia = ((pokazFx_ZapadniaDataTable)(base.Tables["pokazFx_Zapadnia"]));
+            if ((initTable == true)) {
+                if ((this.tablepokazFx_Zapadnia != null)) {
+                    this.tablepokazFx_Zapadnia.InitVars();
+                }
+            }
+            this.tablepokazFx_Zapadnia_Zapadnia = ((pokazFx_Zapadnia_ZapadniaDataTable)(base.Tables["pokazFx_Zapadnia_Zapadnia"]));
+            if ((initTable == true)) {
+                if ((this.tablepokazFx_Zapadnia_Zapadnia != null)) {
+                    this.tablepokazFx_Zapadnia_Zapadnia.InitVars();
+                }
+            }
+            this.tablepokazFx_Zapadnia_Zapadnia_dlajednej = ((pokazFx_Zapadnia_Zapadnia_dlajednejDataTable)(base.Tables["pokazFx_Zapadnia_Zapadnia_dlajednej"]));
+            if ((initTable == true)) {
+                if ((this.tablepokazFx_Zapadnia_Zapadnia_dlajednej != null)) {
+                    this.tablepokazFx_Zapadnia_Zapadnia_dlajednej.InitVars();
+                }
+            }
             this.relationFK_Akt_Przedstawienie = this.Relations["FK_Akt_Przedstawienie"];
             this.relationFK_FX_Most_Akt = this.Relations["FK_FX_Most_Akt"];
             this.relationFK_FXMost_Most_FX_Most = this.Relations["FK_FXMost_Most_FX_Most"];
@@ -1037,6 +1109,12 @@ namespace Dyplom_Dariusz_Petasz_Z709 {
             base.Tables.Add(this.tablepokazMosty);
             this.tablepokazZapadnie = new pokazZapadnieDataTable();
             base.Tables.Add(this.tablepokazZapadnie);
+            this.tablepokazFx_Zapadnia = new pokazFx_ZapadniaDataTable();
+            base.Tables.Add(this.tablepokazFx_Zapadnia);
+            this.tablepokazFx_Zapadnia_Zapadnia = new pokazFx_Zapadnia_ZapadniaDataTable();
+            base.Tables.Add(this.tablepokazFx_Zapadnia_Zapadnia);
+            this.tablepokazFx_Zapadnia_Zapadnia_dlajednej = new pokazFx_Zapadnia_Zapadnia_dlajednejDataTable();
+            base.Tables.Add(this.tablepokazFx_Zapadnia_Zapadnia_dlajednej);
             this.relationFK_Akt_Przedstawienie = new global::System.Data.DataRelation("FK_Akt_Przedstawienie", new global::System.Data.DataColumn[] {
                         this.tablePrzedstawienie.idprzedColumn}, new global::System.Data.DataColumn[] {
                         this.tableAkt.idprzedColumn}, false);
@@ -1295,6 +1373,24 @@ namespace Dyplom_Dariusz_Petasz_Z709 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializepokazFx_Zapadnia() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializepokazFx_Zapadnia_Zapadnia() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializepokazFx_Zapadnia_Zapadnia_dlajednej() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1440,6 +1536,15 @@ namespace Dyplom_Dariusz_Petasz_Z709 {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void pokazZapadnieRowChangeEventHandler(object sender, pokazZapadnieRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void pokazFx_ZapadniaRowChangeEventHandler(object sender, pokazFx_ZapadniaRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void pokazFx_Zapadnia_ZapadniaRowChangeEventHandler(object sender, pokazFx_Zapadnia_ZapadniaRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void pokazFx_Zapadnia_Zapadnia_dlajednejRowChangeEventHandler(object sender, pokazFx_Zapadnia_Zapadnia_dlajednejRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -11319,6 +11424,1017 @@ namespace Dyplom_Dariusz_Petasz_Z709 {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class pokazFx_ZapadniaDataTable : global::System.Data.TypedTableBase<pokazFx_ZapadniaRow> {
+            
+            private global::System.Data.DataColumn columnidfx_zapadnia;
+            
+            private global::System.Data.DataColumn columnidakt;
+            
+            private global::System.Data.DataColumn columnnazwa;
+            
+            private global::System.Data.DataColumn columnopis;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_ZapadniaDataTable() {
+                this.TableName = "pokazFx_Zapadnia";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal pokazFx_ZapadniaDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected pokazFx_ZapadniaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idfx_zapadniaColumn {
+                get {
+                    return this.columnidfx_zapadnia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idaktColumn {
+                get {
+                    return this.columnidakt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nazwaColumn {
+                get {
+                    return this.columnnazwa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn opisColumn {
+                get {
+                    return this.columnopis;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_ZapadniaRow this[int index] {
+                get {
+                    return ((pokazFx_ZapadniaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event pokazFx_ZapadniaRowChangeEventHandler pokazFx_ZapadniaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event pokazFx_ZapadniaRowChangeEventHandler pokazFx_ZapadniaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event pokazFx_ZapadniaRowChangeEventHandler pokazFx_ZapadniaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event pokazFx_ZapadniaRowChangeEventHandler pokazFx_ZapadniaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddpokazFx_ZapadniaRow(pokazFx_ZapadniaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_ZapadniaRow AddpokazFx_ZapadniaRow(int idakt, string nazwa, string opis) {
+                pokazFx_ZapadniaRow rowpokazFx_ZapadniaRow = ((pokazFx_ZapadniaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        idakt,
+                        nazwa,
+                        opis};
+                rowpokazFx_ZapadniaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowpokazFx_ZapadniaRow);
+                return rowpokazFx_ZapadniaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_ZapadniaRow FindByidfx_zapadnia(int idfx_zapadnia) {
+                return ((pokazFx_ZapadniaRow)(this.Rows.Find(new object[] {
+                            idfx_zapadnia})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                pokazFx_ZapadniaDataTable cln = ((pokazFx_ZapadniaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new pokazFx_ZapadniaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnidfx_zapadnia = base.Columns["idfx_zapadnia"];
+                this.columnidakt = base.Columns["idakt"];
+                this.columnnazwa = base.Columns["nazwa"];
+                this.columnopis = base.Columns["opis"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnidfx_zapadnia = new global::System.Data.DataColumn("idfx_zapadnia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidfx_zapadnia);
+                this.columnidakt = new global::System.Data.DataColumn("idakt", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidakt);
+                this.columnnazwa = new global::System.Data.DataColumn("nazwa", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnazwa);
+                this.columnopis = new global::System.Data.DataColumn("opis", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnopis);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnidfx_zapadnia}, true));
+                this.columnidfx_zapadnia.AutoIncrement = true;
+                this.columnidfx_zapadnia.AutoIncrementSeed = -1;
+                this.columnidfx_zapadnia.AutoIncrementStep = -1;
+                this.columnidfx_zapadnia.AllowDBNull = false;
+                this.columnidfx_zapadnia.ReadOnly = true;
+                this.columnidfx_zapadnia.Unique = true;
+                this.columnidakt.AllowDBNull = false;
+                this.columnnazwa.MaxLength = 20;
+                this.columnopis.MaxLength = 200;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_ZapadniaRow NewpokazFx_ZapadniaRow() {
+                return ((pokazFx_ZapadniaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new pokazFx_ZapadniaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(pokazFx_ZapadniaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.pokazFx_ZapadniaRowChanged != null)) {
+                    this.pokazFx_ZapadniaRowChanged(this, new pokazFx_ZapadniaRowChangeEvent(((pokazFx_ZapadniaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.pokazFx_ZapadniaRowChanging != null)) {
+                    this.pokazFx_ZapadniaRowChanging(this, new pokazFx_ZapadniaRowChangeEvent(((pokazFx_ZapadniaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.pokazFx_ZapadniaRowDeleted != null)) {
+                    this.pokazFx_ZapadniaRowDeleted(this, new pokazFx_ZapadniaRowChangeEvent(((pokazFx_ZapadniaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.pokazFx_ZapadniaRowDeleting != null)) {
+                    this.pokazFx_ZapadniaRowDeleting(this, new pokazFx_ZapadniaRowChangeEvent(((pokazFx_ZapadniaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovepokazFx_ZapadniaRow(pokazFx_ZapadniaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                TWDataSet ds = new TWDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "pokazFx_ZapadniaDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class pokazFx_Zapadnia_ZapadniaDataTable : global::System.Data.TypedTableBase<pokazFx_Zapadnia_ZapadniaRow> {
+            
+            private global::System.Data.DataColumn columnidfx_zapadnia_zapadnia;
+            
+            private global::System.Data.DataColumn columnidfx_zapadnia;
+            
+            private global::System.Data.DataColumn columnidzapadnia;
+            
+            private global::System.Data.DataColumn columnpredkosc;
+            
+            private global::System.Data.DataColumn columnmiejsce_stop;
+            
+            private global::System.Data.DataColumn columnsprzeganie;
+            
+            private global::System.Data.DataColumn columnaktywacja;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_Zapadnia_ZapadniaDataTable() {
+                this.TableName = "pokazFx_Zapadnia_Zapadnia";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal pokazFx_Zapadnia_ZapadniaDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected pokazFx_Zapadnia_ZapadniaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idfx_zapadnia_zapadniaColumn {
+                get {
+                    return this.columnidfx_zapadnia_zapadnia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idfx_zapadniaColumn {
+                get {
+                    return this.columnidfx_zapadnia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idzapadniaColumn {
+                get {
+                    return this.columnidzapadnia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn predkoscColumn {
+                get {
+                    return this.columnpredkosc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn miejsce_stopColumn {
+                get {
+                    return this.columnmiejsce_stop;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn sprzeganieColumn {
+                get {
+                    return this.columnsprzeganie;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn aktywacjaColumn {
+                get {
+                    return this.columnaktywacja;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_Zapadnia_ZapadniaRow this[int index] {
+                get {
+                    return ((pokazFx_Zapadnia_ZapadniaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event pokazFx_Zapadnia_ZapadniaRowChangeEventHandler pokazFx_Zapadnia_ZapadniaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event pokazFx_Zapadnia_ZapadniaRowChangeEventHandler pokazFx_Zapadnia_ZapadniaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event pokazFx_Zapadnia_ZapadniaRowChangeEventHandler pokazFx_Zapadnia_ZapadniaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event pokazFx_Zapadnia_ZapadniaRowChangeEventHandler pokazFx_Zapadnia_ZapadniaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddpokazFx_Zapadnia_ZapadniaRow(pokazFx_Zapadnia_ZapadniaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_Zapadnia_ZapadniaRow AddpokazFx_Zapadnia_ZapadniaRow(int idfx_zapadnia, int idzapadnia, int predkosc, decimal miejsce_stop, bool sprzeganie, bool aktywacja) {
+                pokazFx_Zapadnia_ZapadniaRow rowpokazFx_Zapadnia_ZapadniaRow = ((pokazFx_Zapadnia_ZapadniaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        idfx_zapadnia,
+                        idzapadnia,
+                        predkosc,
+                        miejsce_stop,
+                        sprzeganie,
+                        aktywacja};
+                rowpokazFx_Zapadnia_ZapadniaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowpokazFx_Zapadnia_ZapadniaRow);
+                return rowpokazFx_Zapadnia_ZapadniaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_Zapadnia_ZapadniaRow FindByidfx_zapadnia_zapadnia(int idfx_zapadnia_zapadnia) {
+                return ((pokazFx_Zapadnia_ZapadniaRow)(this.Rows.Find(new object[] {
+                            idfx_zapadnia_zapadnia})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                pokazFx_Zapadnia_ZapadniaDataTable cln = ((pokazFx_Zapadnia_ZapadniaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new pokazFx_Zapadnia_ZapadniaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnidfx_zapadnia_zapadnia = base.Columns["idfx_zapadnia_zapadnia"];
+                this.columnidfx_zapadnia = base.Columns["idfx_zapadnia"];
+                this.columnidzapadnia = base.Columns["idzapadnia"];
+                this.columnpredkosc = base.Columns["predkosc"];
+                this.columnmiejsce_stop = base.Columns["miejsce_stop"];
+                this.columnsprzeganie = base.Columns["sprzeganie"];
+                this.columnaktywacja = base.Columns["aktywacja"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnidfx_zapadnia_zapadnia = new global::System.Data.DataColumn("idfx_zapadnia_zapadnia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidfx_zapadnia_zapadnia);
+                this.columnidfx_zapadnia = new global::System.Data.DataColumn("idfx_zapadnia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidfx_zapadnia);
+                this.columnidzapadnia = new global::System.Data.DataColumn("idzapadnia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidzapadnia);
+                this.columnpredkosc = new global::System.Data.DataColumn("predkosc", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpredkosc);
+                this.columnmiejsce_stop = new global::System.Data.DataColumn("miejsce_stop", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmiejsce_stop);
+                this.columnsprzeganie = new global::System.Data.DataColumn("sprzeganie", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsprzeganie);
+                this.columnaktywacja = new global::System.Data.DataColumn("aktywacja", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnaktywacja);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnidfx_zapadnia_zapadnia}, true));
+                this.columnidfx_zapadnia_zapadnia.AutoIncrement = true;
+                this.columnidfx_zapadnia_zapadnia.AutoIncrementSeed = -1;
+                this.columnidfx_zapadnia_zapadnia.AutoIncrementStep = -1;
+                this.columnidfx_zapadnia_zapadnia.AllowDBNull = false;
+                this.columnidfx_zapadnia_zapadnia.ReadOnly = true;
+                this.columnidfx_zapadnia_zapadnia.Unique = true;
+                this.columnidfx_zapadnia.AllowDBNull = false;
+                this.columnidzapadnia.AllowDBNull = false;
+                this.columnpredkosc.AllowDBNull = false;
+                this.columnmiejsce_stop.AllowDBNull = false;
+                this.columnsprzeganie.AllowDBNull = false;
+                this.columnaktywacja.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_Zapadnia_ZapadniaRow NewpokazFx_Zapadnia_ZapadniaRow() {
+                return ((pokazFx_Zapadnia_ZapadniaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new pokazFx_Zapadnia_ZapadniaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(pokazFx_Zapadnia_ZapadniaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.pokazFx_Zapadnia_ZapadniaRowChanged != null)) {
+                    this.pokazFx_Zapadnia_ZapadniaRowChanged(this, new pokazFx_Zapadnia_ZapadniaRowChangeEvent(((pokazFx_Zapadnia_ZapadniaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.pokazFx_Zapadnia_ZapadniaRowChanging != null)) {
+                    this.pokazFx_Zapadnia_ZapadniaRowChanging(this, new pokazFx_Zapadnia_ZapadniaRowChangeEvent(((pokazFx_Zapadnia_ZapadniaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.pokazFx_Zapadnia_ZapadniaRowDeleted != null)) {
+                    this.pokazFx_Zapadnia_ZapadniaRowDeleted(this, new pokazFx_Zapadnia_ZapadniaRowChangeEvent(((pokazFx_Zapadnia_ZapadniaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.pokazFx_Zapadnia_ZapadniaRowDeleting != null)) {
+                    this.pokazFx_Zapadnia_ZapadniaRowDeleting(this, new pokazFx_Zapadnia_ZapadniaRowChangeEvent(((pokazFx_Zapadnia_ZapadniaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovepokazFx_Zapadnia_ZapadniaRow(pokazFx_Zapadnia_ZapadniaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                TWDataSet ds = new TWDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "pokazFx_Zapadnia_ZapadniaDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class pokazFx_Zapadnia_Zapadnia_dlajednejDataTable : global::System.Data.TypedTableBase<pokazFx_Zapadnia_Zapadnia_dlajednejRow> {
+            
+            private global::System.Data.DataColumn columnidfx_zapadnia_zapadnia;
+            
+            private global::System.Data.DataColumn columnidfx_zapadnia;
+            
+            private global::System.Data.DataColumn columnidzapadnia;
+            
+            private global::System.Data.DataColumn columnpredkosc;
+            
+            private global::System.Data.DataColumn columnmiejsce_stop;
+            
+            private global::System.Data.DataColumn columnsprzeganie;
+            
+            private global::System.Data.DataColumn columnaktywacja;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_Zapadnia_Zapadnia_dlajednejDataTable() {
+                this.TableName = "pokazFx_Zapadnia_Zapadnia_dlajednej";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal pokazFx_Zapadnia_Zapadnia_dlajednejDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected pokazFx_Zapadnia_Zapadnia_dlajednejDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idfx_zapadnia_zapadniaColumn {
+                get {
+                    return this.columnidfx_zapadnia_zapadnia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idfx_zapadniaColumn {
+                get {
+                    return this.columnidfx_zapadnia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idzapadniaColumn {
+                get {
+                    return this.columnidzapadnia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn predkoscColumn {
+                get {
+                    return this.columnpredkosc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn miejsce_stopColumn {
+                get {
+                    return this.columnmiejsce_stop;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn sprzeganieColumn {
+                get {
+                    return this.columnsprzeganie;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn aktywacjaColumn {
+                get {
+                    return this.columnaktywacja;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_Zapadnia_Zapadnia_dlajednejRow this[int index] {
+                get {
+                    return ((pokazFx_Zapadnia_Zapadnia_dlajednejRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event pokazFx_Zapadnia_Zapadnia_dlajednejRowChangeEventHandler pokazFx_Zapadnia_Zapadnia_dlajednejRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event pokazFx_Zapadnia_Zapadnia_dlajednejRowChangeEventHandler pokazFx_Zapadnia_Zapadnia_dlajednejRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event pokazFx_Zapadnia_Zapadnia_dlajednejRowChangeEventHandler pokazFx_Zapadnia_Zapadnia_dlajednejRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event pokazFx_Zapadnia_Zapadnia_dlajednejRowChangeEventHandler pokazFx_Zapadnia_Zapadnia_dlajednejRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddpokazFx_Zapadnia_Zapadnia_dlajednejRow(pokazFx_Zapadnia_Zapadnia_dlajednejRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_Zapadnia_Zapadnia_dlajednejRow AddpokazFx_Zapadnia_Zapadnia_dlajednejRow(int idfx_zapadnia, int idzapadnia, int predkosc, decimal miejsce_stop, bool sprzeganie, bool aktywacja) {
+                pokazFx_Zapadnia_Zapadnia_dlajednejRow rowpokazFx_Zapadnia_Zapadnia_dlajednejRow = ((pokazFx_Zapadnia_Zapadnia_dlajednejRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        idfx_zapadnia,
+                        idzapadnia,
+                        predkosc,
+                        miejsce_stop,
+                        sprzeganie,
+                        aktywacja};
+                rowpokazFx_Zapadnia_Zapadnia_dlajednejRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowpokazFx_Zapadnia_Zapadnia_dlajednejRow);
+                return rowpokazFx_Zapadnia_Zapadnia_dlajednejRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_Zapadnia_Zapadnia_dlajednejRow FindByidfx_zapadnia_zapadnia(int idfx_zapadnia_zapadnia) {
+                return ((pokazFx_Zapadnia_Zapadnia_dlajednejRow)(this.Rows.Find(new object[] {
+                            idfx_zapadnia_zapadnia})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                pokazFx_Zapadnia_Zapadnia_dlajednejDataTable cln = ((pokazFx_Zapadnia_Zapadnia_dlajednejDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new pokazFx_Zapadnia_Zapadnia_dlajednejDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnidfx_zapadnia_zapadnia = base.Columns["idfx_zapadnia_zapadnia"];
+                this.columnidfx_zapadnia = base.Columns["idfx_zapadnia"];
+                this.columnidzapadnia = base.Columns["idzapadnia"];
+                this.columnpredkosc = base.Columns["predkosc"];
+                this.columnmiejsce_stop = base.Columns["miejsce_stop"];
+                this.columnsprzeganie = base.Columns["sprzeganie"];
+                this.columnaktywacja = base.Columns["aktywacja"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnidfx_zapadnia_zapadnia = new global::System.Data.DataColumn("idfx_zapadnia_zapadnia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidfx_zapadnia_zapadnia);
+                this.columnidfx_zapadnia = new global::System.Data.DataColumn("idfx_zapadnia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidfx_zapadnia);
+                this.columnidzapadnia = new global::System.Data.DataColumn("idzapadnia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidzapadnia);
+                this.columnpredkosc = new global::System.Data.DataColumn("predkosc", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpredkosc);
+                this.columnmiejsce_stop = new global::System.Data.DataColumn("miejsce_stop", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmiejsce_stop);
+                this.columnsprzeganie = new global::System.Data.DataColumn("sprzeganie", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsprzeganie);
+                this.columnaktywacja = new global::System.Data.DataColumn("aktywacja", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnaktywacja);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnidfx_zapadnia_zapadnia}, true));
+                this.columnidfx_zapadnia_zapadnia.AutoIncrement = true;
+                this.columnidfx_zapadnia_zapadnia.AutoIncrementSeed = -1;
+                this.columnidfx_zapadnia_zapadnia.AutoIncrementStep = -1;
+                this.columnidfx_zapadnia_zapadnia.AllowDBNull = false;
+                this.columnidfx_zapadnia_zapadnia.ReadOnly = true;
+                this.columnidfx_zapadnia_zapadnia.Unique = true;
+                this.columnidfx_zapadnia.AllowDBNull = false;
+                this.columnidzapadnia.AllowDBNull = false;
+                this.columnpredkosc.AllowDBNull = false;
+                this.columnmiejsce_stop.AllowDBNull = false;
+                this.columnsprzeganie.AllowDBNull = false;
+                this.columnaktywacja.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_Zapadnia_Zapadnia_dlajednejRow NewpokazFx_Zapadnia_Zapadnia_dlajednejRow() {
+                return ((pokazFx_Zapadnia_Zapadnia_dlajednejRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new pokazFx_Zapadnia_Zapadnia_dlajednejRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(pokazFx_Zapadnia_Zapadnia_dlajednejRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.pokazFx_Zapadnia_Zapadnia_dlajednejRowChanged != null)) {
+                    this.pokazFx_Zapadnia_Zapadnia_dlajednejRowChanged(this, new pokazFx_Zapadnia_Zapadnia_dlajednejRowChangeEvent(((pokazFx_Zapadnia_Zapadnia_dlajednejRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.pokazFx_Zapadnia_Zapadnia_dlajednejRowChanging != null)) {
+                    this.pokazFx_Zapadnia_Zapadnia_dlajednejRowChanging(this, new pokazFx_Zapadnia_Zapadnia_dlajednejRowChangeEvent(((pokazFx_Zapadnia_Zapadnia_dlajednejRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.pokazFx_Zapadnia_Zapadnia_dlajednejRowDeleted != null)) {
+                    this.pokazFx_Zapadnia_Zapadnia_dlajednejRowDeleted(this, new pokazFx_Zapadnia_Zapadnia_dlajednejRowChangeEvent(((pokazFx_Zapadnia_Zapadnia_dlajednejRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.pokazFx_Zapadnia_Zapadnia_dlajednejRowDeleting != null)) {
+                    this.pokazFx_Zapadnia_Zapadnia_dlajednejRowDeleting(this, new pokazFx_Zapadnia_Zapadnia_dlajednejRowChangeEvent(((pokazFx_Zapadnia_Zapadnia_dlajednejRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovepokazFx_Zapadnia_Zapadnia_dlajednejRow(pokazFx_Zapadnia_Zapadnia_dlajednejRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                TWDataSet ds = new TWDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "pokazFx_Zapadnia_Zapadnia_dlajednejDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class AktRow : global::System.Data.DataRow {
@@ -14280,6 +15396,283 @@ namespace Dyplom_Dariusz_Petasz_Z709 {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class pokazFx_ZapadniaRow : global::System.Data.DataRow {
+            
+            private pokazFx_ZapadniaDataTable tablepokazFx_Zapadnia;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal pokazFx_ZapadniaRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablepokazFx_Zapadnia = ((pokazFx_ZapadniaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int idfx_zapadnia {
+                get {
+                    return ((int)(this[this.tablepokazFx_Zapadnia.idfx_zapadniaColumn]));
+                }
+                set {
+                    this[this.tablepokazFx_Zapadnia.idfx_zapadniaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int idakt {
+                get {
+                    return ((int)(this[this.tablepokazFx_Zapadnia.idaktColumn]));
+                }
+                set {
+                    this[this.tablepokazFx_Zapadnia.idaktColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nazwa {
+                get {
+                    try {
+                        return ((string)(this[this.tablepokazFx_Zapadnia.nazwaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'nazwa\' in table \'pokazFx_Zapadnia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepokazFx_Zapadnia.nazwaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string opis {
+                get {
+                    try {
+                        return ((string)(this[this.tablepokazFx_Zapadnia.opisColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'opis\' in table \'pokazFx_Zapadnia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepokazFx_Zapadnia.opisColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsnazwaNull() {
+                return this.IsNull(this.tablepokazFx_Zapadnia.nazwaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetnazwaNull() {
+                this[this.tablepokazFx_Zapadnia.nazwaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsopisNull() {
+                return this.IsNull(this.tablepokazFx_Zapadnia.opisColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetopisNull() {
+                this[this.tablepokazFx_Zapadnia.opisColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class pokazFx_Zapadnia_ZapadniaRow : global::System.Data.DataRow {
+            
+            private pokazFx_Zapadnia_ZapadniaDataTable tablepokazFx_Zapadnia_Zapadnia;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal pokazFx_Zapadnia_ZapadniaRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablepokazFx_Zapadnia_Zapadnia = ((pokazFx_Zapadnia_ZapadniaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int idfx_zapadnia_zapadnia {
+                get {
+                    return ((int)(this[this.tablepokazFx_Zapadnia_Zapadnia.idfx_zapadnia_zapadniaColumn]));
+                }
+                set {
+                    this[this.tablepokazFx_Zapadnia_Zapadnia.idfx_zapadnia_zapadniaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int idfx_zapadnia {
+                get {
+                    return ((int)(this[this.tablepokazFx_Zapadnia_Zapadnia.idfx_zapadniaColumn]));
+                }
+                set {
+                    this[this.tablepokazFx_Zapadnia_Zapadnia.idfx_zapadniaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int idzapadnia {
+                get {
+                    return ((int)(this[this.tablepokazFx_Zapadnia_Zapadnia.idzapadniaColumn]));
+                }
+                set {
+                    this[this.tablepokazFx_Zapadnia_Zapadnia.idzapadniaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int predkosc {
+                get {
+                    return ((int)(this[this.tablepokazFx_Zapadnia_Zapadnia.predkoscColumn]));
+                }
+                set {
+                    this[this.tablepokazFx_Zapadnia_Zapadnia.predkoscColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal miejsce_stop {
+                get {
+                    return ((decimal)(this[this.tablepokazFx_Zapadnia_Zapadnia.miejsce_stopColumn]));
+                }
+                set {
+                    this[this.tablepokazFx_Zapadnia_Zapadnia.miejsce_stopColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool sprzeganie {
+                get {
+                    return ((bool)(this[this.tablepokazFx_Zapadnia_Zapadnia.sprzeganieColumn]));
+                }
+                set {
+                    this[this.tablepokazFx_Zapadnia_Zapadnia.sprzeganieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool aktywacja {
+                get {
+                    return ((bool)(this[this.tablepokazFx_Zapadnia_Zapadnia.aktywacjaColumn]));
+                }
+                set {
+                    this[this.tablepokazFx_Zapadnia_Zapadnia.aktywacjaColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class pokazFx_Zapadnia_Zapadnia_dlajednejRow : global::System.Data.DataRow {
+            
+            private pokazFx_Zapadnia_Zapadnia_dlajednejDataTable tablepokazFx_Zapadnia_Zapadnia_dlajednej;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal pokazFx_Zapadnia_Zapadnia_dlajednejRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablepokazFx_Zapadnia_Zapadnia_dlajednej = ((pokazFx_Zapadnia_Zapadnia_dlajednejDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int idfx_zapadnia_zapadnia {
+                get {
+                    return ((int)(this[this.tablepokazFx_Zapadnia_Zapadnia_dlajednej.idfx_zapadnia_zapadniaColumn]));
+                }
+                set {
+                    this[this.tablepokazFx_Zapadnia_Zapadnia_dlajednej.idfx_zapadnia_zapadniaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int idfx_zapadnia {
+                get {
+                    return ((int)(this[this.tablepokazFx_Zapadnia_Zapadnia_dlajednej.idfx_zapadniaColumn]));
+                }
+                set {
+                    this[this.tablepokazFx_Zapadnia_Zapadnia_dlajednej.idfx_zapadniaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int idzapadnia {
+                get {
+                    return ((int)(this[this.tablepokazFx_Zapadnia_Zapadnia_dlajednej.idzapadniaColumn]));
+                }
+                set {
+                    this[this.tablepokazFx_Zapadnia_Zapadnia_dlajednej.idzapadniaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int predkosc {
+                get {
+                    return ((int)(this[this.tablepokazFx_Zapadnia_Zapadnia_dlajednej.predkoscColumn]));
+                }
+                set {
+                    this[this.tablepokazFx_Zapadnia_Zapadnia_dlajednej.predkoscColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal miejsce_stop {
+                get {
+                    return ((decimal)(this[this.tablepokazFx_Zapadnia_Zapadnia_dlajednej.miejsce_stopColumn]));
+                }
+                set {
+                    this[this.tablepokazFx_Zapadnia_Zapadnia_dlajednej.miejsce_stopColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool sprzeganie {
+                get {
+                    return ((bool)(this[this.tablepokazFx_Zapadnia_Zapadnia_dlajednej.sprzeganieColumn]));
+                }
+                set {
+                    this[this.tablepokazFx_Zapadnia_Zapadnia_dlajednej.sprzeganieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool aktywacja {
+                get {
+                    return ((bool)(this[this.tablepokazFx_Zapadnia_Zapadnia_dlajednej.aktywacjaColumn]));
+                }
+                set {
+                    this[this.tablepokazFx_Zapadnia_Zapadnia_dlajednej.aktywacjaColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -15319,6 +16712,108 @@ namespace Dyplom_Dariusz_Petasz_Z709 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public pokazZapadnieRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class pokazFx_ZapadniaRowChangeEvent : global::System.EventArgs {
+            
+            private pokazFx_ZapadniaRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_ZapadniaRowChangeEvent(pokazFx_ZapadniaRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_ZapadniaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class pokazFx_Zapadnia_ZapadniaRowChangeEvent : global::System.EventArgs {
+            
+            private pokazFx_Zapadnia_ZapadniaRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_Zapadnia_ZapadniaRowChangeEvent(pokazFx_Zapadnia_ZapadniaRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_Zapadnia_ZapadniaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class pokazFx_Zapadnia_Zapadnia_dlajednejRowChangeEvent : global::System.EventArgs {
+            
+            private pokazFx_Zapadnia_Zapadnia_dlajednejRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_Zapadnia_Zapadnia_dlajednejRowChangeEvent(pokazFx_Zapadnia_Zapadnia_dlajednejRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public pokazFx_Zapadnia_Zapadnia_dlajednejRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -24438,6 +25933,577 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class pokazFx_ZapadniaTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public pokazFx_ZapadniaTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "pokazFx_Zapadnia";
+            tableMapping.ColumnMappings.Add("idfx_zapadnia", "idfx_zapadnia");
+            tableMapping.ColumnMappings.Add("idakt", "idakt");
+            tableMapping.ColumnMappings.Add("nazwa", "nazwa");
+            tableMapping.ColumnMappings.Add("opis", "opis");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.DypTWConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.pokazFx_Zapadnia";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(TWDataSet.pokazFx_ZapadniaDataTable dataTable, global::System.Nullable<int> id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual TWDataSet.pokazFx_ZapadniaDataTable GetData(global::System.Nullable<int> id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            TWDataSet.pokazFx_ZapadniaDataTable dataTable = new TWDataSet.pokazFx_ZapadniaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class pokazFx_Zapadnia_ZapadniaTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public pokazFx_Zapadnia_ZapadniaTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "pokazFx_Zapadnia_Zapadnia";
+            tableMapping.ColumnMappings.Add("idfx_zapadnia_zapadnia", "idfx_zapadnia_zapadnia");
+            tableMapping.ColumnMappings.Add("idfx_zapadnia", "idfx_zapadnia");
+            tableMapping.ColumnMappings.Add("idzapadnia", "idzapadnia");
+            tableMapping.ColumnMappings.Add("predkosc", "predkosc");
+            tableMapping.ColumnMappings.Add("miejsce_stop", "miejsce_stop");
+            tableMapping.ColumnMappings.Add("sprzeganie", "sprzeganie");
+            tableMapping.ColumnMappings.Add("aktywacja", "aktywacja");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.DypTWConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.pokazFx_Zapadnia_Zapadnia";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(TWDataSet.pokazFx_Zapadnia_ZapadniaDataTable dataTable, global::System.Nullable<int> id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual TWDataSet.pokazFx_Zapadnia_ZapadniaDataTable GetData(global::System.Nullable<int> id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            TWDataSet.pokazFx_Zapadnia_ZapadniaDataTable dataTable = new TWDataSet.pokazFx_Zapadnia_ZapadniaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class pokazFx_Zapadnia_Zapadnia_dlajednejTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public pokazFx_Zapadnia_Zapadnia_dlajednejTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "pokazFx_Zapadnia_Zapadnia_dlajednej";
+            tableMapping.ColumnMappings.Add("idfx_zapadnia_zapadnia", "idfx_zapadnia_zapadnia");
+            tableMapping.ColumnMappings.Add("idfx_zapadnia", "idfx_zapadnia");
+            tableMapping.ColumnMappings.Add("idzapadnia", "idzapadnia");
+            tableMapping.ColumnMappings.Add("predkosc", "predkosc");
+            tableMapping.ColumnMappings.Add("miejsce_stop", "miejsce_stop");
+            tableMapping.ColumnMappings.Add("sprzeganie", "sprzeganie");
+            tableMapping.ColumnMappings.Add("aktywacja", "aktywacja");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Dyplom_Dariusz_Petasz_Z709.Properties.Settings.Default.DypTWConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.pokazFx_Zapadnia_Zapadnia_dlajednej";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idZap", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(TWDataSet.pokazFx_Zapadnia_Zapadnia_dlajednejDataTable dataTable, global::System.Nullable<int> id, global::System.Nullable<int> idZap) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((idZap.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(idZap.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual TWDataSet.pokazFx_Zapadnia_Zapadnia_dlajednejDataTable GetData(global::System.Nullable<int> id, global::System.Nullable<int> idZap) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((idZap.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(idZap.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            TWDataSet.pokazFx_Zapadnia_Zapadnia_dlajednejDataTable dataTable = new TWDataSet.pokazFx_Zapadnia_Zapadnia_dlajednejDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class QueriesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.IDbCommand[] _commandCollection;
@@ -26053,21 +28119,21 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(TWDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._rezyserTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Rezyser.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._rezyserTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._rodzajTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Rodzaj.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._rodzajTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._rezyserTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Rezyser.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._rezyserTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -26098,12 +28164,12 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._sztankietTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Sztankiet.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._zapadniaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Zapadnia.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._sztankietTableAdapter.Update(updatedRows));
+                    result = (result + this._zapadniaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -26116,12 +28182,39 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._fX_SztankietTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.FX_Sztankiet.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._fX_SztankietTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._fX_ZapadniaTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.FX_Zapadnia.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._fX_ZapadniaTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._wozekTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Wozek.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._wozekTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._sztankietTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Sztankiet.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._sztankietTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -26140,33 +28233,6 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._fX_MostTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._fX_SztankietTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.FX_Sztankiet.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._fX_SztankietTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._wozekTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Wozek.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._wozekTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._zapadniaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Zapadnia.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._zapadniaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -26243,19 +28309,19 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(TWDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._rezyserTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Rezyser.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._rezyserTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._rodzajTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Rodzaj.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._rodzajTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._rezyserTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Rezyser.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._rezyserTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -26283,11 +28349,11 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._sztankietTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Sztankiet.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._zapadniaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Zapadnia.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._sztankietTableAdapter.Update(addedRows));
+                    result = (result + this._zapadniaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -26299,11 +28365,35 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._fX_SztankietTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.FX_Sztankiet.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._fX_SztankietTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._fX_ZapadniaTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.FX_Zapadnia.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._fX_ZapadniaTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._wozekTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Wozek.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._wozekTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._sztankietTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Sztankiet.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._sztankietTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -26320,30 +28410,6 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._fX_MostTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._fX_SztankietTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.FX_Sztankiet.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._fX_SztankietTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._wozekTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Wozek.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._wozekTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._zapadniaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Zapadnia.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._zapadniaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -26469,30 +28535,6 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._zapadniaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Zapadnia.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._zapadniaTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._wozekTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Wozek.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._wozekTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._fX_SztankietTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.FX_Sztankiet.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._fX_SztankietTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._fX_MostTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.FX_Most.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -26509,11 +28551,35 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._sztankietTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Sztankiet.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._sztankietTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._wozekTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Wozek.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._wozekTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._fX_ZapadniaTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.FX_Zapadnia.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._fX_ZapadniaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._fX_SztankietTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.FX_Sztankiet.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._fX_SztankietTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -26525,11 +28591,11 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._sztankietTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Sztankiet.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._zapadniaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Zapadnia.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._sztankietTableAdapter.Update(deletedRows));
+                    result = (result + this._zapadniaTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -26557,19 +28623,19 @@ SELECT idzapadnia, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FRO
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._rodzajTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Rodzaj.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._rodzajTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._rezyserTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Rezyser.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._rezyserTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._rodzajTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Rodzaj.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._rodzajTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

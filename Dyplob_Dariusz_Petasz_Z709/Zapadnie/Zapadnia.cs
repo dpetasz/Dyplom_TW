@@ -21,6 +21,12 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         IZapiszZapadnia db = new ZapiszZapadnia();
         Graphics g;
 
+        int id;
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
         bool rygiel_1;
         public bool Rygiel_1
         {
@@ -128,7 +134,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         public Zapadnia(int Id, string Nazwa, float Pozycja, int PredkoscMax, int Przychamowanie)
         {
             InitializeComponent();
-            rysujZapadnia.Id = Id;
+            this.Id = Id;
             rysujZapadnia.Nazwa = Nazwa;
             this.Pozycja = Pozycja;
             this.Aktywacja = false;
