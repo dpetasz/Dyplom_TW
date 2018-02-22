@@ -17,7 +17,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         Zapadnia zapadnia;
         Graphics g;
         IZapiszZapadnia zapiszZapadnia = new ZapiszZapadnia();
-        bool rozstaw = false, joystick = false, doPozycji = false, programowa = false;
+        bool rozstaw = false, joystick = false, doPozycji = false, programowa = false, ryglowanie = true;
         
         public ZapadniePanel()
         {
@@ -144,7 +144,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         }
         void LadujJazdaDoPozycji()
         {
-            buttonStartStop.Enabled = true;
+            
             foreach (Zapadnia z in Zapadnia.ListaZapadnia)
             {
                 z.AktywujDoPozycji();
@@ -223,7 +223,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 {
                     if (z.Aktywacja == true)
                     {
-                        z.AktywujDoPozycji();
                         z.Predkosc = trackBarJoystick.Value;
                     }
                 }
@@ -399,8 +398,74 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             LadujFx_Zapadnia_Zapadnia();
         }
 
+        private void buttonOdryglowanie_Click(object sender, EventArgs e)
+        {
+            if (ryglowanie == true) Odryglowanie();
+            else Ryglowanie();
+            
+        }
 
+        void Ryglowanie()
+        {
+            foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+            {
+                if (z.DoPozycji == true || z.Rozstaw == true) z.Ryglowanie();
+            }
+            ryglowanie = true;
+            buttonOdryglowanie.BackColor = Color.SkyBlue;
+            buttonStartStop.Enabled = false;
+            panelJoystick.Enabled = false;
+        }
+        void Odryglowanie()
+        {
+            foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+            {
+                if (z.Aktywacja == true && z.DoPozycji == true)
+                {
+                    z.JazdaDoPozycjiOdryglowanie();
+                    buttonStartStop.Enabled = true;
+                    panelJoystick.Enabled = true;
+                }
+                if (z.Aktywacja == true && z.Joystick == true)
+                {
+                    z.JazdaDoPozycjiOdryglowanie();
+                    panelJoystick.Enabled = true;
+                }
+                if (z.Aktywacja == true && z.Rozstaw == true)
+                {
+                    z.JazdaRozstawOdryglowanie();
+                    panelJoystick.Enabled = true;
+                }
+            }
+            ryglowanie = false;
+            buttonOdryglowanie.BackColor = Color.IndianRed;
+        }
 
+        void LadujBazaProgramowa()
+        {
+            foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+            {
+                try
+                {
+                    int idFx = ((this.pokazFxZapadniaBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_ZapadniaRow).idfx_zapadnia;
+                    z.ladujBazaProgramowa(idFx);
+                    
+                }
+                catch (Exception)
+                {
 
+                }
+            }
+        }
+
+        private void comboBox3_VisibleChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void comboBox6_SelectedValueChanged(object sender, EventArgs e)
+        {
+            LadujBazaProgramowa();
+        }
     }
 }

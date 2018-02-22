@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelOpisZapadnia = new System.Windows.Forms.Panel();
+            this.buttonSprzeganie = new System.Windows.Forms.Button();
             this.textBoxWynik = new System.Windows.Forms.TextBox();
             this.buttonZmianaRozstaw = new System.Windows.Forms.Button();
             this.textBoxPredkosc = new System.Windows.Forms.TextBox();
@@ -107,12 +109,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.trackBarPredkosc = new System.Windows.Forms.TrackBar();
-            this.buttonSprzeganie = new System.Windows.Forms.Button();
+            this.tWDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
+            this.pokazFxZapadniaZapadniadlajednejBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pokazFx_Zapadnia_Zapadnia_dlajednejTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Zapadnia_Zapadnia_dlajednejTableAdapter();
             this.panelOpisZapadnia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMiejsceStop.SuspendLayout();
             this.panelPredkosc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPredkosc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazFxZapadniaZapadniadlajednejBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelOpisZapadnia
@@ -134,6 +140,16 @@
             this.panelOpisZapadnia.Name = "panelOpisZapadnia";
             this.panelOpisZapadnia.Size = new System.Drawing.Size(557, 227);
             this.panelOpisZapadnia.TabIndex = 1;
+            // 
+            // buttonSprzeganie
+            // 
+            this.buttonSprzeganie.BackColor = System.Drawing.Color.SkyBlue;
+            this.buttonSprzeganie.Location = new System.Drawing.Point(3, 39);
+            this.buttonSprzeganie.Name = "buttonSprzeganie";
+            this.buttonSprzeganie.Size = new System.Drawing.Size(141, 31);
+            this.buttonSprzeganie.TabIndex = 22;
+            this.buttonSprzeganie.Text = "Sprzeganie";
+            this.buttonSprzeganie.UseVisualStyleBackColor = false;
             // 
             // textBoxWynik
             // 
@@ -1110,15 +1126,19 @@
             this.trackBarPredkosc.Scroll += new System.EventHandler(this.trackBarPredkosc_Scroll);
             this.trackBarPredkosc.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBarPredkosc_MouseUp);
             // 
-            // buttonSprzeganie
+            // tWDataSet
             // 
-            this.buttonSprzeganie.BackColor = System.Drawing.Color.SkyBlue;
-            this.buttonSprzeganie.Location = new System.Drawing.Point(3, 39);
-            this.buttonSprzeganie.Name = "buttonSprzeganie";
-            this.buttonSprzeganie.Size = new System.Drawing.Size(141, 31);
-            this.buttonSprzeganie.TabIndex = 22;
-            this.buttonSprzeganie.Text = "Sprzeganie";
-            this.buttonSprzeganie.UseVisualStyleBackColor = false;
+            this.tWDataSet.DataSetName = "TWDataSet";
+            this.tWDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pokazFxZapadniaZapadniadlajednejBindingSource
+            // 
+            this.pokazFxZapadniaZapadniadlajednejBindingSource.DataMember = "pokazFx_Zapadnia_Zapadnia_dlajednej";
+            this.pokazFxZapadniaZapadniadlajednejBindingSource.DataSource = this.tWDataSet;
+            // 
+            // pokazFx_Zapadnia_Zapadnia_dlajednejTableAdapter
+            // 
+            this.pokazFx_Zapadnia_Zapadnia_dlajednejTableAdapter.ClearBeforeFill = true;
             // 
             // Zapadnia
             // 
@@ -1144,6 +1164,8 @@
             this.panelPredkosc.ResumeLayout(false);
             this.panelPredkosc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPredkosc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazFxZapadniaZapadniadlajednejBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1231,5 +1253,8 @@
         private System.Windows.Forms.TrackBar trackBarPredkosc;
         private System.Windows.Forms.Button buttonZamknijPanelPredkosc;
         private System.Windows.Forms.Button buttonSprzeganie;
+        private TWDataSet tWDataSet;
+        private System.Windows.Forms.BindingSource pokazFxZapadniaZapadniadlajednejBindingSource;
+        private TWDataSetTableAdapters.pokazFx_Zapadnia_Zapadnia_dlajednejTableAdapter pokazFx_Zapadnia_Zapadnia_dlajednejTableAdapter;
     }
 }

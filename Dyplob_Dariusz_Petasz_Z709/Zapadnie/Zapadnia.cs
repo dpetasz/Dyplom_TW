@@ -156,23 +156,29 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             textBoxMiejsceStop.Text = (Pozycja / 20).ToString() + " m";
             WczytajMiejsceStop(Math.Abs((Pozycja / 20)).ToString());
         }
-        void JazdaDoPozycjiOdryglowanie()
+        public void JazdaDoPozycjiOdryglowanie()
         {
             Rygiel_1 = false;
             Rygiel_3 = false;
             Rygiel_2 = true;
+            LadujKolor();
+            pictureBox1.Invalidate();
         }
-        void JazdaRozstawOdryglowanie()
+        public void JazdaRozstawOdryglowanie()
         {
             Rygiel_1 = true;
             Rygiel_3 = false;
             Rygiel_2 = false;
+            LadujKolor();
+            pictureBox1.Invalidate();
         }
-        void Ryglowanie()
+        public void Ryglowanie()
         {
             Rygiel_1 = true;
             Rygiel_3 = true;
             Rygiel_2 = true;
+            LadujKolor();
+            pictureBox1.Invalidate();
         }
         private void Zapadnia_Load(object sender, EventArgs e)
         {
@@ -206,7 +212,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         }
         public void ZmianaAktywacjaJoystick()
         {
-            Ryglowanie();
+            //Ryglowanie();
             buttonAktywacja.BackColor = Color.SkyBlue;
             Aktywacja = false;
             Rozstaw = false;
@@ -224,7 +230,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         }
         public void ZmianaAktywacjaRozstaw()
         {
-            Ryglowanie();
+            //Ryglowanie();
             DoPozycji = false;
             Joystick = false;
             buttonAktywacja.BackColor = Color.SkyBlue;
@@ -236,26 +242,18 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         }
         public void ZmianaAktywacjaDoPozycji()
         {
-            Ryglowanie();
-            buttonAktywacja.BackColor = Color.SkyBlue;
-            Aktywacja = false;
+            //Ryglowanie();
+            //buttonAktywacja.BackColor = Color.SkyBlue;
+            //Aktywacja = false;
             Rozstaw = false;
             Joystick = false;
-            Predkosc = 0;
+            //Predkosc = 0;
             buttonZmianaRozstaw.BackColor = Color.SkyBlue;
             buttonZmianaRozstaw.Enabled = false;
             textBoxWynik.BackColor = Color.Moccasin;
             ZapiszPozycjaBaza();
         }
-        public void zmianaPrzyciskRozstawTak()
-        {
-            buttonZmianaRozstaw.Enabled = true;
-        }
-        public void zmianaPrzyciskRozstawNie()
-        {
-
-            buttonZmianaRozstaw.Enabled = false;
-        }
+        
         public void JazdaJoystick()
         {
             if (Pozycja > -10 && Predkosc > 0)
@@ -320,7 +318,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             {
                 if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
                 {
-                    Aktywacja = false;
+                    //Aktywacja = false;
                     DoPozycji = false;
                     Predkosc = 0;
                     ZmianaAktywacjaRozstaw();
@@ -346,7 +344,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             {
                 if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
                 {
-                    Aktywacja = false;
+                    //Aktywacja = false;
                     Predkosc = 0;
                     ZmianaAktywacjaDoPozycji();
                     Odswiez();
@@ -369,8 +367,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             {
                 if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
                 {
-                    Aktywacja = false;
-                    Predkosc = 0;
+                    //Aktywacja = false;
+                    //Predkosc = 0;
                     ZmianaAktywacjaDoPozycji();
                     Odswiez();
                 }
@@ -395,6 +393,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         {
             textBoxPozycja.Text = ((float)Math.Round((Pozycja / 20), 2)).ToString() + " m";
             textBoxRozstaw.Text = ((float)Math.Round(((PozycjaPortal - Pozycja) / 20), 2)).ToString() + " m";
+            textBoxMiejsceStop.Text = PozycjaZadana.ToString();
             textBoxPredkosc.Text = Predkosc.ToString();
             pictureBox1.Invalidate();
         }
@@ -408,13 +407,13 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 
                 if ((Aktywacja == true && DoPozycji == true) || (Aktywacja == true && Joystick == true))
                 {
-                    JazdaDoPozycjiOdryglowanie();
+                    //JazdaDoPozycjiOdryglowanie();
                     LadujKolor();
                     pictureBox1.Invalidate();
                 }
                 else if ((Aktywacja == true && Rozstaw == true))
                 {
-                    JazdaRozstawOdryglowanie();
+                    //JazdaRozstawOdryglowanie();
                     LadujKolor();
                     pictureBox1.Invalidate();
 
@@ -423,11 +422,9 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             else
             {
                 Aktywacja = false;
-                //Rozstaw = false;
                 buttonAktywacja.BackColor = Color.SkyBlue;
                 buttonZmianaRozstaw.BackColor = Color.SkyBlue;
                 ZapiszPozycjaBaza();
-                Ryglowanie();
                 LadujKolor();
                 pictureBox1.Invalidate();
             }
@@ -455,8 +452,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             DoPozycji = true;
             Rozstaw = false;
             Joystick = false;
-            //buttonZmianaRozstaw.BackColor = Color.SkyBlue;
-            //buttonZmianaRozstaw.Enabled = false;
         }
 
 
@@ -804,6 +799,15 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         private void trackBarPredkosc_MouseUp(object sender, MouseEventArgs e)
         {
             panelPredkosc.Visible = false;
+        }
+        public void ladujBazaProgramowa(int idFx)
+        {
+            this.pokazFx_Zapadnia_Zapadnia_dlajednejTableAdapter.Fill(this.tWDataSet.pokazFx_Zapadnia_Zapadnia_dlajednej, idFx, Id);
+            Predkosc = ((this.pokazFxZapadniaZapadniadlajednejBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Zapadnia_Zapadnia_dlajednejRow).predkosc;
+            PozycjaZadana = (float)((this.pokazFxZapadniaZapadniadlajednejBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Zapadnia_Zapadnia_dlajednejRow).miejsce_stop;
+            Aktywacja = ((this.pokazFxZapadniaZapadniadlajednejBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Zapadnia_Zapadnia_dlajednejRow).aktywacja;
+            Sprzeganie = ((this.pokazFxZapadniaZapadniadlajednejBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Zapadnia_Zapadnia_dlajednejRow).sprzeganie;
+            Odswiez();
         }
     }
 }
