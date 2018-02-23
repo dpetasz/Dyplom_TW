@@ -150,10 +150,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         void LadujDane()
         {
             textBoxNazwa.Text = rysujZapadnia.Nazwa;
-            textBoxPozycja.Text = ((float)Math.Round((Pozycja / 20), 2)).ToString() + " m";
-            textBoxRozstaw.Text = ((float)Math.Round(((PozycjaPortal - Pozycja) / 20), 2)).ToString() + " m";
-            textBoxPredkosc.Text = Predkosc.ToString();
-            textBoxMiejsceStop.Text = (Pozycja / 20).ToString() + " m";
+            Odswiez();
             WczytajMiejsceStop(Math.Abs((Pozycja / 20)).ToString());
         }
         public void JazdaDoPozycjiOdryglowanie()
@@ -162,6 +159,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             Rygiel_3 = false;
             Rygiel_2 = true;
             LadujKolor();
+            ZapiszPozycjaBaza();
             pictureBox1.Invalidate();
         }
         public void JazdaRozstawOdryglowanie()
@@ -170,6 +168,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             Rygiel_3 = false;
             Rygiel_2 = false;
             LadujKolor();
+            ZapiszPozycjaBaza();
             pictureBox1.Invalidate();
         }
         public void Ryglowanie()
@@ -178,6 +177,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             Rygiel_3 = true;
             Rygiel_2 = true;
             LadujKolor();
+            ZapiszPozycjaBaza();
             pictureBox1.Invalidate();
         }
         private void Zapadnia_Load(object sender, EventArgs e)
@@ -224,9 +224,9 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             Odswiez();
 
         }
-        void ZapiszPozycjaBaza()
+        public void ZapiszPozycjaBaza()
         {
-            textBoxWynik.Text = db.ZapiszPozycja(rysujZapadnia.Id, (decimal)Pozycja, (decimal)PozycjaPortal, Rygiel_1, Rygiel_2, Rygiel_3, Sprzeganie);
+            textBoxWynik.Text = db.ZapiszPozycja(Id, (decimal)Pozycja, (decimal)PozycjaPortal, Rygiel_1, Rygiel_2, Rygiel_3, Sprzeganie);
         }
         public void ZmianaAktywacjaRozstaw()
         {
@@ -393,9 +393,21 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         {
             textBoxPozycja.Text = ((float)Math.Round((Pozycja / 20), 2)).ToString() + " m";
             textBoxRozstaw.Text = ((float)Math.Round(((PozycjaPortal - Pozycja) / 20), 2)).ToString() + " m";
-            textBoxMiejsceStop.Text = PozycjaZadana.ToString();
+            textBoxMiejsceStop.Text = ((float)Math.Round((PozycjaZadana / 20), 2)).ToString() + " m";
             textBoxPredkosc.Text = Predkosc.ToString();
+            OdswiezPrzyciskAktualizuj();
             pictureBox1.Invalidate();
+        }
+        void OdswiezPrzyciskAktualizuj()
+        {
+            if(Aktywacja == true)
+            {
+                buttonAktywacja.BackColor = Color.IndianRed;
+            }
+            else
+            {
+                buttonAktywacja.BackColor = Color.SkyBlue;
+            }
         }
 
         private void buttonAktywacja_Click(object sender, EventArgs e)
@@ -403,7 +415,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             if (Aktywacja == false)
             {
                 Aktywacja = true;
-                buttonAktywacja.BackColor = Color.IndianRed;
+                OdswiezPrzyciskAktualizuj();
 
                 if ((Aktywacja == true && DoPozycji == true) || (Aktywacja == true && Joystick == true))
                 {
@@ -422,8 +434,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             else
             {
                 Aktywacja = false;
-                buttonAktywacja.BackColor = Color.SkyBlue;
-                buttonZmianaRozstaw.BackColor = Color.SkyBlue;
+                OdswiezPrzyciskAktualizuj();
                 ZapiszPozycjaBaza();
                 LadujKolor();
                 pictureBox1.Invalidate();
@@ -808,6 +819,11 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             Aktywacja = ((this.pokazFxZapadniaZapadniadlajednejBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Zapadnia_Zapadnia_dlajednejRow).aktywacja;
             Sprzeganie = ((this.pokazFxZapadniaZapadniadlajednejBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Zapadnia_Zapadnia_dlajednejRow).sprzeganie;
             Odswiez();
+        }
+
+        private void button59_Click(object sender, EventArgs e)
+        {
+            panelMiejsceStop.Visible = false;
         }
     }
 }

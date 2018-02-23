@@ -112,6 +112,7 @@
             this.tWDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
             this.pokazFxZapadniaZapadniadlajednejBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokazFx_Zapadnia_Zapadnia_dlajednejTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Zapadnia_Zapadnia_dlajednejTableAdapter();
+            this.button59 = new System.Windows.Forms.Button();
             this.panelOpisZapadnia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMiejsceStop.SuspendLayout();
@@ -295,6 +296,7 @@
             // 
             // panelMiejsceStop
             // 
+            this.panelMiejsceStop.Controls.Add(this.button59);
             this.panelMiejsceStop.Controls.Add(this.button58);
             this.panelMiejsceStop.Controls.Add(this.button49);
             this.panelMiejsceStop.Controls.Add(this.button50);
@@ -1140,6 +1142,18 @@
             // 
             this.pokazFx_Zapadnia_Zapadnia_dlajednejTableAdapter.ClearBeforeFill = true;
             // 
+            // button59
+            // 
+            this.button59.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button59.Location = new System.Drawing.Point(54, 637);
+            this.button59.Margin = new System.Windows.Forms.Padding(2);
+            this.button59.Name = "button59";
+            this.button59.Size = new System.Drawing.Size(86, 22);
+            this.button59.TabIndex = 59;
+            this.button59.Text = "Koniec";
+            this.button59.UseVisualStyleBackColor = true;
+            this.button59.Click += new System.EventHandler(this.button59_Click);
+            // 
             // Zapadnia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -1256,5 +1270,6 @@
         private TWDataSet tWDataSet;
         private System.Windows.Forms.BindingSource pokazFxZapadniaZapadniadlajednejBindingSource;
         private TWDataSetTableAdapters.pokazFx_Zapadnia_Zapadnia_dlajednejTableAdapter pokazFx_Zapadnia_Zapadnia_dlajednejTableAdapter;
+        private System.Windows.Forms.Button button59;
     }
 }

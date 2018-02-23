@@ -27,7 +27,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         private void ZapadniePanel_Load(object sender, EventArgs e)
         {
             this.pokazZapadnieTableAdapter.Fill(this.twDataSet.pokazZapadnie);
-            this.pokazPrzedstawienieTableAdapter.Fill(this.twDataSet.pokazPrzedstawienie);
             LadujZapadnia();
             Stop();
         }
@@ -57,7 +56,9 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 zapadnia.Top = 3;
                 zapadnia.Left = szer;
                 szer += 154;
+                
             }
+            
         }
         void LadujDoPozycji()
         {
@@ -78,6 +79,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             programowa = false;
             buttonPrgramowa.BackColor = Color.LightSteelBlue;
             buttonPrgramowa.Enabled = true;
+            tabControlProgramowa.Enabled = false;
         }
         void LadujJoystick()
         {
@@ -100,6 +102,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             programowa = false;
             buttonPrgramowa.BackColor = Color.LightSteelBlue;
             buttonPrgramowa.Enabled = true;
+            tabControlProgramowa.Enabled = false;
         }
         void LadujRozstaw()
         {
@@ -121,6 +124,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             programowa = false;
             buttonPrgramowa.BackColor = Color.LightSteelBlue;
             buttonPrgramowa.Enabled = true;
+            tabControlProgramowa.Enabled = false;
         }
         void LadujProgramowa()
         {
@@ -140,6 +144,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             programowa = true;
             buttonPrgramowa.BackColor = Color.IndianRed;
             buttonPrgramowa.Enabled = false;
+            tabControlProgramowa.Enabled = true;
             LadujJazdaDoPozycji();
         }
         void LadujJazdaDoPozycji()
@@ -263,6 +268,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 if (z.Aktywacja == true)
                 {
                     z.Predkosc = trackBarJoystick.Value;
+                    z.ZapiszPozycjaBaza();
                     z.Odswiez();
                 }
 
@@ -281,18 +287,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         }
 
 
-        void StartStop()
-        {
-
-            if (timer1.Enabled == false)
-            {
-                Start();
-            }
-            else
-            {
-                Stop();
-            }
-        }
+        
         void Start()
         {
             timer1.Enabled = true;
@@ -304,6 +299,15 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             timer1.Enabled = false;
             buttonStartStop.BackColor = Color.Green;
             buttonStartStop.Text = "Start";
+            foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+            {
+                if (z.Aktywacja == true)
+                {
+                    z.ZapiszPozycjaBaza();
+                    z.Odswiez();
+                }
+
+            }
         }
 
         private void buttonStartStop_MouseDown(object sender, MouseEventArgs e)
@@ -318,15 +322,17 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 
         private void buttonPrgramowa_Click(object sender, EventArgs e)
         {
+            this.pokazPrzedstawienieTableAdapter.Fill(this.twDataSet.pokazPrzedstawienie);
             LadujProgramowa();
         }
 
-        private void buttonStartStop_Click(object sender, EventArgs e)
-        {
-            StartStop();
-        }
+        
 
         private void pokazPrzedstawienieBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            LadujPrzedstawienie();
+        }
+        void LadujPrzedstawienie()
         {
             try
             {
@@ -339,7 +345,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 
             }
         }
-
         private void buttonDodajFX_Click(object sender, EventArgs e)
         {
             int id = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
@@ -357,6 +362,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             {
                 int idAkt = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
                 this.pokazFx_ZapadniaTableAdapter.Fill(this.twDataSet.pokazFx_Zapadnia, idAkt);
+                this.pokazFx_zap_rosnacoTableAdapter.Fill(this.twDataSet.pokazFx_zap_rosnaco, idAkt);
             }
             catch (Exception)
             {
@@ -401,7 +407,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         private void buttonOdryglowanie_Click(object sender, EventArgs e)
         {
             if (ryglowanie == true) Odryglowanie();
-            else Ryglowanie();
+            else
+            {
+                Ryglowanie();
+            }
             
         }
 
@@ -416,6 +425,24 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             buttonStartStop.Enabled = false;
             panelJoystick.Enabled = false;
         }
+
+        private void pokazFxzaprosnacoBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+            {
+                try
+                {
+                    int idFx = ((this.pokazFxzaprosnacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_zap_rosnacoRow).idfx_zapadnia;
+                    
+                    z.ladujBazaProgramowa(idFx);
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+        }
+
         void Odryglowanie()
         {
             foreach (Zapadnia z in Zapadnia.ListaZapadnia)
@@ -443,19 +470,17 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 
         void LadujBazaProgramowa()
         {
-            foreach (Zapadnia z in Zapadnia.ListaZapadnia)
-            {
+            
                 try
                 {
                     int idFx = ((this.pokazFxZapadniaBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_ZapadniaRow).idfx_zapadnia;
-                    z.ladujBazaProgramowa(idFx);
-                    
+                    this.pokazFx_Zapadnia_ZapadniaTableAdapter.Fill(this.twDataSet.pokazFx_Zapadnia_Zapadnia, idFx);
                 }
                 catch (Exception)
                 {
 
                 }
-            }
+           
         }
 
         private void comboBox3_VisibleChanged(object sender, EventArgs e)
