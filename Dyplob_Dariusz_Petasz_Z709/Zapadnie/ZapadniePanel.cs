@@ -18,7 +18,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         Graphics g;
         IZapiszZapadnia zapiszZapadnia = new ZapiszZapadnia();
         bool rozstaw = false, joystick = false, doPozycji = false, programowa = false, ryglowanie = true;
-        
+
         public ZapadniePanel()
         {
             InitializeComponent();
@@ -56,9 +56,9 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 zapadnia.Top = 3;
                 zapadnia.Left = szer;
                 szer += 154;
-                
+
             }
-            
+
         }
         void LadujDoPozycji()
         {
@@ -149,7 +149,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         }
         void LadujJazdaDoPozycji()
         {
-            
+
             foreach (Zapadnia z in Zapadnia.ListaZapadnia)
             {
                 z.AktywujDoPozycji();
@@ -204,7 +204,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 }
             }
 
-            if (doPozycji == true)
+            if (doPozycji == true || programowa == true)
             {
                 foreach (Zapadnia z in Zapadnia.ListaZapadnia)
                 {
@@ -221,7 +221,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 
         private void trackBarJoystick_Scroll(object sender, EventArgs e)
         {
-            if (doPozycji == true)
+            if (doPozycji == true || programowa == true)
             {
                 timer1.Enabled = true;
                 foreach (Zapadnia z in Zapadnia.ListaZapadnia)
@@ -287,7 +287,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         }
 
 
-        
+
         void Start()
         {
             timer1.Enabled = true;
@@ -326,7 +326,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             LadujProgramowa();
         }
 
-        
+
 
         private void pokazPrzedstawienieBindingSource_CurrentChanged(object sender, EventArgs e)
         {
@@ -348,7 +348,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         private void buttonDodajFX_Click(object sender, EventArgs e)
         {
             int id = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
-            textBoxWynik.Text = zapiszZapadnia.ZapiszFX_Zapadnia(id,"");
+            textBoxWynik.Text = zapiszZapadnia.ZapiszFX_Zapadnia(id, "");
             LadujFx_Zapadnia();
         }
 
@@ -411,7 +411,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             {
                 Ryglowanie();
             }
-            
+
         }
 
         void Ryglowanie()
@@ -428,19 +428,20 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 
         private void pokazFxzaprosnacoBindingSource_CurrentChanged(object sender, EventArgs e)
         {
-            foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+            try
             {
-                try
+                int idFx = ((this.pokazFxzaprosnacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_zap_rosnacoRow).idfx_zapadnia;
+                this.pokazFx_Zapadnia_ZapadniaTableAdapter.Fill(this.twDataSet.pokazFx_Zapadnia_Zapadnia, idFx);
+                foreach (Zapadnia z in Zapadnia.ListaZapadnia)
                 {
-                    int idFx = ((this.pokazFxzaprosnacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_zap_rosnacoRow).idfx_zapadnia;
-                    
+
+
                     z.ladujBazaProgramowa(idFx);
-                }
-                catch (Exception)
-                {
 
                 }
             }
+            catch { }
+           
         }
 
         void Odryglowanie()
@@ -470,27 +471,69 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 
         void LadujBazaProgramowa()
         {
-            
-                try
-                {
-                    int idFx = ((this.pokazFxZapadniaBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_ZapadniaRow).idfx_zapadnia;
-                    this.pokazFx_Zapadnia_ZapadniaTableAdapter.Fill(this.twDataSet.pokazFx_Zapadnia_Zapadnia, idFx);
-                }
-                catch (Exception)
-                {
 
-                }
-           
+            try
+            {
+                int idFx = ((this.pokazFxZapadniaBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_ZapadniaRow).idfx_zapadnia;
+                this.pokazFx_Zapadnia_ZapadniaTableAdapter.Fill(this.twDataSet.pokazFx_Zapadnia_Zapadnia, idFx);
+            }
+            catch (Exception)
+            {
+
+            }
+
         }
 
         private void comboBox3_VisibleChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void comboBox6_SelectedValueChanged(object sender, EventArgs e)
         {
             LadujBazaProgramowa();
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNazwaFX_MouseClick(object sender, MouseEventArgs e)
+        {
+            textBoxNazwaFX.Clear();
+        }
+
+        private void richTextBox4_Click(object sender, EventArgs e)
+        {
+            richTextBox4.Clear();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int idFxZap = ((this.pokazFxzaprosnacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_zap_rosnacoRow).idfx_zapadnia;
+            string x = zapiszZapadnia.AktualizujFX_zap(idFxZap, textBoxNazwaFX.Text, richTextBox4.Text);
+            LadujFx_Zapadnia();
+            richTextBox4.Text +=" " + x;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idfx = ((this.pokazFxzaprosnacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_zap_rosnacoRow).idfx_zapadnia;
+                foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+                {
+                    //textBoxWynik.Text = zapiszZapadnia.ZapiszFX_Zapadnia_Zapadnia(z.Id, idfx, z.Predkosc, z.Pozycja, z.Sprzeganie, z.Aktywacja);
+                    //LadujFx_Zapadnia();
+                    z.aktualizujFX_zap_zap(idfx);
+                }
+                LadujFx_Zapadnia_Zapadnia();
+            }
+            catch
+            {
+
+            }
         }
     }
 }

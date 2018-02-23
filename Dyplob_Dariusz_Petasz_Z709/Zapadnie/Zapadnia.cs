@@ -253,7 +253,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             textBoxWynik.BackColor = Color.Moccasin;
             ZapiszPozycjaBaza();
         }
-        
+
         public void JazdaJoystick()
         {
             if (Pozycja > -10 && Predkosc > 0)
@@ -400,7 +400,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         }
         void OdswiezPrzyciskAktualizuj()
         {
-            if(Aktywacja == true)
+            if (Aktywacja == true)
             {
                 buttonAktywacja.BackColor = Color.IndianRed;
             }
@@ -824,6 +824,16 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         private void button59_Click(object sender, EventArgs e)
         {
             panelMiejsceStop.Visible = false;
+        }
+        public void aktualizujFX_zap_zap(int idFx)
+        {
+            try
+            {
+                this.pokazFx_Zapadnia_Zapadnia_dlajednejTableAdapter.Fill(this.tWDataSet.pokazFx_Zapadnia_Zapadnia_dlajednej, idFx, Id);
+                int idFx_zap_zap = ((this.pokazFxZapadniaZapadniadlajednejBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Zapadnia_Zapadnia_dlajednejRow).idfx_zapadnia_zapadnia;
+                textBoxWynik.Text = db.AktualizujFX_zap_zap(idFx_zap_zap, Predkosc, Pozycja, Sprzeganie, Aktywacja);
+            }
+            catch { }
         }
     }
 }

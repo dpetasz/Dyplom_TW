@@ -30,6 +30,20 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
             db.dodaj_FX_zapadnia_zapadnia(idzap, idfx, v, (decimal)Math.Round(stop,1), spr, akt, ref kom);
             return kom;
         }
+
+        public string AktualizujFX_zap_zap(int idzapzap, int v, float stop, bool spr, bool akt)
+        {
+            string kom = "";
+            db.aktualizujFx_zap_zap(idzapzap, v, (decimal)Math.Round(stop, 1), spr, akt, ref kom);
+            return kom;
+        }
+
+        public string AktualizujFX_zap(int idfx_zap, string nazwa, string opis)
+        {
+            string kom = "";
+            db.AktualizujFX_zap(idfx_zap, nazwa, opis, ref kom);
+            return kom;
+        }
         
     }
 }
