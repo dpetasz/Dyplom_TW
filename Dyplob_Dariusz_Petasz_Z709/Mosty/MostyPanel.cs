@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dyplom_Dariusz_Petasz_Z709.BD_TW;
 
 namespace Dyplom_Dariusz_Petasz_Z709.Mosty
 {
     public partial class MostyPanel : UserControl
     {
         Most most;
+        IZapiszMost db = new ZapiszMost();
         public MostyPanel()
         {
             InitializeComponent();
@@ -97,7 +99,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
                 buttonJoystick.BackColor = Color.LightSteelBlue;
                 panelJoystick.Enabled = false;
             }
-            else {
+            else
+            {
                 buttonJoystick.BackColor = Color.IndianRed;
                 panelJoystick.Enabled = true;
             }
@@ -171,6 +174,77 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
         private void buttonManual_Click(object sender, EventArgs e)
         {
 
+        }
+        void ladujFx_Most()
+        {
+            try
+            {
+                int idAkt = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
+                this.pokazFx_Most_malejacoTableAdapter.Fill(this.twDataSet.pokazFx_Most_malejaco, idAkt);
+                this.pokazFx_Most_rosnacoTableAdapter.Fill(this.twDataSet.pokazFx_Most_rosnaco, idAkt);
+            }
+            catch
+            {
+
+
+            }
+        }
+        private void pokazAktBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            ladujFx_Most();
+        }
+
+        private void buttonDodajFX_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idAkt = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
+                textBoxWynik.Text = db.DodajFx_most(idAkt, richTextBoxOpisFXMost.Text);
+                ladujFx_Most();
+            }
+            catch
+            {
+
+
+            }
+
+        }
+
+        private void buttonZapiszFx_most_most_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idfx = ((this.pokazFxMostmalejacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Most_malejacoRow).idfx_most;
+                foreach (Most m in Most.ListaMost)
+                {
+                    textBoxWynik.Text = db.DodajFx_most_most(m.GetId(), idfx, m.Predkosc, m.Pozycja);
+                    ladujFx_Most();
+                }
+            }
+            catch
+            {
+
+
+            }
+        }
+
+        private void pokazFxMostrosnacoBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            ladujFx_Most_Most();
+        }
+        void ladujFx_Most_Most()
+        {
+            try
+            {
+                int idFx_most = ((this.pokazFxMostrosnacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Most_rosnacoRow).idfx_most;
+                this.pokazFx_Most_MostTableAdapter.Fill(this.twDataSet.pokazFx_Most_Most, idFx_most);
+
+            }
+            catch
+            {
+
+
+            }
         }
     }
 }

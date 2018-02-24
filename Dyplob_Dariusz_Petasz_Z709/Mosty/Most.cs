@@ -19,9 +19,22 @@ namespace Dyplom_Dariusz_Petasz_Z709
         RysujMost rysujMost = new RysujMost();
         IJazdaMost jazdaMost = new JazdaMost();
         Graphics g;
-        
-        
 
+
+        int id;
+        int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        public int GetId()
+        {
+            return Id;
+        }
+        public void SetId(int Id)
+        {
+            this.Id = Id;
+        }
         bool kierunek;
         public bool Kierunek
         {
@@ -80,7 +93,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
         public Most(int Id, string Nazwa, float Pozycja, int PredkoscMax, int Przychamowanie)
         {
             InitializeComponent();
-            rysujMost.Id = Id;
+            SetId(Id);
             rysujMost.Nazwa = Nazwa;
             this.Pozycja = Pozycja ;
             this.Aktywacja = false;

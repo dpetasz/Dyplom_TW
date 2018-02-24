@@ -17,6 +17,10 @@ namespace Dyplom_Dariusz_Petasz_Z709
             get { return id; }
             set { id = value; }
         }
+        public int GetId()
+        {
+            return Id;
+        }
         string nazwa;
         public string Nazwa
         {
