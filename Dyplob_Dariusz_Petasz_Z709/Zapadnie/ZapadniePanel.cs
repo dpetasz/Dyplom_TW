@@ -499,15 +499,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 
         }
 
-        private void textBoxNazwaFX_MouseClick(object sender, MouseEventArgs e)
-        {
-            textBoxNazwaFX.Clear();
-        }
-
-        private void richTextBox4_Click(object sender, EventArgs e)
-        {
-            richTextBox4.Clear();
-        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {

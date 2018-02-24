@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelZapadnie = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Odrygluj = new System.Windows.Forms.Panel();
@@ -352,6 +352,7 @@
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.richTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazFxzaprosnacoBindingSource, "opis", true));
             this.richTextBox1.ForeColor = System.Drawing.Color.LightGray;
             this.richTextBox1.Location = new System.Drawing.Point(37, 192);
             this.richTextBox1.Name = "richTextBox1";
@@ -390,7 +391,7 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.label3.ForeColor = System.Drawing.Color.LavenderBlush;
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(24, 107);
+            this.label3.Location = new System.Drawing.Point(39, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 19);
             this.label3.TabIndex = 25;
@@ -646,6 +647,7 @@
             // richTextBox2
             // 
             this.richTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.richTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazFxzaprosnacoBindingSource, "opis", true));
             this.richTextBox2.ForeColor = System.Drawing.Color.LightGray;
             this.richTextBox2.Location = new System.Drawing.Point(9, 277);
             this.richTextBox2.Name = "richTextBox2";
@@ -676,9 +678,9 @@
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "idfx_zapadnia";
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Moccasin;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Moccasin;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridViewTextBoxColumn1.HeaderText = "idfx";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 53;
@@ -687,8 +689,8 @@
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "idzapadnia";
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Moccasin;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.Moccasin;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle22;
             this.dataGridViewTextBoxColumn2.HeaderText = "idzapadnia";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 94;
@@ -697,8 +699,8 @@
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "predkosc";
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Moccasin;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.Moccasin;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle23;
             this.dataGridViewTextBoxColumn3.HeaderText = "v";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 60;
@@ -707,8 +709,8 @@
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "miejsce_stop";
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Moccasin;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Moccasin;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle24;
             this.dataGridViewTextBoxColumn4.HeaderText = "Stop";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
@@ -877,7 +879,6 @@
             this.textBoxNazwaFX.Name = "textBoxNazwaFX";
             this.textBoxNazwaFX.Size = new System.Drawing.Size(257, 26);
             this.textBoxNazwaFX.TabIndex = 48;
-            this.textBoxNazwaFX.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBoxNazwaFX_MouseClick);
             // 
             // richTextBox4
             // 
@@ -889,7 +890,6 @@
             this.richTextBox4.Size = new System.Drawing.Size(332, 179);
             this.richTextBox4.TabIndex = 47;
             this.richTextBox4.Text = "";
-            this.richTextBox4.Click += new System.EventHandler(this.richTextBox4_Click);
             // 
             // label15
             // 
