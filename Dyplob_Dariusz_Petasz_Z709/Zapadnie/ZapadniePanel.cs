@@ -250,7 +250,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 {
                     if (z.Aktywacja == true && z.Rozstaw == true)
                     {
-                        //z.AktywujRozstaw();
                         z.Predkosc = trackBarJoystick.Value;
                         z.Odswiez();
                     }
@@ -322,11 +321,14 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 
         private void buttonPrgramowa_Click(object sender, EventArgs e)
         {
-            this.pokazPrzedstawienieTableAdapter.Fill(this.twDataSet.pokazPrzedstawienie);
             LadujProgramowa();
+            LadujBazaPrzedstawienie();
         }
 
-
+        void LadujBazaPrzedstawienie()
+        {
+            this.pokazPrzedstawienieTableAdapter.Fill(this.twDataSet.pokazPrzedstawienie);
+        }
 
         private void pokazPrzedstawienieBindingSource_CurrentChanged(object sender, EventArgs e)
         {
@@ -516,8 +518,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 int idfx = ((this.pokazFxzaprosnacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_zap_rosnacoRow).idfx_zapadnia;
                 foreach (Zapadnia z in Zapadnia.ListaZapadnia)
                 {
-                    //textBoxWynik.Text = zapiszZapadnia.ZapiszFX_Zapadnia_Zapadnia(z.Id, idfx, z.Predkosc, z.Pozycja, z.Sprzeganie, z.Aktywacja);
-                    //LadujFx_Zapadnia();
                     z.aktualizujFX_zap_zap(idfx);
                 }
                 LadujFx_Zapadnia_Zapadnia();

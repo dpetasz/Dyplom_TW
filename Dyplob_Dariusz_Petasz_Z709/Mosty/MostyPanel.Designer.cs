@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMosty = new System.Windows.Forms.Panel();
             this.twDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
             this.pokazMostyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokazMostyTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazMostyTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabControlProgramowa = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -65,6 +65,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.idmostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.predkoscDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miejscestopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pokazFxMostMostBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
@@ -82,7 +85,7 @@
             this.buttonJazdaDoPozycji = new System.Windows.Forms.Button();
             this.buttonManual = new System.Windows.Forms.Button();
             this.buttonJoystick = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonStartStop = new System.Windows.Forms.Button();
             this.fxobrotowkaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pokazPrzedstawienieTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazPrzedstawienieTableAdapter();
@@ -91,13 +94,10 @@
             this.pokazFx_Most_rosnacoTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Most_rosnacoTableAdapter();
             this.pokazFx_Most_MostTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Most_MostTableAdapter();
             this.pokazFx_Most_malejacoTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Most_malejacoTableAdapter();
-            this.idmostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.predkoscDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.miejscestopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazMostyBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
-            this.tabControl2.SuspendLayout();
+            this.tabControlProgramowa.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazFxMostrosnacoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource)).BeginInit();
@@ -138,7 +138,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.tabControl2);
+            this.panel1.Controls.Add(this.tabControlProgramowa);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(958, 0);
@@ -146,18 +146,19 @@
             this.panel1.Size = new System.Drawing.Size(388, 701);
             this.panel1.TabIndex = 1;
             // 
-            // tabControl2
+            // tabControlProgramowa
             // 
-            this.tabControl2.Controls.Add(this.tabPage3);
-            this.tabControl2.Controls.Add(this.tabPage4);
-            this.tabControl2.Controls.Add(this.tabPage1);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabControl2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tabControl2.Location = new System.Drawing.Point(0, 0);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(388, 416);
-            this.tabControl2.TabIndex = 1;
+            this.tabControlProgramowa.Controls.Add(this.tabPage3);
+            this.tabControlProgramowa.Controls.Add(this.tabPage4);
+            this.tabControlProgramowa.Controls.Add(this.tabPage1);
+            this.tabControlProgramowa.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tabControlProgramowa.Enabled = false;
+            this.tabControlProgramowa.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tabControlProgramowa.Location = new System.Drawing.Point(0, 0);
+            this.tabControlProgramowa.Name = "tabControlProgramowa";
+            this.tabControlProgramowa.SelectedIndex = 0;
+            this.tabControlProgramowa.Size = new System.Drawing.Size(388, 416);
+            this.tabControlProgramowa.TabIndex = 1;
             // 
             // tabPage3
             // 
@@ -495,6 +496,30 @@
             this.dataGridView2.Size = new System.Drawing.Size(343, 213);
             this.dataGridView2.TabIndex = 49;
             // 
+            // idmostDataGridViewTextBoxColumn
+            // 
+            this.idmostDataGridViewTextBoxColumn.DataPropertyName = "idmost";
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.Moccasin;
+            this.idmostDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle22;
+            this.idmostDataGridViewTextBoxColumn.HeaderText = "idmost";
+            this.idmostDataGridViewTextBoxColumn.Name = "idmostDataGridViewTextBoxColumn";
+            // 
+            // predkoscDataGridViewTextBoxColumn
+            // 
+            this.predkoscDataGridViewTextBoxColumn.DataPropertyName = "predkosc";
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.Moccasin;
+            this.predkoscDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle23;
+            this.predkoscDataGridViewTextBoxColumn.HeaderText = "predkosc";
+            this.predkoscDataGridViewTextBoxColumn.Name = "predkoscDataGridViewTextBoxColumn";
+            // 
+            // miejscestopDataGridViewTextBoxColumn
+            // 
+            this.miejscestopDataGridViewTextBoxColumn.DataPropertyName = "miejsce_stop";
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Moccasin;
+            this.miejscestopDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle24;
+            this.miejscestopDataGridViewTextBoxColumn.HeaderText = "miejsce_stop";
+            this.miejscestopDataGridViewTextBoxColumn.Name = "miejscestopDataGridViewTextBoxColumn";
+            // 
             // pokazFxMostMostBindingSource
             // 
             this.pokazFxMostMostBindingSource.DataMember = "pokazFx_Most_Most";
@@ -585,7 +610,7 @@
             this.panel2.Controls.Add(this.buttonJazdaDoPozycji);
             this.panel2.Controls.Add(this.buttonManual);
             this.panel2.Controls.Add(this.buttonJoystick);
-            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.buttonStartStop);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 418);
             this.panel2.Name = "panel2";
@@ -600,7 +625,6 @@
             this.panelJoystick.Controls.Add(this.label7);
             this.panelJoystick.Controls.Add(this.trackBarJoystick);
             this.panelJoystick.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelJoystick.Enabled = false;
             this.panelJoystick.Location = new System.Drawing.Point(291, 0);
             this.panelJoystick.Name = "panelJoystick";
             this.panelJoystick.Size = new System.Drawing.Size(95, 281);
@@ -665,6 +689,7 @@
             this.buttonPrgramowa.TabIndex = 24;
             this.buttonPrgramowa.Text = "Programowa";
             this.buttonPrgramowa.UseVisualStyleBackColor = false;
+            this.buttonPrgramowa.Click += new System.EventHandler(this.buttonPrgramowa_Click);
             // 
             // buttonJazdaDoPozycji
             // 
@@ -682,7 +707,6 @@
             // buttonManual
             // 
             this.buttonManual.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.buttonManual.Enabled = false;
             this.buttonManual.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.buttonManual.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.buttonManual.Location = new System.Drawing.Point(7, 3);
@@ -706,17 +730,18 @@
             this.buttonJoystick.UseVisualStyleBackColor = false;
             this.buttonJoystick.Click += new System.EventHandler(this.buttonJoystick_Click);
             // 
-            // button3
+            // buttonStartStop
             // 
-            this.button3.BackColor = System.Drawing.Color.Green;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(63, 122);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(134, 125);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Start";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonStartStop.BackColor = System.Drawing.Color.Green;
+            this.buttonStartStop.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonStartStop.Location = new System.Drawing.Point(63, 122);
+            this.buttonStartStop.Name = "buttonStartStop";
+            this.buttonStartStop.Size = new System.Drawing.Size(134, 125);
+            this.buttonStartStop.TabIndex = 20;
+            this.buttonStartStop.Text = "Start";
+            this.buttonStartStop.UseVisualStyleBackColor = false;
+            this.buttonStartStop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonStartStop_MouseDown);
+            this.buttonStartStop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonStartStop_MouseUp);
             // 
             // fxobrotowkaBindingSource
             // 
@@ -752,30 +777,6 @@
             // 
             this.pokazFx_Most_malejacoTableAdapter.ClearBeforeFill = true;
             // 
-            // idmostDataGridViewTextBoxColumn
-            // 
-            this.idmostDataGridViewTextBoxColumn.DataPropertyName = "idmost";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Moccasin;
-            this.idmostDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.idmostDataGridViewTextBoxColumn.HeaderText = "idmost";
-            this.idmostDataGridViewTextBoxColumn.Name = "idmostDataGridViewTextBoxColumn";
-            // 
-            // predkoscDataGridViewTextBoxColumn
-            // 
-            this.predkoscDataGridViewTextBoxColumn.DataPropertyName = "predkosc";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Moccasin;
-            this.predkoscDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.predkoscDataGridViewTextBoxColumn.HeaderText = "predkosc";
-            this.predkoscDataGridViewTextBoxColumn.Name = "predkoscDataGridViewTextBoxColumn";
-            // 
-            // miejscestopDataGridViewTextBoxColumn
-            // 
-            this.miejscestopDataGridViewTextBoxColumn.DataPropertyName = "miejsce_stop";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Moccasin;
-            this.miejscestopDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.miejscestopDataGridViewTextBoxColumn.HeaderText = "miejsce_stop";
-            this.miejscestopDataGridViewTextBoxColumn.Name = "miejscestopDataGridViewTextBoxColumn";
-            // 
             // MostyPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -790,7 +791,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazMostyBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.tabControl2.ResumeLayout(false);
+            this.tabControlProgramowa.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazFxMostrosnacoBindingSource)).EndInit();
@@ -818,7 +819,7 @@
         private TWDataSetTableAdapters.pokazMostyTableAdapter pokazMostyTableAdapter;
         private System.Windows.Forms.Panel panelMosty;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabControl tabControlProgramowa;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Panel panel2;
@@ -834,7 +835,7 @@
         private System.Windows.Forms.Button buttonJazdaDoPozycji;
         private System.Windows.Forms.Button buttonManual;
         private System.Windows.Forms.Button buttonJoystick;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonStartStop;
         private System.Windows.Forms.Panel panelJoystick;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;

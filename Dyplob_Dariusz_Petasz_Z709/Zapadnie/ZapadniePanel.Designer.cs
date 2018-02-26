@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelZapadnie = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Odrygluj = new System.Windows.Forms.Panel();
@@ -51,9 +51,9 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.pokazFxzaprosnacoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.twDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.pokazAktBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -360,6 +360,17 @@
             this.richTextBox1.TabIndex = 27;
             this.richTextBox1.Text = "";
             // 
+            // pokazFxzaprosnacoBindingSource
+            // 
+            this.pokazFxzaprosnacoBindingSource.DataMember = "pokazFx_zap_rosnaco";
+            this.pokazFxzaprosnacoBindingSource.DataSource = this.twDataSet;
+            this.pokazFxzaprosnacoBindingSource.CurrentChanged += new System.EventHandler(this.pokazFxzaprosnacoBindingSource_CurrentChanged);
+            // 
+            // twDataSet
+            // 
+            this.twDataSet.DataSetName = "TWDataSet";
+            this.twDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // comboBox3
             // 
             this.comboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
@@ -373,17 +384,6 @@
             this.comboBox3.Size = new System.Drawing.Size(203, 27);
             this.comboBox3.TabIndex = 26;
             this.comboBox3.VisibleChanged += new System.EventHandler(this.comboBox3_VisibleChanged);
-            // 
-            // pokazFxzaprosnacoBindingSource
-            // 
-            this.pokazFxzaprosnacoBindingSource.DataMember = "pokazFx_zap_rosnaco";
-            this.pokazFxzaprosnacoBindingSource.DataSource = this.twDataSet;
-            this.pokazFxzaprosnacoBindingSource.CurrentChanged += new System.EventHandler(this.pokazFxzaprosnacoBindingSource_CurrentChanged);
-            // 
-            // twDataSet
-            // 
-            this.twDataSet.DataSetName = "TWDataSet";
-            this.twDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label3
             // 
@@ -678,9 +678,9 @@
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "idfx_zapadnia";
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Moccasin;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Moccasin;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn1.HeaderText = "idfx";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 53;
@@ -689,8 +689,8 @@
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "idzapadnia";
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.Moccasin;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Moccasin;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn2.HeaderText = "idzapadnia";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 94;
@@ -699,8 +699,8 @@
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "predkosc";
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.Moccasin;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Moccasin;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn3.HeaderText = "v";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 60;
@@ -709,8 +709,8 @@
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "miejsce_stop";
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Moccasin;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Moccasin;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn4.HeaderText = "Stop";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 

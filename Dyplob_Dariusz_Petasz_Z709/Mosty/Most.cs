@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dyplom_Dariusz_Petasz_Z709.Mosty;
 using Dyplom_Dariusz_Petasz_Z709.Urzadzenia;
+using Dyplom_Dariusz_Petasz_Z709.BD_TW;
 
 namespace Dyplom_Dariusz_Petasz_Z709
 {
@@ -18,9 +19,33 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
         RysujMost rysujMost = new RysujMost();
         IJazdaMost jazdaMost = new JazdaMost();
+        IZapiszMost db = new ZapiszMost();
         Graphics g;
 
-
+        bool doPozycji;
+        public bool DoPozycji
+        {
+            get { return doPozycji; }
+            set { doPozycji = value; }
+        }
+        bool programowa;
+        public bool Programowa
+        {
+            get { return programowa; }
+            set { programowa = value; }
+        }
+        bool joystick;
+        public bool Joystick
+        {
+            get { return joystick; }
+            set { joystick = value; }
+        }
+        bool manualna;
+        public bool Manualna
+        {
+            get { return manualna; }
+            set { manualna = value; }
+        }
         int id;
         int Id
         {
@@ -53,6 +78,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
             get { return pozycjaZadana; }
             set { pozycjaZadana = value; }
         }
+
         int przychamowanie;
         public int Przychamowanie
         {
@@ -60,11 +86,22 @@ namespace Dyplom_Dariusz_Petasz_Z709
             set { przychamowanie = value; }
         }
         float pozycja;
-        public float Pozycja
+        float Pozycja
         {
             get { return pozycja; }
             set { pozycja = value; }
         }
+
+        public float GetPozycja()
+        {
+            return Pozycja;
+        }
+
+        public void SetPozycja(float Pozycja)
+        {
+            this.Pozycja = Pozycja;
+        }
+
 
         float kg;
         public float Kg
@@ -85,46 +122,100 @@ namespace Dyplom_Dariusz_Petasz_Z709
             set { predkoscMax = value; }
         }
         int predkosc;
-        public int Predkosc
+        int Predkosc
         {
             get { return predkosc; }
             set { predkosc = value; }
+        }
+        public int GetPredkosc()
+        {
+            return Predkosc;
+        }
+        public void SetPredkosc(int Predkosc)
+        {
+            this.Predkosc = Predkosc;
         }
         public Most(int Id, string Nazwa, float Pozycja, int PredkoscMax, int Przychamowanie)
         {
             InitializeComponent();
             SetId(Id);
             rysujMost.Nazwa = Nazwa;
-            this.Pozycja = Pozycja ;
+            this.Pozycja = Pozycja;
             this.Aktywacja = false;
             this.PredkoscMax = PredkoscMax;
             this.Predkosc = 0;
             this.Przychamowanie = Przychamowanie;
             rysujMost.Wypelnienie();
             ListaMost.Add(this);
-            
-        }
-        
-      
 
+        }
+
+        public void AktywujDoPozycji()
+        {
+            DoPozycji = true;
+            Manualna = false;
+            Joystick = false;
+            Programowa = false;
+            Aktywacja = false;
+            textBoxPozycjaZadana.ReadOnly = false;
+            Odswiez();
+        }
+
+        public void AktywujManualna()
+        {
+            DoPozycji = false;
+            Manualna = true;
+            Joystick = false;
+            Programowa = false;
+            Aktywacja = false;
+            textBoxPozycjaZadana.ReadOnly = true;
+            Odswiez();
+        }
+        public void AktywujJoystick()
+        {
+            DoPozycji = false;
+            Manualna = false;
+            Joystick = true;
+            Programowa = false;
+            Aktywacja = false;
+            textBoxPozycjaZadana.ReadOnly = true;
+            Odswiez();
+        }
+        public void AktywujProgamowa()
+        {
+            DoPozycji = true;
+            Manualna = false;
+            Joystick = false;
+            Programowa = true;
+            Aktywacja = false;
+            textBoxPozycjaZadana.ReadOnly = false;
+            Odswiez();
+        }
         private void Most_Load(object sender, EventArgs e)
         {
             textBoxNazwa.Text = rysujMost.Nazwa;
-            textBoxPozycja.Text = (Pozycja / 10).ToString();
-            textBoxPredkosc.Text = Predkosc.ToString();
+            Odswiez();
         }
 
+        void PrzyciskAktywacja()
+        {
+            if (Aktywacja == false)
+            {
+                buttonAktywacja.BackColor = Color.SkyBlue;
+            }
+            else buttonAktywacja.BackColor = Color.IndianRed;
+        }
         private void buttonAktywacja_Click(object sender, EventArgs e)
         {
             if (Aktywacja == false)
             {
                 Aktywacja = true;
-                buttonAktywacja.BackColor = Color.IndianRed;
+                PrzyciskAktywacja();
             }
             else
             {
                 Aktywacja = false;
-                buttonAktywacja.BackColor = Color.SkyBlue;
+                PrzyciskAktywacja();
             }
         }
 
@@ -136,70 +227,176 @@ namespace Dyplom_Dariusz_Petasz_Z709
             rysujMost.MostJazda(g, Pozycja);
         }
 
-        public void Manual()
+        public void JazdaManual()
         {
-            Pozycja = jazdaMost.jazdaManual(Kierunek, Predkosc, Pozycja);
-            //return jazdaMost.jazdaManual(Kierunek, Predkosc, Pozycja);
+            SetPozycja(jazdaMost.jazdaManual(Kierunek, Predkosc, Pozycja));
+            Odswiez();
         }
-        public void Joystick()
+        public void JazdaJoystick()
         {
-            float x = Kg -3, y = Kd +3;
+            float x = Kg - 3, y = Kd + 3;
             if ((Pozycja >= x) && Predkosc > 0)
             {
-                Pozycja = jazdaMost.jazdaJoystick(Przychamowanie, Pozycja);
-                Odswiez();
-            }else if ((Pozycja <= y) && Predkosc<0)
-            {
-
-                Pozycja = jazdaMost.jazdaJoystick(Przychamowanie * -1, Pozycja);
-                Odswiez();
+                if (GetPozycja() >= Kg && GetPredkosc() > 0)
+                {
+                    ZmianaAktywacjaJoystick();
+                    ZapiszPozycjaBaza();
+                    ZmianaKrancowa();
+                }
+                else
+                {
+                    SetPozycja(jazdaMost.jazdaJoystick(Przychamowanie, GetPozycja()));
+                    Odswiez();
+                }
             }
-            else { Pozycja = jazdaMost.jazdaJoystick(Predkosc, Pozycja);
-            Odswiez();
+            else if ((Pozycja <= y) && Predkosc < 0)
+            {
+                if (GetPozycja() <= Kd && GetPredkosc() < 0)
+                {
+                    ZmianaAktywacjaJoystick();
+                    ZapiszPozycjaBaza();
+                    ZmianaKrancowa();
+                }
+                else
+                {
+                    SetPozycja(jazdaMost.jazdaJoystick(Przychamowanie * -1, GetPozycja()));
+                    Odswiez();
+                }
+
+
+            }
+            else
+            {
+                SetPozycja(jazdaMost.jazdaJoystick(Predkosc, GetPozycja()));
+                Odswiez();
             }
         }
-        public void DoPozycji()
+        public void JazdaDoPozycji()
         {
-            Pozycja = jazdaMost.jazdaDoPozycjiDown(Predkosc,Pozycja);
+            WczytajPozycjaZadana();
+            SetPozycja(jazdaMost.jazdaDoPozycjiDown(Predkosc, Pozycja));
+            Odswiez();
+            if (Pozycja < PozycjaZadana)
+            {
+                if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
+                {
+                    Predkosc = 0;
+                    ZmianaAktywacjaDoPozycji();
+                    Odswiez();
+                }
+                else if (Pozycja > PozycjaZadana - 10)
+                {
+                    Pozycja = jazdaMost.jazdaDoPozycjiUp(Przychamowanie, Pozycja);
+
+                    Odswiez();
+                }
+                else
+                {
+                    Pozycja = jazdaMost.jazdaDoPozycjiUp(Predkosc, Pozycja);
+                    Odswiez();
+                }
+
+            }
+            if (Pozycja > PozycjaZadana)
+            {
+                if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
+                {
+                    ZmianaAktywacjaDoPozycji();
+                    Odswiez();
+                }
+                else if (Pozycja < PozycjaZadana + 10)
+                {
+                    Pozycja = jazdaMost.jazdaDoPozycjiDown(Przychamowanie, Pozycja);
+                    Odswiez();
+                }
+                else
+                {
+                    Pozycja = jazdaMost.jazdaDoPozycjiDown(Predkosc, Pozycja);
+                    Odswiez();
+                }
+            }
+
         }
         public void Odswiez()
         {
-            textBoxPozycja.Text = (Pozycja/10).ToString();
+            textBoxPozycja.Text = ((float)Math.Round((Pozycja / 10), 2)).ToString() + " m";
+            textBoxPozycjaZadana.Text = ((float)Math.Round((PozycjaZadana / 10), 2)).ToString() + " m";
             textBoxPredkosc.Text = Predkosc.ToString();
-            
+            PrzyciskAktywacja();
+            ZmianaKrancowa();
             pictureBox1.Invalidate();
         }
 
-        
-       
+
+
         public void ZmianaAktywacja()
         {
-            if(Aktywacja == false)
-            { 
+            if (Aktywacja == false)
+            {
 
-            buttonAktywacja.BackColor = Color.SkyBlue;
+                buttonAktywacja.BackColor = Color.SkyBlue;
             }
-            else {
-                
+            else
+            {
+
                 buttonAktywacja.BackColor = Color.Maroon;
             }
         }
         public void ZmianaKrancowa()
         {
-            if (Pozycja >= Kg) { textBoxKG.BackColor = Color.Red; } else { textBoxKG.BackColor = Color.DarkSeaGreen; }
-            if (Pozycja <= Kd) { textBoxKD.BackColor = Color.Red; } else { textBoxKD.BackColor = Color.DarkSeaGreen; }
+            if (GetPozycja() >= Kg) { textBoxKG.BackColor = Color.Red; } else { textBoxKG.BackColor = Color.DarkSeaGreen; }
+            if (GetPozycja() <= Kd) { textBoxKD.BackColor = Color.Red; } else { textBoxKD.BackColor = Color.DarkSeaGreen; }
         }
 
         private void textBoxPozycjaZadana_MouseClick(object sender, MouseEventArgs e)
         {
-            
+            textBoxPozycjaZadana.Clear();
+        }
+        public void ZmianaManual()
+        {
+            Aktywacja = false;
+            Manualna = true;
+            Predkosc = 0;
+            textBoxWynik.BackColor = Color.Moccasin;
+            PrzyciskAktywacja();
+            Odswiez();
+        }
+        public void ZmianaAktywacjaDoPozycji()
+        {
+            Aktywacja = false;
+
+            Predkosc = 0;
+            textBoxWynik.BackColor = Color.Moccasin;
+            PrzyciskAktywacja();
+            Odswiez();
+        }
+        public void ZmianaAktywacjaJoystick()
+        {
+
+            Aktywacja = false;
+            Predkosc = 0;
+            textBoxWynik.BackColor = Color.Moccasin;
+            PrzyciskAktywacja();
+            Odswiez();
 
         }
-        public void ZmianaDoPozycji()
+        public void ZapiszPozycjaBaza()
         {
-            if(textBoxPozycjaZadana.Enabled == true)
-            textBoxPozycjaZadana.Enabled = false;
-            else textBoxPozycjaZadana.Enabled = true;
+            textBoxWynik.Text = db.ZapiszPozycja(Id, GetPozycja());
+        }
+        public void WczytajPozycjaZadana()
+        {
+            try
+            {
+                PozycjaZadana = float.Parse(textBoxPozycjaZadana.Text.ToString());
+
+            }
+            catch
+            {
+                PozycjaZadana = Pozycja;
+                
+            }
+
         }
     }
 }

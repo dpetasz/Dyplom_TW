@@ -33,15 +33,16 @@
             this.textBoxKD = new System.Windows.Forms.TextBox();
             this.textBoxKG = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBoxPozycja = new System.Windows.Forms.TextBox();
             this.textBoxPozycjaZadana = new System.Windows.Forms.TextBox();
             this.textBoxPredkosc = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonDown = new System.Windows.Forms.Button();
+            this.buttonUp = new System.Windows.Forms.Button();
+            this.textBoxWynik = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -54,14 +55,14 @@
             this.textBoxNazwa.Location = new System.Drawing.Point(36, 12);
             this.textBoxNazwa.Name = "textBoxNazwa";
             this.textBoxNazwa.ReadOnly = true;
-            this.textBoxNazwa.Size = new System.Drawing.Size(173, 29);
+            this.textBoxNazwa.Size = new System.Drawing.Size(186, 29);
             this.textBoxNazwa.TabIndex = 0;
             this.textBoxNazwa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // buttonAktywacja
             // 
             this.buttonAktywacja.BackColor = System.Drawing.Color.SkyBlue;
-            this.buttonAktywacja.Location = new System.Drawing.Point(58, 58);
+            this.buttonAktywacja.Location = new System.Drawing.Point(70, 56);
             this.buttonAktywacja.Name = "buttonAktywacja";
             this.buttonAktywacja.Size = new System.Drawing.Size(125, 31);
             this.buttonAktywacja.TabIndex = 1;
@@ -104,12 +105,22 @@
             this.panel1.Size = new System.Drawing.Size(30, 300);
             this.panel1.TabIndex = 5;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 250);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.Moccasin;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(35, 183);
+            this.textBox1.Location = new System.Drawing.Point(40, 160);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(98, 25);
@@ -122,7 +133,7 @@
             this.textBox2.BackColor = System.Drawing.Color.Moccasin;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.Location = new System.Drawing.Point(35, 215);
+            this.textBox2.Location = new System.Drawing.Point(40, 192);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(98, 25);
@@ -135,7 +146,7 @@
             this.textBox3.BackColor = System.Drawing.Color.Moccasin;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox3.Location = new System.Drawing.Point(35, 247);
+            this.textBox3.Location = new System.Drawing.Point(40, 224);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(98, 25);
@@ -146,7 +157,7 @@
             // textBoxPozycja
             // 
             this.textBoxPozycja.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBoxPozycja.Location = new System.Drawing.Point(139, 183);
+            this.textBoxPozycja.Location = new System.Drawing.Point(144, 160);
             this.textBoxPozycja.Name = "textBoxPozycja";
             this.textBoxPozycja.ReadOnly = true;
             this.textBoxPozycja.Size = new System.Drawing.Size(78, 26);
@@ -156,9 +167,8 @@
             // 
             this.textBoxPozycjaZadana.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxPozycjaZadana.Enabled = false;
-            this.textBoxPozycjaZadana.Location = new System.Drawing.Point(139, 215);
+            this.textBoxPozycjaZadana.Location = new System.Drawing.Point(144, 192);
             this.textBoxPozycjaZadana.Name = "textBoxPozycjaZadana";
-            this.textBoxPozycjaZadana.ReadOnly = true;
             this.textBoxPozycjaZadana.Size = new System.Drawing.Size(78, 26);
             this.textBoxPozycjaZadana.TabIndex = 12;
             this.textBoxPozycjaZadana.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBoxPozycjaZadana_MouseClick);
@@ -166,43 +176,46 @@
             // textBoxPredkosc
             // 
             this.textBoxPredkosc.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBoxPredkosc.Location = new System.Drawing.Point(139, 247);
+            this.textBoxPredkosc.Location = new System.Drawing.Point(144, 224);
             this.textBoxPredkosc.Name = "textBoxPredkosc";
             this.textBoxPredkosc.ReadOnly = true;
             this.textBoxPredkosc.Size = new System.Drawing.Size(78, 26);
             this.textBoxPredkosc.TabIndex = 13;
             // 
-            // button2
+            // buttonDown
             // 
-            this.button2.BackColor = System.Drawing.Color.SkyBlue;
-            this.button2.BackgroundImage = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.D;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(129, 102);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(66, 52);
-            this.button2.TabIndex = 10;
-            this.button2.UseVisualStyleBackColor = false;
+            this.buttonDown.BackColor = System.Drawing.Color.SkyBlue;
+            this.buttonDown.BackgroundImage = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.D;
+            this.buttonDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonDown.Location = new System.Drawing.Point(144, 102);
+            this.buttonDown.Name = "buttonDown";
+            this.buttonDown.Size = new System.Drawing.Size(66, 52);
+            this.buttonDown.TabIndex = 10;
+            this.buttonDown.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // buttonUp
             // 
-            this.button1.BackColor = System.Drawing.Color.SkyBlue;
-            this.button1.BackgroundImage = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.G;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(48, 102);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 52);
-            this.button1.TabIndex = 9;
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonUp.BackColor = System.Drawing.Color.SkyBlue;
+            this.buttonUp.BackgroundImage = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.G;
+            this.buttonUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonUp.Location = new System.Drawing.Point(48, 102);
+            this.buttonUp.Name = "buttonUp";
+            this.buttonUp.Size = new System.Drawing.Size(66, 52);
+            this.buttonUp.TabIndex = 9;
+            this.buttonUp.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
+            // textBoxWynik
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 250);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            this.textBoxWynik.BackColor = System.Drawing.Color.Moccasin;
+            this.textBoxWynik.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxWynik.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxWynik.Location = new System.Drawing.Point(42, 272);
+            this.textBoxWynik.Name = "textBoxWynik";
+            this.textBoxWynik.ReadOnly = true;
+            this.textBoxWynik.Size = new System.Drawing.Size(180, 25);
+            this.textBoxWynik.TabIndex = 22;
+            this.textBoxWynik.Text = "Wynik";
+            this.textBoxWynik.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Most
             // 
@@ -210,11 +223,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Controls.Add(this.textBoxWynik);
             this.Controls.Add(this.textBoxPredkosc);
             this.Controls.Add(this.textBoxPozycjaZadana);
             this.Controls.Add(this.textBoxPozycja);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonDown);
+            this.Controls.Add(this.buttonUp);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -246,10 +260,11 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonUp;
+        private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.TextBox textBoxPozycja;
         private System.Windows.Forms.TextBox textBoxPozycjaZadana;
         private System.Windows.Forms.TextBox textBoxPredkosc;
+        private System.Windows.Forms.TextBox textBoxWynik;
     }
 }

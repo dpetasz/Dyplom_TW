@@ -212,7 +212,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         }
         public void ZmianaAktywacjaJoystick()
         {
-            //Ryglowanie();
             buttonAktywacja.BackColor = Color.SkyBlue;
             Aktywacja = false;
             Rozstaw = false;
@@ -230,7 +229,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         }
         public void ZmianaAktywacjaRozstaw()
         {
-            //Ryglowanie();
             DoPozycji = false;
             Joystick = false;
             buttonAktywacja.BackColor = Color.SkyBlue;
@@ -242,12 +240,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         }
         public void ZmianaAktywacjaDoPozycji()
         {
-            //Ryglowanie();
-            //buttonAktywacja.BackColor = Color.SkyBlue;
-            //Aktywacja = false;
             Rozstaw = false;
             Joystick = false;
-            //Predkosc = 0;
             buttonZmianaRozstaw.BackColor = Color.SkyBlue;
             buttonZmianaRozstaw.Enabled = false;
             textBoxWynik.BackColor = Color.Moccasin;
@@ -318,7 +312,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             {
                 if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
                 {
-                    //Aktywacja = false;
                     DoPozycji = false;
                     Predkosc = 0;
                     ZmianaAktywacjaRozstaw();
@@ -327,13 +320,11 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 else if (Pozycja < PozycjaZadana + 10)
                 {
                     Pozycja = jazdaZapadnia.jazdaDoPozycjiDown(Przychamowanie, Pozycja);
-                    //PozycjaPortal = jazdaZapadnia.jazdaDoPozycjiDown(Przychamowanie, PozycjaPortal);
                     Odswiez();
                 }
                 else
                 {
                     Pozycja = jazdaZapadnia.jazdaDoPozycjiDown(Predkosc, Pozycja);
-                    //PozycjaPortal = jazdaZapadnia.jazdaDoPozycjiDown(Predkosc, PozycjaPortal);
                     Odswiez();
                 }
             }
@@ -344,7 +335,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             {
                 if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
                 {
-                    //Aktywacja = false;
                     Predkosc = 0;
                     ZmianaAktywacjaDoPozycji();
                     Odswiez();
@@ -367,8 +357,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             {
                 if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
                 {
-                    //Aktywacja = false;
-                    //Predkosc = 0;
                     ZmianaAktywacjaDoPozycji();
                     Odswiez();
                 }
@@ -419,13 +407,11 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 
                 if ((Aktywacja == true && DoPozycji == true) || (Aktywacja == true && Joystick == true))
                 {
-                    //JazdaDoPozycjiOdryglowanie();
                     LadujKolor();
                     pictureBox1.Invalidate();
                 }
                 else if ((Aktywacja == true && Rozstaw == true))
                 {
-                    //JazdaRozstawOdryglowanie();
                     LadujKolor();
                     pictureBox1.Invalidate();
 

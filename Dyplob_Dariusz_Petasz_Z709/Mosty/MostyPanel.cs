@@ -15,6 +15,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
     {
         Most most;
         IZapiszMost db = new ZapiszMost();
+        bool joystick = false, doPozycji = false, manualna = false, programowa = false;
         public MostyPanel()
         {
             InitializeComponent();
@@ -60,101 +61,243 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
             }
         }
 
+
+
+
         private void MostyPanel_Load(object sender, EventArgs e)
         {
-            //this.pokazWozkiTableAdapter.Fill(this.tWDataSet.pokazWozki);
             this.pokazMostyTableAdapter.Fill(this.twDataSet.pokazMosty);
             LadujMost();
-            LadujBaza();
 
         }
-        void LadujBaza()
+        void LadujBazaPrzedstawienie()
         {
             this.pokazPrzedstawienieTableAdapter.Fill(this.twDataSet.pokazPrzedstawienie);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+
+
+        void LadujProgramowa()
         {
+            doPozycji = true;
+            buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
+            buttonJazdaDoPozycji.Enabled = true;
+            buttonStartStop.Enabled = true;
+
+            joystick = false;
+            buttonJoystick.BackColor = Color.LightSteelBlue;
+            buttonJoystick.Enabled = true;
+
+            manualna = false;
+            buttonManual.BackColor = Color.LightSteelBlue;
+            buttonManual.Enabled = true;
+
+
+            programowa = true;
+            buttonPrgramowa.BackColor = Color.IndianRed;
+            buttonPrgramowa.Enabled = false;
+            tabControlProgramowa.Enabled = true;
+            LadujJazdaDoPozycji();
+        }
+        void LadujJoystick()
+        {
+            doPozycji = false;
+            buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
+            buttonJazdaDoPozycji.Enabled = true;
+            buttonStartStop.Enabled = false;
+            Stop();
+
+            joystick = true;
+            buttonJoystick.BackColor = Color.IndianRed;
+            buttonJoystick.Enabled = false;
+            LadujJazdaJoystick();
+
+            manualna = false;
+            buttonManual.BackColor = Color.LightSteelBlue;
+            buttonManual.Enabled = true;
+
+
+            programowa = false;
+            buttonPrgramowa.BackColor = Color.LightSteelBlue;
+            buttonPrgramowa.Enabled = true;
+            tabControlProgramowa.Enabled = false;
+        }
+        void LadujDoPozycji()
+        {
+            doPozycji = true;
+            buttonJazdaDoPozycji.BackColor = Color.IndianRed;
+            buttonJazdaDoPozycji.Enabled = false;
+            buttonStartStop.Enabled = true;
+            LadujJazdaDoPozycji();
+
+            joystick = false;
+            buttonJoystick.BackColor = Color.LightSteelBlue;
+            buttonJoystick.Enabled = true;
+
+            manualna = false;
+            buttonManual.BackColor = Color.LightSteelBlue;
+            buttonManual.Enabled = true;
+
+
+            programowa = false;
+            buttonPrgramowa.BackColor = Color.LightSteelBlue;
+            buttonPrgramowa.Enabled = true;
+            tabControlProgramowa.Enabled = false;
+        }
+        void LadujJazdaJoystick()
+        {
+            foreach (Most z in Most.ListaMost)
+            {
+                z.ZmianaAktywacjaJoystick();
+            }
+        }
+        void LadujJazdaDoPozycji()
+        {
+            foreach (Most m in Most.ListaMost)
+            {
+                m.AktywujDoPozycji();
+            }
 
         }
+        void LadujJazdaProgramowa()
+        {
+            foreach (Most m in Most.ListaMost)
+            {
+                m.AktywujDoPozycji();
+            }
+        }
+        void LadujJazdaManual()
+        {
+            foreach (Most z in Most.ListaMost)
+            {
+                z.ZmianaManual();
+            }
+        }
+        void Start()
+        {
+            timer1.Enabled = true;
+            buttonStartStop.BackColor = Color.IndianRed;
+            buttonStartStop.Text = "Stop";
+        }
+        void Stop()
+        {
+            timer1.Enabled = false;
+            buttonStartStop.BackColor = Color.Green;
+            buttonStartStop.Text = "Start";
+            foreach (Most m in Most.ListaMost)
+            {
+                if (m.Aktywacja == true)
+                {
+                    m.ZapiszPozycjaBaza();
+                    m.Odswiez();
+                }
 
+            }
+        }
+        void LadujManual()
+        {
+            doPozycji = false;
+            buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
+            buttonJazdaDoPozycji.Enabled = true;
+            buttonStartStop.Enabled = false;
+            Stop();
+
+            joystick = false;
+            buttonJoystick.BackColor = Color.LightSteelBlue;
+            buttonJoystick.Enabled = true;
+
+            manualna = true;
+            buttonManual.BackColor = Color.IndianRed;
+            buttonManual.Enabled = false;
+            LadujJazdaManual();
+
+            programowa = false;
+            buttonPrgramowa.BackColor = Color.LightSteelBlue;
+            buttonPrgramowa.Enabled = true;
+            tabControlProgramowa.Enabled = false;
+        }
+
+        private void buttonJoystick_Click(object sender, EventArgs e)
+        {
+            LadujJoystick();
+
+
+        }
+        private void buttonPrgramowa_Click(object sender, EventArgs e)
+        {
+            LadujProgramowa();
+            LadujBazaPrzedstawienie();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (joystick == true)
+            {
+                foreach (Most m in Most.ListaMost)
+                {
+                    if (m.Aktywacja == true )
+                    {
+                        m.JazdaJoystick();
+                    }
+                }
+            }
+            if (manualna == true)
+            {
+                foreach (Most m in Most.ListaMost)
+                {
+                    if (m.Aktywacja == true)
+                    {
+                        m.JazdaManual();
+                    }
+                }
+            }
+            if(doPozycji == true || programowa == true)
+            {
+                foreach (Most m in Most.ListaMost)
+                {
+                    if (m.Aktywacja == true)
+                    {
+                        m.JazdaDoPozycji();
+                    }
+                }
+            }
+            
+            
+        }
+
+        private void trackBarJoystick_Scroll(object sender, EventArgs e)
+        {
+
+            timer1.Enabled = true;
+            foreach (Most m in Most.ListaMost)
+            {
+                if (m.Aktywacja == true)
+                {
+                    m.SetPredkosc(trackBarJoystick.Value);
+                    m.ZmianaKrancowa();
+                    //m.Odswiez();
+                }
+            }
+        }
         private void trackBarJoystick_MouseUp(object sender, MouseEventArgs e)
         {
             timer1.Enabled = false;
             trackBarJoystick.Value = 0;
             foreach (Most m in Most.ListaMost)
             {
-
-                m.Predkosc = trackBarJoystick.Value;
-
-                m.Odswiez();
-
-            }
-        }
-
-        private void buttonJoystick_Click(object sender, EventArgs e)
-        {
-            if (panelJoystick.Enabled == true)
-            {
-                buttonJoystick.BackColor = Color.LightSteelBlue;
-                panelJoystick.Enabled = false;
-            }
-            else
-            {
-                buttonJoystick.BackColor = Color.IndianRed;
-                panelJoystick.Enabled = true;
-            }
-
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            foreach (Most m in Most.ListaMost)
-            {
                 if (m.Aktywacja == true)
                 {
-
-
-                    if (m.Pozycja > m.Kg && trackBarJoystick.Value > 0)
-                    {
-                        m.Aktywacja = false;
-                        m.ZmianaAktywacja();
-                        m.ZmianaKrancowa();
-                    }
-                    if (m.Pozycja < m.Kd && trackBarJoystick.Value < 0)
-                    {
-                        m.Aktywacja = false;
-                        m.ZmianaAktywacja();
-                        m.ZmianaKrancowa();
-                    }
-                    m.Joystick();
+                    m.SetPredkosc(trackBarJoystick.Value);
+                    m.ZapiszPozycjaBaza();
+                    m.Odswiez();
                 }
             }
         }
 
-        private void trackBarJoystick_Scroll(object sender, EventArgs e)
-        {
-            timer1.Enabled = true;
-            foreach (Most m in Most.ListaMost)
-            {
-                if (m.Aktywacja == true)
-                {
-
-                    m.Predkosc = trackBarJoystick.Value;
-                    m.ZmianaKrancowa();
-
-                    //m.Odswiez();
-                }
-            }
-        }
 
         private void buttonJazdaDoPozycji_Click(object sender, EventArgs e)
         {
-
-            foreach (Most m in Most.ListaMost)
-            {
-                m.ZmianaDoPozycji();
-            }
+            LadujDoPozycji();
         }
 
         private void pokazPrzedstawienieBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -173,7 +316,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
 
         private void buttonManual_Click(object sender, EventArgs e)
         {
-
+            LadujManual();
         }
         void ladujFx_Most()
         {
@@ -217,7 +360,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
                 int idfx = ((this.pokazFxMostmalejacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Most_malejacoRow).idfx_most;
                 foreach (Most m in Most.ListaMost)
                 {
-                    textBoxWynik.Text = db.DodajFx_most_most(m.GetId(), idfx, m.Predkosc, m.Pozycja);
+                    textBoxWynik.Text = db.DodajFx_most_most(m.GetId(), idfx, m.GetPredkosc(), m.GetPozycja());
                     ladujFx_Most();
                 }
             }
@@ -246,5 +389,17 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
 
             }
         }
+
+        private void buttonStartStop_MouseDown(object sender, MouseEventArgs e)
+        {
+            Start();
+        }
+
+        private void buttonStartStop_MouseUp(object sender, MouseEventArgs e)
+        {
+            Stop();
+        }
+
+
     }
 }
