@@ -351,6 +351,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
         private void textBoxPozycjaZadana_MouseClick(object sender, MouseEventArgs e)
         {
             textBoxPozycjaZadana.Clear();
+            panelPrzyciski.Visible = true;
         }
         public void ZmianaManual()
         {
@@ -388,15 +389,113 @@ namespace Dyplom_Dariusz_Petasz_Z709
         {
             try
             {
-                PozycjaZadana = float.Parse(textBoxPozycjaZadana.Text.ToString());
-
+                PozycjaZadana = float.Parse(textBoxStop.Text.ToString())*10;
+                if (PozycjaZadana  < Kd || PozycjaZadana  > Kg)
+                {
+                    textBoxWynik.Text = "Przedział od " + Kd / 10 + " do " + Kg;
+                    textBoxStop.Clear();
+                }
+                else textBoxPozycjaZadana.Text = (PozycjaZadana/10).ToString() + " m";
             }
             catch
             {
                 PozycjaZadana = Pozycja;
-                
+                textBoxWynik.Text = "Zły format liczby";
+                textBoxStop.Clear();
             }
 
+        }
+        private void button13_Click(object sender, EventArgs e)
+        {
+            WczytajPozycjaZadana();
+            panelPrzyciski.Visible = false;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBoxStop.Text += button1.Text; 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBoxStop.Text += button2.Text;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBoxStop.Text += button3.Text;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            textBoxStop.Text += button12.Text;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            textBoxStop.Text += button11.Text;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            textBoxStop.Text += button10.Text;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBoxStop.Text += button4.Text;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBoxStop.Text += button5.Text;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            textBoxStop.Text += button6.Text;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            textBoxStop.Text += button9.Text;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            textBoxStop.Text += button8.Text;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBoxStop.Clear();
+        }
+
+        private void textBoxPozycjaZadana_Click(object sender, EventArgs e)
+        {
+            panelPrzyciski.Visible = true;
+            textBoxStop.Clear();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            panelPrzyciski.Visible = false;
+            textBoxPozycjaZadana.Text = (PozycjaZadana / 10).ToString();
+        }
+
+        private void textBoxPredkosc_Click(object sender, EventArgs e)
+        {
+            panelPredkosc.Visible = true;
+            textBoxPredkosc.Clear();
+        }
+
+        private void trackBarPredkosc_Scroll(object sender, EventArgs e)
+        {
+            Predkosc = trackBarPredkosc.Value;
+        }
+
+        private void trackBarPredkosc_MouseUp(object sender, MouseEventArgs e)
+        {
+            panelPredkosc.Visible = false;
         }
     }
 }

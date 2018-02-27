@@ -40,6 +40,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
                     most.Kg = kg;
                     most.Kd = kd;
                     most.Parent = panelMosty;
+                    most.Width = 225;
                     most.Top = wys;
                     most.Left = szer;
                     szer += 230;
