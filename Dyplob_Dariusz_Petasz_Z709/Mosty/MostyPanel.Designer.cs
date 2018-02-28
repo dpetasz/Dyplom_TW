@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMosty = new System.Windows.Forms.Panel();
             this.twDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
             this.pokazMostyBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -94,6 +94,19 @@
             this.pokazFx_Most_rosnacoTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Most_rosnacoTableAdapter();
             this.pokazFx_Most_MostTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Most_MostTableAdapter();
             this.pokazFx_Most_malejacoTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Most_malejacoTableAdapter();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBoxNazwaFX = new System.Windows.Forms.TextBox();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.comboBox10 = new System.Windows.Forms.ComboBox();
+            this.comboBox11 = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.comboBox12 = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazMostyBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
@@ -111,15 +124,16 @@
             this.panelJoystick.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarJoystick)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fxobrotowkaBindingSource)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMosty
             // 
             this.panelMosty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(15)))), ((int)(((byte)(52)))));
             this.panelMosty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelMosty.Location = new System.Drawing.Point(21, 45);
+            this.panelMosty.Location = new System.Drawing.Point(22, 26);
             this.panelMosty.Name = "panelMosty";
-            this.panelMosty.Size = new System.Drawing.Size(930, 620);
+            this.panelMosty.Size = new System.Drawing.Size(930, 649);
             this.panelMosty.TabIndex = 0;
             // 
             // twDataSet
@@ -151,6 +165,7 @@
             this.tabControlProgramowa.Controls.Add(this.tabPage3);
             this.tabControlProgramowa.Controls.Add(this.tabPage4);
             this.tabControlProgramowa.Controls.Add(this.tabPage1);
+            this.tabControlProgramowa.Controls.Add(this.tabPage2);
             this.tabControlProgramowa.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControlProgramowa.Enabled = false;
             this.tabControlProgramowa.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -499,24 +514,24 @@
             // idmostDataGridViewTextBoxColumn
             // 
             this.idmostDataGridViewTextBoxColumn.DataPropertyName = "idmost";
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.Moccasin;
-            this.idmostDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.Moccasin;
+            this.idmostDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle25;
             this.idmostDataGridViewTextBoxColumn.HeaderText = "idmost";
             this.idmostDataGridViewTextBoxColumn.Name = "idmostDataGridViewTextBoxColumn";
             // 
             // predkoscDataGridViewTextBoxColumn
             // 
             this.predkoscDataGridViewTextBoxColumn.DataPropertyName = "predkosc";
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.Moccasin;
-            this.predkoscDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.Moccasin;
+            this.predkoscDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle26;
             this.predkoscDataGridViewTextBoxColumn.HeaderText = "predkosc";
             this.predkoscDataGridViewTextBoxColumn.Name = "predkoscDataGridViewTextBoxColumn";
             // 
             // miejscestopDataGridViewTextBoxColumn
             // 
             this.miejscestopDataGridViewTextBoxColumn.DataPropertyName = "miejsce_stop";
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Moccasin;
-            this.miejscestopDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.Moccasin;
+            this.miejscestopDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle27;
             this.miejscestopDataGridViewTextBoxColumn.HeaderText = "miejsce_stop";
             this.miejscestopDataGridViewTextBoxColumn.Name = "miejscestopDataGridViewTextBoxColumn";
             // 
@@ -777,6 +792,177 @@
             // 
             this.pokazFx_Most_malejacoTableAdapter.ClearBeforeFill = true;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(15)))), ((int)(((byte)(52)))));
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.label19);
+            this.tabPage2.Controls.Add(this.label18);
+            this.tabPage2.Controls.Add(this.textBoxNazwaFX);
+            this.tabPage2.Controls.Add(this.richTextBox4);
+            this.tabPage2.Controls.Add(this.label15);
+            this.tabPage2.Controls.Add(this.comboBox10);
+            this.tabPage2.Controls.Add(this.comboBox11);
+            this.tabPage2.Controls.Add(this.label16);
+            this.tabPage2.Controls.Add(this.comboBox12);
+            this.tabPage2.Controls.Add(this.label17);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(380, 383);
+            this.tabPage2.TabIndex = 3;
+            this.tabPage2.Text = "Aktualizuj Efekt";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button2.Location = new System.Drawing.Point(44, 337);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(157, 35);
+            this.button2.TabIndex = 64;
+            this.button2.Text = "Aktualizuj dane dla FX";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button1.Location = new System.Drawing.Point(253, 337);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 35);
+            this.button1.TabIndex = 63;
+            this.button1.Text = "Aktualizuj FX";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label19.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label19.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label19.Location = new System.Drawing.Point(4, 142);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(38, 19);
+            this.label19.TabIndex = 62;
+            this.label19.Text = "Opis";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label18.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label18.Location = new System.Drawing.Point(40, 113);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(76, 19);
+            this.label18.TabIndex = 61;
+            this.label18.Text = "Nazwa FX";
+            // 
+            // textBoxNazwaFX
+            // 
+            this.textBoxNazwaFX.BackColor = System.Drawing.Color.Moccasin;
+            this.textBoxNazwaFX.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxNazwaFX.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazFxMostrosnacoBindingSource, "nazwa", true));
+            this.textBoxNazwaFX.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.textBoxNazwaFX.Location = new System.Drawing.Point(119, 110);
+            this.textBoxNazwaFX.Name = "textBoxNazwaFX";
+            this.textBoxNazwaFX.Size = new System.Drawing.Size(257, 26);
+            this.textBoxNazwaFX.TabIndex = 60;
+            // 
+            // richTextBox4
+            // 
+            this.richTextBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.richTextBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazFxMostrosnacoBindingSource, "opis", true));
+            this.richTextBox4.ForeColor = System.Drawing.Color.LightGray;
+            this.richTextBox4.Location = new System.Drawing.Point(44, 142);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.Size = new System.Drawing.Size(332, 179);
+            this.richTextBox4.TabIndex = 59;
+            this.richTextBox4.Text = "";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label15.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label15.Location = new System.Drawing.Point(87, 80);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(29, 19);
+            this.label15.TabIndex = 58;
+            this.label15.Text = "FX";
+            // 
+            // comboBox10
+            // 
+            this.comboBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.comboBox10.DataSource = this.pokazFxMostrosnacoBindingSource;
+            this.comboBox10.DisplayMember = "nazwa";
+            this.comboBox10.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBox10.ForeColor = System.Drawing.Color.LightGray;
+            this.comboBox10.FormattingEnabled = true;
+            this.comboBox10.Location = new System.Drawing.Point(119, 77);
+            this.comboBox10.Name = "comboBox10";
+            this.comboBox10.Size = new System.Drawing.Size(257, 27);
+            this.comboBox10.TabIndex = 57;
+            // 
+            // comboBox11
+            // 
+            this.comboBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.comboBox11.DataSource = this.pokazAktBindingSource;
+            this.comboBox11.DisplayMember = "nazwa";
+            this.comboBox11.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBox11.ForeColor = System.Drawing.Color.LightGray;
+            this.comboBox11.FormattingEnabled = true;
+            this.comboBox11.Location = new System.Drawing.Point(119, 44);
+            this.comboBox11.Name = "comboBox11";
+            this.comboBox11.Size = new System.Drawing.Size(257, 27);
+            this.comboBox11.TabIndex = 56;
+            this.comboBox11.ValueMember = "idakt";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label16.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label16.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label16.Location = new System.Drawing.Point(84, 47);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(32, 19);
+            this.label16.TabIndex = 55;
+            this.label16.Text = "Akt";
+            // 
+            // comboBox12
+            // 
+            this.comboBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.comboBox12.DataSource = this.pokazPrzedstawienieBindingSource;
+            this.comboBox12.DisplayMember = "nazwa";
+            this.comboBox12.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBox12.ForeColor = System.Drawing.Color.LightGray;
+            this.comboBox12.FormattingEnabled = true;
+            this.comboBox12.Location = new System.Drawing.Point(119, 11);
+            this.comboBox12.Name = "comboBox12";
+            this.comboBox12.Size = new System.Drawing.Size(257, 27);
+            this.comboBox12.TabIndex = 54;
+            this.comboBox12.ValueMember = "idprzed";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label17.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label17.Location = new System.Drawing.Point(17, 14);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(106, 19);
+            this.label17.TabIndex = 53;
+            this.label17.Text = "Przedstawienie: ";
+            // 
             // MostyPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -809,6 +995,8 @@
             this.panelJoystick.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarJoystick)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fxobrotowkaBindingSource)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -876,5 +1064,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idmostDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn predkoscDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn miejscestopDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox textBoxNazwaFX;
+        private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox comboBox10;
+        private System.Windows.Forms.ComboBox comboBox11;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox comboBox12;
+        private System.Windows.Forms.Label label17;
     }
 }

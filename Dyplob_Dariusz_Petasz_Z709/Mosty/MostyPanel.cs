@@ -44,7 +44,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
                     most.Top = wys;
                     most.Left = szer;
                     szer += 230;
-                    if (szer == 925) { szer = 5; wys = 310; }
+                    if (szer == 925) { szer = 5; wys = 320; }
                 }
                 else
                 {
@@ -274,7 +274,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
             {
                 if (m.Aktywacja == true)
                 {
-                    m.SetPredkosc(trackBarJoystick.Value);
+                    m.SetPredkosc((trackBarJoystick.Value)*-1);
                     m.ZmianaKrancowa();
                     //m.Odswiez();
                 }
@@ -382,7 +382,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
             {
                 int idFx_most = ((this.pokazFxMostrosnacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Most_rosnacoRow).idfx_most;
                 this.pokazFx_Most_MostTableAdapter.Fill(this.twDataSet.pokazFx_Most_Most, idFx_most);
-
+                foreach (Most m in Most.ListaMost)
+                {
+                    m.ladujBazaProgramowa(idFx_most);
+                }
             }
             catch
             {
@@ -399,6 +402,47 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
         private void buttonStartStop_MouseUp(object sender, MouseEventArgs e)
         {
             Stop();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            int idFxMost = ((this.pokazFxMostrosnacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Most_rosnacoRow).idfx_most;
+            string x = db.AktualizujFx_most(idFxMost, textBoxNazwaFX.Text, richTextBox4.Text);
+            ladujFx_Most();
+            richTextBox4.Text += " " + x;
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                int idfx = ((this.pokazFxMostmalejacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Most_malejacoRow).idfx_most;
+                foreach (Most m in Most.ListaMost)
+                {
+                    m.aktualizujFx_most_most(idfx);
+                }
+                ladujFx_Most_Most();
+            }
+            catch
+            {
+
+
+            }
         }
 
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBoxNazwa = new System.Windows.Forms.TextBox();
             this.buttonAktywacja = new System.Windows.Forms.Button();
             this.textBoxKD = new System.Windows.Forms.TextBox();
@@ -44,9 +45,10 @@
             this.buttonUp = new System.Windows.Forms.Button();
             this.textBoxWynik = new System.Windows.Forms.TextBox();
             this.panelPrzyciski = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button13 = new System.Windows.Forms.Button();
+            this.textBoxStop = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -56,21 +58,25 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
-            this.textBoxStop = new System.Windows.Forms.TextBox();
-            this.button13 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button14 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelPredkosc = new System.Windows.Forms.Panel();
             this.buttonZamknijPanelPredkosc = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.trackBarPredkosc = new System.Windows.Forms.TrackBar();
+            this.pokazFx_Most_Most_dlajednegoTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Most_Most_dlajednegoTableAdapter();
+            this.twDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
+            this.pokazFxMostMostdlajednegoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelPrzyciski.SuspendLayout();
             this.panelPredkosc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPredkosc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazFxMostMostdlajednegoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxNazwa
@@ -101,7 +107,7 @@
             this.textBoxKD.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.textBoxKD.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxKD.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBoxKD.Location = new System.Drawing.Point(0, 281);
+            this.textBoxKD.Location = new System.Drawing.Point(0, 291);
             this.textBoxKD.Name = "textBoxKD";
             this.textBoxKD.Size = new System.Drawing.Size(30, 19);
             this.textBoxKD.TabIndex = 3;
@@ -128,7 +134,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(30, 300);
+            this.panel1.Size = new System.Drawing.Size(30, 310);
             this.panel1.TabIndex = 5;
             // 
             // pictureBox1
@@ -136,7 +142,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Location = new System.Drawing.Point(2, 25);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 250);
+            this.pictureBox1.Size = new System.Drawing.Size(25, 260);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
@@ -266,39 +272,52 @@
             this.panelPrzyciski.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelPrzyciski.Location = new System.Drawing.Point(402, 0);
             this.panelPrzyciski.Name = "panelPrzyciski";
-            this.panelPrzyciski.Size = new System.Drawing.Size(161, 300);
+            this.panelPrzyciski.Size = new System.Drawing.Size(161, 310);
             this.panelPrzyciski.TabIndex = 23;
             this.panelPrzyciski.Visible = false;
             // 
-            // button1
+            // button14
             // 
-            this.button1.Location = new System.Drawing.Point(20, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button14.Location = new System.Drawing.Point(133, 0);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(30, 25);
+            this.button14.TabIndex = 22;
+            this.button14.Text = "X";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
-            // button2
+            // textBox5
             // 
-            this.button2.Location = new System.Drawing.Point(65, 35);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 30);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.textBox5.BackColor = System.Drawing.Color.Moccasin;
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.textBox5.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox5.Location = new System.Drawing.Point(0, 0);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(130, 25);
+            this.textBox5.TabIndex = 21;
+            this.textBox5.Text = "Pozycja zadana";
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button3
+            // button13
             // 
-            this.button3.Location = new System.Drawing.Point(111, 35);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(30, 30);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button13.Location = new System.Drawing.Point(20, 258);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(121, 30);
+            this.button13.TabIndex = 19;
+            this.button13.Text = "Zapisz";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // textBoxStop
+            // 
+            this.textBoxStop.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBoxStop.Location = new System.Drawing.Point(20, 215);
+            this.textBoxStop.Name = "textBoxStop";
+            this.textBoxStop.ReadOnly = true;
+            this.textBoxStop.Size = new System.Drawing.Size(121, 26);
+            this.textBoxStop.TabIndex = 18;
             // 
             // button7
             // 
@@ -390,48 +409,35 @@
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
-            // textBoxStop
+            // button3
             // 
-            this.textBoxStop.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBoxStop.Location = new System.Drawing.Point(20, 215);
-            this.textBoxStop.Name = "textBoxStop";
-            this.textBoxStop.ReadOnly = true;
-            this.textBoxStop.Size = new System.Drawing.Size(121, 26);
-            this.textBoxStop.TabIndex = 18;
+            this.button3.Location = new System.Drawing.Point(111, 35);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(30, 30);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button13
+            // button2
             // 
-            this.button13.Location = new System.Drawing.Point(20, 258);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(121, 30);
-            this.button13.TabIndex = 19;
-            this.button13.Text = "Zapisz";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.button2.Location = new System.Drawing.Point(65, 35);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(30, 30);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox5
+            // button1
             // 
-            this.textBox5.BackColor = System.Drawing.Color.Moccasin;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.textBox5.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox5.Location = new System.Drawing.Point(0, 0);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(130, 25);
-            this.textBox5.TabIndex = 21;
-            this.textBox5.Text = "Pozycja zadana";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(133, 0);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(30, 25);
-            this.button14.TabIndex = 22;
-            this.button14.Text = "X";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.button1.Location = new System.Drawing.Point(20, 35);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 30);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panelPredkosc
             // 
@@ -445,7 +451,7 @@
             this.panelPredkosc.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelPredkosc.Location = new System.Drawing.Point(297, 0);
             this.panelPredkosc.Name = "panelPredkosc";
-            this.panelPredkosc.Size = new System.Drawing.Size(105, 300);
+            this.panelPredkosc.Size = new System.Drawing.Size(105, 310);
             this.panelPredkosc.TabIndex = 24;
             this.panelPredkosc.Visible = false;
             // 
@@ -457,6 +463,7 @@
             this.buttonZamknijPanelPredkosc.TabIndex = 4;
             this.buttonZamknijPanelPredkosc.Text = "Zamknij";
             this.buttonZamknijPanelPredkosc.UseVisualStyleBackColor = true;
+            this.buttonZamknijPanelPredkosc.Click += new System.EventHandler(this.buttonZamknijPanelPredkosc_Click);
             // 
             // label3
             // 
@@ -502,6 +509,20 @@
             this.trackBarPredkosc.Scroll += new System.EventHandler(this.trackBarPredkosc_Scroll);
             this.trackBarPredkosc.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBarPredkosc_MouseUp);
             // 
+            // pokazFx_Most_Most_dlajednegoTableAdapter
+            // 
+            this.pokazFx_Most_Most_dlajednegoTableAdapter.ClearBeforeFill = true;
+            // 
+            // twDataSet
+            // 
+            this.twDataSet.DataSetName = "TWDataSet";
+            this.twDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pokazFxMostMostdlajednegoBindingSource
+            // 
+            this.pokazFxMostMostdlajednegoBindingSource.DataMember = "pokazFx_Most_Most_dlajednego";
+            this.pokazFxMostMostdlajednegoBindingSource.DataSource = this.twDataSet;
+            // 
             // Most
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -526,7 +547,7 @@
             this.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Most";
-            this.Size = new System.Drawing.Size(563, 300);
+            this.Size = new System.Drawing.Size(563, 310);
             this.Load += new System.EventHandler(this.Most_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -536,6 +557,8 @@
             this.panelPredkosc.ResumeLayout(false);
             this.panelPredkosc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPredkosc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazFxMostMostdlajednegoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -581,5 +604,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TrackBar trackBarPredkosc;
+        private TWDataSetTableAdapters.pokazFx_Most_Most_dlajednegoTableAdapter pokazFx_Most_Most_dlajednegoTableAdapter;
+        private TWDataSet twDataSet;
+        private System.Windows.Forms.BindingSource pokazFxMostMostdlajednegoBindingSource;
     }
 }

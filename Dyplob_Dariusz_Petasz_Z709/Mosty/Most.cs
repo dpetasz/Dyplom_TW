@@ -73,12 +73,19 @@ namespace Dyplom_Dariusz_Petasz_Z709
             set { aktywacja = value; }
         }
         float pozycjaZadana;
-        public float PozycjaZadana
+        float PozycjaZadana
         {
             get { return pozycjaZadana; }
             set { pozycjaZadana = value; }
         }
-
+        public float GetPozycjaZadana()
+        {
+            return PozycjaZadana;
+        }
+        public void SetPozycjaZadana(float PozycjaZadana)
+        {
+            this.PozycjaZadana = PozycjaZadana;
+        }
         int przychamowanie;
         public int Przychamowanie
         {
@@ -140,14 +147,16 @@ namespace Dyplom_Dariusz_Petasz_Z709
             InitializeComponent();
             SetId(Id);
             rysujMost.Nazwa = Nazwa;
-            this.Pozycja = Pozycja;
+            SetPozycja(Pozycja);
             this.Aktywacja = false;
             this.PredkoscMax = PredkoscMax;
-            this.Predkosc = 0;
+            SetPredkosc(0);
+            this.PozycjaZadana = GetPozycja();
             this.Przychamowanie = Przychamowanie;
             rysujMost.Wypelnienie();
+            AktywujDoPozycji();
             ListaMost.Add(this);
-
+            Odswiez();
         }
 
         public void AktywujDoPozycji()
@@ -234,24 +243,10 @@ namespace Dyplom_Dariusz_Petasz_Z709
         }
         public void JazdaJoystick()
         {
-            float x = Kg - 3, y = Kd + 3;
-            if ((Pozycja >= x) && Predkosc > 0)
+
+            if ((GetPozycja() <= Kg + 5) && GetPredkosc() < 0)
             {
-                if (GetPozycja() >= Kg && GetPredkosc() > 0)
-                {
-                    ZmianaAktywacjaJoystick();
-                    ZapiszPozycjaBaza();
-                    ZmianaKrancowa();
-                }
-                else
-                {
-                    SetPozycja(jazdaMost.jazdaJoystick(Przychamowanie, GetPozycja()));
-                    Odswiez();
-                }
-            }
-            else if ((Pozycja <= y) && Predkosc < 0)
-            {
-                if (GetPozycja() <= Kd && GetPredkosc() < 0)
+                if (GetPozycja() <= Kg && GetPredkosc() < 0)
                 {
                     ZmianaAktywacjaJoystick();
                     ZapiszPozycjaBaza();
@@ -262,21 +257,34 @@ namespace Dyplom_Dariusz_Petasz_Z709
                     SetPozycja(jazdaMost.jazdaJoystick(Przychamowanie * -1, GetPozycja()));
                     Odswiez();
                 }
+            }
+            else if ((GetPozycja() >= Kd - 5) && GetPredkosc() > 0)
+            {
+                if (GetPozycja() >= Kd && GetPredkosc() > 0)
+                {
+                    ZmianaAktywacjaJoystick();
+                    ZapiszPozycjaBaza();
+                    ZmianaKrancowa();
+                }
+                else
+                {
+                    SetPozycja(jazdaMost.jazdaJoystick(Przychamowanie, GetPozycja()));
+                    Odswiez();
+                }
 
 
             }
             else
             {
-                SetPozycja(jazdaMost.jazdaJoystick(Predkosc, GetPozycja()));
+                SetPozycja(jazdaMost.jazdaJoystick(GetPredkosc(), GetPozycja()));
                 Odswiez();
             }
         }
         public void JazdaDoPozycji()
         {
-            WczytajPozycjaZadana();
-            SetPozycja(jazdaMost.jazdaDoPozycjiDown(Predkosc, Pozycja));
-            Odswiez();
-            if (Pozycja < PozycjaZadana)
+
+            
+            if (GetPozycja() < PozycjaZadana)
             {
                 if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
                 {
@@ -284,34 +292,34 @@ namespace Dyplom_Dariusz_Petasz_Z709
                     ZmianaAktywacjaDoPozycji();
                     Odswiez();
                 }
-                else if (Pozycja > PozycjaZadana - 10)
+                else if (GetPozycja() > PozycjaZadana - 5)
                 {
-                    Pozycja = jazdaMost.jazdaDoPozycjiUp(Przychamowanie, Pozycja);
+                    SetPozycja(jazdaMost.jazdaDoPozycjiUp(Przychamowanie, Pozycja));
 
                     Odswiez();
                 }
                 else
                 {
-                    Pozycja = jazdaMost.jazdaDoPozycjiUp(Predkosc, Pozycja);
+                    SetPozycja(jazdaMost.jazdaDoPozycjiUp(Predkosc, Pozycja));
                     Odswiez();
                 }
 
             }
-            if (Pozycja > PozycjaZadana)
+            if (GetPozycja() > PozycjaZadana)
             {
                 if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
                 {
                     ZmianaAktywacjaDoPozycji();
                     Odswiez();
                 }
-                else if (Pozycja < PozycjaZadana + 10)
+                else if (GetPozycja() < PozycjaZadana + 5)
                 {
-                    Pozycja = jazdaMost.jazdaDoPozycjiDown(Przychamowanie, Pozycja);
+                    SetPozycja(jazdaMost.jazdaDoPozycjiDown(Przychamowanie, Pozycja));
                     Odswiez();
                 }
                 else
                 {
-                    Pozycja = jazdaMost.jazdaDoPozycjiDown(Predkosc, Pozycja);
+                    SetPozycja(jazdaMost.jazdaDoPozycjiDown(Predkosc, Pozycja));
                     Odswiez();
                 }
             }
@@ -319,15 +327,31 @@ namespace Dyplom_Dariusz_Petasz_Z709
         }
         public void Odswiez()
         {
-            textBoxPozycja.Text = ((float)Math.Round((Pozycja / 10), 2)).ToString() + " m";
-            textBoxPozycjaZadana.Text = ((float)Math.Round((PozycjaZadana / 10), 2)).ToString() + " m";
-            textBoxPredkosc.Text = Predkosc.ToString();
+            textBoxPozycja.Text = ((float)Math.Round((250 - Pozycja) / 10, 2)).ToString() + " m";
+            textBoxPozycjaZadana.Text = ((float)Math.Round((250 - PozycjaZadana) / 10, 2)).ToString() + " m";
+            textBoxPredkosc.Text = Math.Abs(Predkosc).ToString();
             PrzyciskAktywacja();
             ZmianaKrancowa();
             pictureBox1.Invalidate();
         }
 
-
+        public void ladujBazaProgramowa(int idFx)
+        {
+            this.pokazFx_Most_Most_dlajednegoTableAdapter.Fill(this.twDataSet.pokazFx_Most_Most_dlajednego, idFx, GetId());
+            SetPredkosc(((this.pokazFxMostMostdlajednegoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Most_Most_dlajednegoRow).predkosc);
+            SetPozycjaZadana((float)((this.pokazFxMostMostdlajednegoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Most_Most_dlajednegoRow).miejsce_stop);
+            Odswiez();
+        }
+        public void aktualizujFx_most_most(int idFx)
+        {
+            try
+            {
+                this.pokazFx_Most_Most_dlajednegoTableAdapter.Fill(this.twDataSet.pokazFx_Most_Most_dlajednego, idFx, GetId());
+                int idFx_most_most = ((this.pokazFxMostMostdlajednegoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Most_Most_dlajednegoRow).idfx_most_most;
+                textBoxWynik.Text = db.AktualizujFX_most_most(idFx_most_most, GetPredkosc(), GetPozycja());
+            }
+            catch {}
+        }
 
         public void ZmianaAktywacja()
         {
@@ -344,8 +368,8 @@ namespace Dyplom_Dariusz_Petasz_Z709
         }
         public void ZmianaKrancowa()
         {
-            if (GetPozycja() >= Kg) { textBoxKG.BackColor = Color.Red; } else { textBoxKG.BackColor = Color.DarkSeaGreen; }
-            if (GetPozycja() <= Kd) { textBoxKD.BackColor = Color.Red; } else { textBoxKD.BackColor = Color.DarkSeaGreen; }
+            if (GetPozycja() <= Kg) { textBoxKG.BackColor = Color.Red; } else { textBoxKG.BackColor = Color.DarkSeaGreen; }
+            if (GetPozycja() >= Kd) { textBoxKD.BackColor = Color.Red; } else { textBoxKD.BackColor = Color.DarkSeaGreen; }
         }
 
         private void textBoxPozycjaZadana_MouseClick(object sender, MouseEventArgs e)
@@ -389,13 +413,17 @@ namespace Dyplom_Dariusz_Petasz_Z709
         {
             try
             {
-                PozycjaZadana = float.Parse(textBoxStop.Text.ToString())*10;
-                if (PozycjaZadana  < Kd || PozycjaZadana  > Kg)
+                PozycjaZadana = 250 - (float.Parse(textBoxStop.Text.ToString()) * 10);
+                if (PozycjaZadana > Kd || PozycjaZadana < Kg)
                 {
                     textBoxWynik.Text = "Przedział od " + Kd / 10 + " do " + Kg;
                     textBoxStop.Clear();
                 }
-                else textBoxPozycjaZadana.Text = (PozycjaZadana/10).ToString() + " m";
+                else
+                {
+                    textBoxPozycjaZadana.Text = (PozycjaZadana / 10).ToString() + " m";
+                    Odswiez();
+                }
             }
             catch
             {
@@ -412,7 +440,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            textBoxStop.Text += button1.Text; 
+            textBoxStop.Text += button1.Text;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -490,12 +518,20 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
         private void trackBarPredkosc_Scroll(object sender, EventArgs e)
         {
-            Predkosc = trackBarPredkosc.Value;
+            SetPredkosc(trackBarPredkosc.Value);
+            Odswiez();
         }
 
         private void trackBarPredkosc_MouseUp(object sender, MouseEventArgs e)
         {
             panelPredkosc.Visible = false;
+            trackBarPredkosc.Value = GetPredkosc();
+        }
+
+        private void buttonZamknijPanelPredkosc_Click(object sender, EventArgs e)
+        {
+            panelPredkosc.Visible = false;
+            
         }
     }
 }
