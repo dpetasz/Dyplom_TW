@@ -103,6 +103,7 @@
             this.pokazFx_Wozek_malejacoTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Wozek_malejacoTableAdapter();
             this.pokazFx_Wozek_WozekTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Wozek_WozekTableAdapter();
             this.pokazFxWozekrosnacoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.textBoxWynikZapisu = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControlProgramowa.SuspendLayout();
             this.tabPageBazaDanych.SuspendLayout();
@@ -364,6 +365,7 @@
             this.buttonDodajFX.TabIndex = 88;
             this.buttonDodajFX.Text = "Dodaj FX";
             this.buttonDodajFX.UseVisualStyleBackColor = false;
+            this.buttonDodajFX.Click += new System.EventHandler(this.buttonDodajFX_Click);
             // 
             // buttonZapiszFx_most_most
             // 
@@ -799,6 +801,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.textBoxWynikZapisu);
             this.panel1.Controls.Add(this.buttonProgramowa);
             this.panel1.Controls.Add(this.buttonJazdaDoPozycji);
             this.panel1.Controls.Add(this.buttonManual);
@@ -942,6 +945,17 @@
             this.pokazFxWozekrosnacoBindingSource1.DataMember = "pokazFx_Wozek_rosnaco";
             this.pokazFxWozekrosnacoBindingSource1.DataSource = this.tWDataSet;
             // 
+            // textBoxWynikZapisu
+            // 
+            this.textBoxWynikZapisu.BackColor = System.Drawing.Color.Moccasin;
+            this.textBoxWynikZapisu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxWynikZapisu.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.textBoxWynikZapisu.Location = new System.Drawing.Point(33, 211);
+            this.textBoxWynikZapisu.Name = "textBoxWynikZapisu";
+            this.textBoxWynikZapisu.ReadOnly = true;
+            this.textBoxWynikZapisu.Size = new System.Drawing.Size(414, 26);
+            this.textBoxWynikZapisu.TabIndex = 87;
+            // 
             // WozkiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -976,6 +990,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panelJoystick.ResumeLayout(false);
             this.panelJoystick.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarJoystick)).EndInit();
@@ -1060,5 +1075,6 @@
         private TWDataSetTableAdapters.pokazFx_Wozek_malejacoTableAdapter pokazFx_Wozek_malejacoTableAdapter;
         private TWDataSetTableAdapters.pokazFx_Wozek_WozekTableAdapter pokazFx_Wozek_WozekTableAdapter;
         private System.Windows.Forms.BindingSource pokazFxWozekrosnacoBindingSource1;
+        private System.Windows.Forms.TextBox textBoxWynikZapisu;
     }
 }

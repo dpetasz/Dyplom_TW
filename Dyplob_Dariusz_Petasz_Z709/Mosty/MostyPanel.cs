@@ -22,7 +22,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
         }
         void LadujMost()
         {
-
+            
             int wys = 5;
             int szer = 5;
             foreach (DataRow m in twDataSet.pokazMosty.Rows)

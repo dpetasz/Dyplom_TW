@@ -17,7 +17,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
         Graphics g;
 
-
+        IZapiszWozek db = new ZapiszFxWozek();
         PokazPrzedstawienia przedstawienia = new PokazPrzedstawienia();
 
         bool joystick = false, doPozycji = false, manualna = false, programowa = false;
@@ -44,8 +44,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
                 Wozek wozek = new Wozek(p, Convert.ToInt32(w["predkosc_max"].ToString()), w["nazwa"].ToString(), (Convert.ToInt32(w["idwozek"].ToString())));
                 wozek.Przychamowanie = Convert.ToInt32(w["przychamowanie"].ToString());
-                wozek.Kd = (float)(Convert.ToDouble(w["krancowa_tyl"].ToString()));
-                wozek.Kg = (float)(Convert.ToDouble(w["krancowa_przod"].ToString()));
+                wozek.Kd = (float)(Convert.ToDouble(w["krancowa_przod"].ToString()));
+                wozek.Kg = (float)(Convert.ToDouble(w["krancowa_tyl"].ToString()));
                 wozek.Parent = pictureBox1;
                 wozek.Top = wys;
                 wozek.Left = 10;
@@ -89,7 +89,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         private void WozkiForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'tWDataSet.pokazPrzedstawienie' table. You can move, or remove it, as needed.
-            this.pokazPrzedstawienieTableAdapter.Fill(this.tWDataSet.pokazPrzedstawienie);
+            //this.pokazPrzedstawienieTableAdapter.Fill(this.tWDataSet.pokazPrzedstawienie);
             this.pokazWozkiTableAdapter.Fill(this.tWDataSet.pokazWozki);
             LadujWozek();
         }
@@ -109,17 +109,19 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             {
                 if (w.Aktywacja == true)
                 {
-                    if (w.Pozycja >= 600 && trackBarJoystick.Value > 0)
+                    if (joystick == true)
                     {
-                        w.Aktywacja = false;
-                        w.LadujAktywuj();
+                        w.JazdaJoystick();
                     }
-                    if (w.Pozycja <= 0 && trackBarJoystick.Value < 0)
+                    else if (manualna == true)
                     {
-                        w.Aktywacja = false;
-                        w.LadujAktywuj();
+                        w.JazdaManual();
                     }
-                    w.JazdaJoystick();
+                    else if (doPozycji == true || programowa == true)
+                    {
+                        w.JazdaDoPozycji();
+                    }
+
                 }
             }
             pictureBox1.Invalidate();
@@ -159,10 +161,16 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         {
             timer1.Enabled = false;
             trackBarJoystick.Value = 0;
-            foreach(Wozek w in Wozek.ListaWozek)
+            textBoxWynikZapisu.Clear();
+            foreach (Wozek w in Wozek.ListaWozek)
             {
-                w.Predkosc = trackBarJoystick.Value;
-                w.LadujAktywuj();
+                if (w.Aktywacja == true)
+                {
+                    w.SetPredkosc(trackBarJoystick.Value);
+                    textBoxWynikZapisu.Text +=" / " +  w.ZapiszPozycjaBaza() ;
+                    w.Odswiez();
+                }
+
             }
         }
 
@@ -397,6 +405,21 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         private void buttonManual_Click(object sender, EventArgs e)
         {
             LadujManual();
+        }
+
+        private void buttonDodajFX_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idAkt = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
+                //textBoxWynik.Text = db.DodajFx_Wozek(idAkt, richTextBox3.Text);
+                //ladujFx_Most();
+            }
+            catch
+            {
+
+
+            }
         }
     }
 }

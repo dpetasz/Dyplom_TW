@@ -453,22 +453,24 @@ namespace Dyplom_Dariusz_Petasz_Z709
         {
             try
             {
-                PozycjaZadana = 250 - (float.Parse(textBoxStop.Text.ToString()) * 10);
-                if (PozycjaZadana > Kd || PozycjaZadana < Kg)
+                SetPozycjaZadana(250 - (float.Parse(textBoxStop.Text.ToString()) * 10));
+                if (GetPozycjaZadana() > Kd || GetPozycjaZadana() < Kg)
                 {
-                    textBoxWynik.Text = "Przedział od " + Kd / 10 + " do " + Kg;
+                    MessageBox.Show("Przedział od " + Kd / 10 + " do " + Kg);
                     textBoxStop.Clear();
+                    SetPozycjaZadana(GetPozycja());
+                    Odswiez();
                 }
                 else
                 {
-                    textBoxPozycjaZadana.Text = (PozycjaZadana / 10).ToString() + " m";
+                    textBoxPozycjaZadana.Text = (GetPozycjaZadana() / 10).ToString() + " m";
                     Odswiez();
                 }
             }
             catch
             {
-                PozycjaZadana = Pozycja;
-                textBoxWynik.Text = "Zły format liczby";
+                SetPozycjaZadana(GetPozycja());
+                MessageBox.Show("To nie są liczby");
                 textBoxStop.Clear();
             }
 

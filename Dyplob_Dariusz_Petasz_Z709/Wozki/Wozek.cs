@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dyplom_Dariusz_Petasz_Z709.BD_TW;
 
 namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 {
@@ -16,6 +17,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
         RysujWozek rysujWozek = new RysujWozek();
         JazdaWozek jazdaWozek = new JazdaWozek();
+        IZapiszWozek db = new ZapiszFxWozek();
         Graphics g;
         bool doPozycji;
         public bool DoPozycji
@@ -156,7 +158,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             rysujWozek.Nazwa = name;
             this.Pozycja = x;
             this.PredkoscMax = vmax;
-
+            SetPozycjaZadana(GetPozycja());
             this.Aktywacja = false;
             this.Kierunek = false;
             this.Przychamowanie = 10;
@@ -165,8 +167,9 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             this.Predkosc = 0;
             LadujPrzyciski();
             rysujWozek.Wypelnienie();
+
         }
-private void Wozek_Paint(object sender, PaintEventArgs e)
+        private void Wozek_Paint(object sender, PaintEventArgs e)
         {
             g = e.Graphics;
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
@@ -280,20 +283,42 @@ private void Wozek_Paint(object sender, PaintEventArgs e)
         }
         public void JazdaJoystick()
         {
-            if (GetPozycja() >= 590 && GetPredkosc() > 0)
+            if (GetPozycja() <= Kg + 10 && GetPredkosc() < 0)
             {
-                SetPozycja(jazdaWozek.jazdaJoystick(Przychamowanie, GetPozycja()));
-                LadujPrzyciski();
+                if (GetPozycja() <= Kg)
+                {
+                    ZmianaAktywacja();
+                    LadujAktywuj();
+                    ZapiszPozycjaBaza();
+                    Odswiez();
+                }
+                else
+                {
+                    SetPozycja(jazdaWozek.jazdaJoystick(Przychamowanie * -1, GetPozycja()));
+                    Odswiez();
+                }
+
             }
-            else if (GetPozycja() <= 10 && GetPredkosc() < 0)
+            else if (GetPozycja() >= Kd - 10 && GetPredkosc() > 0)
             {
-                SetPozycja(jazdaWozek.jazdaJoystick(Przychamowanie * -1, GetPozycja()));
-                LadujPrzyciski();
+                if (GetPozycja() >= Kd)
+                {
+                    ZmianaAktywacja();
+                    LadujAktywuj();
+                    ZapiszPozycjaBaza();
+                    Odswiez();
+
+                }
+                else
+                {
+                    SetPozycja(jazdaWozek.jazdaJoystick(Przychamowanie, GetPozycja()));
+                    Odswiez();
+                }
             }
             else
             {
                 SetPozycja(jazdaWozek.jazdaJoystick(GetPredkosc(), GetPozycja()));
-                LadujPrzyciski();
+                Odswiez();
             }
         }
 
@@ -304,7 +329,8 @@ private void Wozek_Paint(object sender, PaintEventArgs e)
                 if (GetPozycja() <= Kg)
                 {
                     ZmianaAktywacja();
-                    //ZapiszPozycjaBaza();
+                    ZapiszPozycjaBaza();
+                    LadujAktywuj();
                 }
                 else
                 {
@@ -318,7 +344,8 @@ private void Wozek_Paint(object sender, PaintEventArgs e)
                 if (GetPozycja() >= Kd)
                 {
                     ZmianaAktywacja();
-                    //ZapiszPozycjaBaza();
+                    ZapiszPozycjaBaza();
+                    LadujAktywuj();
                 }
                 else
                 {
@@ -344,6 +371,8 @@ private void Wozek_Paint(object sender, PaintEventArgs e)
                 {
                     Predkosc = 0;
                     ZmianaAktywacja();
+
+                    LadujAktywuj();
                     Odswiez();
                 }
                 else if (GetPozycja() > PozycjaZadana - 5)
@@ -364,6 +393,7 @@ private void Wozek_Paint(object sender, PaintEventArgs e)
                 if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
                 {
                     ZmianaAktywacja();
+                    LadujAktywuj();
                     Odswiez();
                 }
                 else if (GetPozycja() < PozycjaZadana + 5)
@@ -388,13 +418,13 @@ private void Wozek_Paint(object sender, PaintEventArgs e)
         {
             if (GetKierunek() == false)
             {
-                buttonLewo.BackColor = Color.IndianRed;
+                buttonLewo.BackColor = Color.Green;
                 buttonPrawo.BackColor = Color.SkyBlue;
             }
             else
             {
                 buttonLewo.BackColor = Color.SkyBlue;
-                buttonPrawo.BackColor = Color.IndianRed;
+                buttonPrawo.BackColor = Color.Green;
             }
         }
 
@@ -467,9 +497,151 @@ private void Wozek_Paint(object sender, PaintEventArgs e)
             PrzyciskAktywacja();
             Odswiez();
         }
-        public string Wynik(string wynik)
+
+        public string ZapiszPozycjaBaza()
         {
-            return wynik;
+            try
+            {
+                return db.ZapiszPozycja(GetId(), GetPozycja());
+            }
+            catch (Exception)
+            {
+
+                return "Błąd bazy danych";
+            }
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPredkosc_ChangeUICues(object sender, UICuesEventArgs e)
+        {
+
+        }
+
+        private void textBoxPredkosc_Click(object sender, EventArgs e)
+        {
+            trackBarPredkosc.Value = GetPredkosc();
+            labelPredkosc.Text = trackBarPredkosc.Value.ToString();
+            panelPredkosc.Visible = true;
+            panelPredkosc.Left = 1088;
+        }
+
+        private void trackBarPredkosc_Scroll(object sender, EventArgs e)
+        {
+            labelPredkosc.Text = trackBarPredkosc.Value.ToString();
+            SetPredkosc(trackBarPredkosc.Value);
+            Odswiez();
+        }
+
+        private void trackBarPredkosc_MouseUp(object sender, MouseEventArgs e)
+        {
+            panelPredkosc.Visible = false;
+        }
+
+        private void buttonZamknijPanelPredkosc_Click(object sender, EventArgs e)
+        {
+            panelPredkosc.Visible = false;
+        }
+        public void WczytajPozycjaZadana()
+        {
+            try
+            {
+                SetPozycjaZadana((float.Parse(textBox4.Text.ToString()) * 20));
+                if (GetPozycjaZadana() > Kd || GetPozycjaZadana() < Kg)
+                {
+                    MessageBox.Show("Przedział od " + Kd/20 + " do " + Kg/20);
+                    textBoxStop.Clear();
+                    SetPozycjaZadana(GetPozycja());
+                    Odswiez();
+                }
+                else
+                {
+                    textBoxStop.Text = (GetPozycjaZadana() / 20).ToString() + " m";
+                    Odswiez();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("To nie są liczby" );
+                SetPozycjaZadana(GetPozycja());
+                textBoxStop.Clear();
+                Odswiez();
+            }
+        }
+        private void button13_Click(object sender, EventArgs e)
+        {
+            WczytajPozycjaZadana();
+            panelPozycjaZadana.Visible = false;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox4.Text += button1.Text;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox4.Text += button2.Text;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox4.Text += button3.Text;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            textBox4.Text += button12.Text;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            textBox4.Text += button11.Text;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            textBox4.Text += button10.Text;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox4.Text += button4.Text;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox4.Text += button5.Text;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            textBox4.Text += button6.Text;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            textBox4.Text += button9.Text;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            textBox4.Text += button8.Text;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBox4.Clear();
+        }
+
+        private void textBoxStop_Click(object sender, EventArgs e)
+        {
+            textBox4.Clear();
+            panelPozycjaZadana.Visible = true;
+            panelPozycjaZadana.Left = 1088;
         }
 
     }
