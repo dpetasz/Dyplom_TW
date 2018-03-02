@@ -17,7 +17,44 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         RysujWozek rysujWozek = new RysujWozek();
         JazdaWozek jazdaWozek = new JazdaWozek();
         Graphics g;
-
+        bool doPozycji;
+        public bool DoPozycji
+        {
+            get { return doPozycji; }
+            set { doPozycji = value; }
+        }
+        bool programowa;
+        public bool Programowa
+        {
+            get { return programowa; }
+            set { programowa = value; }
+        }
+        bool joystick;
+        public bool Joystick
+        {
+            get { return joystick; }
+            set { joystick = value; }
+        }
+        bool manualna;
+        public bool Manualna
+        {
+            get { return manualna; }
+            set { manualna = value; }
+        }
+        int id;
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        public int GetId()
+        {
+            return Id;
+        }
+        public void SetId(int Id)
+        {
+            this.Id = Id;
+        }
         int predkoscMax;
         int PredkoscMax
         {
@@ -29,6 +66,26 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         {
             get { return kierunek; }
             set { kierunek = value; }
+        }
+        float kg;
+        public float Kg
+        {
+            get { return kg; }
+            set { kg = value; }
+        }
+        float kd;
+        public float Kd
+        {
+            get { return kd; }
+            set { kd = value; }
+        }
+        public bool GetKierunek()
+        {
+            return Kierunek;
+        }
+        public void SetKierunek(bool Kierunek)
+        {
+            this.Kierunek = Kierunek;
         }
         bool aktywacja;
         public bool Aktywacja
@@ -49,12 +106,43 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             get { return pozycja; }
             set { pozycja = value; }
         }
+        public float GetPozycja()
+        {
+            return Pozycja;
+        }
 
+        public void SetPozycja(float Pozycja)
+        {
+            this.Pozycja = Pozycja;
+        }
         int predkosc;
         public int Predkosc
         {
             get { return predkosc; }
             set { predkosc = value; }
+        }
+        public int GetPredkosc()
+        {
+            return Predkosc;
+        }
+        public void SetPredkosc(int Predkosc)
+        {
+            this.Predkosc = Predkosc;
+        }
+
+        float pozycjaZadana;
+        float PozycjaZadana
+        {
+            get { return pozycjaZadana; }
+            set { pozycjaZadana = value; }
+        }
+        public float GetPozycjaZadana()
+        {
+            return PozycjaZadana;
+        }
+        public void SetPozycjaZadana(float PozycjaZadana)
+        {
+            this.PozycjaZadana = PozycjaZadana;
         }
         public Wozek()
         {
@@ -64,26 +152,21 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         {
             InitializeComponent();
 
-            rysujWozek.Id = idW;
+            SetId(idW);
             rysujWozek.Nazwa = name;
             this.Pozycja = x;
             this.PredkoscMax = vmax;
 
             this.Aktywacja = false;
             this.Kierunek = false;
-            //this.Przychamowanie = 10;
+            this.Przychamowanie = 10;
             rysujWozek.Wypelnienie();
             ListaWozek.Add(this);
             this.Predkosc = 0;
             LadujPrzyciski();
             rysujWozek.Wypelnienie();
         }
-
-
-
-
-
-        private void Wozek_Paint(object sender, PaintEventArgs e)
+private void Wozek_Paint(object sender, PaintEventArgs e)
         {
             g = e.Graphics;
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
@@ -92,11 +175,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             WozekJazda(g, Pozycja);
 
         }
-
-
-
-
-
         public void WozekJazda(Graphics g, float x)
         {
 
@@ -118,13 +196,56 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             //g.DrawRectangle(pioro, 480, 20, 140, 360);
             g.DrawRectangle(rysujWozek.Pioro, 600, 0, 460, 105);
         }
+
+        public void AktywujDoPozycji()
+        {
+            DoPozycji = true;
+            Manualna = false;
+            Joystick = false;
+            Programowa = false;
+            Aktywacja = false;
+            textBoxStop.ReadOnly = false;
+            Odswiez();
+        }
+
+        public void AktywujManualna()
+        {
+            DoPozycji = false;
+            Manualna = true;
+            Joystick = false;
+            Programowa = false;
+            Aktywacja = false;
+            textBoxStop.ReadOnly = true;
+            Odswiez();
+        }
+        public void AktywujJoystick()
+        {
+            DoPozycji = false;
+            Manualna = false;
+            Joystick = true;
+            Programowa = false;
+            Aktywacja = false;
+            textBoxStop.ReadOnly = true;
+            Odswiez();
+        }
+        public void AktywujProgamowa()
+        {
+            DoPozycji = true;
+            Manualna = false;
+            Joystick = false;
+            Programowa = true;
+            Aktywacja = false;
+            textBoxStop.ReadOnly = false;
+            Odswiez();
+        }
         void LadujPrzyciski()
         {
-            textBoxPozycja.Text = (Pozycja/20).ToString();
-            textBoxPredkosc.Text = Predkosc.ToString();
-            buttonAktywuj.Text = "Aktywuj W-" + rysujWozek.Id;
+            textBoxPozycja.Text = ((float)Math.Round(GetPozycja() / 20, 2)).ToString() + " m";
+            textBoxStop.Text = ((float)Math.Round(GetPozycjaZadana() / 20, 2)).ToString() + " m";
+            textBoxPredkosc.Text = Math.Abs(Predkosc).ToString();
+            buttonAktywacja.Text = "Aktywuj W-" + GetId();
             LadujAktywuj();
-            LadujKierunek();
+            PrzyciskKierunek();
             Invalidate();
         }
 
@@ -144,57 +265,136 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         void Green()
         {
 
-            buttonAktywuj.BackColor = Color.SkyBlue;
-            buttonAktywuj.Text = "Aktywuj W-" + rysujWozek.Id;
+            buttonAktywacja.BackColor = Color.SkyBlue;
+            buttonAktywacja.Text = "Aktywuj W-" + GetId();
             rysujWozek.Wypelnienie();
             Invalidate();
         }
         void Red()
         {
 
-            buttonAktywuj.BackColor = Color.IndianRed;
-            buttonAktywuj.Text = "Aktywny W-" + rysujWozek.Id;
+            buttonAktywacja.BackColor = Color.IndianRed;
+            buttonAktywacja.Text = "Aktywny W-" + GetId();
             rysujWozek.WypelnienieJazda();
             Invalidate();
         }
-        public void Joystick()
+        public void JazdaJoystick()
         {
-            if (Pozycja >= 590 && Predkosc > 0)
+            if (GetPozycja() >= 590 && GetPredkosc() > 0)
             {
-                Pozycja = jazdaWozek.jazdaJoystick(Przychamowanie, Pozycja);
+                SetPozycja(jazdaWozek.jazdaJoystick(Przychamowanie, GetPozycja()));
                 LadujPrzyciski();
-            } else if (Pozycja <= 10 && Predkosc < 0)
+            }
+            else if (GetPozycja() <= 10 && GetPredkosc() < 0)
             {
-                Pozycja = jazdaWozek.jazdaJoystick(Przychamowanie * -1, Pozycja);
+                SetPozycja(jazdaWozek.jazdaJoystick(Przychamowanie * -1, GetPozycja()));
                 LadujPrzyciski();
             }
             else
             {
-                Pozycja = jazdaWozek.jazdaJoystick(Predkosc, Pozycja);
+                SetPozycja(jazdaWozek.jazdaJoystick(GetPredkosc(), GetPozycja()));
                 LadujPrzyciski();
             }
         }
 
+        public void JazdaManual()
+        {
+            if (GetPozycja() <= Kg + 5 && GetKierunek() == false)
+            {
+                if (GetPozycja() <= Kg)
+                {
+                    ZmianaAktywacja();
+                    //ZapiszPozycjaBaza();
+                }
+                else
+                {
+                    SetPozycja(jazdaWozek.jazdaManual(GetKierunek(), Przychamowanie, GetPozycja()));
+                    Odswiez();
+                }
+
+            }
+            else if (GetPozycja() >= Kd - 5 && GetKierunek() == true)
+            {
+                if (GetPozycja() >= Kd)
+                {
+                    ZmianaAktywacja();
+                    //ZapiszPozycjaBaza();
+                }
+                else
+                {
+                    SetPozycja(jazdaWozek.jazdaManual(GetKierunek(), Przychamowanie, GetPozycja()));
+                    Odswiez();
+                }
+            }
+            else
+            {
+                SetPozycja(jazdaWozek.jazdaManual(GetKierunek(), GetPredkosc(), GetPozycja()));
+                Odswiez();
+            }
+
+        }
+
+        public void JazdaDoPozycji()
+        {
+
+
+            if (GetPozycja() < PozycjaZadana)
+            {
+                if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
+                {
+                    Predkosc = 0;
+                    ZmianaAktywacja();
+                    Odswiez();
+                }
+                else if (GetPozycja() > PozycjaZadana - 5)
+                {
+                    SetPozycja(jazdaWozek.jazdaDoPozycjiUp(Przychamowanie, Pozycja));
+
+                    Odswiez();
+                }
+                else
+                {
+                    SetPozycja(jazdaWozek.jazdaDoPozycjiUp(Predkosc, Pozycja));
+                    Odswiez();
+                }
+
+            }
+            if (GetPozycja() > PozycjaZadana)
+            {
+                if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
+                {
+                    ZmianaAktywacja();
+                    Odswiez();
+                }
+                else if (GetPozycja() < PozycjaZadana + 5)
+                {
+                    SetPozycja(jazdaWozek.jazdaDoPozycjiDown(Przychamowanie, Pozycja));
+                    Odswiez();
+                }
+                else
+                {
+                    SetPozycja(jazdaWozek.jazdaDoPozycjiDown(Predkosc, Pozycja));
+                    Odswiez();
+                }
+            }
+
+        }
         private void Wozek_Load(object sender, EventArgs e)
         {
 
         }
 
-        void LadujKierunek()
+        void PrzyciskKierunek()
         {
-            if (Kierunek == false)
+            if (GetKierunek() == false)
             {
-                buttonLewo.BackColor = Color.DarkSeaGreen;
+                buttonLewo.BackColor = Color.IndianRed;
                 buttonPrawo.BackColor = Color.SkyBlue;
-                buttonLewo.Enabled = false;
-                buttonPrawo.Enabled = true;
             }
             else
             {
                 buttonLewo.BackColor = Color.SkyBlue;
-                buttonPrawo.BackColor = Color.DarkSeaGreen;
-                buttonPrawo.Enabled = false;
-                buttonLewo.Enabled = true;
+                buttonPrawo.BackColor = Color.IndianRed;
             }
         }
 
@@ -217,30 +417,60 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
         private void buttonLewo_Click(object sender, EventArgs e)
         {
-            if (Kierunek == true)
-            {
-                Kierunek = false;
-                LadujKierunek();
-            }
-            else
-            {
-                Kierunek = true;
-                LadujKierunek();
-            }
+
+            Kierunek = false;
+            PrzyciskKierunek();
+
         }
 
         private void buttonPrawo_Click(object sender, EventArgs e)
         {
-            if (Kierunek == true)
-            {
-                Kierunek = false;
-                LadujKierunek();
-            }
-            else
-            {
-                Kierunek = true;
-                LadujKierunek();
-            }
+
+            Kierunek = true;
+            PrzyciskKierunek();
+
         }
+        public void ladujBazaProgramowa(int idFx_wozek)
+        {
+            try
+            {
+                this.pokazFx_Wozek_Wozek_dlajednegoTableAdapter.Fill(this.tWDataSet.pokazFx_Wozek_Wozek_dlajednego, idFx_wozek, GetId());
+                SetPredkosc(((this.pokazFxWozekWozekdlajednegoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Wozek_Wozek_dlajednegoRow).predkosc);
+                SetPozycjaZadana((float)((this.pokazFxWozekWozekdlajednegoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Wozek_Wozek_dlajednegoRow).miejsce_stop);
+                Odswiez();
+            }
+            catch (Exception)
+            {
+            }
+
+        }
+        public void Odswiez()
+        {
+            textBoxPozycja.Text = ((float)Math.Round(GetPozycja() / 20, 2)).ToString() + " m";
+            textBoxStop.Text = ((float)Math.Round(GetPozycjaZadana() / 20, 2)).ToString() + " m";
+            textBoxPredkosc.Text = Math.Abs(Predkosc).ToString();
+            PrzyciskAktywacja();
+            Invalidate();
+        }
+        void PrzyciskAktywacja()
+        {
+            if (Aktywacja == false)
+            {
+                buttonAktywacja.BackColor = Color.SkyBlue;
+            }
+            else buttonAktywacja.BackColor = Color.IndianRed;
+        }
+        public void ZmianaAktywacja()
+        {
+            Aktywacja = false;
+            Predkosc = 0;
+            PrzyciskAktywacja();
+            Odswiez();
+        }
+        public string Wynik(string wynik)
+        {
+            return wynik;
+        }
+
     }
 }

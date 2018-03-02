@@ -225,6 +225,7 @@
             this.buttonDown.Size = new System.Drawing.Size(66, 52);
             this.buttonDown.TabIndex = 10;
             this.buttonDown.UseVisualStyleBackColor = false;
+            this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click);
             // 
             // buttonUp
             // 
@@ -236,6 +237,7 @@
             this.buttonUp.Size = new System.Drawing.Size(66, 52);
             this.buttonUp.TabIndex = 9;
             this.buttonUp.UseVisualStyleBackColor = false;
+            this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
             // 
             // textBoxWynik
             // 

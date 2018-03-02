@@ -66,6 +66,14 @@ namespace Dyplom_Dariusz_Petasz_Z709
             get { return kierunek; }
             set { kierunek = value; }
         }
+        public bool GetKierunek()
+        {
+            return Kierunek;
+        }
+        public void SetKierunek(bool Kierunek)
+        {
+            this.Kierunek = Kierunek;
+        }
         bool aktywacja;
         public bool Aktywacja
         {
@@ -117,6 +125,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
             set { kg = value; }
         }
         float kd;
+
         public float Kd
         {
             get { return kd; }
@@ -153,6 +162,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
             SetPredkosc(0);
             this.PozycjaZadana = GetPozycja();
             this.Przychamowanie = Przychamowanie;
+            SetKierunek(true);
             rysujMost.Wypelnienie();
             AktywujDoPozycji();
             ListaMost.Add(this);
@@ -238,8 +248,41 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
         public void JazdaManual()
         {
-            SetPozycja(jazdaMost.jazdaManual(Kierunek, Predkosc, Pozycja));
-            Odswiez();
+            if (GetPozycja() <= Kg + 5 && GetKierunek() == false)
+            {
+                if (GetPozycja() <= Kg)
+                {
+                    ZmianaAktywacjaManual();
+                    ZapiszPozycjaBaza();
+                    ZmianaKrancowa();
+                }
+                else
+                {
+                    SetPozycja(jazdaMost.jazdaManual(GetKierunek(), Przychamowanie, GetPozycja()));
+                    Odswiez();
+                }
+
+            }
+            else if (GetPozycja() >= Kd - 5 && GetKierunek() == true)
+            {
+                if (GetPozycja() >= Kd)
+                {
+                    ZmianaAktywacjaManual();
+                    ZapiszPozycjaBaza();
+                    ZmianaKrancowa();
+                }
+                else
+                {
+                    SetPozycja(jazdaMost.jazdaManual(GetKierunek(), Przychamowanie, GetPozycja()));
+                    Odswiez();
+                }
+            }
+            else
+            {
+                SetPozycja(jazdaMost.jazdaManual(GetKierunek(), GetPredkosc(), GetPozycja()));
+                Odswiez();
+            }
+
         }
         public void JazdaJoystick()
         {
@@ -283,7 +326,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
         public void JazdaDoPozycji()
         {
 
-            
+
             if (GetPozycja() < PozycjaZadana)
             {
                 if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
@@ -350,7 +393,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
                 int idFx_most_most = ((this.pokazFxMostMostdlajednegoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Most_Most_dlajednegoRow).idfx_most_most;
                 textBoxWynik.Text = db.AktualizujFX_most_most(idFx_most_most, GetPredkosc(), GetPozycja());
             }
-            catch {}
+            catch { }
         }
 
         public void ZmianaAktywacja()
@@ -377,10 +420,9 @@ namespace Dyplom_Dariusz_Petasz_Z709
             textBoxPozycjaZadana.Clear();
             panelPrzyciski.Visible = true;
         }
-        public void ZmianaManual()
+        public void ZmianaAktywacjaManual()
         {
             Aktywacja = false;
-            Manualna = true;
             Predkosc = 0;
             textBoxWynik.BackColor = Color.Moccasin;
             PrzyciskAktywacja();
@@ -389,7 +431,6 @@ namespace Dyplom_Dariusz_Petasz_Z709
         public void ZmianaAktywacjaDoPozycji()
         {
             Aktywacja = false;
-
             Predkosc = 0;
             textBoxWynik.BackColor = Color.Moccasin;
             PrzyciskAktywacja();
@@ -397,7 +438,6 @@ namespace Dyplom_Dariusz_Petasz_Z709
         }
         public void ZmianaAktywacjaJoystick()
         {
-
             Aktywacja = false;
             Predkosc = 0;
             textBoxWynik.BackColor = Color.Moccasin;
@@ -531,7 +571,32 @@ namespace Dyplom_Dariusz_Petasz_Z709
         private void buttonZamknijPanelPredkosc_Click(object sender, EventArgs e)
         {
             panelPredkosc.Visible = false;
-            
+
+        }
+
+        private void buttonUp_Click(object sender, EventArgs e)
+        {
+            SetKierunek(false);
+            PrzyciskKierunek();
+        }
+
+        private void buttonDown_Click(object sender, EventArgs e)
+        {
+            SetKierunek(true);
+            PrzyciskKierunek();
+        }
+        void PrzyciskKierunek()
+        {
+            if (GetKierunek() == false)
+            {
+                buttonUp.BackColor = Color.IndianRed;
+                buttonDown.BackColor = Color.SkyBlue;
+            }
+            else
+            {
+                buttonUp.BackColor = Color.SkyBlue;
+                buttonDown.BackColor = Color.IndianRed;
+            }
         }
     }
 }

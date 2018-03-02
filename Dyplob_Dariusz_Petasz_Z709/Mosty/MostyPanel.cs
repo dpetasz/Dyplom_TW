@@ -95,8 +95,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
 
 
             programowa = true;
-            buttonPrgramowa.BackColor = Color.IndianRed;
-            buttonPrgramowa.Enabled = false;
+            buttonProgramowa.BackColor = Color.IndianRed;
+            buttonProgramowa.Enabled = false;
             tabControlProgramowa.Enabled = true;
             LadujJazdaDoPozycji();
         }
@@ -119,8 +119,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
 
 
             programowa = false;
-            buttonPrgramowa.BackColor = Color.LightSteelBlue;
-            buttonPrgramowa.Enabled = true;
+            buttonProgramowa.BackColor = Color.LightSteelBlue;
+            buttonProgramowa.Enabled = true;
             tabControlProgramowa.Enabled = false;
         }
         void LadujDoPozycji()
@@ -141,8 +141,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
 
 
             programowa = false;
-            buttonPrgramowa.BackColor = Color.LightSteelBlue;
-            buttonPrgramowa.Enabled = true;
+            buttonProgramowa.BackColor = Color.LightSteelBlue;
+            buttonProgramowa.Enabled = true;
             tabControlProgramowa.Enabled = false;
         }
         void LadujJazdaJoystick()
@@ -171,7 +171,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
         {
             foreach (Most z in Most.ListaMost)
             {
-                z.ZmianaManual();
+                z.ZmianaAktywacjaManual();
             }
         }
         void Start()
@@ -213,8 +213,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
             LadujJazdaManual();
 
             programowa = false;
-            buttonPrgramowa.BackColor = Color.LightSteelBlue;
-            buttonPrgramowa.Enabled = true;
+            buttonProgramowa.BackColor = Color.LightSteelBlue;
+            buttonProgramowa.Enabled = true;
             tabControlProgramowa.Enabled = false;
         }
 
@@ -404,20 +404,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Mosty
             Stop();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void button1_Click_1(object sender, EventArgs e)
         {

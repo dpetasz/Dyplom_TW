@@ -19,6 +19,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
 
         PokazPrzedstawienia przedstawienia = new PokazPrzedstawienia();
+
+        bool joystick = false, doPozycji = false, manualna = false, programowa = false;
         public WozkiForm()
         {
             InitializeComponent();
@@ -42,6 +44,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
                 Wozek wozek = new Wozek(p, Convert.ToInt32(w["predkosc_max"].ToString()), w["nazwa"].ToString(), (Convert.ToInt32(w["idwozek"].ToString())));
                 wozek.Przychamowanie = Convert.ToInt32(w["przychamowanie"].ToString());
+                wozek.Kd = (float)(Convert.ToDouble(w["krancowa_tyl"].ToString()));
+                wozek.Kg = (float)(Convert.ToDouble(w["krancowa_przod"].ToString()));
                 wozek.Parent = pictureBox1;
                 wozek.Top = wys;
                 wozek.Left = 10;
@@ -115,7 +119,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                         w.Aktywacja = false;
                         w.LadujAktywuj();
                     }
-                    w.Joystick();
+                    w.JazdaJoystick();
                 }
             }
             pictureBox1.Invalidate();
@@ -124,16 +128,16 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         {
 
             timer1.Enabled = false;
-            button3.BackColor = Color.Green;
-            button3.Text = "Start";
+            buttonStartStop.BackColor = Color.Green;
+            buttonStartStop.Text = "Start";
 
 
         }
         private void red()
         {
             timer1.Enabled = true;
-            button3.BackColor = Color.Red;
-            button3.Text = "Stop";
+            buttonStartStop.BackColor = Color.Red;
+            buttonStartStop.Text = "Stop";
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -164,16 +168,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
         private void buttonJazdaProgramowa_Click(object sender, EventArgs e)
         {
-            if (panelJoystick.Enabled == true)
-            {
-                buttonJoystick.BackColor = Color.LightSteelBlue;
-                panelJoystick.Enabled = false;
-            }
-            else
-            {
-                buttonJoystick.BackColor = Color.IndianRed;
-                panelJoystick.Enabled = true;
-            }
+            LadujProgramowa();
+            LadujBazaPrzedstawienie();
         }
 
         private void trackBarJoystick_Scroll(object sender, EventArgs e)
@@ -186,6 +182,221 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                     w.Predkosc = trackBarJoystick.Value;
                 }
             }
+        }
+
+        private void pokazPrzedstawienieBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int idPrzed = ((this.pokazPrzedstawienieBindingSource.Current as DataRowView).Row as TWDataSet.pokazPrzedstawienieRow).idprzed;
+                this.pokazAktTableAdapter.Fill(this.tWDataSet.pokazAkt, idPrzed);
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+        private void pokazAktBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            ladujFx_Wozek();
+        }
+
+        void ladujFx_Wozek()
+        {
+            try
+            {
+                int idAkt = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
+                this.pokazFx_Wozek_malejacoTableAdapter.Fill(this.tWDataSet.pokazFx_Wozek_malejaco, idAkt);
+                this.pokazFx_Wozek_rosnacoTableAdapter.Fill(this.tWDataSet.pokazFx_Wozek_rosnaco, idAkt);
+            }
+            catch
+            {
+
+
+            }
+        }
+
+        void ladujFx_Wozek_Wozek()
+        {
+            try
+            {
+                int idFx_wozek = ((this.pokazFxWozekrosnacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Wozek_rosnacoRow).idfx_wozek;
+                this.pokazFx_Wozek_WozekTableAdapter.Fill(this.tWDataSet.pokazFx_Wozek_Wozek, idFx_wozek);
+                foreach (Wozek w in Wozek.ListaWozek)
+                {
+                    w.ladujBazaProgramowa(idFx_wozek);
+                }
+            }
+            catch
+            {
+
+
+            }
+        }
+        void LadujProgramowa()
+        {
+            doPozycji = true;
+            buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
+            buttonJazdaDoPozycji.Enabled = true;
+            buttonStartStop.Enabled = true;
+
+            joystick = false;
+            buttonJoystick.BackColor = Color.LightSteelBlue;
+            buttonJoystick.Enabled = true;
+
+            manualna = false;
+            buttonManual.BackColor = Color.LightSteelBlue;
+            buttonManual.Enabled = true;
+
+
+            programowa = true;
+            buttonProgramowa.BackColor = Color.IndianRed;
+            buttonProgramowa.Enabled = false;
+            tabControlProgramowa.Enabled = true;
+            LadujJazdaDoPozycji();
+        }
+        void LadujJoystick()
+        {
+            doPozycji = false;
+            buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
+            buttonJazdaDoPozycji.Enabled = true;
+            buttonStartStop.Enabled = false;
+            Stop();
+
+            joystick = true;
+            buttonJoystick.BackColor = Color.IndianRed;
+            buttonJoystick.Enabled = false;
+            LadujJazdaJoystick();
+
+            manualna = false;
+            buttonManual.BackColor = Color.LightSteelBlue;
+            buttonManual.Enabled = true;
+
+
+            programowa = false;
+            buttonProgramowa.BackColor = Color.LightSteelBlue;
+            buttonProgramowa.Enabled = true;
+            tabControlProgramowa.Enabled = false;
+        }
+        void LadujDoPozycji()
+        {
+            doPozycji = true;
+            buttonJazdaDoPozycji.BackColor = Color.IndianRed;
+            buttonJazdaDoPozycji.Enabled = false;
+            buttonStartStop.Enabled = true;
+            LadujJazdaDoPozycji();
+
+            joystick = false;
+            buttonJoystick.BackColor = Color.LightSteelBlue;
+            buttonJoystick.Enabled = true;
+
+            manualna = false;
+            buttonManual.BackColor = Color.LightSteelBlue;
+            buttonManual.Enabled = true;
+
+
+            programowa = false;
+            buttonProgramowa.BackColor = Color.LightSteelBlue;
+            buttonProgramowa.Enabled = true;
+            tabControlProgramowa.Enabled = false;
+        }
+        void LadujManual()
+        {
+            doPozycji = false;
+            buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
+            buttonJazdaDoPozycji.Enabled = true;
+            buttonStartStop.Enabled = false;
+            Stop();
+
+            joystick = false;
+            buttonJoystick.BackColor = Color.LightSteelBlue;
+            buttonJoystick.Enabled = true;
+
+            manualna = true;
+            buttonManual.BackColor = Color.IndianRed;
+            buttonManual.Enabled = false;
+            LadujJazdaManual();
+
+            programowa = false;
+            buttonProgramowa.BackColor = Color.LightSteelBlue;
+            buttonProgramowa.Enabled = true;
+            tabControlProgramowa.Enabled = false;
+        }
+        void Start()
+        {
+            timer1.Enabled = true;
+            buttonStartStop.BackColor = Color.IndianRed;
+            buttonStartStop.Text = "Stop";
+        }
+        void Stop()
+        {
+            timer1.Enabled = false;
+            buttonStartStop.BackColor = Color.Green;
+            buttonStartStop.Text = "Start";
+            foreach (Most m in Most.ListaMost)
+            {
+                if (m.Aktywacja == true)
+                {
+                    m.ZapiszPozycjaBaza();
+                    m.Odswiez();
+                }
+
+            }
+        }
+        private void buttonProgramowa_Click(object sender, EventArgs e)
+        {
+            LadujProgramowa();
+            LadujBazaPrzedstawienie();
+        }
+        void LadujJazdaJoystick()
+        {
+            foreach (Wozek w in Wozek.ListaWozek)
+            {
+                w.AktywujJoystick();
+            }
+        }
+        void LadujJazdaDoPozycji()
+        {
+            foreach (Wozek w in Wozek.ListaWozek)
+            {
+                w.AktywujDoPozycji();
+            }
+
+        }
+        void LadujJazdaProgramowa()
+        {
+            foreach (Wozek w in Wozek.ListaWozek)
+            {
+                w.AktywujDoPozycji();
+            }
+        }
+        void LadujJazdaManual()
+        {
+            foreach (Wozek w in Wozek.ListaWozek)
+            {
+                w.AktywujManualna();
+            }
+        }
+        void LadujBazaPrzedstawienie()
+        {
+            this.pokazPrzedstawienieTableAdapter.Fill(this.tWDataSet.pokazPrzedstawienie);
+        }
+
+        private void buttonJoystick_Click(object sender, EventArgs e)
+        {
+            LadujJoystick();
+        }
+
+        private void buttonJazdaDoPozycji_Click(object sender, EventArgs e)
+        {
+            LadujDoPozycji();
+        }
+
+        private void buttonManual_Click(object sender, EventArgs e)
+        {
+            LadujManual();
         }
     }
 }

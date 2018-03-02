@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMosty = new System.Windows.Forms.Panel();
             this.twDataSet = new Dyplom_Dariusz_Petasz_Z709.TWDataSet();
             this.pokazMostyBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -75,25 +75,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panelJoystick = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.trackBarJoystick = new System.Windows.Forms.TrackBar();
-            this.buttonPrgramowa = new System.Windows.Forms.Button();
-            this.buttonJazdaDoPozycji = new System.Windows.Forms.Button();
-            this.buttonManual = new System.Windows.Forms.Button();
-            this.buttonJoystick = new System.Windows.Forms.Button();
-            this.buttonStartStop = new System.Windows.Forms.Button();
-            this.fxobrotowkaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pokazPrzedstawienieTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazPrzedstawienieTableAdapter();
-            this.pokazAktTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazAktTableAdapter();
-            this.fx_obrotowkaTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.Fx_obrotowkaTableAdapter();
-            this.pokazFx_Most_rosnacoTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Most_rosnacoTableAdapter();
-            this.pokazFx_Most_MostTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Most_MostTableAdapter();
-            this.pokazFx_Most_malejacoTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Most_malejacoTableAdapter();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -107,6 +88,25 @@
             this.label16 = new System.Windows.Forms.Label();
             this.comboBox12 = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelJoystick = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.trackBarJoystick = new System.Windows.Forms.TrackBar();
+            this.buttonProgramowa = new System.Windows.Forms.Button();
+            this.buttonJazdaDoPozycji = new System.Windows.Forms.Button();
+            this.buttonManual = new System.Windows.Forms.Button();
+            this.buttonJoystick = new System.Windows.Forms.Button();
+            this.buttonStartStop = new System.Windows.Forms.Button();
+            this.fxobrotowkaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pokazPrzedstawienieTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazPrzedstawienieTableAdapter();
+            this.pokazAktTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazAktTableAdapter();
+            this.fx_obrotowkaTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.Fx_obrotowkaTableAdapter();
+            this.pokazFx_Most_rosnacoTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Most_rosnacoTableAdapter();
+            this.pokazFx_Most_MostTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Most_MostTableAdapter();
+            this.pokazFx_Most_malejacoTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Most_malejacoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.twDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazMostyBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
@@ -120,11 +120,11 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazFxMostMostBindingSource)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelJoystick.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarJoystick)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fxobrotowkaBindingSource)).BeginInit();
-            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMosty
@@ -313,7 +313,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(12)))), ((int)(((byte)(40)))));
+            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(60)))));
             this.tabPage4.Controls.Add(this.label14);
             this.tabPage4.Controls.Add(this.richTextBoxOpisFXMost);
             this.tabPage4.Controls.Add(this.textBoxWynik);
@@ -514,24 +514,24 @@
             // idmostDataGridViewTextBoxColumn
             // 
             this.idmostDataGridViewTextBoxColumn.DataPropertyName = "idmost";
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.Moccasin;
-            this.idmostDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Moccasin;
+            this.idmostDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.idmostDataGridViewTextBoxColumn.HeaderText = "idmost";
             this.idmostDataGridViewTextBoxColumn.Name = "idmostDataGridViewTextBoxColumn";
             // 
             // predkoscDataGridViewTextBoxColumn
             // 
             this.predkoscDataGridViewTextBoxColumn.DataPropertyName = "predkosc";
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.Moccasin;
-            this.predkoscDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Moccasin;
+            this.predkoscDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.predkoscDataGridViewTextBoxColumn.HeaderText = "predkosc";
             this.predkoscDataGridViewTextBoxColumn.Name = "predkoscDataGridViewTextBoxColumn";
             // 
             // miejscestopDataGridViewTextBoxColumn
             // 
             this.miejscestopDataGridViewTextBoxColumn.DataPropertyName = "miejsce_stop";
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.Moccasin;
-            this.miejscestopDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Moccasin;
+            this.miejscestopDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.miejscestopDataGridViewTextBoxColumn.HeaderText = "miejsce_stop";
             this.miejscestopDataGridViewTextBoxColumn.Name = "miejscestopDataGridViewTextBoxColumn";
             // 
@@ -617,184 +617,9 @@
             this.label13.TabIndex = 43;
             this.label13.Text = "Przedstawienie: ";
             // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.panelJoystick);
-            this.panel2.Controls.Add(this.buttonPrgramowa);
-            this.panel2.Controls.Add(this.buttonJazdaDoPozycji);
-            this.panel2.Controls.Add(this.buttonManual);
-            this.panel2.Controls.Add(this.buttonJoystick);
-            this.panel2.Controls.Add(this.buttonStartStop);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 418);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(388, 283);
-            this.panel2.TabIndex = 0;
-            // 
-            // panelJoystick
-            // 
-            this.panelJoystick.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelJoystick.Controls.Add(this.label5);
-            this.panelJoystick.Controls.Add(this.label6);
-            this.panelJoystick.Controls.Add(this.label7);
-            this.panelJoystick.Controls.Add(this.trackBarJoystick);
-            this.panelJoystick.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelJoystick.Location = new System.Drawing.Point(291, 0);
-            this.panelJoystick.Name = "panelJoystick";
-            this.panelJoystick.Size = new System.Drawing.Size(95, 281);
-            this.panelJoystick.TabIndex = 25;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Info;
-            this.label5.Location = new System.Drawing.Point(42, 248);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 24);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "- 100";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Info;
-            this.label6.Location = new System.Drawing.Point(42, -2);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 24);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "- 100";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Info;
-            this.label7.Location = new System.Drawing.Point(42, 124);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 24);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "- 0";
-            // 
-            // trackBarJoystick
-            // 
-            this.trackBarJoystick.Dock = System.Windows.Forms.DockStyle.Left;
-            this.trackBarJoystick.Location = new System.Drawing.Point(0, 0);
-            this.trackBarJoystick.Maximum = 100;
-            this.trackBarJoystick.Minimum = -100;
-            this.trackBarJoystick.Name = "trackBarJoystick";
-            this.trackBarJoystick.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBarJoystick.Size = new System.Drawing.Size(45, 277);
-            this.trackBarJoystick.TabIndex = 0;
-            this.trackBarJoystick.TickFrequency = 10;
-            this.trackBarJoystick.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.trackBarJoystick.Scroll += new System.EventHandler(this.trackBarJoystick_Scroll);
-            this.trackBarJoystick.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBarJoystick_MouseUp);
-            // 
-            // buttonPrgramowa
-            // 
-            this.buttonPrgramowa.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.buttonPrgramowa.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.buttonPrgramowa.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonPrgramowa.Location = new System.Drawing.Point(141, 54);
-            this.buttonPrgramowa.Name = "buttonPrgramowa";
-            this.buttonPrgramowa.Size = new System.Drawing.Size(112, 35);
-            this.buttonPrgramowa.TabIndex = 24;
-            this.buttonPrgramowa.Text = "Programowa";
-            this.buttonPrgramowa.UseVisualStyleBackColor = false;
-            this.buttonPrgramowa.Click += new System.EventHandler(this.buttonPrgramowa_Click);
-            // 
-            // buttonJazdaDoPozycji
-            // 
-            this.buttonJazdaDoPozycji.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.buttonJazdaDoPozycji.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.buttonJazdaDoPozycji.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonJazdaDoPozycji.Location = new System.Drawing.Point(7, 54);
-            this.buttonJazdaDoPozycji.Name = "buttonJazdaDoPozycji";
-            this.buttonJazdaDoPozycji.Size = new System.Drawing.Size(112, 35);
-            this.buttonJazdaDoPozycji.TabIndex = 23;
-            this.buttonJazdaDoPozycji.Text = "Do pozycji";
-            this.buttonJazdaDoPozycji.UseVisualStyleBackColor = false;
-            this.buttonJazdaDoPozycji.Click += new System.EventHandler(this.buttonJazdaDoPozycji_Click);
-            // 
-            // buttonManual
-            // 
-            this.buttonManual.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.buttonManual.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.buttonManual.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonManual.Location = new System.Drawing.Point(7, 3);
-            this.buttonManual.Name = "buttonManual";
-            this.buttonManual.Size = new System.Drawing.Size(112, 35);
-            this.buttonManual.TabIndex = 22;
-            this.buttonManual.Text = "Manual";
-            this.buttonManual.UseVisualStyleBackColor = false;
-            this.buttonManual.Click += new System.EventHandler(this.buttonManual_Click);
-            // 
-            // buttonJoystick
-            // 
-            this.buttonJoystick.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.buttonJoystick.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.buttonJoystick.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonJoystick.Location = new System.Drawing.Point(141, 3);
-            this.buttonJoystick.Name = "buttonJoystick";
-            this.buttonJoystick.Size = new System.Drawing.Size(112, 35);
-            this.buttonJoystick.TabIndex = 21;
-            this.buttonJoystick.Text = "Joystick";
-            this.buttonJoystick.UseVisualStyleBackColor = false;
-            this.buttonJoystick.Click += new System.EventHandler(this.buttonJoystick_Click);
-            // 
-            // buttonStartStop
-            // 
-            this.buttonStartStop.BackColor = System.Drawing.Color.Green;
-            this.buttonStartStop.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonStartStop.Location = new System.Drawing.Point(63, 122);
-            this.buttonStartStop.Name = "buttonStartStop";
-            this.buttonStartStop.Size = new System.Drawing.Size(134, 125);
-            this.buttonStartStop.TabIndex = 20;
-            this.buttonStartStop.Text = "Start";
-            this.buttonStartStop.UseVisualStyleBackColor = false;
-            this.buttonStartStop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonStartStop_MouseDown);
-            this.buttonStartStop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonStartStop_MouseUp);
-            // 
-            // fxobrotowkaBindingSource
-            // 
-            this.fxobrotowkaBindingSource.DataMember = "Fx_obrotowka";
-            this.fxobrotowkaBindingSource.DataSource = this.twDataSet;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 50;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // pokazPrzedstawienieTableAdapter
-            // 
-            this.pokazPrzedstawienieTableAdapter.ClearBeforeFill = true;
-            // 
-            // pokazAktTableAdapter
-            // 
-            this.pokazAktTableAdapter.ClearBeforeFill = true;
-            // 
-            // fx_obrotowkaTableAdapter
-            // 
-            this.fx_obrotowkaTableAdapter.ClearBeforeFill = true;
-            // 
-            // pokazFx_Most_rosnacoTableAdapter
-            // 
-            this.pokazFx_Most_rosnacoTableAdapter.ClearBeforeFill = true;
-            // 
-            // pokazFx_Most_MostTableAdapter
-            // 
-            this.pokazFx_Most_MostTableAdapter.ClearBeforeFill = true;
-            // 
-            // pokazFx_Most_malejacoTableAdapter
-            // 
-            this.pokazFx_Most_malejacoTableAdapter.ClearBeforeFill = true;
-            // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(15)))), ((int)(((byte)(52)))));
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(60)))));
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.label19);
@@ -963,6 +788,181 @@
             this.label17.TabIndex = 53;
             this.label17.Text = "Przedstawienie: ";
             // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.panelJoystick);
+            this.panel2.Controls.Add(this.buttonProgramowa);
+            this.panel2.Controls.Add(this.buttonJazdaDoPozycji);
+            this.panel2.Controls.Add(this.buttonManual);
+            this.panel2.Controls.Add(this.buttonJoystick);
+            this.panel2.Controls.Add(this.buttonStartStop);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 418);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(388, 283);
+            this.panel2.TabIndex = 0;
+            // 
+            // panelJoystick
+            // 
+            this.panelJoystick.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelJoystick.Controls.Add(this.label5);
+            this.panelJoystick.Controls.Add(this.label6);
+            this.panelJoystick.Controls.Add(this.label7);
+            this.panelJoystick.Controls.Add(this.trackBarJoystick);
+            this.panelJoystick.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelJoystick.Location = new System.Drawing.Point(291, 0);
+            this.panelJoystick.Name = "panelJoystick";
+            this.panelJoystick.Size = new System.Drawing.Size(95, 281);
+            this.panelJoystick.TabIndex = 25;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Info;
+            this.label5.Location = new System.Drawing.Point(42, 248);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 24);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "- 100";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Info;
+            this.label6.Location = new System.Drawing.Point(42, -2);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 24);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "- 100";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Info;
+            this.label7.Location = new System.Drawing.Point(42, 124);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 24);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "- 0";
+            // 
+            // trackBarJoystick
+            // 
+            this.trackBarJoystick.Dock = System.Windows.Forms.DockStyle.Left;
+            this.trackBarJoystick.Location = new System.Drawing.Point(0, 0);
+            this.trackBarJoystick.Maximum = 100;
+            this.trackBarJoystick.Minimum = -100;
+            this.trackBarJoystick.Name = "trackBarJoystick";
+            this.trackBarJoystick.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBarJoystick.Size = new System.Drawing.Size(45, 277);
+            this.trackBarJoystick.TabIndex = 0;
+            this.trackBarJoystick.TickFrequency = 10;
+            this.trackBarJoystick.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.trackBarJoystick.Scroll += new System.EventHandler(this.trackBarJoystick_Scroll);
+            this.trackBarJoystick.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBarJoystick_MouseUp);
+            // 
+            // buttonProgramowa
+            // 
+            this.buttonProgramowa.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonProgramowa.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.buttonProgramowa.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonProgramowa.Location = new System.Drawing.Point(141, 54);
+            this.buttonProgramowa.Name = "buttonProgramowa";
+            this.buttonProgramowa.Size = new System.Drawing.Size(112, 35);
+            this.buttonProgramowa.TabIndex = 24;
+            this.buttonProgramowa.Text = "Programowa";
+            this.buttonProgramowa.UseVisualStyleBackColor = false;
+            this.buttonProgramowa.Click += new System.EventHandler(this.buttonPrgramowa_Click);
+            // 
+            // buttonJazdaDoPozycji
+            // 
+            this.buttonJazdaDoPozycji.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonJazdaDoPozycji.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.buttonJazdaDoPozycji.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonJazdaDoPozycji.Location = new System.Drawing.Point(7, 54);
+            this.buttonJazdaDoPozycji.Name = "buttonJazdaDoPozycji";
+            this.buttonJazdaDoPozycji.Size = new System.Drawing.Size(112, 35);
+            this.buttonJazdaDoPozycji.TabIndex = 23;
+            this.buttonJazdaDoPozycji.Text = "Do pozycji";
+            this.buttonJazdaDoPozycji.UseVisualStyleBackColor = false;
+            this.buttonJazdaDoPozycji.Click += new System.EventHandler(this.buttonJazdaDoPozycji_Click);
+            // 
+            // buttonManual
+            // 
+            this.buttonManual.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonManual.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.buttonManual.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonManual.Location = new System.Drawing.Point(7, 3);
+            this.buttonManual.Name = "buttonManual";
+            this.buttonManual.Size = new System.Drawing.Size(112, 35);
+            this.buttonManual.TabIndex = 22;
+            this.buttonManual.Text = "Manual";
+            this.buttonManual.UseVisualStyleBackColor = false;
+            this.buttonManual.Click += new System.EventHandler(this.buttonManual_Click);
+            // 
+            // buttonJoystick
+            // 
+            this.buttonJoystick.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonJoystick.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.buttonJoystick.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonJoystick.Location = new System.Drawing.Point(141, 3);
+            this.buttonJoystick.Name = "buttonJoystick";
+            this.buttonJoystick.Size = new System.Drawing.Size(112, 35);
+            this.buttonJoystick.TabIndex = 21;
+            this.buttonJoystick.Text = "Joystick";
+            this.buttonJoystick.UseVisualStyleBackColor = false;
+            this.buttonJoystick.Click += new System.EventHandler(this.buttonJoystick_Click);
+            // 
+            // buttonStartStop
+            // 
+            this.buttonStartStop.BackColor = System.Drawing.Color.Green;
+            this.buttonStartStop.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonStartStop.Location = new System.Drawing.Point(63, 122);
+            this.buttonStartStop.Name = "buttonStartStop";
+            this.buttonStartStop.Size = new System.Drawing.Size(134, 125);
+            this.buttonStartStop.TabIndex = 20;
+            this.buttonStartStop.Text = "Start";
+            this.buttonStartStop.UseVisualStyleBackColor = false;
+            this.buttonStartStop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonStartStop_MouseDown);
+            this.buttonStartStop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonStartStop_MouseUp);
+            // 
+            // fxobrotowkaBindingSource
+            // 
+            this.fxobrotowkaBindingSource.DataMember = "Fx_obrotowka";
+            this.fxobrotowkaBindingSource.DataSource = this.twDataSet;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 50;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pokazPrzedstawienieTableAdapter
+            // 
+            this.pokazPrzedstawienieTableAdapter.ClearBeforeFill = true;
+            // 
+            // pokazAktTableAdapter
+            // 
+            this.pokazAktTableAdapter.ClearBeforeFill = true;
+            // 
+            // fx_obrotowkaTableAdapter
+            // 
+            this.fx_obrotowkaTableAdapter.ClearBeforeFill = true;
+            // 
+            // pokazFx_Most_rosnacoTableAdapter
+            // 
+            this.pokazFx_Most_rosnacoTableAdapter.ClearBeforeFill = true;
+            // 
+            // pokazFx_Most_MostTableAdapter
+            // 
+            this.pokazFx_Most_MostTableAdapter.ClearBeforeFill = true;
+            // 
+            // pokazFx_Most_malejacoTableAdapter
+            // 
+            this.pokazFx_Most_malejacoTableAdapter.ClearBeforeFill = true;
+            // 
             // MostyPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -990,13 +990,13 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazFxMostMostBindingSource)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panelJoystick.ResumeLayout(false);
             this.panelJoystick.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarJoystick)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fxobrotowkaBindingSource)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1019,7 +1019,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonPrgramowa;
+        private System.Windows.Forms.Button buttonProgramowa;
         private System.Windows.Forms.Button buttonJazdaDoPozycji;
         private System.Windows.Forms.Button buttonManual;
         private System.Windows.Forms.Button buttonJoystick;
@@ -1038,9 +1038,7 @@
         private TWDataSetTableAdapters.Fx_obrotowkaTableAdapter fx_obrotowkaTableAdapter;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.RichTextBox richTextBoxOpisFXMost;
-        private System.Windows.Forms.TextBox textBoxWynik;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button buttonZapiszFx_most_most;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.Button buttonDodajFX;
         private System.Windows.Forms.ComboBox comboBox4;
@@ -1077,5 +1075,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox comboBox12;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBoxWynik;
+        private System.Windows.Forms.Button buttonZapiszFx_most_most;
     }
 }

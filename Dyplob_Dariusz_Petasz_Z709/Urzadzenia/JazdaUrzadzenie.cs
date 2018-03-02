@@ -14,12 +14,12 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
             {
                 case true:
                     {
-                        pozycja += v * 0.001f;
+                        pozycja += Math.Abs(v) * 0.01f;
                         break;
                     }
                 case false:
                     {
-                        pozycja -= v * 0.001f;
+                        pozycja -= Math.Abs(v) * 0.01f;
                         break;
                     }
             }
