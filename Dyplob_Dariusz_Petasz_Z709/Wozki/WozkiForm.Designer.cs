@@ -50,7 +50,7 @@
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.buttonDodajFX = new System.Windows.Forms.Button();
-            this.buttonZapiszFx_most_most = new System.Windows.Forms.Button();
+            this.buttonZapiszFx_wozek_wozek = new System.Windows.Forms.Button();
             this.textBoxWynik = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
@@ -89,6 +89,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.buttonStartStop = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxWynikZapisu = new System.Windows.Forms.TextBox();
             this.buttonProgramowa = new System.Windows.Forms.Button();
             this.buttonJazdaDoPozycji = new System.Windows.Forms.Button();
             this.buttonManual = new System.Windows.Forms.Button();
@@ -103,7 +104,6 @@
             this.pokazFx_Wozek_malejacoTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Wozek_malejacoTableAdapter();
             this.pokazFx_Wozek_WozekTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokazFx_Wozek_WozekTableAdapter();
             this.pokazFxWozekrosnacoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.textBoxWynikZapisu = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControlProgramowa.SuspendLayout();
             this.tabPageBazaDanych.SuspendLayout();
@@ -182,6 +182,7 @@
             // 
             this.pokazFxWozekrosnacoBindingSource.DataMember = "pokazFx_Wozek_rosnaco";
             this.pokazFxWozekrosnacoBindingSource.DataSource = this.tWDataSet;
+            this.pokazFxWozekrosnacoBindingSource.CurrentChanged += new System.EventHandler(this.pokazFxWozekrosnacoBindingSource_CurrentChanged);
             // 
             // tWDataSet
             // 
@@ -285,7 +286,7 @@
             this.tabPage2.Controls.Add(this.comboBox6);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.buttonDodajFX);
-            this.tabPage2.Controls.Add(this.buttonZapiszFx_most_most);
+            this.tabPage2.Controls.Add(this.buttonZapiszFx_wozek_wozek);
             this.tabPage2.Controls.Add(this.textBoxWynik);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.richTextBox3);
@@ -327,6 +328,7 @@
             // 
             this.pokazFxWozekmalejacoBindingSource.DataMember = "pokazFx_Wozek_malejaco";
             this.pokazFxWozekmalejacoBindingSource.DataSource = this.tWDataSet;
+            this.pokazFxWozekmalejacoBindingSource.CurrentChanged += new System.EventHandler(this.pokazFxWozekmalejacoBindingSource_CurrentChanged);
             // 
             // comboBox6
             // 
@@ -367,17 +369,18 @@
             this.buttonDodajFX.UseVisualStyleBackColor = false;
             this.buttonDodajFX.Click += new System.EventHandler(this.buttonDodajFX_Click);
             // 
-            // buttonZapiszFx_most_most
+            // buttonZapiszFx_wozek_wozek
             // 
-            this.buttonZapiszFx_most_most.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.buttonZapiszFx_most_most.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.buttonZapiszFx_most_most.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonZapiszFx_most_most.Location = new System.Drawing.Point(148, 170);
-            this.buttonZapiszFx_most_most.Name = "buttonZapiszFx_most_most";
-            this.buttonZapiszFx_most_most.Size = new System.Drawing.Size(137, 35);
-            this.buttonZapiszFx_most_most.TabIndex = 87;
-            this.buttonZapiszFx_most_most.Text = "Zapisz dane dla FX";
-            this.buttonZapiszFx_most_most.UseVisualStyleBackColor = false;
+            this.buttonZapiszFx_wozek_wozek.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonZapiszFx_wozek_wozek.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.buttonZapiszFx_wozek_wozek.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonZapiszFx_wozek_wozek.Location = new System.Drawing.Point(148, 170);
+            this.buttonZapiszFx_wozek_wozek.Name = "buttonZapiszFx_wozek_wozek";
+            this.buttonZapiszFx_wozek_wozek.Size = new System.Drawing.Size(137, 35);
+            this.buttonZapiszFx_wozek_wozek.TabIndex = 87;
+            this.buttonZapiszFx_wozek_wozek.Text = "Zapisz dane dla FX";
+            this.buttonZapiszFx_wozek_wozek.UseVisualStyleBackColor = false;
+            this.buttonZapiszFx_wozek_wozek.Click += new System.EventHandler(this.buttonZapiszFx_wozek_wozek_Click);
             // 
             // textBoxWynik
             // 
@@ -633,6 +636,7 @@
             // richTextBox2
             // 
             this.richTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.richTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazFxWozekrosnacoBindingSource, "opis", true));
             this.richTextBox2.ForeColor = System.Drawing.Color.LightGray;
             this.richTextBox2.Location = new System.Drawing.Point(288, 6);
             this.richTextBox2.Name = "richTextBox2";
@@ -651,6 +655,7 @@
             this.button4.TabIndex = 71;
             this.button4.Text = "Aktualizuj dane dla FX";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
@@ -663,6 +668,7 @@
             this.button2.TabIndex = 70;
             this.button2.Text = "Aktualizuj FX";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // label18
             // 
@@ -680,6 +686,7 @@
             // 
             this.textBoxNazwaFX.BackColor = System.Drawing.Color.Moccasin;
             this.textBoxNazwaFX.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxNazwaFX.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazFxWozekrosnacoBindingSource, "nazwa", true));
             this.textBoxNazwaFX.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.textBoxNazwaFX.Location = new System.Drawing.Point(83, 128);
             this.textBoxNazwaFX.Name = "textBoxNazwaFX";
@@ -811,6 +818,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(466, 250);
             this.panel1.TabIndex = 11;
+            // 
+            // textBoxWynikZapisu
+            // 
+            this.textBoxWynikZapisu.BackColor = System.Drawing.Color.Moccasin;
+            this.textBoxWynikZapisu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxWynikZapisu.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.textBoxWynikZapisu.Location = new System.Drawing.Point(33, 211);
+            this.textBoxWynikZapisu.Name = "textBoxWynikZapisu";
+            this.textBoxWynikZapisu.ReadOnly = true;
+            this.textBoxWynikZapisu.Size = new System.Drawing.Size(414, 26);
+            this.textBoxWynikZapisu.TabIndex = 87;
             // 
             // buttonProgramowa
             // 
@@ -945,17 +963,6 @@
             this.pokazFxWozekrosnacoBindingSource1.DataMember = "pokazFx_Wozek_rosnaco";
             this.pokazFxWozekrosnacoBindingSource1.DataSource = this.tWDataSet;
             // 
-            // textBoxWynikZapisu
-            // 
-            this.textBoxWynikZapisu.BackColor = System.Drawing.Color.Moccasin;
-            this.textBoxWynikZapisu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxWynikZapisu.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.textBoxWynikZapisu.Location = new System.Drawing.Point(33, 211);
-            this.textBoxWynikZapisu.Name = "textBoxWynikZapisu";
-            this.textBoxWynikZapisu.ReadOnly = true;
-            this.textBoxWynikZapisu.Size = new System.Drawing.Size(414, 26);
-            this.textBoxWynikZapisu.TabIndex = 87;
-            // 
             // WozkiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1055,7 +1062,7 @@
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBoxWynik;
-        private System.Windows.Forms.Button buttonZapiszFx_most_most;
+        private System.Windows.Forms.Button buttonZapiszFx_wozek_wozek;
         private System.Windows.Forms.Button buttonDodajFX;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox5;

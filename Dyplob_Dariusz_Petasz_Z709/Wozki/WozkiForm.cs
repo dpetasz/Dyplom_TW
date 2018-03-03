@@ -243,6 +243,23 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
             }
         }
+        void ladujFx_Wozek_Wozek_malejaco()
+        {
+            try
+            {
+                int idFx_wozek = ((this.pokazFxWozekmalejacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Wozek_malejacoRow).idfx_wozek;
+                this.pokazFx_Wozek_WozekTableAdapter.Fill(this.tWDataSet.pokazFx_Wozek_Wozek, idFx_wozek);
+                foreach (Wozek w in Wozek.ListaWozek)
+                {
+                    w.ladujBazaProgramowa(idFx_wozek);
+                }
+            }
+            catch
+            {
+
+
+            }
+        }
         void LadujProgramowa()
         {
             doPozycji = true;
@@ -412,12 +429,81 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             try
             {
                 int idAkt = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
-                //textBoxWynik.Text = db.DodajFx_Wozek(idAkt, richTextBox3.Text);
-                //ladujFx_Most();
+                textBoxWynik.Text = db.DodajFx_Wozek(idAkt, richTextBox3.Text);
+                ladujFx_Wozek();
             }
             catch
             {
 
+
+            }
+        }
+
+        private void buttonZapiszFx_wozek_wozek_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                int idfxwozek = ((this.pokazFxWozekmalejacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Wozek_malejacoRow).idfx_wozek;
+                
+                foreach (Wozek w in Wozek.ListaWozek)
+                {
+                    textBoxWynik.Text = db.DodajFx_Wozek_Wozek( idfxwozek,w.GetId(),  w.GetPredkosc(), w.GetPozycja());
+                    ladujFx_Wozek();
+                    w.ladujBazaProgramowa(idfxwozek);
+                }
+            }
+            catch
+            {
+                textBoxWynik.Text = "Błąd bazy";
+
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idfxwozek = ((this.pokazFxWozekmalejacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Wozek_malejacoRow).idfx_wozek;
+
+                foreach (Wozek w in Wozek.ListaWozek)
+                {
+                    w.aktualizujFx_wozek_wozek(idfxwozek);
+                }
+                ladujFx_Wozek_Wozek();
+            }
+            catch
+            {
+
+
+            }
+        }
+
+        private void pokazFxWozekrosnacoBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            ladujFx_Wozek_Wozek();
+        }
+
+        private void pokazFxWozekmalejacoBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            ladujFx_Wozek_Wozek_malejaco();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                int idfxwozek = ((this.pokazFxWozekrosnacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Wozek_rosnacoRow).idfx_wozek;
+
+                foreach (Wozek w in Wozek.ListaWozek)
+                {
+                    textBoxWynik.Text = db.AktualizujFx_wozek(idfxwozek, textBoxNazwaFX.Text, richTextBox2.Text);
+                    ladujFx_Wozek();
+                }
+            }
+            catch
+            {
+                textBoxWynik.Text = "Błąd bazy";
 
             }
         }

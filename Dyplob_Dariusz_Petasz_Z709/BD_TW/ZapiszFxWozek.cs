@@ -10,11 +10,11 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
     {
         TWDataSetTableAdapters.QueriesTableAdapter db = new TWDataSetTableAdapters.QueriesTableAdapter();
 
-        public string DodajFx_Wozek(int idAkt, string nazwa, string opis)
+        public string DodajFx_Wozek(int idAkt, string opis)
         {
             string kom = "";
 
-            db.dodajFx_Wozek(idAkt, nazwa, opis, ref kom);
+            db.dodajFx_Wozek(idAkt, opis, ref kom);
 
             return kom;
 

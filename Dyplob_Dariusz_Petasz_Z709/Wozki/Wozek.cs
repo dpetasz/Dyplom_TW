@@ -175,7 +175,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
             Scena(g);
-            WozekJazda(g, Pozycja);
+            WozekJazda(g, GetPozycja());
 
         }
         public void WozekJazda(Graphics g, float x)
@@ -365,9 +365,9 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         {
 
 
-            if (GetPozycja() < PozycjaZadana)
+            if (GetPozycja() < GetPozycjaZadana())
             {
-                if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
+                if ((float)Math.Round(GetPozycja(), 1) == (float)Math.Round(GetPozycjaZadana(),1))
                 {
                     Predkosc = 0;
                     ZmianaAktywacja();
@@ -375,35 +375,35 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                     LadujAktywuj();
                     Odswiez();
                 }
-                else if (GetPozycja() > PozycjaZadana - 5)
+                else if (GetPozycja() > GetPozycjaZadana() - 5)
                 {
-                    SetPozycja(jazdaWozek.jazdaDoPozycjiUp(Przychamowanie, Pozycja));
+                    SetPozycja(jazdaWozek.jazdaDoPozycjiUp(Przychamowanie, GetPozycja()));
 
                     Odswiez();
                 }
                 else
                 {
-                    SetPozycja(jazdaWozek.jazdaDoPozycjiUp(Predkosc, Pozycja));
+                    SetPozycja(jazdaWozek.jazdaDoPozycjiUp(GetPredkosc(), GetPozycja()));
                     Odswiez();
                 }
 
             }
-            if (GetPozycja() > PozycjaZadana)
+            if (GetPozycja() > GetPozycjaZadana())
             {
-                if ((float)Math.Round(Pozycja, 1) == PozycjaZadana)
+                if ((float)Math.Round(GetPozycja(), 1) == (float)Math.Round(GetPozycjaZadana(), 1))
                 {
                     ZmianaAktywacja();
                     LadujAktywuj();
                     Odswiez();
                 }
-                else if (GetPozycja() < PozycjaZadana + 5)
+                else if (GetPozycja() < GetPozycjaZadana() + 5)
                 {
-                    SetPozycja(jazdaWozek.jazdaDoPozycjiDown(Przychamowanie, Pozycja));
+                    SetPozycja(jazdaWozek.jazdaDoPozycjiDown(Przychamowanie, GetPozycja()));
                     Odswiez();
                 }
                 else
                 {
-                    SetPozycja(jazdaWozek.jazdaDoPozycjiDown(Predkosc, Pozycja));
+                    SetPozycja(jazdaWozek.jazdaDoPozycjiDown(GetPredkosc(), GetPozycja()));
                     Odswiez();
                 }
             }
@@ -473,6 +473,17 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             {
             }
 
+        }
+        public void aktualizujFx_wozek_wozek(int idFx)
+        {
+            try
+            {
+                this.pokazFx_Wozek_Wozek_dlajednegoTableAdapter.Fill(this.tWDataSet.pokazFx_Wozek_Wozek_dlajednego, idFx, GetId());
+                int idFx_wozek_wozek = ((this.pokazFxWozekWozekdlajednegoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Wozek_Wozek_dlajednegoRow).idfx_wozek_wozek;
+                db.AktualizujFX_most_most(idFx_wozek_wozek, GetPredkosc(), GetPozycja());
+                ladujBazaProgramowa(idFx);
+            }
+            catch { }
         }
         public void Odswiez()
         {
