@@ -30,7 +30,24 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
         public SolidBrush KolorLiczby;
         public Font textFont;
 
-       
+        bool doPozycji;
+        public bool DoPozycji
+        {
+            get { return doPozycji; }
+            set { doPozycji = value; }
+        }
+        bool programowa;
+        public bool Programowa
+        {
+            get { return programowa; }
+            set { programowa = value; }
+        }
+        bool joystick;
+        public bool Joystick
+        {
+            get { return joystick; }
+            set { joystick = value; }
+        }
 
         int predkosc;
         int Predkosc
@@ -38,11 +55,27 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             get { return predkosc; }
             set { predkosc = value; }
         }
-        bool kierunek = false;
+        public int GetPredkosc()
+        {
+            return Predkosc;
+        }
+        public void SetPredkosc(int Predkosc)
+        {
+            this.Predkosc = Predkosc;
+        }
+        bool kierunek;
         bool Kierunek
         {
             get { return kierunek; }
             set { kierunek = value; }
+        }
+        public bool GetKierunek()
+        {
+            return Kierunek;
+        }
+        public void SetKierunek(bool Kierunek)
+        {
+            this.Kierunek = Kierunek;
         }
         float pozycja;
         float Pozycja
@@ -50,11 +83,41 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             get { return pozycja; }
             set { pozycja = value; }
         }
+        public float GetPozycja()
+        {
+            return Pozycja;
+        }
 
+        public void SetPozycja(float Pozycja)
+        {
+            this.Pozycja = Pozycja;
+        }
+
+        float pozycjaZadana;
+        float PozycjaZadana
+        {
+            get { return pozycjaZadana; }
+            set { pozycjaZadana = value; }
+        }
+        public float GetPozycjaZadana()
+        {
+            return PozycjaZadana;
+        }
+        public void SetPozycjaZadana(float PozycjaZadana)
+        {
+            this.PozycjaZadana = PozycjaZadana;
+        }
         public ObrotowkaPanel()
         {
             InitializeComponent();
-            Pozycja = Jazda.PozycjaObrotowka();
+            SetPozycja(Jazda.PozycjaObrotowka());
+            Joystick = false;
+            DoPozycji = false;
+            Programowa = false;
+            Kierunek = false;
+            SetPredkosc(0);
+            SetPozycjaZadana(GetPozycja());
+            Odswiez();
         }
 
         private void ObrotowkaPanel_Load(object sender, EventArgs e)
@@ -78,14 +141,17 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             Rysuj.Obrot(g, pozycja);
         }
 
-       
+
         public void Wypelnienie()
         {
             stanWyp.Wypelnienie(Rysuj);
 
         }
-        
 
+        public void JazdaJoystick()
+        {
+
+        }
         private void green()
         {
 
@@ -107,17 +173,19 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            pozycja = Jazda.ruch(Kierunek, predkosc);
-            textBoxPozycjaObrotowka.Text = pozycja.ToString();
-            pictureBox1.Invalidate();
+            if (Joystick == true)
+            {
+                SetPozycja(Jazda.joystick(GetPredkosc(), GetPozycja()));
+                Odswiez();
+                pictureBox1.Invalidate();
+            }
+
+
         }
 
         private void trackBarKierunek_Scroll(object sender, EventArgs e)
         {
-            if (trackBarKierunek.Value == 1)
-                Kierunek = true;
 
-            else Kierunek = false;
         }
 
         private void buttonStartStop_Click(object sender, EventArgs e)
@@ -135,57 +203,86 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             }
         }
 
-        private void trackBarPredkoscObrotowka_Scroll(object sender, EventArgs e)
+        void Odswiez()
         {
-            textBoxPredkoscObrotowka.Text = trackBarPredkoscObrotowka.Value.ToString();
-            Predkosc = trackBarPredkoscObrotowka.Value;
+            textBoxPredkoscObrotowka.Text = GetPredkosc().ToString();
+            textBoxPozycjaObrotowka.Text = GetPozycja().ToString();
+            textBoxPozycjaZadanaObrotowka.Text = GetPozycjaZadana().ToString();
+            if (DoPozycji == true)
+            {
+                buttonJazdaDoPozycji.BackColor = Color.IndianRed;
+                buttonJazdaDoPozycji.Enabled = false;
+
+                buttonJazdaTechniczna.BackColor = Color.LightSteelBlue;
+                buttonJazdaTechniczna.Enabled = true;
+
+                buttonJazdaProgramowa.BackColor = Color.LightSteelBlue;
+                buttonJazdaProgramowa.Enabled = true;
+
+                textBoxPozycjaZadanaObrotowka.ReadOnly = false;
+                //panelBazaDanych.Enabled = false;
+                textBoxPredkoscObrotowka.ReadOnly = false;
+                buttonStartStop.Enabled = true;
+            }
+            else if (Programowa == true)
+            {
+                buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
+                buttonJazdaDoPozycji.Enabled = true;
+
+                buttonJazdaTechniczna.BackColor = Color.LightSteelBlue;
+                buttonJazdaTechniczna.Enabled = true;
+
+                buttonJazdaProgramowa.BackColor = Color.IndianRed;
+                buttonJazdaProgramowa.Enabled = false;
+
+                textBoxPozycjaZadanaObrotowka.ReadOnly = true;
+                textBoxPredkoscObrotowka.ReadOnly = false;
+                //panelBazaDanych.Enabled = true;
+
+                buttonStartStop.Enabled = true;
+            }
+            else if (Joystick == true)
+            {
+                buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
+                buttonJazdaDoPozycji.Enabled = true;
+
+                buttonJazdaTechniczna.BackColor = Color.IndianRed;
+                buttonJazdaTechniczna.Enabled = false;
+
+                buttonJazdaProgramowa.BackColor = Color.LightSteelBlue;
+                buttonJazdaProgramowa.Enabled = true;
+                textBoxPredkoscObrotowka.ReadOnly = true;
+                textBoxPozycjaZadanaObrotowka.ReadOnly = true;
+                // panelBazaDanych.Enabled = false;
+
+                buttonStartStop.Enabled = false;
+            }
         }
 
         void jazdaDoPozycji()
         {
-            buttonJazdaDoPozycji.BackColor = Color.Maroon;
-            buttonJazdaDoPozycji.Enabled = false;
+            DoPozycji = true;
+            Joystick = false;
+            Programowa = false;
+            Odswiez();
 
-            buttonJazdaTechniczna.BackColor = Color.LightSteelBlue;
-            buttonJazdaTechniczna.Enabled = true;
-
-            buttonJazdaProgramowa.BackColor = Color.LightSteelBlue;
-            buttonJazdaProgramowa.Enabled = true;
-
-            textBoxPozycjaZadanaObrotowka.ReadOnly = false;
-            //panelBazaDanych.Enabled = false;
         }
         void jazdaProgramowa()
         {
-            buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
-            buttonJazdaDoPozycji.Enabled = true;
-
-            buttonJazdaTechniczna.BackColor = Color.LightSteelBlue;
-            buttonJazdaTechniczna.Enabled = true;
-
-            buttonJazdaProgramowa.BackColor = Color.Maroon;
-            buttonJazdaProgramowa.Enabled = false;
-
-            textBoxPozycjaZadanaObrotowka.ReadOnly = true;
-
-            //panelBazaDanych.Enabled = true;
+            DoPozycji = false;
+            Joystick = false;
+            Programowa = true;
+            Odswiez();
         }
         void jazdaTechniczna()
         {
-            buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
-            buttonJazdaDoPozycji.Enabled = true;
-
-            buttonJazdaTechniczna.BackColor = Color.Maroon;
-            buttonJazdaTechniczna.Enabled = false;
-
-            buttonJazdaProgramowa.BackColor = Color.LightSteelBlue;
-            buttonJazdaProgramowa.Enabled = true;
-
-            textBoxPozycjaZadanaObrotowka.ReadOnly = true;
-           // panelBazaDanych.Enabled = false;
+            DoPozycji = false;
+            Joystick = true;
+            Programowa = false;
+            Odswiez();
         }
 
-       
+
 
 
 
@@ -247,5 +344,52 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 
             labelWynikDodajFX_Ob.Text = db.DodajFX(idAkt, textBoxNazwaFX.Text, Predkosc, Kierunek, (decimal)Pozycja, richTextBoxOpisZapisFx.Text);
         }
+
+        private void buttonLewo_Click(object sender, EventArgs e)
+        {
+            Kierunek = false;
+            PrzyciskKierunek();
+        }
+
+        void PrzyciskKierunek()
+        {
+            if (Kierunek == false)
+            {
+                buttonLewo.BackColor = Color.Green;
+                buttonPrawo.BackColor = Color.SkyBlue;
+            }
+            else
+            {
+                buttonLewo.BackColor = Color.SkyBlue;
+                buttonPrawo.BackColor = Color.Green;
+            }
+        }
+
+        private void buttonPrawo_Click(object sender, EventArgs e)
+        {
+            Kierunek = true;
+            PrzyciskKierunek();
+        }
+
+        private void trackBarJoystick_Scroll(object sender, EventArgs e)
+        {
+            this.stanWyp = new WypelnienieJazda();
+            timer1.Enabled = true;
+            SetPredkosc(trackBarJoystick.Value);
+            Odswiez();
+        }
+
+        private void trackBarJoystick_MouseUp(object sender, MouseEventArgs e)
+        {
+
+            this.stanWyp = new Wypelnienie1();
+            pictureBox1.Invalidate();
+            timer1.Enabled = false;
+            trackBarJoystick.Value = 0;
+            SetPredkosc(trackBarJoystick.Value);
+            Jazda.ZapisPozycja(GetPozycja());
+            Odswiez();
+        }
+
     }
 }

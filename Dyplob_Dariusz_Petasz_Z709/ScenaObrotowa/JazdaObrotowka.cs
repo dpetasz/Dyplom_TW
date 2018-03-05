@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 {
-    public class JazdaObrotowka: IJazdaObrotowka
+    public class JazdaObrotowka : IJazdaObrotowka
     {
         float obrot;
         float Obrot
@@ -29,7 +29,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
                 sr.Close();
                 fs.Close();
                 this.Obrot = float.Parse(txt);
-                
+
 
             }
             catch { Obrot = 0; }
@@ -44,32 +44,53 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             try
             {
                 StreamWriter sw = new StreamWriter(fs);
-                sw.WriteLine(Math.Round(x,2).ToString());
+                sw.WriteLine(Math.Round(x, 2).ToString());
                 sw.Close();
                 fs.Close();
-                
+
             }
-            catch {  }
+            catch { }
         }
         public float ruch(bool kierunek, int v)
         {
-           
+
             switch (kierunek)
             {
                 case true:
                     {
-                        this.Obrot += v * 0.001f;
+                        this.Obrot += v * 0.01f;
                         if (Math.Round(Obrot, 1) == 360) Obrot = 0;
                         break;
                     }
                 case false:
                     {
-                        this.Obrot -= v * 0.001f;
+                        this.Obrot -= v * 0.01f;
                         if (Math.Round(Obrot, 1) == 0) Obrot = 360;
                         break;
                     }
             }
             return (float)Math.Round(Obrot, 1);
+
+        }
+        public float joystick(int v, float pozycja)
+        {
+
+
+
+            if (v > 0)
+            {
+
+                pozycja += v * 0.001f;
+                if (Math.Round(pozycja, 1) == 360) pozycja = 0;
+            }
+            else if (v < 0)
+            {
+
+                pozycja += v * 0.001f;
+                if (Math.Round(pozycja, 1) == 0) pozycja = 360;
+            }
+
+            return (float)Math.Round(pozycja, 1);
 
         }
     }
