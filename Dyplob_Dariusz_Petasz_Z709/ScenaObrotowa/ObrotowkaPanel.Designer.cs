@@ -31,10 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBoxPredkoscObrotowka = new System.Windows.Forms.TextBox();
             this.textBoxPozycjaZadanaObrotowka = new System.Windows.Forms.TextBox();
             this.textBoxPozycjaObrotowka = new System.Windows.Forms.TextBox();
             this.panelSterowanie = new System.Windows.Forms.Panel();
+            this.trackBarJoystick = new System.Windows.Forms.TrackBar();
+            this.buttonPrawo = new System.Windows.Forms.Button();
+            this.buttonLewo = new System.Windows.Forms.Button();
             this.buttonJazdaDoPozycji = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -74,15 +80,10 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControlBazaDanych = new System.Windows.Forms.TabControl();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.buttonLewo = new System.Windows.Forms.Button();
-            this.buttonPrawo = new System.Windows.Forms.Button();
-            this.trackBarJoystick = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelSterowanie.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarJoystick)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazFxObrotowkaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource)).BeginInit();
@@ -90,7 +91,6 @@
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControlBazaDanych.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarJoystick)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -117,6 +117,45 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(285, 160);
             this.panel2.TabIndex = 6;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.Moccasin;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox3.Location = new System.Drawing.Point(21, 104);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(98, 25);
+            this.textBox3.TabIndex = 25;
+            this.textBox3.Text = "Prędkość";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Moccasin;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox1.Location = new System.Drawing.Point(21, 64);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(98, 25);
+            this.textBox1.TabIndex = 24;
+            this.textBox1.Text = "Pozycja zadana";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.Moccasin;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox2.Location = new System.Drawing.Point(21, 23);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(98, 25);
+            this.textBox2.TabIndex = 23;
+            this.textBox2.Text = "Pozycja";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxPredkoscObrotowka
             // 
@@ -170,6 +209,44 @@
             this.panelSterowanie.Name = "panelSterowanie";
             this.panelSterowanie.Size = new System.Drawing.Size(288, 363);
             this.panelSterowanie.TabIndex = 7;
+            // 
+            // trackBarJoystick
+            // 
+            this.trackBarJoystick.Location = new System.Drawing.Point(201, 13);
+            this.trackBarJoystick.Maximum = 100;
+            this.trackBarJoystick.Minimum = -100;
+            this.trackBarJoystick.Name = "trackBarJoystick";
+            this.trackBarJoystick.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBarJoystick.Size = new System.Drawing.Size(45, 332);
+            this.trackBarJoystick.TabIndex = 21;
+            this.trackBarJoystick.TickFrequency = 10;
+            this.trackBarJoystick.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.trackBarJoystick.Scroll += new System.EventHandler(this.trackBarJoystick_Scroll);
+            this.trackBarJoystick.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBarJoystick_MouseUp);
+            // 
+            // buttonPrawo
+            // 
+            this.buttonPrawo.BackColor = System.Drawing.Color.SkyBlue;
+            this.buttonPrawo.BackgroundImage = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.P;
+            this.buttonPrawo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonPrawo.Location = new System.Drawing.Point(103, 174);
+            this.buttonPrawo.Name = "buttonPrawo";
+            this.buttonPrawo.Size = new System.Drawing.Size(54, 52);
+            this.buttonPrawo.TabIndex = 20;
+            this.buttonPrawo.UseVisualStyleBackColor = false;
+            this.buttonPrawo.Click += new System.EventHandler(this.buttonPrawo_Click);
+            // 
+            // buttonLewo
+            // 
+            this.buttonLewo.BackColor = System.Drawing.Color.SkyBlue;
+            this.buttonLewo.BackgroundImage = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.L;
+            this.buttonLewo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonLewo.Location = new System.Drawing.Point(43, 174);
+            this.buttonLewo.Name = "buttonLewo";
+            this.buttonLewo.Size = new System.Drawing.Size(54, 52);
+            this.buttonLewo.TabIndex = 19;
+            this.buttonLewo.UseVisualStyleBackColor = false;
+            this.buttonLewo.Click += new System.EventHandler(this.buttonLewo_Click);
             // 
             // buttonJazdaDoPozycji
             // 
@@ -271,7 +348,8 @@
             this.buttonStartStop.TabIndex = 2;
             this.buttonStartStop.Text = "START";
             this.buttonStartStop.UseVisualStyleBackColor = false;
-            this.buttonStartStop.Click += new System.EventHandler(this.buttonStartStop_Click);
+            this.buttonStartStop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonStartStop_MouseDown);
+            this.buttonStartStop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonStartStop_MouseUp);
             // 
             // buttonJazdaProgramowa
             // 
@@ -598,89 +676,13 @@
             // 
             this.tabControlBazaDanych.Controls.Add(this.tabPage1);
             this.tabControlBazaDanych.Controls.Add(this.tabPage2);
+            this.tabControlBazaDanych.Enabled = false;
             this.tabControlBazaDanych.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabControlBazaDanych.Location = new System.Drawing.Point(996, 30);
             this.tabControlBazaDanych.Name = "tabControlBazaDanych";
             this.tabControlBazaDanych.SelectedIndex = 0;
             this.tabControlBazaDanych.Size = new System.Drawing.Size(337, 630);
             this.tabControlBazaDanych.TabIndex = 8;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.Moccasin;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.Location = new System.Drawing.Point(21, 23);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(98, 25);
-            this.textBox2.TabIndex = 23;
-            this.textBox2.Text = "Pozycja";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.Moccasin;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(21, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(98, 25);
-            this.textBox1.TabIndex = 24;
-            this.textBox1.Text = "Pozycja zadana";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.Moccasin;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox3.Location = new System.Drawing.Point(21, 104);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(98, 25);
-            this.textBox3.TabIndex = 25;
-            this.textBox3.Text = "Prędkość";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // buttonLewo
-            // 
-            this.buttonLewo.BackColor = System.Drawing.Color.SkyBlue;
-            this.buttonLewo.BackgroundImage = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.L;
-            this.buttonLewo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonLewo.Location = new System.Drawing.Point(43, 174);
-            this.buttonLewo.Name = "buttonLewo";
-            this.buttonLewo.Size = new System.Drawing.Size(54, 52);
-            this.buttonLewo.TabIndex = 19;
-            this.buttonLewo.UseVisualStyleBackColor = false;
-            this.buttonLewo.Click += new System.EventHandler(this.buttonLewo_Click);
-            // 
-            // buttonPrawo
-            // 
-            this.buttonPrawo.BackColor = System.Drawing.Color.SkyBlue;
-            this.buttonPrawo.BackgroundImage = global::Dyplom_Dariusz_Petasz_Z709.Properties.Resources.P;
-            this.buttonPrawo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonPrawo.Location = new System.Drawing.Point(103, 174);
-            this.buttonPrawo.Name = "buttonPrawo";
-            this.buttonPrawo.Size = new System.Drawing.Size(54, 52);
-            this.buttonPrawo.TabIndex = 20;
-            this.buttonPrawo.UseVisualStyleBackColor = false;
-            this.buttonPrawo.Click += new System.EventHandler(this.buttonPrawo_Click);
-            // 
-            // trackBarJoystick
-            // 
-            this.trackBarJoystick.Location = new System.Drawing.Point(201, 13);
-            this.trackBarJoystick.Maximum = 100;
-            this.trackBarJoystick.Minimum = -100;
-            this.trackBarJoystick.Name = "trackBarJoystick";
-            this.trackBarJoystick.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBarJoystick.Size = new System.Drawing.Size(45, 332);
-            this.trackBarJoystick.TabIndex = 21;
-            this.trackBarJoystick.TickFrequency = 10;
-            this.trackBarJoystick.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.trackBarJoystick.Scroll += new System.EventHandler(this.trackBarJoystick_Scroll);
-            this.trackBarJoystick.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBarJoystick_MouseUp);
             // 
             // ObrotowkaPanel
             // 
@@ -700,6 +702,7 @@
             this.panel2.PerformLayout();
             this.panelSterowanie.ResumeLayout(false);
             this.panelSterowanie.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarJoystick)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazFxObrotowkaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tWDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokazAktBindingSource)).EndInit();
@@ -709,7 +712,6 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabControlBazaDanych.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarJoystick)).EndInit();
             this.ResumeLayout(false);
 
         }

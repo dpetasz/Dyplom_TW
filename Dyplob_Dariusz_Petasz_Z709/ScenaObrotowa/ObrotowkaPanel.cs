@@ -29,7 +29,12 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
         public SolidBrush Pioro3;
         public SolidBrush KolorLiczby;
         public Font textFont;
-
+        bool aktywacja;
+        public bool Aktywacja
+        {
+            get { return aktywacja; }
+            set { aktywacja = value; }
+        }
         bool doPozycji;
         public bool DoPozycji
         {
@@ -115,6 +120,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             DoPozycji = false;
             Programowa = false;
             Kierunek = false;
+            Aktywacja = false;
             SetPredkosc(0);
             SetPozycjaZadana(GetPozycja());
             Odswiez();
@@ -122,7 +128,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 
         private void ObrotowkaPanel_Load(object sender, EventArgs e)
         {
-            LadujBaza();
             jazdaTechniczna();
 
         }
@@ -147,19 +152,22 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             stanWyp.Wypelnienie(Rysuj);
 
         }
-
-        public void JazdaJoystick()
+        void StopWypelnienie()
         {
-
+            this.stanWyp = new Wypelnienie1();
+            pictureBox1.Invalidate();
+        }
+        void JazdaWypelnienie()
+        {
+            this.stanWyp = new WypelnienieJazda();
+            pictureBox1.Invalidate();
         }
         private void green()
         {
-
             timer1.Enabled = false;
             buttonStartStop.BackColor = Color.Green;
             buttonStartStop.Text = "Start";
-            this.stanWyp = new Wypelnienie1();
-            pictureBox1.Invalidate();
+            StopWypelnienie();
 
         }
         private void red()
@@ -167,8 +175,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             timer1.Enabled = true;
             buttonStartStop.BackColor = Color.Red;
             buttonStartStop.Text = "Stop";
-            this.stanWyp = new WypelnienieJazda();
-            pictureBox1.Invalidate();
+            JazdaWypelnienie();
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -179,7 +187,21 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
                 Odswiez();
                 pictureBox1.Invalidate();
             }
+            if (DoPozycji == true || Programowa == true)
+            {
+                if ((Math.Round(GetPozycja(), 1)) == (Math.Round(GetPozycjaZadana(), 1)))
+                {
+                    StopWypelnienie();
+                    Odswiez();
+                }
+                else
+                {
+                    SetPozycja(Jazda.doPozycji(GetPredkosc(), GetKierunek(), GetPozycja()));
+                    Odswiez();
+                    pictureBox1.Invalidate();
 
+                }
+            }
 
         }
 
@@ -206,8 +228,9 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
         void Odswiez()
         {
             textBoxPredkoscObrotowka.Text = GetPredkosc().ToString();
-            textBoxPozycjaObrotowka.Text = GetPozycja().ToString();
+            textBoxPozycjaObrotowka.Text = (Math.Round(GetPozycja(), 1)).ToString();
             textBoxPozycjaZadanaObrotowka.Text = GetPozycjaZadana().ToString();
+            PrzyciskKierunek();
             if (DoPozycji == true)
             {
                 buttonJazdaDoPozycji.BackColor = Color.IndianRed;
@@ -223,6 +246,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
                 //panelBazaDanych.Enabled = false;
                 textBoxPredkoscObrotowka.ReadOnly = false;
                 buttonStartStop.Enabled = true;
+                tabControlBazaDanych.Enabled = false;
             }
             else if (Programowa == true)
             {
@@ -235,11 +259,12 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
                 buttonJazdaProgramowa.BackColor = Color.IndianRed;
                 buttonJazdaProgramowa.Enabled = false;
 
-                textBoxPozycjaZadanaObrotowka.ReadOnly = true;
+                textBoxPozycjaZadanaObrotowka.ReadOnly = false;
                 textBoxPredkoscObrotowka.ReadOnly = false;
                 //panelBazaDanych.Enabled = true;
 
                 buttonStartStop.Enabled = true;
+                tabControlBazaDanych.Enabled = true;
             }
             else if (Joystick == true)
             {
@@ -256,6 +281,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
                 // panelBazaDanych.Enabled = false;
 
                 buttonStartStop.Enabled = false;
+                tabControlBazaDanych.Enabled = false;
             }
         }
 
@@ -294,6 +320,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
         private void buttonJazdaProgramowa_Click(object sender, EventArgs e)
         {
             jazdaProgramowa();
+
+            LadujBaza();
         }
 
         private void buttonJazdaDoPozycji_Click(object sender, EventArgs e)
@@ -373,17 +401,29 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 
         private void trackBarJoystick_Scroll(object sender, EventArgs e)
         {
-            this.stanWyp = new WypelnienieJazda();
-            timer1.Enabled = true;
-            SetPredkosc(trackBarJoystick.Value);
-            Odswiez();
+            if(joystick == true)
+            {
+                JazdaWypelnienie();
+                timer1.Enabled = true;
+                SetPredkosc(trackBarJoystick.Value);
+                Odswiez();
+            }
+            else
+            {
+                SetPozycjaZadana(float.Parse(textBoxPozycjaZadanaObrotowka.Text));
+                SetPredkosc(Int32.Parse(textBoxPredkoscObrotowka.Text));
+                JazdaWypelnienie();
+                timer1.Enabled = true;
+                SetPredkosc(Math.Abs(trackBarJoystick.Value));
+                Odswiez();
+            }
+            
         }
 
         private void trackBarJoystick_MouseUp(object sender, MouseEventArgs e)
         {
 
-            this.stanWyp = new Wypelnienie1();
-            pictureBox1.Invalidate();
+            StopWypelnienie();
             timer1.Enabled = false;
             trackBarJoystick.Value = 0;
             SetPredkosc(trackBarJoystick.Value);
@@ -391,5 +431,18 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             Odswiez();
         }
 
+        private void buttonStartStop_MouseDown(object sender, MouseEventArgs e)
+        {
+            SetPozycjaZadana(float.Parse(textBoxPozycjaZadanaObrotowka.Text));
+            SetPredkosc(Int32.Parse(textBoxPredkoscObrotowka.Text));
+            red();
+        }
+
+        private void buttonStartStop_MouseUp(object sender, MouseEventArgs e)
+        {
+            green();
+            Jazda.ZapisPozycja(GetPozycja());
+            Odswiez();
+        }
     }
 }

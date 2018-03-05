@@ -80,18 +80,32 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             if (v > 0)
             {
 
-                pozycja += v * 0.001f;
-                if (Math.Round(pozycja, 1) == 360) pozycja = 0;
+                pozycja -= Math.Abs(v) * 0.001f;
+                if (Math.Round(pozycja, 1) == 0) pozycja = 360;
             }
             else if (v < 0)
             {
 
-                pozycja += v * 0.001f;
-                if (Math.Round(pozycja, 1) == 0) pozycja = 360;
+                pozycja += Math.Abs(v) * 0.001f;
+                if (Math.Round(pozycja, 1) == 360) pozycja = 0;
             }
 
             return (float)Math.Round(pozycja, 1);
 
+        }
+        public float doPozycji(int v, bool kierunek, float pozycja)
+        {
+            if(kierunek == false)
+            {
+                pozycja -= Math.Abs(v) * 0.001f;
+                if (Math.Round(pozycja, 1) == 0) pozycja = 360;
+            }
+            else if(kierunek == true)
+            {
+                pozycja += Math.Abs(v) * 0.001f;
+                if (Math.Round(pozycja, 1) == 360) pozycja = 0;
+            }
+            return pozycja;
         }
     }
 }
