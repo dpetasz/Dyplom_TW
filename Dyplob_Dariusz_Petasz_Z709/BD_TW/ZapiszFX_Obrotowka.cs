@@ -13,7 +13,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
         {
             string kom = "";
 
-            db.dodajFx_obrotowka(idAkt, nazwa,predkosc , kierunek, stop ,opis, ref kom);
+            db.dodajFx_obrotowka(idAkt, nazwa,predkosc , kierunek, (decimal)Math.Round(stop, 1) ,opis, ref kom);
 
             return kom;
 
@@ -23,7 +23,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
         {
             string kom = "";
 
-            db.aktualizujFx_obrotowka(idFX,idAkt, nazwa, predkosc, kierunek, stop, opis, ref kom);
+            db.aktualizujFx_obrotowka(idFX, idAkt, nazwa, predkosc, kierunek, (decimal)Math.Round(stop, 1), opis, ref kom);
 
             return kom;
 

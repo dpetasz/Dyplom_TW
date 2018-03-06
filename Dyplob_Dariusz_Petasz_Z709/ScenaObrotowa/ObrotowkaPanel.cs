@@ -112,6 +112,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
         {
             this.PozycjaZadana = PozycjaZadana;
         }
+        void ladujProgramowa()
+        {
+
+        }
         public ObrotowkaPanel()
         {
             InitializeComponent();
@@ -228,7 +232,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
         void Odswiez()
         {
             textBoxPredkoscObrotowka.Text = GetPredkosc().ToString();
-            textBoxPozycjaObrotowka.Text = (Math.Round(GetPozycja(), 1)).ToString();
+            textBoxPozycjaObrotowka.Text = (Math.Round(GetPozycja(), 2)).ToString();
             textBoxPozycjaZadanaObrotowka.Text = GetPozycjaZadana().ToString();
             PrzyciskKierunek();
             if (DoPozycji == true)
@@ -345,6 +349,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 
         private void pokazAktBindingSource_CurrentChanged(object sender, EventArgs e)
         {
+            ladujAkt();
+        }
+        void ladujAkt()
+        {
             try
             {
                 int idAkt = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
@@ -356,7 +364,21 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 
             }
         }
-
+        private void pokazFxObrotowkaBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int idFx = ((this.pokazFxObrotowkaBindingSource.Current as DataRowView).Row as TWDataSet.pokazFxObrotowkaRow).idfx_obrotowka;
+                SetPredkosc(((this.pokazFxObrotowkaBindingSource.Current as DataRowView).Row as TWDataSet.pokazFxObrotowkaRow).predkosc);
+                SetPozycjaZadana((float)((this.pokazFxObrotowkaBindingSource.Current as DataRowView).Row as TWDataSet.pokazFxObrotowkaRow).miejsce_stop);
+                SetKierunek(((this.pokazFxObrotowkaBindingSource.Current as DataRowView).Row as TWDataSet.pokazFxObrotowkaRow).kierunek);
+                Odswiez();
+            }
+            catch (Exception)
+            {
+                
+            }
+        }
         private void buttonZapiszFX_Click(object sender, EventArgs e)
         {
             int idAkt;
@@ -371,6 +393,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             }
 
             labelWynikDodajFX_Ob.Text = db.DodajFX(idAkt, textBoxNazwaFX.Text, Predkosc, Kierunek, (decimal)Pozycja, richTextBoxOpisZapisFx.Text);
+            ladujAkt();
         }
 
         private void buttonLewo_Click(object sender, EventArgs e)
@@ -444,5 +467,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             Jazda.ZapisPozycja(GetPozycja());
             Odswiez();
         }
+
+        
     }
 }

@@ -80,6 +80,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControlBazaDanych = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelSterowanie.SuspendLayout();
@@ -368,6 +369,7 @@
             // 
             this.pokazFxObrotowkaBindingSource.DataMember = "pokazFxObrotowka";
             this.pokazFxObrotowkaBindingSource.DataSource = this.tWDataSet;
+            this.pokazFxObrotowkaBindingSource.CurrentChanged += new System.EventHandler(this.pokazFxObrotowkaBindingSource_CurrentChanged);
             // 
             // tWDataSet
             // 
@@ -676,6 +678,7 @@
             // 
             this.tabControlBazaDanych.Controls.Add(this.tabPage1);
             this.tabControlBazaDanych.Controls.Add(this.tabPage2);
+            this.tabControlBazaDanych.Controls.Add(this.tabPage3);
             this.tabControlBazaDanych.Enabled = false;
             this.tabControlBazaDanych.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabControlBazaDanych.Location = new System.Drawing.Point(996, 30);
@@ -683,6 +686,16 @@
             this.tabControlBazaDanych.SelectedIndex = 0;
             this.tabControlBazaDanych.Size = new System.Drawing.Size(337, 630);
             this.tabControlBazaDanych.TabIndex = 8;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(329, 598);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Aktualizuj FX";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // ObrotowkaPanel
             // 
@@ -769,5 +782,6 @@
         private System.Windows.Forms.Button buttonLewo;
         private System.Windows.Forms.Button buttonPrawo;
         private System.Windows.Forms.TrackBar trackBarJoystick;
+        private System.Windows.Forms.TabPage tabPage3;
     }
 }
