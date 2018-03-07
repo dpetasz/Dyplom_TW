@@ -281,7 +281,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         {
             if (Pozycja < PozycjaZadana)
             {
-                if ((PozycjaPortal - PozycjaZadana) < 60)
+                if (((float)Math.Round(PozycjaPortal,1) - PozycjaZadana) < 59)
                 {
                     ZmianaAktywacjaRozstaw();
                     textBoxWynik.BackColor = Color.Red;
@@ -380,7 +380,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         public void Odswiez()
         {
             textBoxPozycja.Text = ((float)Math.Round((Pozycja / 20), 2)).ToString() + " m";
-            textBoxRozstaw.Text = ((float)Math.Round(((PozycjaPortal - Pozycja) / 20), 2)).ToString() + " m";
+            textBoxRozstaw.Text = ((float)Math.Round(((PozycjaPortal - Pozycja) / 20), 1)).ToString() + " m";
             textBoxMiejsceStop.Text = ((float)Math.Round((PozycjaZadana / 20), 2)).ToString() + " m";
             textBoxPredkosc.Text = Predkosc.ToString();
             OdswiezPrzyciskAktualizuj();
