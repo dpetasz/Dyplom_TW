@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dyplom_Dariusz_Petasz_Z709.Urzadzenia;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -7,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace Dyplom_Dariusz_Petasz_Z709
 {
-    class RysujTarcza: IRysujTarcza
+    class RysujTarcza: RysujUrzadzenie
     {
         StanWypelnienie stanWyp = new Wypelnienie1();
-        public Pen pioroLinia;
-        public SolidBrush wypelnienieTrojkat;
-        public Pen pioro;
-        public SolidBrush Pioro1;
-        public SolidBrush Pioro2;
-        public SolidBrush Pioro3;
-        public SolidBrush KolorLiczby;
-        public Font textFont;
+        //public Pen pioroLinia;
+        //public SolidBrush wypelnienieTrojkat;
+        //public Pen pioro;
+        //public SolidBrush Pioro1;
+        //public SolidBrush Pioro2;
+        //public SolidBrush Pioro3;
+        //public SolidBrush KolorLiczby;
+        //public Font textFont;
         
         
 
@@ -29,10 +30,10 @@ namespace Dyplom_Dariusz_Petasz_Z709
 
             Font textFont = new Font("Century", 12F, FontStyle.Bold);
             g.FillRectangle(Pioro3, 0, 0, 630, 630);
-            g.DrawEllipse(pioro, 70, 70, 500, 500);
+            g.DrawEllipse(Pioro, 70, 70, 500, 500);
             g.FillEllipse(Pioro1, 90, 90, 460, 460);
             g.FillEllipse(Pioro2, 317, 317, 6, 6);
-            g.DrawLine(pioro, 550, 320, 570, 320);
+            g.DrawLine(Pioro, 550, 320, 570, 320);
             g.DrawString(x.ToString(), textFont, KolorLiczby, 575, 310);
             for (int i = 1; i < 360; i++)
             {
@@ -42,18 +43,18 @@ namespace Dyplom_Dariusz_Petasz_Z709
                 g.TranslateTransform(-320, -320);
                 if (i % 5 == 0)
                 {
-                    g.DrawLine(pioro, 560, 320, 570, 320);
+                    g.DrawLine(Pioro, 560, 320, 570, 320);
                 }
                 if (i % 10 == 0)
                 {
                     x += 10;
-                    g.DrawLine(pioro, 550, 320, 570, 320);
+                    g.DrawLine(Pioro, 550, 320, 570, 320);
                     g.DrawString(x.ToString(), textFont, KolorLiczby, 575, 310);
 
                 }
                 else
                 {
-                    g.DrawLine(pioro, 565, 320, 570, 320);
+                    g.DrawLine(Pioro, 565, 320, 570, 320);
                 }
 
             }
@@ -68,7 +69,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
             g.TranslateTransform(320, 320);
             g.RotateTransform(o);
             g.TranslateTransform(-320, -320);
-            g.DrawLine(pioroLinia, 90, 316, 550, 324);
+            g.DrawLine(PioroLinia, 90, 316, 550, 324);
             g.FillPolygon(wypelnienieTrojkat, trojkat);
         }
         public void Wypelnienie()

@@ -21163,8 +21163,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters {
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Akt] ([idprzed], [nazwa], [opis], [dlugosc]) VALUES (@idprzed," +
-                " @nazwa, @opis, @dlugosc);\nSELECT idakt, idprzed, nazwa, opis, dlugosc FROM Akt " +
-                "WHERE (idakt = SCOPE_IDENTITY())";
+                " @nazwa, @opis, @dlugosc);\r\nSELECT idakt, idprzed, nazwa, opis, dlugosc FROM Akt" +
+                " WHERE (idakt = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idprzed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idprzed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nazwa", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -21565,8 +21565,8 @@ SELECT idakt, idprzed, nazwa, opis, dlugosc FROM Akt WHERE (idakt = @idakt)";
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[FX_Most] ([idakt], [nazwa], [opis]) VALUES (@idakt, @nazwa, @o" +
-                "pis);\nSELECT idfx_most, idakt, nazwa, opis FROM FX_Most WHERE (idfx_most = SCOPE" +
-                "_IDENTITY())";
+                "pis);\r\nSELECT idfx_most, idakt, nazwa, opis FROM FX_Most WHERE (idfx_most = SCOP" +
+                "E_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idakt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idakt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nazwa", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -22647,8 +22647,8 @@ SELECT idfx_obrotowka, idakt, nazwa, predkosc, kierunek, miejsce_stop, opis FROM
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[FX_Sztankiet] ([idakt], [nazwa], [opis]) VALUES (@idakt, @nazw" +
-                "a, @opis);\nSELECT idfx_sztankiet, idakt, nazwa, opis FROM FX_Sztankiet WHERE (id" +
-                "fx_sztankiet = SCOPE_IDENTITY())";
+                "a, @opis);\r\nSELECT idfx_sztankiet, idakt, nazwa, opis FROM FX_Sztankiet WHERE (i" +
+                "dfx_sztankiet = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idakt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idakt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nazwa", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23338,8 +23338,8 @@ SELECT idfx_sztankiet_sztankiet, idfx_sztankiet, idsztankiet, predkosc, miejsce_
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[FX_Wozek] ([idakt], [nazwa], [opis]) VALUES (@idakt, @nazwa, @" +
-                "opis);\nSELECT idfx_wozek, idakt, nazwa, opis FROM FX_Wozek WHERE (idfx_wozek = S" +
-                "COPE_IDENTITY())";
+                "opis);\r\nSELECT idfx_wozek, idakt, nazwa, opis FROM FX_Wozek WHERE (idfx_wozek = " +
+                "SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idakt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idakt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nazwa", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -24032,8 +24032,8 @@ SELECT idfx_wozek_wozek, idfx_wozek, idwozek, predkosc, miejsce_stop FROM FX_Woz
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[FX_Zapadnia] ([idakt], [nazwa], [opis]) VALUES (@idakt, @nazwa" +
-                ", @opis);\nSELECT idfx_zapadnia, idakt, nazwa, opis FROM FX_Zapadnia WHERE (idfx_" +
-                "zapadnia = SCOPE_IDENTITY())";
+                ", @opis);\r\nSELECT idfx_zapadnia, idakt, nazwa, opis FROM FX_Zapadnia WHERE (idfx" +
+                "_zapadnia = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idakt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idakt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nazwa", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -24730,9 +24730,9 @@ SELECT idfx_zapadnia_zapadnia, idfx_zapadnia, idzapadnia, z_portalem, predkosc, 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_imie", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imie", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Kompozytor] ([nazwisko], [imie]) VALUES (@nazwisko, @imie);\nSE" +
-                "LECT idkompozytor, nazwisko, imie FROM Kompozytor WHERE (idkompozytor = SCOPE_ID" +
-                "ENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Kompozytor] ([nazwisko], [imie]) VALUES (@nazwisko, @imie);\r\nS" +
+                "ELECT idkompozytor, nazwisko, imie FROM Kompozytor WHERE (idkompozytor = SCOPE_I" +
+                "DENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nazwisko", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwisko", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imie", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -25433,15 +25433,15 @@ SELECT idmost, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FROM Mo
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_opis", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opis", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Powiadomienie] ([opis]) VALUES (@opis);\nSELECT idpowiadomienie" +
-                ", opis FROM Powiadomienie WHERE (idpowiadomienie = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Powiadomienie] ([opis]) VALUES (@opis);\r\nSELECT idpowiadomieni" +
+                "e, opis FROM Powiadomienie WHERE (idpowiadomienie = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@opis", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Powiadomienie] SET [opis] = @opis WHERE (([idpowiadomienie] = @Orig" +
-                "inal_idpowiadomienie) AND ([opis] = @Original_opis));\nSELECT idpowiadomienie, op" +
-                "is FROM Powiadomienie WHERE (idpowiadomienie = @idpowiadomienie)";
+                "inal_idpowiadomienie) AND ([opis] = @Original_opis));\r\nSELECT idpowiadomienie, o" +
+                "pis FROM Powiadomienie WHERE (idpowiadomienie = @idpowiadomienie)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@opis", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idpowiadomienie", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idpowiadomienie", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -25753,9 +25753,9 @@ SELECT idmost, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FROM Mo
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Pracownik] ([login], [password]) VALUES (@login, @password);\nS" +
-                "ELECT idpracownik, login, password FROM Pracownik WHERE (idpracownik = SCOPE_IDE" +
-                "NTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Pracownik] ([login], [password]) VALUES (@login, @password);\r\n" +
+                "SELECT idpracownik, login, password FROM Pracownik WHERE (idpracownik = SCOPE_ID" +
+                "ENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@login", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "login", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -26567,8 +26567,8 @@ SELECT idprzed, idkompozytor, idrezyser, idrodzaj, nazwa, datapremiery, dlugosc,
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_imie", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imie", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Rezyser] ([nazwisko], [imie]) VALUES (@nazwisko, @imie);\nSELEC" +
-                "T idrezyser, nazwisko, imie FROM Rezyser WHERE (idrezyser = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Rezyser] ([nazwisko], [imie]) VALUES (@nazwisko, @imie);\r\nSELE" +
+                "CT idrezyser, nazwisko, imie FROM Rezyser WHERE (idrezyser = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nazwisko", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwisko", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imie", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -26916,15 +26916,15 @@ SELECT idrezyser, nazwisko, imie FROM Rezyser WHERE (idrezyser = @idrezyser)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nazwa", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Rodzaj] ([nazwa]) VALUES (@nazwa);\nSELECT idrodzaj, nazwa FROM" +
-                " Rodzaj WHERE (idrodzaj = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Rodzaj] ([nazwa]) VALUES (@nazwa);\r\nSELECT idrodzaj, nazwa FRO" +
+                "M Rodzaj WHERE (idrodzaj = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nazwa", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Rodzaj] SET [nazwa] = @nazwa WHERE (([idrodzaj] = @Original_idrodza" +
-                "j) AND ([nazwa] = @Original_nazwa));\nSELECT idrodzaj, nazwa FROM Rodzaj WHERE (i" +
-                "drodzaj = @idrodzaj)";
+                "j) AND ([nazwa] = @Original_nazwa));\r\nSELECT idrodzaj, nazwa FROM Rodzaj WHERE (" +
+                "idrodzaj = @idrodzaj)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nazwa", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idrodzaj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idrodzaj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -27593,8 +27593,8 @@ SELECT idsztankiet, nazwa, pozycja, predkosc_max, krancowa_gora, krancowa_dol FR
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Wozek] ([nazwa], [pozycja], [predkosc_max]) VALUES (@nazwa, @p" +
-                "ozycja, @predkosc_max);\nSELECT idwozek, nazwa, pozycja, predkosc_max FROM Wozek " +
-                "WHERE (idwozek = SCOPE_IDENTITY())";
+                "ozycja, @predkosc_max);\r\nSELECT idwozek, nazwa, pozycja, predkosc_max FROM Wozek" +
+                " WHERE (idwozek = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nazwa", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pozycja", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 4, 2, "pozycja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

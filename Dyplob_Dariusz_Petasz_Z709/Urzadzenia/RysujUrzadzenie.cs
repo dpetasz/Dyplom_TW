@@ -182,6 +182,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
                 TextPrzycisk = value;
             }
         }
+        public SolidBrush wypelnienieTrojkat;
 
         public virtual void Wypelnienie()
         {
