@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dyplom_Dariusz_Petasz_Z709.Wozki;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
 {
-    public class RysujUrzadzenie
+    public class RysujUrzadzenie 
     {
         int id;
         public int Id
@@ -22,8 +23,14 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
             set { nazwa = value; }
         }
 
-        
-
+        public string GetNazwa()
+        {
+            return Nazwa;
+        }
+        public void SetNazwa(string Nazwa)
+        {
+            this.Nazwa = Nazwa;
+        }
 
         Pen pioroLinia, pioro, liniaPrzycisk;
         public Pen PioroLinia
@@ -48,6 +55,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
                 pioro = value;
             }
         }
+        public Pen GetPioro()
+        {
+            return Pioro;
+        }
         public Pen LiniaPrzycisk
         {
             get
@@ -71,6 +82,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
                 pioro1 = value;
             }
         }
+        public SolidBrush GetPioro1()
+        {
+            return Pioro1;
+        }
         public SolidBrush Pioro2
         {
             get
@@ -93,6 +108,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
                 pioro3 = value;
             }
         }
+        public SolidBrush GetPioro3()
+        {
+            return Pioro3;
+        }
         public SolidBrush KolorLiczby
         {
             get
@@ -103,6 +122,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
             {
                 kolorLiczby = value;
             }
+        }
+        public SolidBrush GetKolorLiczby()
+        {
+            return KolorLiczby;
         }
         public SolidBrush Rygiel_1
         {
@@ -170,6 +193,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
             {
                 textFont = value;
             }
+        }
+        public Font GetTextFont()
+        {
+            return TextFont;
         }
         public Font TextPrzycisk
         {

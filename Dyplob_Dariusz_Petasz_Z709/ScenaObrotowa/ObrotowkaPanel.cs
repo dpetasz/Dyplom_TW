@@ -13,6 +13,7 @@ using System.IO;
 namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 {
     public partial class ObrotowkaPanel : UserControl
+
     {
         Graphics g;
         StanWypelnienie stanWyp = new Wypelnienie1();
@@ -376,7 +377,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             }
             catch (Exception)
             {
-                
+
             }
         }
         private void buttonZapiszFX_Click(object sender, EventArgs e)
@@ -424,7 +425,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 
         private void trackBarJoystick_Scroll(object sender, EventArgs e)
         {
-            if(joystick == true)
+            if (joystick == true)
             {
                 JazdaWypelnienie();
                 timer1.Enabled = true;
@@ -440,7 +441,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
                 SetPredkosc(Math.Abs(trackBarJoystick.Value));
                 Odswiez();
             }
-            
+
         }
 
         private void trackBarJoystick_MouseUp(object sender, MouseEventArgs e)
@@ -468,6 +469,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             Odswiez();
         }
 
-        
+
     }
 }

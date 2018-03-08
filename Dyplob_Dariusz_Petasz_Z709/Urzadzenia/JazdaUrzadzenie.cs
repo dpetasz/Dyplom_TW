@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dyplom_Dariusz_Petasz_Z709.Wozki;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
 {
-    public class JazdaUrzadzenie
+    public class JazdaUrzadzenie: IJazdaWozek
     {
         public virtual float jazdaManual(bool kierunek, int v, float pozycja)
         {
