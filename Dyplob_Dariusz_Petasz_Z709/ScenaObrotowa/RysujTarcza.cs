@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Dyplom_Dariusz_Petasz_Z709
 {
-    class RysujTarcza: RysujUrzadzenie
+    class RysujTarcza: RysujUrzadzenie, IRysujTarcza
     {
         StanWypelnienie stanWyp = new Wypelnienie1();
         //public Pen pioroLinia;

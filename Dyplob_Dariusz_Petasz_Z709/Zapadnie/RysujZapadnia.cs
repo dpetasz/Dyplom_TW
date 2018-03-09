@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 {
-    public class RysujZapadnia : RysujUrzadzenie
+    public class RysujZapadnia : RysujUrzadzenie, IRysujZapadnia
     {
         public void ZapadniaJazda(Graphics g, float zapadnia, float portal)
         {
