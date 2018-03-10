@@ -142,6 +142,7 @@
     <Compile Include="UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Wozki\IJazdaWozek.cs" />
     <Compile Include="Wozki\IRysujWozek.cs" />
     <Compile Include="Wozki\IWozek.cs" />
     <Compile Include="Wozki\JazdaWozek.cs" />

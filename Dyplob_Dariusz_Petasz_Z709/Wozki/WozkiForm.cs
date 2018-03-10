@@ -191,13 +191,25 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                 }
             }
         }
+        public int GetIdPrzedstawienie()
+        {
+            try
+            {
+                return ((this.pokazPrzedstawienieBindingSource.Current as DataRowView).Row as TWDataSet.pokazPrzedstawienieRow).idprzed;
 
+            }
+            catch (Exception)
+            {
+
+                return 0;
+            }
+        }
         private void pokazPrzedstawienieBindingSource_CurrentChanged(object sender, EventArgs e)
         {
             try
             {
-                int idPrzed = ((this.pokazPrzedstawienieBindingSource.Current as DataRowView).Row as TWDataSet.pokazPrzedstawienieRow).idprzed;
-                this.pokazAktTableAdapter.Fill(this.tWDataSet.pokazAkt, idPrzed);
+                
+                this.pokazAktTableAdapter.Fill(this.tWDataSet.pokazAkt, GetIdPrzedstawienie());
             }
             catch (Exception)
             {
@@ -215,9 +227,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         {
             try
             {
-                int idAkt = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
-                this.pokazFx_Wozek_malejacoTableAdapter.Fill(this.tWDataSet.pokazFx_Wozek_malejaco, idAkt);
-                this.pokazFx_Wozek_rosnacoTableAdapter.Fill(this.tWDataSet.pokazFx_Wozek_rosnaco, idAkt);
+                this.pokazFx_Wozek_malejacoTableAdapter.Fill(this.tWDataSet.pokazFx_Wozek_malejaco, GetIdAkt());
+                this.pokazFx_Wozek_rosnacoTableAdapter.Fill(this.tWDataSet.pokazFx_Wozek_rosnaco, GetIdAkt());
             }
             catch
             {
@@ -230,11 +241,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         {
             try
             {
-                int idFx_wozek = ((this.pokazFxWozekrosnacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Wozek_rosnacoRow).idfx_wozek;
-                this.pokazFx_Wozek_WozekTableAdapter.Fill(this.tWDataSet.pokazFx_Wozek_Wozek, idFx_wozek);
+                this.pokazFx_Wozek_WozekTableAdapter.Fill(this.tWDataSet.pokazFx_Wozek_Wozek, GetIdFxWozekRosnaco());
                 foreach (Wozek w in Wozek.ListaWozek)
                 {
-                    w.ladujBazaProgramowa(idFx_wozek);
+                    w.ladujBazaProgramowa(GetIdFxWozekRosnaco());
                 }
             }
             catch
@@ -247,11 +257,11 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         {
             try
             {
-                int idFx_wozek = ((this.pokazFxWozekmalejacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Wozek_malejacoRow).idfx_wozek;
-                this.pokazFx_Wozek_WozekTableAdapter.Fill(this.tWDataSet.pokazFx_Wozek_Wozek, idFx_wozek);
+
+                this.pokazFx_Wozek_WozekTableAdapter.Fill(this.tWDataSet.pokazFx_Wozek_Wozek, GetIdFxWozekMalejaco());
                 foreach (Wozek w in Wozek.ListaWozek)
                 {
-                    w.ladujBazaProgramowa(idFx_wozek);
+                    w.ladujBazaProgramowa(GetIdFxWozekMalejaco());
                 }
             }
             catch
@@ -406,7 +416,16 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         }
         void LadujBazaPrzedstawienie()
         {
+            try
+            {
             this.pokazPrzedstawienieTableAdapter.Fill(this.tWDataSet.pokazPrzedstawienie);
+
+            }
+            catch (Exception)
+            {
+                
+                
+            }
         }
 
         private void buttonJoystick_Click(object sender, EventArgs e)
@@ -424,12 +443,25 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             LadujManual();
         }
 
+        public int GetIdAkt()
+        {
+            try
+            {
+                return ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
+            }
+            catch (Exception)
+            {
+
+                return 0;
+            }
+            
+        }
         private void buttonDodajFX_Click(object sender, EventArgs e)
         {
             try
             {
-                int idAkt = ((this.pokazAktBindingSource.Current as DataRowView).Row as TWDataSet.pokazAktRow).idakt;
-                textBoxWynik.Text = db.DodajFx_Wozek(idAkt, richTextBox3.Text);
+                
+                textBoxWynik.Text = db.DodajFx_Wozek(GetIdAkt(), richTextBox3.Text);
                 ladujFx_Wozek();
             }
             catch
@@ -438,19 +470,42 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
             }
         }
+        public int GetIdFxWozekMalejaco()
+        {
+            try
+            {
+                return ((this.pokazFxWozekmalejacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Wozek_malejacoRow).idfx_wozek;
+            }
+            catch (Exception)
+            {
 
+                return 0;
+            }
+        }
+        public int GetIdFxWozekRosnaco()
+        {
+            try
+            {
+                return ((this.pokazFxWozekrosnacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Wozek_rosnacoRow).idfx_wozek;
+            }
+            catch (Exception)
+            {
+
+                return 0;
+            }
+        }
         private void buttonZapiszFx_wozek_wozek_Click(object sender, EventArgs e)
         {
             
             try
             {
-                int idfxwozek = ((this.pokazFxWozekmalejacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Wozek_malejacoRow).idfx_wozek;
+                
                 
                 foreach (Wozek w in Wozek.ListaWozek)
                 {
-                    textBoxWynik.Text = db.DodajFx_Wozek_Wozek( idfxwozek,w.GetId(),  w.GetPredkosc(), w.GetPozycja());
+                    textBoxWynik.Text = db.DodajFx_Wozek_Wozek( GetIdFxWozekMalejaco(),w.GetId(),  w.GetPredkosc(), w.GetPozycja());
                     ladujFx_Wozek();
-                    w.ladujBazaProgramowa(idfxwozek);
+                    w.ladujBazaProgramowa(GetIdFxWozekMalejaco());
                 }
             }
             catch
@@ -493,11 +548,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         {
             try
             {
-                int idfxwozek = ((this.pokazFxWozekrosnacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Wozek_rosnacoRow).idfx_wozek;
-
+                
                 foreach (Wozek w in Wozek.ListaWozek)
                 {
-                    textBoxWynik.Text = db.AktualizujFx_wozek(idfxwozek, textBoxNazwaFX.Text, richTextBox2.Text);
+                    textBoxWynik.Text = db.AktualizujFx_wozek(GetIdFxWozekRosnaco(), textBoxNazwaFX.Text, richTextBox2.Text);
                     ladujFx_Wozek();
                 }
             }

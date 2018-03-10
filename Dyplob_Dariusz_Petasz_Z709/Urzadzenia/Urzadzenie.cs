@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dyplom_Dariusz_Petasz_Z709.Urzadzenia;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -7,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace Dyplom_Dariusz_Petasz_Z709
 {
-    public class Urzadzenie
+    public class Urzadzenie: RysujUrzadzenie
     {
-        
-        
+
+
         int id;
-        public int Id
+        int Id
         {
             get { return id; }
             set { id = value; }
@@ -22,36 +23,74 @@ namespace Dyplom_Dariusz_Petasz_Z709
             return Id;
         }
         string nazwa;
-        public string Nazwa
+        string Nazwa
         {
             get { return nazwa; }
             set { nazwa = value; }
         }
-
+        public string GetNazwa()
+        {
+            return Nazwa;
+        }
+        public void SetNazwa(string Nazwa)
+        {
+            this.Nazwa = Nazwa;
+        }
         bool kierunek;
-        public bool Kierunek
+        bool Kierunek
         {
             get { return kierunek; }
             set { kierunek = value; }
         }
+        public bool GetKirunek()
+        {
+            return Kierunek;
+        }
+        public void SetKierunek(bool Kierunek)
+        {
+            this.Kierunek = Kierunek;
+        }
         bool aktywacja;
-        public bool Aktywacja
+        bool Aktywacja
         {
             get { return aktywacja; }
             set { aktywacja = value; }
         }
-
+        public bool GetAktywacja()
+        {
+            return Aktywacja;
+        }
+        public void SetAktywacja(bool Aktywacja)
+        {
+            this.Aktywacja = Aktywacja;
+        }
         int przychamowanie;
-        public int Przychamowanie
+        int Przychamowanie
         {
             get { return przychamowanie; }
             set { przychamowanie = value; }
         }
+        public int GetPrzychamowanie()
+        {
+            return Przychamowanie;
+        }
+        public void SetPrzychamowanie(int Przychamowanie)
+        {
+            this.Przychamowanie = Przychamowanie;
+        }
         float pozycja;
-        public float Pozycja
+        float Pozycja
         {
             get { return pozycja; }
             set { pozycja = value; }
+        }
+        public float GetPozycja()
+        {
+            return Pozycja;
+        }
+        public void SetPozycja(float Pozycja)
+        {
+            this.Pozycja = Pozycja;
         }
         int predkoscMax;
         public int PredkoscMax
@@ -60,12 +99,19 @@ namespace Dyplom_Dariusz_Petasz_Z709
             set { predkoscMax = value; }
         }
         int predkosc;
-        public int Predkosc
+        int Predkosc
         {
             get { return predkosc; }
             set { predkosc = value; }
         }
-
+        public int GetPredkosc()
+        {
+            return Predkosc;
+        }
+        public void SetPredkosc(int Predkosc)
+        {
+            this.Predkosc = Predkosc;
+        }
         Pen pioroLinia, pioro;
         public Pen PioroLinia
         {

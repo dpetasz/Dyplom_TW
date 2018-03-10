@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dyplom_Dariusz_Petasz_Z709.BD_TW;
+using Dyplom_Dariusz_Petasz_Z709.Urzadzenia;
 
 namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 {
@@ -15,9 +16,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
     {
         static public List<Wozek> ListaWozek = new List<Wozek>();
 
-        RysujWozek rysujWozek = new RysujWozek();
-        JazdaWozek jazdaWozek = new JazdaWozek();
+        IRysujWozek rysujWozek = new RysujWozek();
+        IJazdaWozek jazdaWozek = new JazdaUrzadzenie();
         IZapiszWozek db = new ZapiszFxWozek();
+        
         Graphics g;
         bool doPozycji;
         public bool DoPozycji
@@ -155,7 +157,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             InitializeComponent();
 
             SetId(idW);
-            rysujWozek.Nazwa = name;
+            rysujWozek.SetNazwa(name);
             this.Pozycja = x;
             this.PredkoscMax = vmax;
             SetPozycjaZadana(GetPozycja());
@@ -183,10 +185,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             //rysuje wozek
-            g.FillRectangle(rysujWozek.Pioro1, x, 1, 460, 104);
-            g.DrawRectangle(rysujWozek.Pioro, x, 1, 460, 104);
+            g.FillRectangle(rysujWozek.GetPioro1(), x, 1, 460, 104);
+            g.DrawRectangle(rysujWozek.GetPioro(), x, 1, 460, 104);
             //napis
-            g.DrawString(rysujWozek.Nazwa.ToString(), rysujWozek.TextFont, rysujWozek.KolorLiczby, x + 180, 30);
+            g.DrawString(rysujWozek.GetNazwa().ToString(), rysujWozek.GetTextFont(), rysujWozek.GetKolorLiczby(), x + 180, 30);
 
 
         }
@@ -194,10 +196,10 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         {
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-            g.FillRectangle(rysujWozek.Pioro3, 0, 0, 460, 105);
-            g.DrawRectangle(rysujWozek.Pioro, 0, 0, 460, 105);
+            g.FillRectangle(rysujWozek.GetPioro3(), 0, 0, 460, 105);
+            g.DrawRectangle(rysujWozek.GetPioro(), 0, 0, 460, 105);
             //g.DrawRectangle(pioro, 480, 20, 140, 360);
-            g.DrawRectangle(rysujWozek.Pioro, 600, 0, 460, 105);
+            g.DrawRectangle(rysujWozek.GetPioro(), 600, 0, 460, 105);
         }
 
         public void AktywujDoPozycji()

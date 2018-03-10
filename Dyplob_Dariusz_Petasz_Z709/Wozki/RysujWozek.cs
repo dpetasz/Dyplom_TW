@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 {
-    public class RysujWozek: RysujUrzadzenie
+    public class RysujWozek: RysujUrzadzenie, IRysujWozek
     {
         public void WozekJazda(Graphics g, float x)
         {
