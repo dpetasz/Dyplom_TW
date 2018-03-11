@@ -441,6 +441,7 @@
             // textBoxNazwaFX
             // 
             this.textBoxNazwaFX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.textBoxNazwaFX.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazFxObrotowkaBindingSource, "nazwa", true));
             this.textBoxNazwaFX.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.textBoxNazwaFX.ForeColor = System.Drawing.Color.LightGray;
             this.textBoxNazwaFX.Location = new System.Drawing.Point(112, 143);
