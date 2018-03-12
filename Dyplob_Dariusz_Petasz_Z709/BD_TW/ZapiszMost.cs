@@ -12,7 +12,16 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
         public string ZapiszPozycja(int id, float pozycja)
         {
             string kom ="";
+            try
+            {
             db.zapisPozycjaMost(id, (decimal)Math.Round(pozycja, 1), ref kom);
+
+            }
+            catch (Exception)
+            {
+
+                kom = "błąd bazy danych";
+            }
             return kom;
         }
         public string DodajFx_most(int id, string opis)

@@ -456,7 +456,7 @@ namespace Dyplom_Dariusz_Petasz_Z709
                 SetPozycjaZadana(250 - (float.Parse(textBoxStop.Text.ToString()) * 10));
                 if (GetPozycjaZadana() > Kd || GetPozycjaZadana() < Kg)
                 {
-                    MessageBox.Show("Przedział od " + Kd / 10 + " do " + Kg);
+                    MessageBox.Show("Przedział ruchu od " + ((250 - Kd) / 10) + " do " + (250 -Kg)/10);
                     textBoxStop.Clear();
                     SetPozycjaZadana(GetPozycja());
                     Odswiez();
