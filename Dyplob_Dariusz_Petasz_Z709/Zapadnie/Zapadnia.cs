@@ -173,6 +173,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         }
         public void Ryglowanie()
         {
+            
             Rygiel_1 = true;
             Rygiel_3 = true;
             Rygiel_2 = true;
@@ -262,14 +263,16 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             }
             else if (Pozycja < -180 && Predkosc < 0)
             {
-                PozycjaPortal = jazdaZapadnia.jazdaJoystick(Przychamowanie * -1, PozycjaPortal);
-                Pozycja = jazdaZapadnia.jazdaJoystick(Przychamowanie * -1, Pozycja);
-                Odswiez();
                 if (Pozycja <= Kg)
                 {
                     ZmianaAktywacjaJoystick();
                 }
+                PozycjaPortal = jazdaZapadnia.jazdaJoystick(Przychamowanie * -1, PozycjaPortal);
+                Pozycja = jazdaZapadnia.jazdaJoystick(Przychamowanie * -1, Pozycja);
+                Odswiez();
+                
             }
+                
             else
             {
                 PozycjaPortal = jazdaZapadnia.jazdaJoystick(Predkosc, PozycjaPortal);

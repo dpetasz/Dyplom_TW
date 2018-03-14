@@ -482,7 +482,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             {
                 this.pokazFx_Wozek_Wozek_dlajednegoTableAdapter.Fill(this.tWDataSet.pokazFx_Wozek_Wozek_dlajednego, idFx, GetId());
                 int idFx_wozek_wozek = ((this.pokazFxWozekWozekdlajednegoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Wozek_Wozek_dlajednegoRow).idfx_wozek_wozek;
-                db.AktualizujFX_most_most(idFx_wozek_wozek, GetPredkosc(), GetPozycja());
+                db.AktualizujFX_most_most(idFx_wozek_wozek, GetPredkosc(), GetPozycjaZadana());
                 ladujBazaProgramowa(idFx);
             }
             catch { }

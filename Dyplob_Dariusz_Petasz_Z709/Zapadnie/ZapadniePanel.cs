@@ -418,14 +418,28 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 
         void Ryglowanie()
         {
+            int x = 0;
             foreach (Zapadnia z in Zapadnia.ListaZapadnia)
             {
-                if (z.DoPozycji == true || z.Rozstaw == true) z.Ryglowanie();
+                if (((z.PozycjaPortal - z.Pozycja) / 20) > 9.6)
+                {
+                    
+                    MessageBox.Show("Zły rozstaw zapadni dla zaryglowania");
+                }
+                else if (z.DoPozycji == true || z.Rozstaw == true)
+                {
+                    z.Ryglowanie();
+                    
+                }
+                if (z.Rygiel_1 == true && z.Rygiel_2 == true && z.Rygiel_3 == true) { x++;}
             }
+            if(x == 6){
             ryglowanie = true;
             buttonOdryglowanie.BackColor = Color.SkyBlue;
             buttonStartStop.Enabled = false;
             panelJoystick.Enabled = false;
+            }
+            
         }
 
         private void pokazFxzaprosnacoBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -443,7 +457,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
                 }
             }
             catch { }
-           
+
         }
 
         void Odryglowanie()
@@ -501,14 +515,14 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 
         }
 
-       
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             int idFxZap = ((this.pokazFxzaprosnacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_zap_rosnacoRow).idfx_zapadnia;
             string x = zapiszZapadnia.AktualizujFX_zap(idFxZap, textBoxNazwaFX.Text, richTextBox4.Text);
             LadujFx_Zapadnia();
-            richTextBox4.Text +=" " + x;
+            richTextBox4.Text += " " + x;
         }
 
         private void button2_Click(object sender, EventArgs e)
