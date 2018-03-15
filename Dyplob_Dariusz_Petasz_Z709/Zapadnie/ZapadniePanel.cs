@@ -519,10 +519,24 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
             int idFxZap = ((this.pokazFxzaprosnacoBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_zap_rosnacoRow).idfx_zapadnia;
             string x = zapiszZapadnia.AktualizujFX_zap(idFxZap, textBoxNazwaFX.Text, richTextBox4.Text);
-            LadujFx_Zapadnia();
+            
             richTextBox4.Text += " " + x;
+            foreach (Zapadnia z in Zapadnia.ListaZapadnia)
+            {
+                z.aktualizujFX_zap_zap(idFxZap);
+            }
+LadujFx_Zapadnia();
+            LadujFx_Zapadnia_Zapadnia();
+
+                 }
+            catch
+            {
+
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

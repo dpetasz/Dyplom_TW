@@ -820,7 +820,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
             {
                 this.pokazFx_Zapadnia_Zapadnia_dlajednejTableAdapter.Fill(this.tWDataSet.pokazFx_Zapadnia_Zapadnia_dlajednej, idFx, Id);
                 int idFx_zap_zap = ((this.pokazFxZapadniaZapadniadlajednejBindingSource.Current as DataRowView).Row as TWDataSet.pokazFx_Zapadnia_Zapadnia_dlajednejRow).idfx_zapadnia_zapadnia;
-                textBoxWynik.Text = db.AktualizujFX_zap_zap(idFx_zap_zap, Predkosc, Pozycja, Sprzeganie, Aktywacja);
+                textBoxWynik.Text = db.AktualizujFX_zap_zap(idFx_zap_zap, Predkosc, PozycjaZadana, Sprzeganie, Aktywacja);
             }
             catch { }
         }
