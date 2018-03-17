@@ -43,7 +43,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                 float p = (float)(Convert.ToDouble(w["pozycja"].ToString()));
 
                 Wozek wozek = new Wozek(p, Convert.ToInt32(w["predkosc_max"].ToString()), w["nazwa"].ToString(), (Convert.ToInt32(w["idwozek"].ToString())));
-                wozek.Przychamowanie = Convert.ToInt32(w["przychamowanie"].ToString());
+                wozek.SetPrzychamowanie(Convert.ToInt32(w["przychamowanie"].ToString()));
                 wozek.Kd = (float)(Convert.ToDouble(w["krancowa_przod"].ToString()));
                 wozek.Kg = (float)(Convert.ToDouble(w["krancowa_tyl"].ToString()));
                 wozek.Parent = pictureBox1;
@@ -69,7 +69,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         {
             foreach (Wozek w in Wozek.ListaWozek)
             {
-                w.Kierunek = true;
+                w.SetKierunek(true);
             }
         }
 
@@ -77,7 +77,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         {
             foreach (Wozek w in Wozek.ListaWozek)
             {
-                w.Kierunek = false;
+                w.SetKierunek(false);
             }
         }
 
@@ -107,7 +107,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         {
             foreach (Wozek w in Wozek.ListaWozek)
             {
-                if (w.Aktywacja == true)
+                if (w.GetAktywacja() == true)
                 {
                     if (joystick == true)
                     {
@@ -164,7 +164,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             textBoxWynikZapisu.Clear();
             foreach (Wozek w in Wozek.ListaWozek)
             {
-                if (w.Aktywacja == true)
+                if (w.GetAktywacja() == true)
                 {
                     w.SetPredkosc(trackBarJoystick.Value);
                     textBoxWynikZapisu.Text +=" / " +  w.ZapiszPozycjaBaza() ;
@@ -185,9 +185,9 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             timer1.Enabled = true;
             foreach (Wozek w in Wozek.ListaWozek)
             {
-                if (w.Aktywacja == true)
+                if (w.GetAktywacja() == true)
                 {
-                    w.Predkosc = trackBarJoystick.Value;
+                    w.SetPredkosc(trackBarJoystick.Value);
                 }
             }
         }

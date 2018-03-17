@@ -19,45 +19,51 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         IRysujWozek rysujWozek = new RysujWozek();
         IJazdaWozek jazdaWozek = new JazdaUrzadzenie();
         IZapiszWozek db = new ZapiszFxWozek();
-        
+        IWozek wozek = new Urzadzenie();
         Graphics g;
-        bool doPozycji;
-        public bool DoPozycji
+        public bool GetDoPozycji()
         {
-            get { return doPozycji; }
-            set { doPozycji = value; }
+            return wozek.GetDoPozycji();
         }
-        bool programowa;
-        public bool Programowa
+        public void SetDoPozycji(bool DoPozycji)
         {
-            get { return programowa; }
-            set { programowa = value; }
+            wozek.SetDoPozycji(DoPozycji);
         }
-        bool joystick;
-        public bool Joystick
+        
+        public bool GetProgramowa()
         {
-            get { return joystick; }
-            set { joystick = value; }
+            return wozek.GetProgramowa();
         }
-        bool manualna;
-        public bool Manualna
+        public void SetProgramowa(bool Programowa)
         {
-            get { return manualna; }
-            set { manualna = value; }
+            wozek.SetProgramowa(Programowa);
         }
-        int id;
-        public int Id
+       
+        
+        public bool GetManualna()
         {
-            get { return id; }
-            set { id = value; }
+            return wozek.GetManualna();
         }
+        public void SetManualna(bool Manualna)
+        {
+            wozek.SetManualna(Manualna);
+        }
+        public bool GetJoystick()
+        {
+            return wozek.GetJoystick();
+        }
+        public void SetJoystick(bool Joystick)
+        {
+            wozek.SetJoystick(Joystick);
+        }
+        
         public int GetId()
         {
-            return Id;
+            return wozek.GetId();
         }
         public void SetId(int Id)
         {
-            this.Id = Id;
+            wozek.SetId(Id);
         }
         int predkoscMax;
         int PredkoscMax
@@ -65,12 +71,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             get { return predkoscMax; }
             set { predkoscMax = value; }
         }
-        bool kierunek;
-        public bool Kierunek
-        {
-            get { return kierunek; }
-            set { kierunek = value; }
-        }
+        
+        
         float kg;
         public float Kg
         {
@@ -85,68 +87,60 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         }
         public bool GetKierunek()
         {
-            return Kierunek;
+            return wozek.GetKierunek();
         }
         public void SetKierunek(bool Kierunek)
         {
-            this.Kierunek = Kierunek;
+            wozek.SetKierunek(Kierunek);
         }
-        bool aktywacja;
-        public bool Aktywacja
-        {
-            get { return aktywacja; }
-            set { aktywacja = value; }
+        
+        
+        public bool GetAktywacja()
+        { 
+            return wozek.GetAktywacja(); 
         }
-        int przychamowanie;
-        public int Przychamowanie
+        public void SetAktywacja(bool Aktywacja)
         {
-            get { return przychamowanie; }
-            set { przychamowanie = value; }
+           wozek.SetAktywacja(Aktywacja);
+        }
+        
+        public int GetPrzychamowanie()
+        {
+            return wozek.GetPrzychamowanie();
+        }
+        public void SetPrzychamowanie(int Przychamowanie)
+        {
+            wozek.SetPrzychamowanie(Przychamowanie);
         }
 
-        float pozycja;
-        public float Pozycja
-        {
-            get { return pozycja; }
-            set { pozycja = value; }
-        }
+       
         public float GetPozycja()
         {
-            return Pozycja;
+            return wozek.GetPozycja();
         }
 
         public void SetPozycja(float Pozycja)
         {
-            this.Pozycja = Pozycja;
+            wozek.SetPozycja(Pozycja);
         }
-        int predkosc;
-        public int Predkosc
-        {
-            get { return predkosc; }
-            set { predkosc = value; }
-        }
+        
         public int GetPredkosc()
         {
-            return Predkosc;
+            return wozek.GetPredkosc();
         }
         public void SetPredkosc(int Predkosc)
         {
-            this.Predkosc = Predkosc;
+            wozek.SetPredkosc(Predkosc);
         }
 
-        float pozycjaZadana;
-        float PozycjaZadana
-        {
-            get { return pozycjaZadana; }
-            set { pozycjaZadana = value; }
-        }
+        
         public float GetPozycjaZadana()
         {
-            return PozycjaZadana;
+            return wozek.GetPozycjaZadana();
         }
         public void SetPozycjaZadana(float PozycjaZadana)
         {
-            this.PozycjaZadana = PozycjaZadana;
+            wozek.SetPozycjaZadana(PozycjaZadana);
         }
         public Wozek()
         {
@@ -158,15 +152,15 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
             SetId(idW);
             rysujWozek.SetNazwa(name);
-            this.Pozycja = x;
+            SetPozycja(x);
             this.PredkoscMax = vmax;
             SetPozycjaZadana(GetPozycja());
-            this.Aktywacja = false;
-            this.Kierunek = false;
-            this.Przychamowanie = 10;
+            SetAktywacja(false);
+            SetKierunek(false);
+            SetPrzychamowanie(10);
             rysujWozek.Wypelnienie();
             ListaWozek.Add(this);
-            this.Predkosc = 0;
+            SetPredkosc(0);
             LadujPrzyciski();
             rysujWozek.Wypelnienie();
 
@@ -204,42 +198,42 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
         public void AktywujDoPozycji()
         {
-            DoPozycji = true;
-            Manualna = false;
-            Joystick = false;
-            Programowa = false;
-            Aktywacja = false;
+            SetDoPozycji(true);
+            SetManualna(false);
+            SetJoystick(false);
+            SetProgramowa(false);
+            SetAktywacja(false);
             textBoxStop.ReadOnly = false;
             Odswiez();
         }
 
         public void AktywujManualna()
         {
-            DoPozycji = false;
-            Manualna = true;
-            Joystick = false;
-            Programowa = false;
-            Aktywacja = false;
+            SetDoPozycji(false);
+            SetManualna(true);
+            SetJoystick(false);
+            SetProgramowa(false);
+            SetAktywacja(false);
             textBoxStop.ReadOnly = true;
             Odswiez();
         }
         public void AktywujJoystick()
         {
-            DoPozycji = false;
-            Manualna = false;
-            Joystick = true;
-            Programowa = false;
-            Aktywacja = false;
+            SetDoPozycji(false);
+            SetManualna(false);
+            SetJoystick(true);
+            SetProgramowa(false);
+            SetAktywacja(false);
             textBoxStop.ReadOnly = true;
             Odswiez();
         }
         public void AktywujProgamowa()
         {
-            DoPozycji = true;
-            Manualna = false;
-            Joystick = false;
-            Programowa = true;
-            Aktywacja = false;
+            SetDoPozycji(true);
+            SetManualna(false);
+            SetJoystick(false);
+            SetProgramowa(true);
+            SetAktywacja(false);
             textBoxStop.ReadOnly = false;
             Odswiez();
         }
@@ -247,7 +241,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         {
             textBoxPozycja.Text = ((float)Math.Round(GetPozycja() / 20, 2)).ToString() + " m";
             textBoxStop.Text = ((float)Math.Round(GetPozycjaZadana() / 20, 2)).ToString() + " m";
-            textBoxPredkosc.Text = Math.Abs(Predkosc).ToString();
+            textBoxPredkosc.Text = Math.Abs(GetPredkosc()).ToString();
             buttonAktywacja.Text = "Aktywuj W-" + GetId();
             LadujAktywuj();
             PrzyciskKierunek();
@@ -256,7 +250,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
         public void LadujAktywuj()
         {
-            if (Aktywacja == true)
+            if (GetAktywacja() == true)
             {
                 rysujWozek.WypelnienieJazda();
                 Red();
@@ -296,7 +290,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                 }
                 else
                 {
-                    SetPozycja(jazdaWozek.jazdaJoystick(Przychamowanie * -1, GetPozycja()));
+                    SetPozycja(jazdaWozek.jazdaJoystick(GetPrzychamowanie() * -1, GetPozycja()));
                     Odswiez();
                 }
 
@@ -313,7 +307,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                 }
                 else
                 {
-                    SetPozycja(jazdaWozek.jazdaJoystick(Przychamowanie, GetPozycja()));
+                    SetPozycja(jazdaWozek.jazdaJoystick(GetPrzychamowanie(), GetPozycja()));
                     Odswiez();
                 }
             }
@@ -336,7 +330,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                 }
                 else
                 {
-                    SetPozycja(jazdaWozek.jazdaManual(GetKierunek(), Przychamowanie, GetPozycja()));
+                    SetPozycja(jazdaWozek.jazdaManual(GetKierunek(), GetPrzychamowanie(), GetPozycja()));
                     Odswiez();
                 }
 
@@ -351,7 +345,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                 }
                 else
                 {
-                    SetPozycja(jazdaWozek.jazdaManual(GetKierunek(), Przychamowanie, GetPozycja()));
+                    SetPozycja(jazdaWozek.jazdaManual(GetKierunek(), GetPrzychamowanie(), GetPozycja()));
                     Odswiez();
                 }
             }
@@ -369,9 +363,9 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
             if (GetPozycja() < GetPozycjaZadana())
             {
-                if ((float)Math.Round(GetPozycja(), 1) == (float)Math.Round(GetPozycjaZadana(),1))
+                if ((float)Math.Round(GetPozycja(), 1) == (float)Math.Round(GetPozycjaZadana(), 1))
                 {
-                    Predkosc = 0;
+                    SetPredkosc(0);
                     ZmianaAktywacja();
 
                     LadujAktywuj();
@@ -379,7 +373,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                 }
                 else if (GetPozycja() > GetPozycjaZadana() - 5)
                 {
-                    SetPozycja(jazdaWozek.jazdaDoPozycjiUp(Przychamowanie, GetPozycja()));
+                    SetPozycja(jazdaWozek.jazdaDoPozycjiUp(GetPrzychamowanie(), GetPozycja()));
 
                     Odswiez();
                 }
@@ -400,7 +394,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                 }
                 else if (GetPozycja() < GetPozycjaZadana() + 5)
                 {
-                    SetPozycja(jazdaWozek.jazdaDoPozycjiDown(Przychamowanie, GetPozycja()));
+                    SetPozycja(jazdaWozek.jazdaDoPozycjiDown(GetPrzychamowanie(), GetPozycja()));
                     Odswiez();
                 }
                 else
@@ -432,14 +426,14 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
 
         private void buttonAktywuj_Click(object sender, EventArgs e)
         {
-            if (Aktywacja == false)
+            if (GetAktywacja() == false)
             {
-                Aktywacja = true;
+                SetAktywacja(true);
                 LadujAktywuj();
             }
             else
             {
-                Aktywacja = false;
+                SetAktywacja(false);
                 LadujAktywuj();
             }
 
@@ -450,7 +444,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         private void buttonLewo_Click(object sender, EventArgs e)
         {
 
-            Kierunek = false;
+            SetKierunek(false);
             PrzyciskKierunek();
 
         }
@@ -458,7 +452,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         private void buttonPrawo_Click(object sender, EventArgs e)
         {
 
-            Kierunek = true;
+            SetKierunek(true);
             PrzyciskKierunek();
 
         }
@@ -491,13 +485,13 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         {
             textBoxPozycja.Text = ((float)Math.Round(GetPozycja() / 20, 2)).ToString() + " m";
             textBoxStop.Text = ((float)Math.Round(GetPozycjaZadana() / 20, 2)).ToString() + " m";
-            textBoxPredkosc.Text = Math.Abs(Predkosc).ToString();
+            textBoxPredkosc.Text = Math.Abs(GetPredkosc()).ToString();
             PrzyciskAktywacja();
             Invalidate();
         }
         void PrzyciskAktywacja()
         {
-            if (Aktywacja == false)
+            if (GetAktywacja() == false)
             {
                 buttonAktywacja.BackColor = Color.SkyBlue;
             }
@@ -505,8 +499,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
         }
         public void ZmianaAktywacja()
         {
-            Aktywacja = false;
-            Predkosc = 0;
+            SetAktywacja(false);
+            SetPredkosc(0);
             PrzyciskAktywacja();
             Odswiez();
         }
@@ -566,7 +560,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
                 SetPozycjaZadana((float.Parse(textBox4.Text.ToString()) * 20));
                 if (GetPozycjaZadana() > Kd || GetPozycjaZadana() < Kg)
                 {
-                    MessageBox.Show("Przedział od " + Kd/20 + " do " + Kg/20);
+                    MessageBox.Show("Przedział od " + Kd / 20 + " do " + Kg / 20);
                     textBoxStop.Clear();
                     SetPozycjaZadana(GetPozycja());
                     Odswiez();
@@ -579,7 +573,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Wozki
             }
             catch
             {
-                MessageBox.Show("To nie są liczby" );
+                MessageBox.Show("To nie są liczby");
                 SetPozycjaZadana(GetPozycja());
                 textBoxStop.Clear();
                 Odswiez();

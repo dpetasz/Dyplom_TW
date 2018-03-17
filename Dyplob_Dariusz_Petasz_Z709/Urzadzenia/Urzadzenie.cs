@@ -1,4 +1,5 @@
 ﻿using Dyplom_Dariusz_Petasz_Z709.Urzadzenia;
+using Dyplom_Dariusz_Petasz_Z709.Wozki;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Dyplom_Dariusz_Petasz_Z709
 {
-    public class Urzadzenie: RysujUrzadzenie
+    public class Urzadzenie: RysujUrzadzenie, IWozek
     {
 
 
@@ -21,6 +22,10 @@ namespace Dyplom_Dariusz_Petasz_Z709
         public int GetId()
         {
             return Id;
+        }
+        public void SetId(int Id)
+        {
+            this.Id = Id;
         }
         string nazwa;
         string Nazwa
@@ -36,13 +41,27 @@ namespace Dyplom_Dariusz_Petasz_Z709
         {
             this.Nazwa = Nazwa;
         }
+        float pozycjaZadana;
+        float PozycjaZadana
+        {
+            get { return pozycjaZadana; }
+            set { pozycjaZadana = value; }
+        }
+        public float GetPozycjaZadana()
+        {
+            return PozycjaZadana;
+        }
+        public void SetPozycjaZadana(float PozycjaZadana)
+        {
+            this.PozycjaZadana = PozycjaZadana;
+        }
         bool kierunek;
         bool Kierunek
         {
             get { return kierunek; }
             set { kierunek = value; }
         }
-        public bool GetKirunek()
+        public bool GetKierunek()
         {
             return Kierunek;
         }
@@ -111,6 +130,64 @@ namespace Dyplom_Dariusz_Petasz_Z709
         public void SetPredkosc(int Predkosc)
         {
             this.Predkosc = Predkosc;
+        }
+
+        bool doPozycji;
+        public bool DoPozycji
+        {
+            get { return doPozycji; }
+            set { doPozycji = value; }
+        }
+        public bool GetDoPozycji()
+        {
+            return DoPozycji;
+        }
+        public void SetDoPozycji(bool DoPozycji)
+        {
+            this.DoPozycji = DoPozycji;
+        }
+        bool programowa;
+        public bool Programowa
+        {
+            get { return programowa; }
+            set { programowa = value; }
+        }
+        public bool GetProgramowa()
+        {
+            return Programowa;
+        }
+        public void SetProgramowa(bool Programowa)
+        {
+            this.Programowa = Programowa;
+        }
+        bool joystick;
+        public bool Joystick
+        {
+            get { return joystick; }
+            set { joystick = value; }
+        }
+        public bool GetJoystick()
+        {
+            return Joystick;
+        }
+        public void SetJoystick(bool Joystick)
+        {
+            this.Joystick = Joystick;
+        }
+
+        bool manualna;
+        public bool Manualna
+        {
+            get { return manualna; }
+            set { manualna = value; }
+        }
+        public bool GetManualna()
+        {
+            return Manualna;
+        }
+        public void SetManualna(bool Manualna)
+        {
+            this.Manualna = Manualna;
         }
         Pen pioroLinia, pioro;
         public Pen PioroLinia
