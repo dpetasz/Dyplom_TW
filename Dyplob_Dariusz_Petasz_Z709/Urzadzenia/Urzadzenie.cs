@@ -1,4 +1,5 @@
-﻿using Dyplom_Dariusz_Petasz_Z709.Urzadzenia;
+﻿using Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa;
+using Dyplom_Dariusz_Petasz_Z709.Urzadzenia;
 using Dyplom_Dariusz_Petasz_Z709.Wozki;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Dyplom_Dariusz_Petasz_Z709
 {
-    public class Urzadzenie: RysujUrzadzenie, IWozek
+    public class Urzadzenie: RysujUrzadzenie, IWozek, IObrotowka
     {
 
 

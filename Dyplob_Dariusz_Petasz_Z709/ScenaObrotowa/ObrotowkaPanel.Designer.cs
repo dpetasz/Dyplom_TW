@@ -81,9 +81,44 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControlBazaDanych = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.buttonAktualizuj = new System.Windows.Forms.Button();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.pokazObrotowkaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokaz_ObrotowkaTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokaz_ObrotowkaTableAdapter();
             this.textBoxWynik = new System.Windows.Forms.TextBox();
+            this.panelPozycjaZadana = new System.Windows.Forms.Panel();
+            this.button14 = new System.Windows.Forms.Button();
+            this.buttonZapiszPozycjaZadana = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panelPredkosc = new System.Windows.Forms.Panel();
+            this.labelPredkosc = new System.Windows.Forms.Label();
+            this.buttonZamknijPanelPredkosc = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.trackBarPredkosc = new System.Windows.Forms.TrackBar();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelSterowanie.SuspendLayout();
@@ -95,7 +130,11 @@
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControlBazaDanych.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazObrotowkaBindingSource)).BeginInit();
+            this.panelPozycjaZadana.SuspendLayout();
+            this.panelPredkosc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarPredkosc)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -171,6 +210,7 @@
             this.textBoxPredkoscObrotowka.Name = "textBoxPredkoscObrotowka";
             this.textBoxPredkoscObrotowka.Size = new System.Drawing.Size(126, 26);
             this.textBoxPredkoscObrotowka.TabIndex = 6;
+            this.textBoxPredkoscObrotowka.Click += new System.EventHandler(this.textBoxPredkoscObrotowka_Click);
             // 
             // textBoxPozycjaZadanaObrotowka
             // 
@@ -182,6 +222,7 @@
             this.textBoxPozycjaZadanaObrotowka.ReadOnly = true;
             this.textBoxPozycjaZadanaObrotowka.Size = new System.Drawing.Size(126, 26);
             this.textBoxPozycjaZadanaObrotowka.TabIndex = 5;
+            this.textBoxPozycjaZadanaObrotowka.Click += new System.EventHandler(this.textBoxPozycjaZadanaObrotowka_Click);
             // 
             // textBoxPozycjaObrotowka
             // 
@@ -450,6 +491,7 @@
             this.textBoxNazwaFX.ForeColor = System.Drawing.Color.LightGray;
             this.textBoxNazwaFX.Location = new System.Drawing.Point(112, 143);
             this.textBoxNazwaFX.Name = "textBoxNazwaFX";
+            this.textBoxNazwaFX.ReadOnly = true;
             this.textBoxNazwaFX.Size = new System.Drawing.Size(203, 26);
             this.textBoxNazwaFX.TabIndex = 32;
             // 
@@ -508,6 +550,7 @@
             // richTextBoxOpisZapisFx
             // 
             this.richTextBoxOpisZapisFx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.richTextBoxOpisZapisFx.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazFxObrotowkaBindingSource, "opis", true));
             this.richTextBoxOpisZapisFx.ForeColor = System.Drawing.Color.LightGray;
             this.richTextBoxOpisZapisFx.Location = new System.Drawing.Point(11, 253);
             this.richTextBoxOpisZapisFx.Name = "richTextBoxOpisZapisFx";
@@ -594,6 +637,7 @@
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.richTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazFxObrotowkaBindingSource, "opis", true));
             this.richTextBox1.ForeColor = System.Drawing.Color.LightGray;
             this.richTextBox1.Location = new System.Drawing.Point(12, 193);
             this.richTextBox1.Name = "richTextBox1";
@@ -694,13 +738,147 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(70)))));
+            this.tabPage3.Controls.Add(this.comboBox6);
+            this.tabPage3.Controls.Add(this.label22);
+            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Controls.Add(this.textBox4);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Controls.Add(this.buttonAktualizuj);
+            this.tabPage3.Controls.Add(this.comboBox4);
+            this.tabPage3.Controls.Add(this.comboBox5);
+            this.tabPage3.Controls.Add(this.richTextBox3);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.label17);
+            this.tabPage3.Controls.Add(this.label18);
             this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(329, 598);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Aktualizuj FX";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label5.ForeColor = System.Drawing.Color.Salmon;
+            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label5.Location = new System.Drawing.Point(10, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(111, 19);
+            this.label5.TabIndex = 43;
+            this.label5.Text = "Zaktualizowano: ";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazFxObrotowkaBindingSource, "nazwa", true));
+            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.textBox4.ForeColor = System.Drawing.Color.LightGray;
+            this.textBox4.Location = new System.Drawing.Point(115, 175);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(203, 26);
+            this.textBox4.TabIndex = 42;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label7.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label7.Location = new System.Drawing.Point(42, 178);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 19);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "Nazwa";
+            // 
+            // buttonAktualizuj
+            // 
+            this.buttonAktualizuj.Location = new System.Drawing.Point(224, 207);
+            this.buttonAktualizuj.Name = "buttonAktualizuj";
+            this.buttonAktualizuj.Size = new System.Drawing.Size(94, 32);
+            this.buttonAktualizuj.TabIndex = 40;
+            this.buttonAktualizuj.Text = "Aktualizuj";
+            this.buttonAktualizuj.UseVisualStyleBackColor = true;
+            this.buttonAktualizuj.Click += new System.EventHandler(this.buttonAktualizuj_Click);
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.comboBox4.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.pokazAktBindingSource, "idakt", true));
+            this.comboBox4.DataSource = this.pokazAktBindingSource;
+            this.comboBox4.DisplayMember = "nazwa";
+            this.comboBox4.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBox4.ForeColor = System.Drawing.Color.LightGray;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(115, 93);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(203, 27);
+            this.comboBox4.TabIndex = 39;
+            this.comboBox4.ValueMember = "idakt";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.comboBox5.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.pokazPrzedstawienieBindingSource, "idprzed", true));
+            this.comboBox5.DataSource = this.pokazPrzedstawienieBindingSource;
+            this.comboBox5.DisplayMember = "nazwa";
+            this.comboBox5.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBox5.ForeColor = System.Drawing.Color.LightGray;
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(115, 48);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(203, 27);
+            this.comboBox5.TabIndex = 38;
+            this.comboBox5.ValueMember = "idprzed";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.richTextBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pokazFxObrotowkaBindingSource, "opis", true));
+            this.richTextBox3.ForeColor = System.Drawing.Color.LightGray;
+            this.richTextBox3.Location = new System.Drawing.Point(14, 253);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(304, 331);
+            this.richTextBox3.TabIndex = 37;
+            this.richTextBox3.Text = "";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label8.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label8.Location = new System.Drawing.Point(77, 96);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 19);
+            this.label8.TabIndex = 36;
+            this.label8.Text = "Akt";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label17.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label17.Location = new System.Drawing.Point(10, 51);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(106, 19);
+            this.label17.TabIndex = 35;
+            this.label17.Text = "Przedstawienie: ";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label18.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label18.Location = new System.Drawing.Point(10, 220);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(42, 19);
+            this.label18.TabIndex = 34;
+            this.label18.Text = "Opis ";
             // 
             // pokazObrotowkaBindingSource
             // 
@@ -722,12 +900,294 @@
             this.textBoxWynik.Size = new System.Drawing.Size(285, 26);
             this.textBoxWynik.TabIndex = 9;
             // 
+            // panelPozycjaZadana
+            // 
+            this.panelPozycjaZadana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(15)))), ((int)(((byte)(32)))));
+            this.panelPozycjaZadana.Controls.Add(this.button14);
+            this.panelPozycjaZadana.Controls.Add(this.buttonZapiszPozycjaZadana);
+            this.panelPozycjaZadana.Controls.Add(this.textBox5);
+            this.panelPozycjaZadana.Controls.Add(this.button7);
+            this.panelPozycjaZadana.Controls.Add(this.button8);
+            this.panelPozycjaZadana.Controls.Add(this.button9);
+            this.panelPozycjaZadana.Controls.Add(this.button6);
+            this.panelPozycjaZadana.Controls.Add(this.button5);
+            this.panelPozycjaZadana.Controls.Add(this.button4);
+            this.panelPozycjaZadana.Controls.Add(this.button10);
+            this.panelPozycjaZadana.Controls.Add(this.button11);
+            this.panelPozycjaZadana.Controls.Add(this.button12);
+            this.panelPozycjaZadana.Controls.Add(this.button3);
+            this.panelPozycjaZadana.Controls.Add(this.button2);
+            this.panelPozycjaZadana.Controls.Add(this.button1);
+            this.panelPozycjaZadana.Location = new System.Drawing.Point(400, 30);
+            this.panelPozycjaZadana.Name = "panelPozycjaZadana";
+            this.panelPozycjaZadana.Size = new System.Drawing.Size(260, 106);
+            this.panelPozycjaZadana.TabIndex = 25;
+            this.panelPozycjaZadana.Visible = false;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(232, 0);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(30, 25);
+            this.button14.TabIndex = 22;
+            this.button14.Text = "X";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // buttonZapiszPozycjaZadana
+            // 
+            this.buttonZapiszPozycjaZadana.Location = new System.Drawing.Point(172, 74);
+            this.buttonZapiszPozycjaZadana.Name = "buttonZapiszPozycjaZadana";
+            this.buttonZapiszPozycjaZadana.Size = new System.Drawing.Size(78, 26);
+            this.buttonZapiszPozycjaZadana.TabIndex = 19;
+            this.buttonZapiszPozycjaZadana.Text = "Zapisz";
+            this.buttonZapiszPozycjaZadana.UseVisualStyleBackColor = true;
+            this.buttonZapiszPozycjaZadana.Click += new System.EventHandler(this.buttonZapiszPozycjaZadana_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox5.Location = new System.Drawing.Point(23, 78);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(121, 20);
+            this.textBox5.TabIndex = 18;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(186, 5);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(30, 30);
+            this.button7.TabIndex = 17;
+            this.button7.Text = "C";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(186, 38);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(30, 30);
+            this.button8.TabIndex = 16;
+            this.button8.Text = ",";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(150, 38);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(30, 30);
+            this.button9.TabIndex = 15;
+            this.button9.Text = "0";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(114, 37);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(30, 30);
+            this.button6.TabIndex = 14;
+            this.button6.Text = "9";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(78, 38);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(30, 30);
+            this.button5.TabIndex = 13;
+            this.button5.Text = "8";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(42, 38);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(30, 30);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "7";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(6, 37);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(30, 30);
+            this.button10.TabIndex = 11;
+            this.button10.Text = "6";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(150, 5);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(30, 30);
+            this.button11.TabIndex = 10;
+            this.button11.Text = "5";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(114, 5);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(30, 30);
+            this.button12.TabIndex = 9;
+            this.button12.Text = "4";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(78, 5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(30, 30);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(42, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(30, 30);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 30);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panelPredkosc
+            // 
+            this.panelPredkosc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(15)))), ((int)(((byte)(52)))));
+            this.panelPredkosc.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelPredkosc.Controls.Add(this.labelPredkosc);
+            this.panelPredkosc.Controls.Add(this.buttonZamknijPanelPredkosc);
+            this.panelPredkosc.Controls.Add(this.label19);
+            this.panelPredkosc.Controls.Add(this.label20);
+            this.panelPredkosc.Controls.Add(this.label21);
+            this.panelPredkosc.Controls.Add(this.trackBarPredkosc);
+            this.panelPredkosc.Location = new System.Drawing.Point(531, 156);
+            this.panelPredkosc.Name = "panelPredkosc";
+            this.panelPredkosc.Size = new System.Drawing.Size(109, 282);
+            this.panelPredkosc.TabIndex = 26;
+            this.panelPredkosc.Visible = false;
+            // 
+            // labelPredkosc
+            // 
+            this.labelPredkosc.AutoSize = true;
+            this.labelPredkosc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelPredkosc.ForeColor = System.Drawing.Color.LightGray;
+            this.labelPredkosc.Location = new System.Drawing.Point(8, 5);
+            this.labelPredkosc.Name = "labelPredkosc";
+            this.labelPredkosc.Size = new System.Drawing.Size(18, 20);
+            this.labelPredkosc.TabIndex = 5;
+            this.labelPredkosc.Text = "0";
+            // 
+            // buttonZamknijPanelPredkosc
+            // 
+            this.buttonZamknijPanelPredkosc.Location = new System.Drawing.Point(69, 3);
+            this.buttonZamknijPanelPredkosc.Name = "buttonZamknijPanelPredkosc";
+            this.buttonZamknijPanelPredkosc.Size = new System.Drawing.Size(31, 26);
+            this.buttonZamknijPanelPredkosc.TabIndex = 4;
+            this.buttonZamknijPanelPredkosc.Text = "X";
+            this.buttonZamknijPanelPredkosc.UseVisualStyleBackColor = true;
+            this.buttonZamknijPanelPredkosc.Click += new System.EventHandler(this.buttonZamknijPanelPredkosc_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.ForeColor = System.Drawing.Color.Gray;
+            this.label19.Location = new System.Drawing.Point(72, 140);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(19, 13);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "50";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.ForeColor = System.Drawing.Color.Gray;
+            this.label20.Location = new System.Drawing.Point(78, 254);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(13, 13);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "0";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.ForeColor = System.Drawing.Color.Gray;
+            this.label21.Location = new System.Drawing.Point(66, 46);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(25, 13);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "100";
+            // 
+            // trackBarPredkosc
+            // 
+            this.trackBarPredkosc.LargeChange = 1;
+            this.trackBarPredkosc.Location = new System.Drawing.Point(6, 34);
+            this.trackBarPredkosc.Maximum = 100;
+            this.trackBarPredkosc.Name = "trackBarPredkosc";
+            this.trackBarPredkosc.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBarPredkosc.RightToLeftLayout = true;
+            this.trackBarPredkosc.Size = new System.Drawing.Size(45, 242);
+            this.trackBarPredkosc.TabIndex = 0;
+            this.trackBarPredkosc.TickFrequency = 5;
+            this.trackBarPredkosc.Scroll += new System.EventHandler(this.trackBarPredkosc_Scroll);
+            this.trackBarPredkosc.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBarPredkosc_MouseUp);
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.comboBox6.DataSource = this.pokazFxObrotowkaBindingSource;
+            this.comboBox6.DisplayMember = "nazwa";
+            this.comboBox6.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBox6.ForeColor = System.Drawing.Color.LightGray;
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(115, 132);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(203, 27);
+            this.comboBox6.TabIndex = 45;
+            this.comboBox6.ValueMember = "idfx_obrotowka";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label22.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label22.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label22.Location = new System.Drawing.Point(1, 135);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(108, 19);
+            this.label22.TabIndex = 44;
+            this.label22.Text = "FX_Obrotówka";
+            // 
             // ObrotowkaPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Controls.Add(this.panelPredkosc);
+            this.Controls.Add(this.panelPozycjaZadana);
             this.Controls.Add(this.textBoxWynik);
             this.Controls.Add(this.tabControlBazaDanych);
             this.Controls.Add(this.panelSterowanie);
@@ -751,7 +1211,14 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabControlBazaDanych.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazObrotowkaBindingSource)).EndInit();
+            this.panelPozycjaZadana.ResumeLayout(false);
+            this.panelPozycjaZadana.PerformLayout();
+            this.panelPredkosc.ResumeLayout(false);
+            this.panelPredkosc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarPredkosc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -814,5 +1281,40 @@
         private System.Windows.Forms.BindingSource pokazObrotowkaBindingSource;
         private TWDataSetTableAdapters.pokaz_ObrotowkaTableAdapter pokaz_ObrotowkaTableAdapter;
         private System.Windows.Forms.TextBox textBoxWynik;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button buttonAktualizuj;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Panel panelPozycjaZadana;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button buttonZapiszPozycjaZadana;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panelPredkosc;
+        private System.Windows.Forms.Label labelPredkosc;
+        private System.Windows.Forms.Button buttonZamknijPanelPredkosc;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TrackBar trackBarPredkosc;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Label label22;
     }
 }

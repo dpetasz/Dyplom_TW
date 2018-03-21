@@ -13,7 +13,6 @@ using System.IO;
 namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 {
     public partial class ObrotowkaPanel : UserControl
-
     {
         Graphics g;
         StanWypelnienie stanWyp = new Wypelnienie1();
@@ -21,6 +20,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
         IJazdaObrotowka Jazda = new JazdaObrotowka();
         IZapiszFX_Obrotowka db = new ZapiszFX_Obrotowka();
         RysujTarcza Rysuj = new RysujTarcza();
+        IObrotowka obrotowka = new Urzadzenie();
 
         public Pen pioroLinia;
         public SolidBrush wypelnienieTrojkat;
@@ -30,88 +30,79 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
         public SolidBrush Pioro3;
         public SolidBrush KolorLiczby;
         public Font textFont;
-        bool aktywacja;
-        public bool Aktywacja
+        
+        public bool GetAktywacja()
         {
-            get { return aktywacja; }
-            set { aktywacja = value; }
+            return obrotowka.GetAktywacja();
         }
-        bool doPozycji;
-        public bool DoPozycji
+        public void SetAktywacja(bool Aktywacja)
         {
-            get { return doPozycji; }
-            set { doPozycji = value; }
+            obrotowka.SetAktywacja( Aktywacja);
         }
-        bool programowa;
-        public bool Programowa
+        
+        public bool GetDoPozycji()
         {
-            get { return programowa; }
-            set { programowa = value; }
+            return obrotowka.GetDoPozycji();
         }
-        bool joystick;
-        public bool Joystick
+        public void SetDoPozycji(bool DoPozycji)
         {
-            get { return joystick; }
-            set { joystick = value; }
+            obrotowka.SetDoPozycji(DoPozycji);
         }
-
-        int predkosc;
-        int Predkosc
+       
+        public bool GetProgramowa()
         {
-            get { return predkosc; }
-            set { predkosc = value; }
+            return obrotowka.GetProgramowa();
         }
+        public void SetProgramowa(bool Programowa)
+        {
+            obrotowka.SetProgramowa(Programowa);
+        }
+        
+        public bool GetJoystick()
+        {
+            return obrotowka.GetJoystick();
+        }
+        public void SetJoystick(bool Joystick)
+        {
+            obrotowka.SetJoystick(Joystick);
+        }
+       
         public int GetPredkosc()
         {
-            return Predkosc;
+            return obrotowka.GetPredkosc();
         }
         public void SetPredkosc(int Predkosc)
         {
-            this.Predkosc = Predkosc;
+            obrotowka.SetPredkosc(Predkosc);
         }
-        bool kierunek;
-        bool Kierunek
-        {
-            get { return kierunek; }
-            set { kierunek = value; }
-        }
+       
         public bool GetKierunek()
         {
-            return Kierunek;
+            return obrotowka.GetKierunek();
         }
         public void SetKierunek(bool Kierunek)
         {
-            this.Kierunek = Kierunek;
+            obrotowka.SetKierunek(Kierunek);
         }
-        float pozycja;
-        float Pozycja
-        {
-            get { return pozycja; }
-            set { pozycja = value; }
-        }
+        
         public float GetPozycja()
         {
-            return Pozycja;
+            return obrotowka.GetPozycja();
         }
 
         public void SetPozycja(float Pozycja)
         {
-            this.Pozycja = Pozycja;
+            obrotowka.SetPozycja ( Pozycja);
         }
 
-        float pozycjaZadana;
-        float PozycjaZadana
-        {
-            get { return pozycjaZadana; }
-            set { pozycjaZadana = value; }
-        }
+        
         public float GetPozycjaZadana()
         {
-            return PozycjaZadana;
+            return obrotowka.GetPozycjaZadana();
         }
         public void SetPozycjaZadana(float PozycjaZadana)
         {
-            this.PozycjaZadana = PozycjaZadana;
+            obrotowka.SetPozycjaZadana ( PozycjaZadana);
         }
         void ladujProgramowa()
         {
@@ -121,11 +112,11 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
         {
             InitializeComponent();
             LadujPozycja();
-            Joystick = false;
-            DoPozycji = false;
-            Programowa = false;
-            Kierunek = false;
-            Aktywacja = false;
+            SetJoystick (false);
+            SetDoPozycji (false);
+            SetProgramowa (false);
+            SetKierunek(false);
+            SetAktywacja ( false);
             SetPredkosc(0);
             SetPozycjaZadana(GetPozycja());
             Odswiez();
@@ -143,16 +134,16 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 
         void LadujPozycja()
         {
-             try
-             {
-                 this.pokaz_ObrotowkaTableAdapter.Fill(this.tWDataSet.pokaz_Obrotowka, 1);
-                 SetPozycja((float)((this.pokazObrotowkaBindingSource.Current as DataRowView).Row as TWDataSet.pokaz_ObrotowkaRow).pozycja);
-             }
-             catch (Exception)
-             {
+            try
+            {
+                this.pokaz_ObrotowkaTableAdapter.Fill(this.tWDataSet.pokaz_Obrotowka, 1);
+                SetPozycja((float)((this.pokazObrotowkaBindingSource.Current as DataRowView).Row as TWDataSet.pokaz_ObrotowkaRow).pozycja);
+            }
+            catch (Exception)
+            {
 
-                 SetPozycja(0);
-             }
+                SetPozycja(0);
+            }
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
@@ -162,7 +153,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             stanWyp.Wypelnienie(Rysuj);
 
             Rysuj.Tarcza(g);
-            Rysuj.Obrot(g, pozycja);
+            Rysuj.Obrot(g, GetPozycja());
         }
 
 
@@ -200,13 +191,13 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (Joystick == true)
+            if (GetJoystick() == true)
             {
                 SetPozycja(Jazda.joystick(GetPredkosc(), GetPozycja()));
                 Odswiez();
                 pictureBox1.Invalidate();
             }
-            if (DoPozycji == true || Programowa == true)
+            if (GetDoPozycji() == true || GetProgramowa() == true)
             {
                 if ((Math.Round(GetPozycja(), 1)) == (Math.Round(GetPozycjaZadana(), 1)))
                 {
@@ -239,7 +230,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             else
             {
 
-                textBoxWynik.Text = db.ZapiszPozycja(1, pozycja);
+                textBoxWynik.Text = db.ZapiszPozycja(1, GetPozycja());
                 green();
             }
         }
@@ -250,7 +241,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             textBoxPozycjaObrotowka.Text = (Math.Round(GetPozycja(), 2)).ToString();
             textBoxPozycjaZadanaObrotowka.Text = GetPozycjaZadana().ToString();
             PrzyciskKierunek();
-            if (DoPozycji == true)
+            if (GetDoPozycji() == true)
             {
                 buttonJazdaDoPozycji.BackColor = Color.IndianRed;
                 buttonJazdaDoPozycji.Enabled = false;
@@ -267,7 +258,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
                 buttonStartStop.Enabled = true;
                 tabControlBazaDanych.Enabled = false;
             }
-            else if (Programowa == true)
+            else if (GetProgramowa() == true)
             {
                 buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
                 buttonJazdaDoPozycji.Enabled = true;
@@ -285,7 +276,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
                 buttonStartStop.Enabled = true;
                 tabControlBazaDanych.Enabled = true;
             }
-            else if (Joystick == true)
+            else if (GetJoystick() == true)
             {
                 buttonJazdaDoPozycji.BackColor = Color.LightSteelBlue;
                 buttonJazdaDoPozycji.Enabled = true;
@@ -306,24 +297,24 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 
         void jazdaDoPozycji()
         {
-            DoPozycji = true;
-            Joystick = false;
-            Programowa = false;
+             SetDoPozycji (true);
+             SetJoystick(false);
+            SetProgramowa(false);
             Odswiez();
 
         }
         void jazdaProgramowa()
         {
-            DoPozycji = false;
-            Joystick = false;
-            Programowa = true;
+             SetDoPozycji (false);
+             SetJoystick(false);
+            SetProgramowa(true);
             Odswiez();
         }
         void jazdaTechniczna()
         {
-            DoPozycji = false;
-            Joystick = true;
-            Programowa = false;
+            SetDoPozycji(false);
+            SetJoystick(true);
+            SetProgramowa(false);
             Odswiez();
         }
 
@@ -407,19 +398,19 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
                 idAkt = 0;
             }
 
-            labelWynikDodajFX_Ob.Text = db.DodajFX(idAkt, textBoxNazwaFX.Text, Predkosc, Kierunek, (decimal)Pozycja, richTextBoxOpisZapisFx.Text);
+            labelWynikDodajFX_Ob.Text = db.DodajFX(idAkt, textBoxNazwaFX.Text, GetPredkosc(), GetKierunek(), GetPozycja(), richTextBoxOpisZapisFx.Text);
             ladujAkt();
         }
 
         private void buttonLewo_Click(object sender, EventArgs e)
         {
-            Kierunek = false;
+            SetKierunek(false);
             PrzyciskKierunek();
         }
 
         void PrzyciskKierunek()
         {
-            if (Kierunek == false)
+            if (GetKierunek() == false)
             {
                 buttonLewo.BackColor = Color.Green;
                 buttonPrawo.BackColor = Color.SkyBlue;
@@ -433,13 +424,13 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
 
         private void buttonPrawo_Click(object sender, EventArgs e)
         {
-            Kierunek = true;
+            SetKierunek(true);
             PrzyciskKierunek();
         }
 
         private void trackBarJoystick_Scroll(object sender, EventArgs e)
         {
-            if (joystick == true)
+            if (GetJoystick() == true)
             {
                 JazdaWypelnienie();
                 timer1.Enabled = true;
@@ -465,7 +456,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             timer1.Enabled = false;
             trackBarJoystick.Value = 0;
             SetPredkosc(trackBarJoystick.Value);
-            db.ZapiszPozycja(1,GetPozycja());
+            db.ZapiszPozycja(1, GetPozycja());
             Odswiez();
         }
 
@@ -481,6 +472,144 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             green();
             db.ZapiszPozycja(1, GetPozycja());
             Odswiez();
+        }
+
+        private void buttonAktualizuj_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idFx = ((this.pokazFxObrotowkaBindingSource.Current as DataRowView).Row as TWDataSet.pokazFxObrotowkaRow).idfx_obrotowka;
+
+                label5.Text = db.AktualizujFX(idFx, textBox4.Text, GetPredkosc(), GetKierunek(), GetPozycjaZadana(), richTextBox3.Text);
+            }
+            catch (Exception)
+            {
+
+                label5.Text = "Błąd Bazy danych";
+            }
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            panelPozycjaZadana.Visible = false;
+        }
+
+        private void buttonZamknijPanelPredkosc_Click(object sender, EventArgs e)
+        {
+            panelPredkosc.Visible = false;
+        }
+
+        private void trackBarPredkosc_Scroll(object sender, EventArgs e)
+        {
+            SetPredkosc(trackBarPredkosc.Value);
+            labelPredkosc.Text = GetPredkosc().ToString();
+        }
+
+        private void trackBarPredkosc_MouseUp(object sender, MouseEventArgs e)
+        {
+            panelPredkosc.Visible = false;
+        }
+
+        private void buttonZapiszPozycjaZadana_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+
+                SetPozycjaZadana(float.Parse(textBox5.Text.ToString()));
+                if (GetPozycjaZadana() > 360 || GetPozycjaZadana() < 0)
+                {
+                    MessageBox.Show("Przedział nie zawiera się 0-360");
+                    textBox5.Clear();
+                    SetPozycjaZadana(GetPozycja());
+                    Odswiez();
+                }
+                else
+                {
+                    panelPozycjaZadana.Visible = false;
+                    textBox5.Clear();
+                    Odswiez();
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Zły format liczb");
+                textBox5.Clear();
+                SetPozycjaZadana(GetPozycja());
+                Odswiez();
+            }
+        }
+
+        private void textBoxPozycjaZadanaObrotowka_Click(object sender, EventArgs e)
+        {
+            panelPozycjaZadana.Visible = true;
+        }
+
+        private void textBoxPredkoscObrotowka_Click(object sender, EventArgs e)
+        {
+            panelPredkosc.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox5.Text += button1.Text;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox5.Text += button2.Text;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox5.Text += button3.Text;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            textBox5.Text += button12.Text;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            textBox5.Text += button11.Text;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            textBox5.Text += button10.Text;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox5.Text += button4.Text;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox5.Text += button5.Text;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            textBox5.Text += button6.Text;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            textBox5.Text += button9.Text;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            textBox5.Text += button8.Text;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBox5.Clear();
         }
 
 
