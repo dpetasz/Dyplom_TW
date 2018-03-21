@@ -81,6 +81,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControlBazaDanych = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pokazObrotowkaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pokaz_ObrotowkaTableAdapter = new Dyplom_Dariusz_Petasz_Z709.TWDataSetTableAdapters.pokaz_ObrotowkaTableAdapter();
+            this.textBoxWynik = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelSterowanie.SuspendLayout();
@@ -92,6 +95,7 @@
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControlBazaDanych.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazObrotowkaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -698,12 +702,33 @@
             this.tabPage3.Text = "Aktualizuj FX";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // pokazObrotowkaBindingSource
+            // 
+            this.pokazObrotowkaBindingSource.DataMember = "pokaz_Obrotowka";
+            this.pokazObrotowkaBindingSource.DataSource = this.tWDataSet;
+            // 
+            // pokaz_ObrotowkaTableAdapter
+            // 
+            this.pokaz_ObrotowkaTableAdapter.ClearBeforeFill = true;
+            // 
+            // textBoxWynik
+            // 
+            this.textBoxWynik.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBoxWynik.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.textBoxWynik.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxWynik.Location = new System.Drawing.Point(684, 666);
+            this.textBoxWynik.Name = "textBoxWynik";
+            this.textBoxWynik.ReadOnly = true;
+            this.textBoxWynik.Size = new System.Drawing.Size(285, 26);
+            this.textBoxWynik.TabIndex = 9;
+            // 
             // ObrotowkaPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(32)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Controls.Add(this.textBoxWynik);
             this.Controls.Add(this.tabControlBazaDanych);
             this.Controls.Add(this.panelSterowanie);
             this.Controls.Add(this.panel2);
@@ -726,7 +751,9 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabControlBazaDanych.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pokazObrotowkaBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -784,5 +811,8 @@
         private System.Windows.Forms.Button buttonPrawo;
         private System.Windows.Forms.TrackBar trackBarJoystick;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.BindingSource pokazObrotowkaBindingSource;
+        private TWDataSetTableAdapters.pokaz_ObrotowkaTableAdapter pokaz_ObrotowkaTableAdapter;
+        private System.Windows.Forms.TextBox textBoxWynik;
     }
 }

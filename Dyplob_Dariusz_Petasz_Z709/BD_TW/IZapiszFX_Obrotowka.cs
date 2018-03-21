@@ -10,5 +10,6 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
     {
         string DodajFX(int idAkt, string nazwa, int predkosc, bool kierunek, decimal stop, string opis);
         string AktualizujFX(int idFX, int idAkt, string nazwa, int predkosc, bool kierunek, decimal stop, string opis);
+        string ZapiszPozycja(int id, float pozycja);
     }
 }

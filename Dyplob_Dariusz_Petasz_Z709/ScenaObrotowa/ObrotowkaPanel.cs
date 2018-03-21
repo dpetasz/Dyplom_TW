@@ -120,7 +120,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
         public ObrotowkaPanel()
         {
             InitializeComponent();
-            SetPozycja(Jazda.PozycjaObrotowka());
+            LadujPozycja();
             Joystick = false;
             DoPozycji = false;
             Programowa = false;
@@ -139,6 +139,20 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
         void LadujBaza()
         {
             this.pokazPrzedstawienieTableAdapter.Fill(this.tWDataSet.pokazPrzedstawienie);
+        }
+
+        void LadujPozycja()
+        {
+             try
+             {
+                 this.pokaz_ObrotowkaTableAdapter.Fill(this.tWDataSet.pokaz_Obrotowka, 1);
+                 SetPozycja((float)((this.pokazObrotowkaBindingSource.Current as DataRowView).Row as TWDataSet.pokaz_ObrotowkaRow).pozycja);
+             }
+             catch (Exception)
+             {
+
+                 SetPozycja(0);
+             }
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
@@ -225,7 +239,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             else
             {
 
-                Jazda.ZapisPozycja(pozycja);
+                textBoxWynik.Text = db.ZapiszPozycja(1, pozycja);
                 green();
             }
         }
@@ -451,7 +465,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
             timer1.Enabled = false;
             trackBarJoystick.Value = 0;
             SetPredkosc(trackBarJoystick.Value);
-            Jazda.ZapisPozycja(GetPozycja());
+            db.ZapiszPozycja(1,GetPozycja());
             Odswiez();
         }
 
@@ -465,7 +479,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.ScenaObrotowa
         private void buttonStartStop_MouseUp(object sender, MouseEventArgs e)
         {
             green();
-            Jazda.ZapisPozycja(GetPozycja());
+            db.ZapiszPozycja(1, GetPozycja());
             Odswiez();
         }
 

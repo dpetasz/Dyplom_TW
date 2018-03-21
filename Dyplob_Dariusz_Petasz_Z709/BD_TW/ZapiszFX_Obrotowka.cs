@@ -28,5 +28,11 @@ namespace Dyplom_Dariusz_Petasz_Z709.BD_TW
             return kom;
 
         }
+        public string ZapiszPozycja(int id, float pozycja)
+        {
+            string kom = "";
+            db.zapisz_Pozycja_Obrotowka(id, (decimal)Math.Round(pozycja, 2), ref kom);
+            return kom;
+        }
     }
 }
