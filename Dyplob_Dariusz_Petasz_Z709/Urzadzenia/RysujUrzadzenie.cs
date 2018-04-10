@@ -10,12 +10,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Urzadzenia
 {
     public class RysujUrzadzenie 
     {
-        int id;
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
+        
         string nazwa;
         public string Nazwa
         {

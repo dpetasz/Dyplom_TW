@@ -28,20 +28,20 @@ namespace Dyplom_Dariusz_Petasz_Z709
         {
             this.Id = Id;
         }
-        string nazwa;
-        string Nazwa
-        {
-            get { return nazwa; }
-            set { nazwa = value; }
-        }
-        public string GetNazwa()
-        {
-            return Nazwa;
-        }
-        public void SetNazwa(string Nazwa)
-        {
-            this.Nazwa = Nazwa;
-        }
+        //string nazwa;
+        //string Nazwa
+        //{
+        //    get { return nazwa; }
+        //    set { nazwa = value; }
+        //}
+        //public string GetNazwa()
+        //{
+        //    return Nazwa;
+        //}
+        //public void SetNazwa(string Nazwa)
+        //{
+        //    this.Nazwa = Nazwa;
+        //}
         float pozycjaZadana;
         float PozycjaZadana
         {

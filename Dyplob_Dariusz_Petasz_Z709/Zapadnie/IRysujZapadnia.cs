@@ -11,5 +11,12 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
     {
         void ZapadniaJazda(Graphics g, float zapadnia, float portal);
         void Obramowanie(Graphics g);
+        void Wypelnienie();
+        void WypelnienieJazda();
+        void WypelnienieJazdaRozstaw();
+        void WypelnienieJazdaZapadnia();
+        void WypelnienieZaryglowanie();
+        void SetNazwa(string Nazwa);
+        string GetNazwa();
     }
 }

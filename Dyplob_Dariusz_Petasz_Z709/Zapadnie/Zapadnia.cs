@@ -16,8 +16,8 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
     {
         static public List<Zapadnia> ListaZapadnia = new List<Zapadnia>();
 
-        RysujZapadnia rysujZapadnia = new RysujZapadnia();
-        JazdaZapadnia jazdaZapadnia = new JazdaZapadnia();
+        IRysujZapadnia rysujZapadnia = new RysujZapadnia();
+        IJazdaZapadnia jazdaZapadnia = new JazdaZapadnia();
         IZapiszZapadnia db = new ZapiszZapadnia();
         Graphics g;
 
@@ -135,7 +135,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         {
             InitializeComponent();
             this.Id = Id;
-            rysujZapadnia.Nazwa = Nazwa;
+            rysujZapadnia.SetNazwa(Nazwa);
             this.Pozycja = Pozycja;
             this.Aktywacja = false;
             this.PredkoscMax = PredkoscMax;
@@ -149,12 +149,13 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         }
         void LadujDane()
         {
-            textBoxNazwa.Text = rysujZapadnia.Nazwa;
+            textBoxNazwa.Text = rysujZapadnia.GetNazwa();
             Odswiez();
             WczytajMiejsceStop(Math.Abs((Pozycja / 20)).ToString());
         }
         public void JazdaDoPozycjiOdryglowanie()
         {
+            //jazdaZapadnia.jazdaDoPozycjiUp(Przychamowanie, Pozycja + 5);
             Rygiel_1 = false;
             Rygiel_3 = false;
             Rygiel_2 = true;

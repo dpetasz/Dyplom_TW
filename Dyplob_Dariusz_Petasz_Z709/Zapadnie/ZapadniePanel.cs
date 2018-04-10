@@ -28,7 +28,7 @@ namespace Dyplom_Dariusz_Petasz_Z709.Zapadnie
         {
             this.pokazZapadnieTableAdapter.Fill(this.twDataSet.pokazZapadnie);
             LadujZapadnia();
-            Stop();
+            LadujJoystick();
         }
         void LadujZapadnia()
         {
